@@ -20,7 +20,7 @@
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="assets/images/logo_lycee_franklin.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
@@ -48,6 +48,8 @@
       
     
     
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -66,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#maths-seconde" class="md-skip">
+        <a href="#acces-rapide" class="md-skip">
           Aller au contenu
         </a>
       
@@ -82,8 +84,7 @@
   <nav class="md-header__inner md-grid" aria-label="En-tête">
     <a href="." title="Maths Seconde" class="md-header__button md-logo" aria-label="Maths Seconde" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="assets/images/logo_lycee_franklin.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -215,7 +216,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="notions/N01-rentree-logique-ensembles/" class="md-tabs__link">
+        <a href="notions/N01-logique-ensembles/" class="md-tabs__link">
           
   
   
@@ -276,7 +277,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -289,8 +292,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="." title="Maths Seconde" class="md-nav__button md-logo" aria-label="Maths Seconde" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="assets/images/logo_lycee_franklin.png" alt="logo">
 
     </a>
     Maths Seconde
@@ -310,8 +312,6 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-      
-        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -354,8 +354,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table des matières">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -469,14 +467,14 @@
   
   
     <li class="md-nav__item">
-      <a href="notions/N01-rentree-logique-ensembles/" class="md-nav__link">
+      <a href="notions/N01-logique-ensembles/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    N01 — Rentree logique ensembles
+    N01 — Logique ensembles
   
 
     
@@ -497,14 +495,42 @@
   
   
     <li class="md-nav__item">
-      <a href="notions/N02-nombres-reels-intervalles-valeur-absolue/" class="md-nav__link">
+      <a href="notions/N02-nombres-reels-intervalles/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    N02 — Nombres reels intervalles valeur absolue
+    N02 — Nombres reels intervalles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="notions/N03-arithmetique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    N03 — Arithmetique
   
 
     
@@ -581,14 +607,14 @@
   
   
     <li class="md-nav__item">
-      <a href="notions/N06-synthese-nombres-calculs-ds1/" class="md-nav__link">
+      <a href="notions/N06-synthese-nombres-calculs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    N06 — Synthese nombres calculs ds1
+    N06 — Synthese nombres calculs
   
 
     
@@ -973,42 +999,14 @@
   
   
     <li class="md-nav__item">
-      <a href="notions/N20-synthese-annuelle-transition-premiere-ds6/" class="md-nav__link">
+      <a href="notions/N20-synthese-annuelle-transition-premiere/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    N20 — Synthese annuelle transition premiere ds6
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="notions/N03-fonctions-lectures-variations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    N03 — Fonctions Lectures Variations
+    N20 — Synthese annuelle transition premiere
   
 
     
@@ -1119,7 +1117,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1127,8 +1127,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table des matières">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1162,21 +1160,81 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<h1 id="maths-seconde">Maths Seconde</h1>
-<p>Bienvenue sur le site de ressources de Seconde mathématiques.</p>
-<p>Ce site complète le cahier de textes Pronote.</p>
-<p>Pronote indique le travail au fil des semaines ; ce site permet de retrouver les contenus par notion.</p>
+
+<div class="maths-home">
+
+<section class="maths-brand">
+  <img class="maths-brand-logo" src="assets/images/logo_lycee_franklin.png" alt="Logo du lycée Franklin">
+  <div>
+    <p class="maths-eyebrow">Mathématiques</p>
+    <h1>Seconde générale et technologique</h1>
+    <p>Un espace de travail pour retrouver les cours, s'entraîner régulièrement et progresser tout au long de l'année.</p>
+  </div>
+</section>
+
+<section class="maths-hero">
+  <div>
+    <h2>Comprendre,<br>s'entraîner,<br>progresser.</h2>
+    <p>Bienvenue sur le site de mathématiques du lycée Franklin. Vous y retrouverez les documents de cours, les TD, les automatismes et les ressources utiles pour préparer les évaluations.</p>
+    <div class="maths-actions">
+      <a class="maths-button" href="#acces-rapide">🚀 Commencer à travailler</a>
+      <a class="maths-link-button" href="progression/">Voir la progression →</a>
+    </div>
+  </div>
+  <div class="maths-illustration" aria-hidden="true"></div>
+</section>
+
+<section class="maths-cards">
+  <a class="maths-card maths-card--blue" href="#acces-rapide">
+    <span class="maths-card-icon">📘</span>
+    <h3>Cours</h3>
+    <p>Retrouver les définitions, propriétés et exemples essentiels de chaque notion.</p>
+    <span class="maths-card-arrow">→</span>
+  </a>
+  <a class="maths-card maths-card--green" href="#acces-rapide">
+    <span class="maths-card-icon">📝</span>
+    <h3>TD</h3>
+    <p>S'entraîner avec les exercices donnés en classe ou à la maison.</p>
+    <span class="maths-card-arrow">→</span>
+  </a>
+  <a class="maths-card maths-card--yellow" href="automatismes/">
+    <span class="maths-card-icon">⚡</span>
+    <h3>Automatismes</h3>
+    <p>Travailler régulièrement les techniques rapides à maîtriser.</p>
+    <span class="maths-card-arrow">→</span>
+  </a>
+  <a class="maths-card maths-card--purple" href="progression/">
+    <span class="maths-card-icon">🎯</span>
+    <h3>Progression</h3>
+    <p>Suivre les notions de l'année et les échéances importantes.</p>
+    <span class="maths-card-arrow">→</span>
+  </a>
+</section>
+
+<section class="maths-note">
+  <span class="maths-note-icon">💡</span>
+  <div>
+    <strong>À ne pas manquer.</strong><br>
+    Les ressources sont mises à jour progressivement. En cas d'absence, commencez par consulter la notion travaillée, puis récupérez le cours et le TD associés.
+  </div>
+</section>
+
+</div>
+
 <h2 id="acces-rapide">Accès rapide</h2>
+<p>Les liens vers les notions de l'année sont ajoutés ou complétés par les scripts de publication.<br />
+Ne pas supprimer le titre <code>## Accès rapide</code> : il sert de point d'ancrage aux scripts.</p>
 <ul>
-<li><a href="progression/">Progression visuelle</a></li>
-<li><a href="notions/N01-rentree-logique-ensembles/">N01 — Rentree logique ensembles</a></li>
-<li><a href="notions/N02-nombres-reels-intervalles-valeur-absolue/">N02 — Nombres reels intervalles valeur absolue</a></li>
+<li><a href="notions/N01-logique-ensembles/">N01 — Logique ensembles</a></li>
+<li><a href="notions/N02-nombres-reels-intervalles/">N02 — Nombres reels intervalles</a></li>
+<li><a href="notions/N03-arithmetique/">N03 — Arithmetique</a></li>
 <li><a href="notions/N04-calcul-litteral/">N04 — Calcul litteral</a></li>
 <li><a href="notions/N05-equations-inequations/">N05 — Équations inéquations</a></li>
-<li><a href="notions/N06-synthese-nombres-calculs-ds1/">N06 — Synthese nombres calculs ds1</a></li>
+<li><a href="notions/N06-synthese-nombres-calculs/">N06 — Synthese nombres calculs</a></li>
 <li><a href="notions/N07-vecteurs-du-plan/">N07 — Vecteurs du plan</a></li>
 <li><a href="notions/N08-droites-equations/">N08 — Droites équations</a></li>
 <li><a href="notions/N09-fonctions-registres/">N09 — Fonctions registres</a></li>
@@ -1190,8 +1248,7 @@
 <li><a href="notions/N17-croisement-variables-qualitatives/">N17 — Croisement variables qualitatives</a></li>
 <li><a href="notions/N18-probabilites-echantillonnage/">N18 — Probabilités echantillonnage</a></li>
 <li><a href="notions/N19-synthese-statistiques-probabilites/">N19 — Synthese statistiques probabilités</a></li>
-<li><a href="notions/N20-synthese-annuelle-transition-premiere-ds6/">N20 — Synthese annuelle transition premiere ds6</a></li>
-<li><a href="notions/N03-fonctions-lectures-variations/">N03 — Fonctions Lectures Variations</a></li>
+<li><a href="notions/N20-synthese-annuelle-transition-premiere/">N20 — Synthese annuelle transition premiere</a></li>
 <li><a href="notions/N21-exponentielle-ii/">N21 — Exponentielle Ii</a></li>
 </ul>
 
@@ -1201,8 +1258,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
