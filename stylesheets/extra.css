@@ -110,8 +110,8 @@
   border: 1px solid var(--maths-border);
   border-radius: 1.25rem;
   background:
-    radial-gradient(circle at 80% 25%, rgba(31, 143, 85, 0.13), transparent 28%),
-    linear-gradient(135deg, #ffffff 0%, #f5fbf8 45%, #f4f7fb 100%);
+    radial-gradient(circle at 15% 20%, rgba(31, 143, 85, 0.10), transparent 30%),
+    linear-gradient(120deg, #ffffff 0%, #f6f7f5 45%, #e2e0db 100%);
   box-shadow: var(--maths-shadow);
   overflow: hidden;
 }
@@ -119,9 +119,10 @@
 .maths-hero h2 {
   margin: 0;
   color: var(--maths-ink);
-  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  font-size: clamp(1.3rem, 1.9vw, 1.7rem);
   line-height: 1.18;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .maths-hero p {
@@ -348,6 +349,9 @@
 @media (max-width: 960px) {
   .maths-hero {
     grid-template-columns: 1fr;
+  }
+  .maths-hero h2 {
+    white-space: normal;
   }
   .maths-illustration {
     aspect-ratio: 16 / 9;
