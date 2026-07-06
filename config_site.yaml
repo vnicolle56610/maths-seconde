@@ -1,0 +1,12 @@
+# Configuration du site — seul fichier à adapter pour réutiliser
+# scripts/synchronisation/ sur un autre niveau (Seconde, Terminale, Expertes).
+
+# Dossier "Version en cours" du dépôt de référence (unique source de vérité).
+source: "~/ENSEIGNEMENT/IA_AGENT_MATHS/GPT-seconde"
+
+# Racine du site MkDocs (contient docs/ et mkdocs.yml).
+# "." signifie : le dossier qui contient ce fichier config_site.yaml.
+destination: "."
+
+# Nom affiché du niveau (informatif, utilisé dans les rapports).
+niveau: "Seconde"
