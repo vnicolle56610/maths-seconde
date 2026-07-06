@@ -68,12 +68,12 @@
 .maths-brand {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  margin: 1.2rem 0 1.4rem;
+  gap: 1rem;
+  margin: 0.6rem 0 0.9rem;
 }
 
 .maths-brand-logo {
-  width: min(250px, 42vw);
+  width: min(170px, 30vw);
   height: auto;
   object-fit: contain;
 }
@@ -90,15 +90,15 @@
 .maths-brand h1 {
   margin: 0;
   color: var(--maths-ink);
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 
 .maths-brand p:last-child {
-  margin: 0.45rem 0 0;
+  margin: 0.3rem 0 0;
   color: var(--maths-muted);
-  font-size: 1.02rem;
+  font-size: 0.95rem;
 }
 
 .maths-hero {
