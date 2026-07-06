@@ -102,10 +102,10 @@
 
 .maths-hero {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 1.5rem;
-  align-items: stretch;
-  padding: clamp(1.2rem, 2.4vw, 1.8rem);
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.6rem;
+  align-items: center;
+  padding: clamp(1rem, 2vw, 1.5rem);
   border: 1px solid var(--maths-border);
   border-radius: 1.25rem;
   background:
@@ -115,26 +115,20 @@
   overflow: hidden;
 }
 
-.maths-hero > div:first-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .maths-hero h2 {
   margin: 0;
   color: var(--maths-ink);
-  font-size: clamp(1.7rem, 2.6vw, 2.5rem);
-  line-height: 1.15;
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  line-height: 1.18;
   letter-spacing: -0.02em;
 }
 
 .maths-hero p {
   max-width: 44rem;
-  margin: 1rem 0 0;
+  margin: 0.65rem 0 0;
   color: var(--maths-muted);
-  font-size: 1.08rem;
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.5;
 }
 
 .maths-actions {
@@ -142,7 +136,7 @@
   flex-wrap: wrap;
   gap: 0.9rem;
   align-items: center;
-  margin-top: 1.35rem;
+  margin-top: 1rem;
 }
 
 .maths-button,
@@ -166,13 +160,17 @@
 }
 
 .maths-illustration {
-  height: 100%;
-  min-height: 200px;
+  aspect-ratio: 16 / 8;
   border-radius: 1rem;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.2)),
-    url("../assets/images/hero_cahier_math.svg") center / cover no-repeat;
-  opacity: 0.95;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}
+
+.maths-illustration img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .maths-cards {
@@ -184,7 +182,7 @@
 
 .maths-card {
   display: block;
-  min-height: 12.5rem;
+  min-height: 9.5rem;
   padding: 1.25rem;
   border: 1px solid var(--maths-border);
   border-bottom: 3px solid var(--maths-card-accent, var(--maths-ink));
@@ -201,9 +199,16 @@
   box-shadow: var(--maths-shadow);
 }
 
+.maths-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 0.5rem;
+}
+
 .maths-card h3 {
-  margin: 0.65rem 0 0.45rem;
-  font-size: 1.25rem;
+  margin: 0;
+  font-size: 1.15rem;
   color: var(--maths-ink);
 }
 
@@ -215,12 +220,13 @@
 
 .maths-card-icon {
   display: inline-flex;
-  width: 3rem;
-  height: 3rem;
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  font-size: 1.45rem;
+  font-size: 1.1rem;
   background: rgba(31, 143, 85, 0.12);
 }
 
@@ -343,8 +349,7 @@
     grid-template-columns: 1fr;
   }
   .maths-illustration {
-    height: auto;
-    min-height: 170px;
+    aspect-ratio: 16 / 9;
   }
   .maths-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
