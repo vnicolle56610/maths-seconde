@@ -13,6 +13,41 @@
   --maths-shadow: 0 12px 30px rgba(13, 27, 42, 0.08);
 }
 
+/* En-tête et onglets clairs, façon maquette Lycée Franklin */
+:root {
+  --md-accent-fg-color: var(--maths-green);
+}
+
+.md-header {
+  color: var(--maths-ink);
+  box-shadow: 0 1px 0 var(--maths-border);
+}
+
+.md-header,
+.md-tabs {
+  background-color: #ffffff;
+}
+
+.md-tabs {
+  border-top: 1px solid var(--maths-border);
+  color: var(--maths-muted);
+}
+
+.md-tabs__link {
+  opacity: 1;
+  color: var(--maths-muted);
+  font-weight: 600;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: var(--maths-green);
+}
+
+.md-header__title {
+  font-weight: 800;
+}
+
 /* Logo dans l'en-tête MkDocs Material */
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
@@ -67,10 +102,10 @@
 
 .maths-hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 1.5rem;
-  align-items: center;
-  padding: clamp(1.2rem, 3vw, 2.3rem);
+  align-items: stretch;
+  padding: clamp(1.2rem, 2.4vw, 1.8rem);
   border: 1px solid var(--maths-border);
   border-radius: 1.25rem;
   background:
@@ -80,12 +115,18 @@
   overflow: hidden;
 }
 
+.maths-hero > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .maths-hero h2 {
   margin: 0;
   color: var(--maths-ink);
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.7rem, 2.6vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .maths-hero p {
@@ -125,7 +166,8 @@
 }
 
 .maths-illustration {
-  min-height: 270px;
+  height: 100%;
+  min-height: 200px;
   border-radius: 1rem;
   background:
     linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.2)),
@@ -145,6 +187,7 @@
   min-height: 12.5rem;
   padding: 1.25rem;
   border: 1px solid var(--maths-border);
+  border-bottom: 3px solid var(--maths-card-accent, var(--maths-ink));
   border-radius: 1rem;
   background: #ffffff;
   box-shadow: 0 8px 22px rgba(13, 27, 42, 0.06);
@@ -189,22 +232,77 @@
   color: var(--maths-ink);
 }
 
-.maths-card--blue { background: linear-gradient(180deg, #ffffff 0%, var(--maths-blue-soft) 100%); }
-.maths-card--green { background: linear-gradient(180deg, #ffffff 0%, var(--maths-green-soft) 100%); }
-.maths-card--yellow { background: linear-gradient(180deg, #ffffff 0%, var(--maths-yellow-soft) 100%); }
-.maths-card--purple { background: linear-gradient(180deg, #ffffff 0%, var(--maths-purple-soft) 100%); }
+.maths-card--blue { --maths-card-accent: #2f6fed; background: linear-gradient(180deg, #ffffff 0%, var(--maths-blue-soft) 100%); }
+.maths-card--green { --maths-card-accent: var(--maths-green); background: linear-gradient(180deg, #ffffff 0%, var(--maths-green-soft) 100%); }
+.maths-card--yellow { --maths-card-accent: #e8a316; background: linear-gradient(180deg, #ffffff 0%, var(--maths-yellow-soft) 100%); }
+.maths-card--purple { --maths-card-accent: #7c5cf0; background: linear-gradient(180deg, #ffffff 0%, var(--maths-purple-soft) 100%); }
+
+.maths-footer-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.4rem 0 1.2rem;
+}
 
 .maths-note {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0.9rem;
   align-items: start;
-  margin: 1.4rem 0 1.8rem;
   padding: 1.1rem 1.2rem;
   border-radius: 1rem;
   border: 1px solid var(--maths-border);
   background: #ffffff;
   box-shadow: 0 8px 22px rgba(13, 27, 42, 0.05);
+}
+
+.maths-quote {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 1.1rem 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--maths-border);
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(13, 27, 42, 0.05);
+}
+
+.maths-quote blockquote {
+  margin: 0;
+  border: none;
+  padding: 0;
+  color: var(--maths-ink);
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.maths-quote cite {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--maths-muted);
+  font-style: normal;
+  font-size: 0.9rem;
+}
+
+.maths-quote-icon {
+  font-size: 1.6rem;
+}
+
+.maths-site-footer {
+  margin: 1.4rem 0 2rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--maths-border);
+  color: var(--maths-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .maths-footer-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .maths-note-icon {
@@ -245,6 +343,7 @@
     grid-template-columns: 1fr;
   }
   .maths-illustration {
+    height: auto;
     min-height: 170px;
   }
   .maths-cards {
