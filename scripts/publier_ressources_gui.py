@@ -23,7 +23,7 @@ import publier_ressources_site as publisher
 
 
 PUBLIC_SITE_URL = (
-    "https://vnicolle56610.github.io/maths-premiere-specialite/"
+    f"https://vnicolle56610.github.io/{publisher.PROJECT_ROOT.name}/"
 )
 
 
@@ -161,7 +161,7 @@ class PublicationApp:
         self.root.after(0, self.scan_resources)
 
     def _build_interface(self) -> None:
-        self.root.title("Publication des ressources — Maths Première")
+        self.root.title(f"Publication des ressources — Maths {publisher.NIVEAU}")
         self.root.geometry("980x820")
         self.root.minsize(780, 620)
 
@@ -668,7 +668,7 @@ class PublicationApp:
         self._set_busy(True)
         try:
             with tempfile.TemporaryDirectory(
-                prefix="maths-premiere-gh-pages-"
+                prefix=f"{publisher.PROJECT_ROOT.name}-gh-pages-"
             ) as site_directory:
                 completed = subprocess.run(
                     [

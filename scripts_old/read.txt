@@ -1,0 +1,35 @@
+Memo - scripts anciens
+=======================
+
+Ces scripts ont ete deplaces ici le 2026-07-07 parce qu'ils ne sont pas
+appeles par la commande habituelle de publication du site Seconde :
+
+    lancer_publication_seconde
+
+Cette commande lance en fait :
+
+    scripts/lancer_publication.sh --gui
+
+La chaine actuellement utilisee est donc :
+
+    scripts/lancer_publication.sh
+    scripts/publier_ressources_gui.py
+    scripts/publier_ressources_site.py
+    scripts/synchronisation/config.py
+
+Les fichiers ranges dans ce dossier correspondaient a une autre voie de
+publication : synchronisation automatique complete, build MkDocs en ligne de
+commande, rapport de coherence, et publication sans interface graphique.
+
+Ils sont conserves comme archive de securite. Ne les supprimer que si le
+fonctionnement avec l'interface graphique est confirme dans la duree.
+
+Attention : les options suivantes de scripts/lancer_publication.sh ne sont
+plus utilisables directement tant que ces anciens scripts restent ici :
+
+    ./scripts/lancer_publication.sh
+    ./scripts/lancer_publication.sh --deploy
+    ./scripts/lancer_publication.sh --sync-only
+
+Pour les reutiliser, il faudrait remettre ces fichiers dans scripts/ ou
+adapter les chemins.

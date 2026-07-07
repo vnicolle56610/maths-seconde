@@ -17,15 +17,14 @@ from pathlib import Path
 from urllib.parse import quote
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from synchronisation.config import charger_configuration  # noqa: E402
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DOCS_ROOT = PROJECT_ROOT / "docs"
-SOURCE_ROOT = (
-    Path.home()
-    / "ENSEIGNEMENT"
-    / "IA_AGENT_MATHS"
-    / "GPT-première"
-    / "Version en cours"
-)
+_CONFIG = charger_configuration(PROJECT_ROOT / "config_site.yaml")
+SOURCE_ROOT = _CONFIG.source
+NIVEAU = _CONFIG.niveau
 
 AUTO_DOCS_START = "<!-- AUTO-DOCS:START -->"
 AUTO_DOCS_END = "<!-- AUTO-DOCS:END -->"
@@ -1108,6 +1107,101 @@ def update_notion_pages(
         report.modified_pages.append(markdown_page)
 
 
+# Pages d'index régénérées à chaque publication, sur le modèle des pages
+# de notions : (sous-dossier de docs/, types de documents listés).
+SECTION_INDEX_PAGES = (
+    ("td", frozenset({"TD"})),
+    ("automatismes", frozenset({"AUTOMATISMES", "MINITEST"})),
+    ("corriges", frozenset({"CORRIGE", "CORRIGE_TD"})),
+)
+
+
+def update_section_index(
+    directory_name: str,
+    kinds: frozenset[str],
+    resources: list[Resource],
+    selected_resources: list[Resource],
+    docs_root: Path,
+    report: PublicationReport,
+) -> None:
+    """Régénérer docs/<section>/index.md, comme les pages de notions."""
+    all_by_notion: dict[str, list[Resource]] = defaultdict(list)
+    for resource in resources:
+        all_by_notion[resource.notion].append(resource)
+
+    selected_by_notion: dict[str, list[Resource]] = defaultdict(list)
+    for resource in selected_resources:
+        if resource.kind in kinds:
+            selected_by_notion[resource.notion].append(resource)
+
+    notions_with_documents = {
+        notion
+        for notion, notion_resources in all_by_notion.items()
+        if any(item.kind in kinds for item in notion_resources)
+    }
+    if not notions_with_documents:
+        return
+
+    markdown_page = docs_root / directory_name / "index.md"
+    if not markdown_page.is_file():
+        report.warnings.append(
+            f"{markdown_page} : page introuvable, index non régénéré"
+        )
+        return
+    ensure_inside_docs(markdown_page, docs_root)
+
+    original_bytes = markdown_page.read_bytes()
+    original_text = original_bytes.decode("utf-8")
+    newline = detect_newline(original_text)
+
+    sections = []
+    for notion in sorted(notions_with_documents):
+        try:
+            notion_page = find_notion_page(docs_root, notion)
+        except ValueError as error:
+            report.warnings.append(str(error))
+            notion_page = None
+        heading_text = notion_page_title(notion_page) if notion_page else notion
+        document_lines = render_document_lines(
+            markdown_page, selected_by_notion[notion]
+        )
+        sections.append(f"## {heading_text}\n\n{document_lines}")
+
+    content = "\n\n".join(sections).replace("\n", newline)
+
+    try:
+        updated_text = replace_auto_docs_zone(original_text, content, newline)
+    except ValueError as error:
+        report.warnings.append(f"{markdown_page}: {error}")
+        return
+
+    updated_bytes = updated_text.encode("utf-8")
+    if updated_bytes == original_bytes:
+        report.unchanged_pages.append(markdown_page)
+        return
+
+    if not report.dry_run:
+        markdown_page.write_bytes(updated_bytes)
+    report.modified_pages.append(markdown_page)
+
+
+def update_section_indexes(
+    resources: list[Resource],
+    selected_resources: list[Resource],
+    docs_root: Path,
+    report: PublicationReport,
+) -> None:
+    for directory_name, kinds in SECTION_INDEX_PAGES:
+        update_section_index(
+            directory_name,
+            kinds,
+            resources,
+            selected_resources,
+            docs_root,
+            report,
+        )
+
+
 def publish_selected_resources(
     resources: list[Resource],
     selected_resources: list[Resource],
@@ -1133,6 +1227,12 @@ def publish_selected_resources(
 
     copy_resources(selected_resources, report)
     update_notion_pages(
+        resources,
+        selected_resources,
+        docs_root,
+        report,
+    )
+    update_section_indexes(
         resources,
         selected_resources,
         docs_root,
