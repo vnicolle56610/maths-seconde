@@ -329,6 +329,73 @@
   color: var(--maths-green);
 }
 
+/* Bandeau de navigation entre notions (précédente / suivante) */
+.notion-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0.8rem;
+  margin: 0.2rem 0 1.5rem;
+}
+
+.notion-nav__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  max-width: 48%;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--maths-border);
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(13, 27, 42, 0.05);
+  color: var(--maths-ink) !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  line-height: 1.25;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.notion-nav__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--maths-shadow);
+}
+
+.notion-nav__btn--next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.notion-nav__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(31, 143, 85, 0.12);
+  color: var(--maths-green);
+}
+
+.notion-nav__text small {
+  display: block;
+  color: var(--maths-muted);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.notion-nav__title {
+  font-size: 0.78rem;
+}
+
+@media (max-width: 640px) {
+  .notion-nav__title {
+    display: none;
+  }
+}
+
 /* La section Accès rapide est utilisée par les scripts : on la rend lisible. */
 #accès-rapide + p,
 #acces-rapide + p {
