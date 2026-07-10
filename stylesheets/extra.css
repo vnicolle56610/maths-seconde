@@ -396,6 +396,53 @@
   }
 }
 
+/* Lien Toutatice (accès Pronote via l'ENT) : icône dans les menus… */
+.md-nav__link[href^="https://www.toutatice.fr"]::before,
+.md-tabs__link[href^="https://www.toutatice.fr"]::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: -0.12em;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='white'/><rect x='1.5' y='1.5' width='2.6' height='13' fill='%2378cbe0'/><rect x='4.1' y='1.5' width='2.6' height='13' fill='%23f39224'/><rect x='6.7' y='1.5' width='2.6' height='13' fill='%23bbd030'/><rect x='9.3' y='1.5' width='2.6' height='13' fill='white'/><rect x='11.9' y='1.5' width='2.6' height='13' fill='%23e61649'/><rect x='0.5' y='0.5' width='15' height='15' rx='2.5' fill='none' stroke='rgba(13,27,42,0.25)'/></svg>")
+    center / contain no-repeat;
+}
+
+/* … et bouton dans le bandeau d'en-tête (ajouté par toutatice-header.js). */
+.toutatice-header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0.4rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--maths-border);
+  border-radius: 999px;
+  color: var(--maths-ink) !important;
+  font-weight: 700;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  text-decoration: none !important;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.toutatice-header-link:hover {
+  color: var(--maths-green) !important;
+  border-color: var(--maths-green);
+}
+
+.toutatice-header-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (max-width: 480px) {
+  .toutatice-header-link span {
+    display: none;
+  }
+}
+
 /* La section Accès rapide est utilisée par les scripts : on la rend lisible. */
 #accès-rapide + p,
 #acces-rapide + p {
