@@ -72,12 +72,6 @@
   margin: 0.6rem 0 0.9rem;
 }
 
-.maths-brand-logo {
-  width: min(170px, 30vw);
-  height: auto;
-  object-fit: contain;
-}
-
 .maths-eyebrow {
   margin: 0 0 0.25rem;
   color: var(--maths-green);
