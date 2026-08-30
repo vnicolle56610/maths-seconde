@@ -9,6 +9,7 @@ import sys
 import tempfile
 import tkinter as tk
 from collections import Counter, defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 from tkinter import messagebox, scrolledtext, ttk
 
@@ -56,6 +57,127 @@ def resource_description(resource: publisher.Resource) -> str:
 
 def path_description(path: Path) -> str:
     return relative_path(path, publisher.PROJECT_ROOT)
+
+
+@dataclass(frozen=True)
+class DeployPreflightResult:
+    ok: bool
+    user_message: str
+    details: str
+
+
+def run_git(project_root: Path, *args: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", *args],
+        cwd=project_root,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+
+def git_output(completed: subprocess.CompletedProcess[str]) -> str:
+    return "\n".join(
+        part.strip()
+        for part in (completed.stdout, completed.stderr)
+        if part.strip()
+    )
+
+
+def classify_git_status(porcelain: str) -> str:
+    statuses = porcelain.splitlines()
+    if any(line.startswith("??") for line in statuses):
+        return "fichiers non suivis"
+    if any("D" in line[:2] for line in statuses):
+        return "fichiers supprimés localement"
+    return "fichiers locaux non enregistrés dans Git"
+
+
+def check_deploy_preflight(project_root: Path) -> DeployPreflightResult:
+    technical_details: list[str] = []
+
+    inside = run_git(project_root, "rev-parse", "--is-inside-work-tree")
+    technical_details.append(f"$ git rev-parse --is-inside-work-tree\n{git_output(inside)}")
+    if inside.returncode != 0 or inside.stdout.strip() != "true":
+        return DeployPreflightResult(
+            False,
+            "Déploiement bloqué : ce dossier n'est pas un dépôt Git.",
+            "\n\n".join(technical_details),
+        )
+
+    branch = run_git(project_root, "branch", "--show-current")
+    technical_details.append(f"$ git branch --show-current\n{git_output(branch)}")
+    if branch.returncode != 0 or branch.stdout.strip() != "main":
+        current = branch.stdout.strip() or "branche détachée ou inconnue"
+        return DeployPreflightResult(
+            False,
+            f"Déploiement bloqué : la branche courante est « {current} », pas « main ».",
+            "\n\n".join(technical_details),
+        )
+
+    status = run_git(project_root, "status", "--porcelain")
+    technical_details.append(f"$ git status --porcelain\n{git_output(status)}")
+    if status.returncode != 0:
+        return DeployPreflightResult(
+            False,
+            "Déploiement bloqué : impossible de vérifier l'état Git local.",
+            "\n\n".join(technical_details),
+        )
+    if status.stdout.strip():
+        reason = classify_git_status(status.stdout)
+        return DeployPreflightResult(
+            False,
+            (
+                "Déploiement bloqué : les fichiers locaux ne correspondent pas "
+                f"à la version enregistrée sur GitHub ({reason})."
+            ),
+            "\n\n".join(technical_details),
+        )
+
+    origin = run_git(project_root, "remote", "get-url", "origin")
+    technical_details.append(f"$ git remote get-url origin\n{git_output(origin)}")
+    if origin.returncode != 0:
+        return DeployPreflightResult(
+            False,
+            "Déploiement bloqué : le remote Git « origin » est introuvable.",
+            "\n\n".join(technical_details),
+        )
+
+    fetch = run_git(project_root, "fetch", "origin")
+    technical_details.append(f"$ git fetch origin\n{git_output(fetch)}")
+    if fetch.returncode != 0:
+        return DeployPreflightResult(
+            False,
+            "Déploiement bloqué : impossible d'actualiser origin/main.",
+            "\n\n".join(technical_details),
+        )
+
+    head = run_git(project_root, "rev-parse", "HEAD")
+    technical_details.append(f"$ git rev-parse HEAD\n{git_output(head)}")
+    origin_main = run_git(project_root, "rev-parse", "--verify", "origin/main")
+    technical_details.append(f"$ git rev-parse --verify origin/main\n{git_output(origin_main)}")
+    if head.returncode != 0 or origin_main.returncode != 0:
+        return DeployPreflightResult(
+            False,
+            "Déploiement bloqué : origin/main est inaccessible.",
+            "\n\n".join(technical_details),
+        )
+
+    if head.stdout.strip() != origin_main.stdout.strip():
+        return DeployPreflightResult(
+            False,
+            (
+                "Déploiement bloqué : le commit local main ne correspond pas "
+                "exactement à origin/main."
+            ),
+            "\n\n".join(technical_details),
+        )
+
+    return DeployPreflightResult(
+        True,
+        "Pré-vol Git validé : main est propre et synchronisé avec origin/main.",
+        "\n\n".join(technical_details),
+    )
 
 
 def add_section(lines: list[str], title: str, items: list[str]) -> None:
@@ -652,6 +774,22 @@ class PublicationApp:
     def deploy_github_pages(self) -> None:
         executable = self._mkdocs_executable_or_error()
         if executable is None:
+            return
+
+        preflight = check_deploy_preflight(publisher.PROJECT_ROOT)
+        self._append_output(
+            "PRÉ-VOL GIT AVANT DÉPLOIEMENT\n"
+            "==============================\n\n"
+            f"{preflight.user_message}\n\n"
+            f"{preflight.details}"
+        )
+        if not preflight.ok:
+            messagebox.showerror(
+                "Déploiement bloqué",
+                preflight.user_message,
+                parent=self.root,
+            )
+            self.status.set("Déploiement bloqué par le pré-vol Git.")
             return
 
         confirmed = messagebox.askyesno(
