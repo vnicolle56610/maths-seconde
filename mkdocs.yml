@@ -1,16 +1,21 @@
 site_name: Maths Seconde
+site_url: https://www.maths-nicolle.fr/maths-seconde/
 site_description: Cours, TD, méthodes et progression de Seconde mathématiques.
-site_author: Vincent
+site_author: Vincent NICOLLE
+copyright: >
+  © Vincent NICOLLE — contenus diffusés sous licence
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank" rel="license noopener">CC BY-NC-SA 4.0</a>
 
 nav:
-  - Accueil: index.md
-  - Progression: progression.md
-  - Notions:
-      - "N01 — Rentree logique ensembles": notions/N01-rentree-logique-ensembles.md
-      - "N02 — Nombres reels intervalles valeur absolue": notions/N02-nombres-reels-intervalles-valeur-absolue.md
+  - "🏠 Accueil": index.md
+  - "📈 Progression": progression.md
+  - "📖 Notions":
+      - "N01 — Logique ensembles": notions/N01-logique-ensembles.md
+      - "N02 — Nombres reels intervalles": notions/N02-nombres-reels-intervalles.md
+      - "N03 — Arithmetique": notions/N03-arithmetique.md
       - "N04 — Calcul litteral": notions/N04-calcul-litteral.md
       - "N05 — Équations inéquations": notions/N05-equations-inequations.md
-      - "N06 — Synthese nombres calculs ds1": notions/N06-synthese-nombres-calculs-ds1.md
+      - "N06 — Synthese nombres calculs": notions/N06-synthese-nombres-calculs.md
       - "N07 — Vecteurs du plan": notions/N07-vecteurs-du-plan.md
       - "N08 — Droites équations": notions/N08-droites-equations.md
       - "N09 — Fonctions registres": notions/N09-fonctions-registres.md
@@ -24,13 +29,20 @@ nav:
       - "N17 — Croisement variables qualitatives": notions/N17-croisement-variables-qualitatives.md
       - "N18 — Probabilités echantillonnage": notions/N18-probabilites-echantillonnage.md
       - "N19 — Synthese statistiques probabilités": notions/N19-synthese-statistiques-probabilites.md
-      - "N20 — Synthese annuelle transition premiere ds6": notions/N20-synthese-annuelle-transition-premiere-ds6.md
-  - Automatismes: automatismes/index.md
-  - Corrigés publiés: corriges/index.md
+      - "N20 — Synthese annuelle transition premiere": notions/N20-synthese-annuelle-transition-premiere.md
+  - "📝 TD": td/index.md
+  - "⚡ Automatismes": automatismes/index.md
+  - "✅ Corrigés publiés": corriges/index.md
+  - "ℹ️ À propos & licence": a-propos.md
+  - "Toutatice (Pronote)": https://www.toutatice.fr/portail
 
 theme:
   name: material
   language: fr
+  palette:
+    - scheme: default
+      primary: white
+      accent: green
   features:
     - navigation.tabs
     - navigation.sections
@@ -44,3 +56,10 @@ markdown_extensions:
   - admonition
   - attr_list
   - pymdownx.superfences
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/pdf-new-tab.js
+  - javascripts/toutatice-header.js
+  - javascripts/goatcounter.js
+  - javascripts/compteur-visites.js
