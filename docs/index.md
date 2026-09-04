@@ -86,8 +86,10 @@ hide:
 
 ## Accès rapide
 
-Les liens vers les notions de l'année sont ajoutés ou complétés par les scripts de publication.  
-Ne pas supprimer le titre `## Accès rapide` : il sert de point d'ancrage aux scripts.
+<!--
+Les liens vers les notions de l'année sont ajoutés ou complétés par les scripts de publication.
+Ne pas supprimer le titre "## Accès rapide" : il sert de point d'ancrage aux scripts.
+-->
 
 - [N01 — Logique ensembles](notions/N01-logique-ensembles.md)
 - [N02 — Nombres reels intervalles](notions/N02-nombres-reels-intervalles.md)
