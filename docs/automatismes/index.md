@@ -6,7 +6,6 @@ Exercices d'automatismes et mini-tests, classés par notion.
 ## N01 — Logique, ensembles et raisonnement
 
 - [Automatismes N01](AUTOMATISMES_N01_LOGIQUE_ENSEMBLES.pdf)
-- [Automatismes N01](AUTOMATISMES_N01_LOGIQUE_ENSEMBLES_4_enonce.pdf)
 
 ## N02 — Nombres réels, intervalles et valeur absolue
 
@@ -15,8 +14,6 @@ Exercices d'automatismes et mini-tests, classés par notion.
 ## N03 — Arithmétique
 
 - [Automatismes N03](AUTOMATISMES_N03_ARITHMETIQUE.pdf)
-- [Mini-test N03](MINITEST_N03_ARITHMETIQUE_SUJET_A.pdf)
-- [Mini-test N03](MINITEST_N03_ARITHMETIQUE_SUJET_B.pdf)
 
 ## N04 — Calcul littéral
 
