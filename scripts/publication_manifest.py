@@ -615,13 +615,19 @@ def bootstrap_manifest_from_auto_docs(
 ) -> dict:
     """Reconstruire un manifeste à partir de ce qui est déjà référencé.
 
-    Un document est considéré publié s'il apparaît dans les blocs
-    AUTO-DOCS des pages de notions existantes — jamais simplement parce
-    qu'un PDF homonyme existe dans docs/ (des orphelins y existent
-    volontairement, cf. N01). On ne relit donc pas les fichiers, on
-    réutilise le lien effectivement présent : une ressource découverte
-    dont le fichier de destination est déjà lié depuis SA page de notion
-    est retenue.
+    Un document est considéré publié s'il apparaît dans un bloc AUTO-DOCS
+    déjà en ligne — jamais simplement parce qu'un PDF homonyme existe dans
+    docs/ (des orphelins y existent volontairement, cf. CAS D). On ne
+    relit donc pas les fichiers, on réutilise le lien effectivement
+    présent.
+
+    Deux emplacements sont vérifiés, car selon le site un type de document
+    peut n'apparaître que sur l'un des deux (certains sites ne listent
+    les corrigés que sur docs/corriges/index.md, jamais sur la page de
+    la notion elle-même) :
+    - la page de SA notion (docs/notions/Nxx-*.md) ;
+    - la page d'index de SA section (docs/<dossier>/index.md, le même
+      dossier que sa destination), si elle existe.
     """
     from publier_ressources_site import (
         AUTO_DOCS_END,
@@ -629,26 +635,46 @@ def bootstrap_manifest_from_auto_docs(
         find_notion_page,
     )
 
+    def contains_in_auto_docs_zone(text: str, filename: str) -> bool:
+        if AUTO_DOCS_START not in text or AUTO_DOCS_END not in text:
+            return False
+        zone = text[
+            text.index(AUTO_DOCS_START) + len(AUTO_DOCS_START) : text.index(AUTO_DOCS_END)
+        ]
+        return filename in zone
+
     keys: set[ResourceKey] = set()
-    pages_cache: dict[str, str] = {}
+    notion_pages_cache: dict[str, str] = {}
+    section_pages_cache: dict[Path, str] = {}
 
     for resource in resources:
         notion = resource.notion
-        if notion not in pages_cache:
+        if notion not in notion_pages_cache:
             try:
                 page = find_notion_page(docs_root, notion)
             except ValueError:
                 page = None
-            pages_cache[notion] = (
+            notion_pages_cache[notion] = (
                 page.read_text(encoding="utf-8") if page and page.is_file() else ""
             )
-        text = pages_cache[notion]
-        if AUTO_DOCS_START not in text or AUTO_DOCS_END not in text:
-            continue
-        zone = text[
-            text.index(AUTO_DOCS_START) + len(AUTO_DOCS_START) : text.index(AUTO_DOCS_END)
-        ]
-        if resource.destination.name in zone:
+
+        published = contains_in_auto_docs_zone(
+            notion_pages_cache[notion], resource.destination.name
+        )
+
+        if not published:
+            section_page = resource.destination.parent / "index.md"
+            if section_page not in section_pages_cache:
+                section_pages_cache[section_page] = (
+                    section_page.read_text(encoding="utf-8")
+                    if section_page.is_file()
+                    else ""
+                )
+            published = contains_in_auto_docs_zone(
+                section_pages_cache[section_page], resource.destination.name
+            )
+
+        if published:
             keys.add((resource.notion, resource.kind, resource.source.name))
 
     return manifest_from_keys(keys)
