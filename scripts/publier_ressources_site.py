@@ -85,6 +85,21 @@ KIND_ORDER = {
 
 SAFE_DEFAULT_KINDS = frozenset({"COURS", "TD"})
 
+
+def is_safe_default(resource: Resource) -> bool:
+    """Un document présélectionnable sans risque de suppression.
+
+    C'est le cas d'un COURS/TD (relu par principe), ou de tout document
+    déjà publié : le préselectionner évite qu'une publication rapide
+    (« Sélection sûre » sans revue manuelle) ne supprime silencieusement
+    des automatismes/corrigés déjà en ligne simplement parce qu'ils
+    n'étaient pas cochés.
+    """
+    return (
+        resource.kind in SAFE_DEFAULT_KINDS
+        or resource.destination.is_file()
+    )
+
 # Dossiers non publiables à ignorer partout sous source_root, quel que soit
 # le niveau d'imbrication (archives et sauvegardes locales de travail).
 IGNORED_DIR_NAME_PATTERN = re.compile(
@@ -925,7 +940,7 @@ def choose_resources(
 
         kind_counts = Counter(resource.kind for resource in notion_resources)
         for resource in notion_resources:
-            preselected = resource.kind in SAFE_DEFAULT_KINDS
+            preselected = is_safe_default(resource)
             checkbox = "[x]" if preselected else "[ ]"
             label = selection_label(
                 resource,
@@ -938,7 +953,7 @@ def choose_resources(
     default_numbers = {
         option_number
         for option_number, resource in options
-        if resource.kind in SAFE_DEFAULT_KINDS
+        if is_safe_default(resource)
     }
     print(
         "\nSaisissez la liste complète des numéros à publier "
@@ -1300,6 +1315,96 @@ def publish_selected_resources(
     return report
 
 
+class CommitError(RuntimeError):
+    """Une étape Git a échoué pendant commit_publication."""
+
+
+def _run_git(project_root: Path, *args: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", *args],
+        cwd=project_root,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+
+def git_output(completed: subprocess.CompletedProcess[str]) -> str:
+    return "\n".join(
+        part.strip()
+        for part in (completed.stdout, completed.stderr)
+        if part.strip()
+    )
+
+
+def commit_publication(report: PublicationReport, project_root: Path) -> str | None:
+    """Committer, à la fin d'une publication réelle, uniquement ce qu'elle a écrit.
+
+    Le but est que suivre le protocole de publication (GUI ou CLI) laisse
+    toujours l'arbre de travail propre, prêt pour le pré-vol de
+    déploiement. On ne fait donc jamais un ``git add -A`` : seuls les
+    fichiers copiés et les pages modifiées par CETTE exécution sont
+    ajoutés, pour ne jamais embarquer une modification étrangère déjà
+    présente dans l'arbre de travail. Renvoie le SHA du commit créé, ou
+    ``None`` si rien n'a changé (simulation, ou publication sans écriture
+    réelle).
+    """
+    if report.dry_run:
+        return None
+
+    changed_paths = [*report.copied_files, *report.modified_pages]
+    if not changed_paths:
+        return None
+
+    added = _run_git(project_root, "add", "--", *[str(path) for path in changed_paths])
+    if added.returncode != 0:
+        raise CommitError(f"git add a échoué :\n{git_output(added)}")
+
+    staged = _run_git(project_root, "diff", "--cached", "--quiet")
+    if staged.returncode == 0:
+        # Les fichiers copiés étaient déjà identiques à la version suivie
+        # par Git : rien à committer.
+        return None
+
+    def displayed(path: Path) -> str:
+        try:
+            return str(path.relative_to(project_root))
+        except ValueError:
+            return str(path)
+
+    message_lines = [
+        "Publication automatique : "
+        f"{len(report.copied_files)} fichier(s) copié(s), "
+        f"{len(report.modified_pages)} page(s) mise(s) à jour",
+        "",
+    ]
+    if report.copied_files:
+        message_lines.append("Fichiers copiés :")
+        message_lines.extend(
+            f"  - {displayed(path)}"
+            for path in sorted(report.copied_files, key=displayed)
+        )
+        message_lines.append("")
+    if report.modified_pages:
+        message_lines.append("Pages mises à jour :")
+        message_lines.extend(
+            f"  - {displayed(path)}"
+            for path in sorted(report.modified_pages, key=displayed)
+        )
+        message_lines.append("")
+    message_lines.append(
+        "Généré par le protocole de publication (publier_ressources_site.py "
+        "/ publier_ressources_gui.py)."
+    )
+
+    committed = _run_git(project_root, "commit", "-m", "\n".join(message_lines))
+    if committed.returncode != 0:
+        raise CommitError(f"git commit a échoué :\n{git_output(committed)}")
+
+    sha = _run_git(project_root, "rev-parse", "HEAD")
+    return sha.stdout.strip() if sha.returncode == 0 else None
+
+
 def display_paths(title: str, paths: list[Path], project_root: Path) -> None:
     print(f"{title} : {len(paths)}")
     for path in sorted(paths, key=lambda item: str(item).casefold()):
@@ -1460,6 +1565,21 @@ def main() -> int:
         return 1
 
     display_report(report, PROJECT_ROOT)
+
+    try:
+        commit_sha = commit_publication(report, PROJECT_ROOT)
+    except CommitError as error:
+        print(f"\nERREUR : {error}")
+        print(
+            "Les fichiers ont bien été écrits mais n’ont pas pu être "
+            "commités automatiquement. Committez-les manuellement avant "
+            "de déployer."
+        )
+        return 1
+    if commit_sha:
+        print(f"\nCommit créé : {commit_sha[:12]}")
+    elif not args.dry_run:
+        print("\nAucun changement à committer (rien de nouveau à publier).")
 
     if args.dry_run:
         if args.serve:

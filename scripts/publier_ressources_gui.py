@@ -593,7 +593,7 @@ class PublicationApp:
             )
             for resource_row, resource in enumerate(notion_resources):
                 variable = tk.BooleanVar(
-                    value=resource.kind in publisher.SAFE_DEFAULT_KINDS
+                    value=publisher.is_safe_default(resource)
                 )
                 self.variables[resource] = variable
                 label = publisher.selection_label(
@@ -629,7 +629,7 @@ class PublicationApp:
 
     def select_safe(self) -> None:
         for resource, variable in self.variables.items():
-            variable.set(resource.kind in publisher.SAFE_DEFAULT_KINDS)
+            variable.set(publisher.is_safe_default(resource))
         self._update_selection_status()
 
     def clear_all(self) -> None:
@@ -737,12 +737,45 @@ class PublicationApp:
             self._set_busy(False)
 
         self._set_output(format_report(report))
+
+        try:
+            commit_sha = publisher.commit_publication(
+                report, publisher.PROJECT_ROOT
+            )
+        except publisher.CommitError as error:
+            self._append_output(
+                "\n\nERREUR : impossible de committer automatiquement "
+                f"cette publication.\n{error}\n\n"
+                "Les fichiers ont bien été écrits, mais l'arbre de travail "
+                "n'est pas propre : committez-les manuellement avant de "
+                "déployer."
+            )
+            messagebox.showerror(
+                "Échec du commit automatique",
+                f"{error}\n\nLes fichiers ont été écrits mais pas commités. "
+                "Committez-les manuellement avant de déployer.",
+                parent=self.root,
+            )
+            self.status.set(
+                "Publication écrite mais non commitée : voir le détail "
+                "ci-dessus."
+            )
+            return
+
         self.deploy_button.configure(state="normal")
-        self.status.set(
-            f"Publication terminée : {len(report.copied_files)} fichier(s) "
-            f"copié(s), {len(report.modified_pages)} page(s) modifiée(s). "
-            "Le déploiement GitHub Pages est maintenant disponible."
-        )
+        if commit_sha:
+            self._append_output(f"\n\nCommit créé : {commit_sha[:12]}")
+            self.status.set(
+                f"Publication commitée ({commit_sha[:12]}) : "
+                f"{len(report.copied_files)} fichier(s) copié(s), "
+                f"{len(report.modified_pages)} page(s) modifiée(s). "
+                "Le déploiement GitHub Pages est maintenant disponible."
+            )
+        else:
+            self.status.set(
+                "Publication terminée : rien de nouveau à committer. "
+                "Le déploiement GitHub Pages est maintenant disponible."
+            )
 
         if report.missing_pages or report.warnings:
             details = []
