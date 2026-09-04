@@ -1,0 +1,16 @@
+# À fusionner dans mkdocs.yml, sans supprimer votre nav existante.
+# Les lignes importantes sont theme.logo et extra_css.
+
+theme:
+  name: material
+  logo: assets/images/logo_lycee_franklin.png
+  favicon: assets/images/logo_lycee_franklin.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+
+extra_css:
+  - stylesheets/extra.css

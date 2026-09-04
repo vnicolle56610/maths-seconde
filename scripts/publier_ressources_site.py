@@ -59,11 +59,11 @@ TOPIC_TITLES = {
     "SECOND_DEGRE_FONCTION_CARRE_FORME_CANONIQUE": (
         "Second degré : fonction carré et forme canonique"
     ),
-    "SECOND_DEGRE_FORMES_RACINES_SIGNE_DISCRIMINANT": (
-        "Second degré : formes, racines, signe et discriminant"
+    "PARTIE_1_FORMES_RACINES_SIGNE_DISCRIMINANT": (
+        "Second degré (partie 1) : formes, racines, signe et discriminant"
     ),
-    "SECOND_DEGRE_INEQUATIONS_OPTIMISATION_PROBLEMES": (
-        "Second degré : inéquations, optimisation et problèmes"
+    "PARTIE_2_INEQUATIONS_OPTIMISATION_PROBLEMES": (
+        "Second degré (partie 2) : inéquations, optimisation et problèmes"
     ),
     "PRODUIT_SCALAIRE_DEFINITION_PROJECTION_COORDONNEES": (
         "Produit scalaire : définition, projection et coordonnées"
@@ -84,6 +84,12 @@ KIND_ORDER = {
 }
 
 SAFE_DEFAULT_KINDS = frozenset({"COURS", "TD"})
+
+# Dossiers non publiables à ignorer partout sous source_root, quel que soit
+# le niveau d'imbrication (archives et sauvegardes locales de travail).
+IGNORED_DIR_NAME_PATTERN = re.compile(
+    r"^_(ANCIEN|ARCHIVE|SAUVEGARDE)", re.IGNORECASE
+)
 
 # CORRIGE_TD doit être testé avant CORRIGE afin de conserver deux choix
 # distincts dans l'interface, tout en envoyant les deux vers docs/corriges.
@@ -187,6 +193,10 @@ def discover_resources(
 
     for path in sorted(source_root.rglob("*"), key=lambda item: str(item).casefold()):
         if not path.is_file() or path.suffix.casefold() != ".pdf":
+            continue
+
+        relative_dirs = path.relative_to(source_root).parent.parts
+        if any(IGNORED_DIR_NAME_PATTERN.match(part) for part in relative_dirs):
             continue
 
         pdf_count += 1
@@ -756,7 +766,6 @@ def student_link_title(
     notion = resource.notion
 
     if resource.kind in {
-        "AUTOMATISMES",
         "MINITEST",
         "DS",
         "CORRIGE",

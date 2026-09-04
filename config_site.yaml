@@ -2,7 +2,11 @@
 # scripts/synchronisation/ sur un autre niveau (Seconde, Terminale, Expertes).
 
 # Dossier "Version en cours" du dépôt de référence (unique source de vérité).
-source: "~/ENSEIGNEMENT/IA_AGENT_MATHS/GPT-seconde"
+# Pointe directement sur CLAUDE (Niveau_2nde), sans copie intermédiaire :
+# l'ancienne copie ~/ENSEIGNEMENT/IA_AGENT_MATHS/GPT-seconde a divergé
+# (238 fichiers différents constatés le 24/07/2026, et contenait même des
+# fichiers de référence de Première spécialité à sa racine).
+source: "~/ENSEIGNEMENT/CLAUDE/Niveau_2nde"
 
 # Racine du site MkDocs (contient docs/ et mkdocs.yml).
 # "." signifie : le dossier qui contient ce fichier config_site.yaml.
