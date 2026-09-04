@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import shutil
+import socket
 import subprocess
 import sys
 import tempfile
@@ -46,6 +47,17 @@ def find_mkdocs_executable() -> str | None:
         if candidate.is_file():
             return str(candidate)
     return shutil.which("mkdocs")
+
+
+def find_free_port(host: str = "127.0.0.1", start: int = 8000, span: int = 20) -> int:
+    """Trouver un port libre à partir de ``start`` (plusieurs sites/aperçus
+    en parallèle utilisent chacun leur propre instance de mkdocs serve)."""
+    for port in range(start, start + span):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
+            probe.settimeout(0.2)
+            if probe.connect_ex((host, port)) != 0:
+                return port
+    return start
 
 
 def relative_path(path: Path, root: Path) -> str:
@@ -1150,10 +1162,14 @@ class PublicationApp:
         if executable is None:
             return
 
+        port = find_free_port()
         try:
             self.mkdocs_process = subprocess.Popen(
-                [executable, "serve"],
+                [executable, "serve", "-a", f"127.0.0.1:{port}"],
                 cwd=publisher.PROJECT_ROOT,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
             )
         except OSError as error:
             messagebox.showerror(
@@ -1165,7 +1181,7 @@ class PublicationApp:
             return
 
         self.status.set(
-            "Aperçu local disponible sur http://127.0.0.1:8000/ — "
+            f"Aperçu local disponible sur http://127.0.0.1:{port}/ — "
             "il ne modifie pas le site public."
         )
         self.root.after(750, self._poll_mkdocs)
@@ -1178,9 +1194,25 @@ class PublicationApp:
             self.root.after(750, self._poll_mkdocs)
             return
 
-        self.status.set(
-            f"mkdocs serve s'est arrêté avec le code {return_code}."
-        )
+        if return_code == 0:
+            self.status.set("mkdocs serve s'est arrêté normalement.")
+        else:
+            output = ""
+            if self.mkdocs_process.stdout is not None:
+                output = self.mkdocs_process.stdout.read().strip()
+            self.status.set(
+                f"mkdocs serve s'est arrêté avec le code {return_code}."
+            )
+            self._append_output(
+                "ERREUR MKDOCS SERVE\n"
+                "====================\n\n"
+                + (output or f"(aucune sortie ; code {return_code})")
+            )
+            messagebox.showerror(
+                "Échec de mkdocs serve",
+                (output[:800] if output else f"Code de sortie {return_code}."),
+                parent=self.root,
+            )
         self.mkdocs_process = None
 
     def quit(self) -> None:
