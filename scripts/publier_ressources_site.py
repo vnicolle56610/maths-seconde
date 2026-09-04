@@ -1046,18 +1046,54 @@ def replace_auto_docs_zone(text: str, content: str, newline: str) -> str:
     )
 
 
+def resource_in_scope(kind: str, considered_kinds: frozenset[str] | None) -> bool:
+    """Un type est "considéré" si cette exécution a pu en décider le sort.
+
+    En mode interactif, tous les types sont proposés à la sélection :
+    ``considered_kinds`` vaut ``None`` et une désélection vaut suppression.
+    En mode non interactif, seuls les types de ``SAFE_DEFAULT_KINDS`` sont
+    proposés ; les autres n'ont pas été soumis à décision et doivent donc
+    être conservés tels quels plutôt qu'effacés.
+    """
+    return considered_kinds is None or kind in considered_kinds
+
+
+def carry_forward_resources(
+    resources: list[Resource],
+    selected_resources: list[Resource],
+    considered_kinds: frozenset[str] | None,
+) -> dict[str, list[Resource]]:
+    """Grouper par notion les ressources à afficher dans une zone AUTO-DOCS.
+
+    Pour un type considéré cette exécution, on applique la sélection telle
+    quelle (cocher/décocher fait foi). Pour un type hors champ de cette
+    exécution (ex. AUTOMATISMES en mode non interactif), on conserve les
+    documents déjà publiés au lieu de les faire disparaître.
+    """
+    selected_set = set(selected_resources)
+    by_notion: dict[str, list[Resource]] = defaultdict(list)
+    for resource in resources:
+        if resource_in_scope(resource.kind, considered_kinds):
+            if resource in selected_set:
+                by_notion[resource.notion].append(resource)
+        elif resource.destination.is_file():
+            by_notion[resource.notion].append(resource)
+    return by_notion
+
+
 def update_notion_pages(
     resources: list[Resource],
     selected_resources: list[Resource],
     docs_root: Path,
     report: PublicationReport,
+    considered_kinds: frozenset[str] | None = None,
 ) -> None:
     resources_by_notion: dict[str, list[Resource]] = defaultdict(list)
-    selected_by_notion: dict[str, list[Resource]] = defaultdict(list)
     for resource in resources:
         resources_by_notion[resource.notion].append(resource)
-    for resource in selected_resources:
-        selected_by_notion[resource.notion].append(resource)
+    selected_by_notion = carry_forward_resources(
+        resources, selected_resources, considered_kinds
+    )
 
     for notion in sorted(resources_by_notion):
         try:
@@ -1132,16 +1168,19 @@ def update_section_index(
     selected_resources: list[Resource],
     docs_root: Path,
     report: PublicationReport,
+    considered_kinds: frozenset[str] | None = None,
 ) -> None:
     """Régénérer docs/<section>/index.md, comme les pages de notions."""
     all_by_notion: dict[str, list[Resource]] = defaultdict(list)
     for resource in resources:
         all_by_notion[resource.notion].append(resource)
 
-    selected_by_notion: dict[str, list[Resource]] = defaultdict(list)
-    for resource in selected_resources:
-        if resource.kind in kinds:
-            selected_by_notion[resource.notion].append(resource)
+    section_resources = [
+        resource for resource in resources if resource.kind in kinds
+    ]
+    selected_by_notion = carry_forward_resources(
+        section_resources, selected_resources, considered_kinds
+    )
 
     notions_with_documents = {
         notion
@@ -1199,6 +1238,7 @@ def update_section_indexes(
     selected_resources: list[Resource],
     docs_root: Path,
     report: PublicationReport,
+    considered_kinds: frozenset[str] | None = None,
 ) -> None:
     for directory_name, kinds in SECTION_INDEX_PAGES:
         update_section_index(
@@ -1208,6 +1248,7 @@ def update_section_indexes(
             selected_resources,
             docs_root,
             report,
+            considered_kinds=considered_kinds,
         )
 
 
@@ -1218,6 +1259,7 @@ def publish_selected_resources(
     pdf_count: int,
     ignored_pdf_count: int,
     dry_run: bool,
+    considered_kinds: frozenset[str] | None = None,
 ) -> PublicationReport:
     selected = set(selected_resources)
     report = PublicationReport(
@@ -1240,12 +1282,14 @@ def publish_selected_resources(
         selected_resources,
         docs_root,
         report,
+        considered_kinds=considered_kinds,
     )
     update_section_indexes(
         resources,
         selected_resources,
         docs_root,
         report,
+        considered_kinds=considered_kinds,
     )
     update_index_quick_access(docs_root, report)
     update_mkdocs_nav_if_safe(
@@ -1405,6 +1449,9 @@ def main() -> int:
             pdf_count,
             ignored_pdf_count,
             dry_run=args.dry_run,
+            considered_kinds=(
+                SAFE_DEFAULT_KINDS if args.non_interactive else None
+            ),
         )
     except SelectionCancelled:
         return 130

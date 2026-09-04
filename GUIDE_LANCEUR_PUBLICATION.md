@@ -44,10 +44,10 @@ dans le terminal, sans aucune fenêtre.
 
 | Commande | Ce qu'elle fait |
 |---|---|
-| `./scripts/lancer_publication.sh --sync-only` | Scanne `GPT-seconde`, régénère les pages/nav/index, affiche le rapport ✓/⚠. **Ne construit pas le site, ne publie rien.** À utiliser pour vérifier ce qui a changé avant d'aller plus loin. |
+| `./scripts/lancer_publication.sh --sync-only` | Scanne la source configurée dans `config_site.yaml` (`CLAUDE/Niveau_2nde`), republie automatiquement les **COURS et TD** et régénère les pages/nav/index en conséquence. **Ne construit pas le site, ne publie rien.** À utiliser pour vérifier ce qui a changé avant d'aller plus loin. |
 | `./scripts/lancer_publication.sh` | Fait tout ce que fait `--sync-only`, puis lance `mkdocs build` (construit le site dans `site/`, en local). **Ne publie toujours rien en ligne.** |
-| `./scripts/lancer_publication.sh --deploy` | Fait tout ce qui précède, **puis publie sur GitHub Pages** (`mkdocs gh-deploy`, qui pousse sur `origin`). C'est la seule commande qui rend les changements visibles sur `https://vnicolle56610.github.io/maths-seconde/`. |
-| `./scripts/lancer_publication.sh --gui` | Ouvre l'ancienne interface graphique (`publier_ressources_gui.py`) avec les cases à cocher pour choisir précisément quels PDF publier. |
+| `./scripts/lancer_publication.sh --deploy` | Fait tout ce qui précède, vérifie que le dépôt local est propre et strictement synchronisé avec `origin/main` (même garde-fou que le bouton « Déployer » du GUI), puis **publie sur GitHub Pages** (`mkdocs gh-deploy`, qui pousse sur `origin`). S'il y a du nouveau contenu à synchroniser, ce premier lancement l'écrit sans le publier : il faut le relire, le committer, puis relancer `--deploy`. C'est la seule commande CLI qui rend les changements visibles sur `https://vnicolle56610.github.io/maths-seconde/`. |
+| `./scripts/lancer_publication.sh --gui` | Ouvre l'interface graphique (`publier_ressources_gui.py`) avec les cases à cocher pour choisir précisément quels PDF publier — seul moyen de publier des AUTOMATISMES, MINITEST, CORRIGE ou DS nouveaux ou modifiés. |
 
 ## Dans quel ordre travailler
 
@@ -68,19 +68,21 @@ dans le terminal, sans aucune fenêtre.
    `Ctrl+Maj+R` (ou ouvrir la page en navigation privée). C'est
    généralement un cache du navigateur, pas un problème de publication.
 
-## ⚠️ Ne pas alterner avec l'interface graphique sur les mêmes notions
+## ⚠️ Ne pas décocher un COURS ou un TD dans le GUI puis relancer le pipeline automatique
 
 Le pipeline automatique (`--sync-only`, sans argument, `--deploy`) republie
-**tout** ce qu'il trouve dans `GPT-seconde`, sans notion de
-sélection. L'interface graphique (`--gui`) permet au contraire de
-**décocher** certains PDF pour ne pas les publier.
+automatiquement **tous les COURS et TD** trouvés dans la source, sans
+notion de sélection pour ces deux types. L'interface graphique (`--gui`)
+permet au contraire de **décocher** un COURS ou un TD précis.
 
-Si vous lancez le pipeline automatique après avoir décoché quelque chose
-dans le GUI, il va **régénérer les pages depuis zéro** et donc annuler
-silencieusement votre désélection.
+Si vous décochez un COURS ou un TD dans le GUI puis relancez le pipeline
+automatique, ce dernier va le republier quand même (il n'a pas connaissance
+de votre désélection).
 
-Règle simple : pour une notion donnée, choisissez un seul des deux outils
-et n'y revenez pas avec l'autre tant que le contenu source n'a pas changé.
+Pour les AUTOMATISMES, MINITEST, CORRIGE et DS en revanche, le pipeline
+automatique ne touche jamais à ce qui est déjà publié : il ne fait que
+conserver tel quel ce qui existe déjà dans `docs/`. Seul le GUI peut
+ajouter, remplacer ou retirer ces documents-là.
 
 ## Prérequis
 
