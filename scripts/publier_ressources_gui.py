@@ -432,6 +432,8 @@ class PublicationApp:
                 width=event.width,
             ),
         )
+        documents_box.bind("<Enter>", self._bind_mousewheel)
+        documents_box.bind("<Leave>", self._unbind_mousewheel)
 
         selection_buttons = ttk.Frame(main)
         selection_buttons.grid(row=4, column=0, sticky="ew", pady=(8, 4))
@@ -543,6 +545,26 @@ class PublicationApp:
     def _set_resource_buttons_state(self, state: str) -> None:
         for button in self.resource_buttons:
             button.configure(state=state)
+
+    def _bind_mousewheel(self, _event: object = None) -> None:
+        self.canvas.bind_all("<MouseWheel>", self._on_mousewheel)
+        self.canvas.bind_all("<Button-4>", self._on_mousewheel)
+        self.canvas.bind_all("<Button-5>", self._on_mousewheel)
+
+    def _unbind_mousewheel(self, _event: object = None) -> None:
+        self.canvas.unbind_all("<MouseWheel>")
+        self.canvas.unbind_all("<Button-4>")
+        self.canvas.unbind_all("<Button-5>")
+
+    def _on_mousewheel(self, event: tk.Event) -> None:
+        if event.num == 4:
+            self.canvas.yview_scroll(-1, "units")
+        elif event.num == 5:
+            self.canvas.yview_scroll(1, "units")
+        else:
+            # Windows (delta multiple de 120) / macOS (petites valeurs) :
+            # toujours le même signe que le sens physique de la molette.
+            self.canvas.yview_scroll(-1 if event.delta > 0 else 1, "units")
 
     def _set_output(self, text: str) -> None:
         self.output.configure(state="normal")
