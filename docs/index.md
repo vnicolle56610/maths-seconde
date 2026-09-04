@@ -84,12 +84,11 @@ hide:
 
 </div>
 
+<!--
 ## Accès rapide
 
-<!--
-Les liens vers les notions de l'année sont ajoutés ou complétés par les scripts de publication.
-Ne pas supprimer le titre "## Accès rapide" : il sert de point d'ancrage aux scripts.
--->
+Les liens vers les notions de l'année sont ajoutés ou complétés par les scripts de publication.  
+Ne pas supprimer le titre `## Accès rapide` : il sert de point d'ancrage aux scripts.
 
 - [N01 — Logique ensembles](notions/N01-logique-ensembles.md)
 - [N02 — Nombres reels intervalles](notions/N02-nombres-reels-intervalles.md)
@@ -111,3 +110,6 @@ Ne pas supprimer le titre "## Accès rapide" : il sert de point d'ancrage aux sc
 - [N18 — Probabilités echantillonnage](notions/N18-probabilites-echantillonnage.md)
 - [N19 — Synthese statistiques probabilités](notions/N19-synthese-statistiques-probabilites.md)
 - [N20 — Synthese annuelle transition premiere](notions/N20-synthese-annuelle-transition-premiere.md)
+
+## Fin accès rapide
+-->

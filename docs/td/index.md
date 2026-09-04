@@ -6,6 +6,7 @@ Exercices d'application donnés en classe ou à la maison, classés par notion.
 ## N01 — Logique ensembles
 
 - [TD N01](TD_N01_LOGIQUE_ENSEMBLES.pdf)
+- [TD N01](TD_N01_LOGIQUE_ENSEMBLES_impression.pdf)
 
 ## N02 — Nombres reels intervalles
 
