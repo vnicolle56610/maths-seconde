@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "notions": {
+    "N01": {
+      "cours": [
+        "COURS_N01_LOGIQUE_ENSEMBLES.pdf"
+      ],
+      "td": [
+        "TD_N01_LOGIQUE_ENSEMBLES.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N01_LOGIQUE_ENSEMBLES.pdf"
+      ],
+      "corrige_td": [
+        "CORRIGE_TD_N01_LOGIQUE_ENSEMBLES.pdf"
+      ]
+    },
+    "N02": {
+      "cours": [
+        "COURS_N02_NOMBRES_REELS_INTERVALLES.pdf"
+      ],
+      "td": [
+        "TD_N02_NOMBRES_REELS_INTERVALLES.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N02_NOMBRES_REELS_INTERVALLES.pdf"
+      ],
+      "corrige_td": [
+        "CORRIGE_TD_N02_NOMBRES_REELS_INTERVALLES.pdf"
+      ]
+    },
+    "N03": {
+      "cours": [
+        "COURS_N03_ARITHMETIQUE.pdf"
+      ],
+      "td": [
+        "TD_N03_ARITHMETIQUE.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N03_ARITHMETIQUE.pdf"
+      ]
+    },
+    "N04": {
+      "cours": [
+        "COURS_N04_CALCUL_LITTERAL.pdf"
+      ],
+      "td": [
+        "TD_N04_CALCUL_LITTERAL.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N04_CALCUL_LITTERAL.pdf"
+      ]
+    },
+    "N05": {
+      "cours": [
+        "COURS_N05_EQUATIONS_INEQUATIONS.pdf"
+      ],
+      "td": [
+        "TD_N05_EQUATIONS_INEQUATIONS.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N05_EQUATIONS_INEQUATIONS.pdf"
+      ]
+    },
+    "N06": {
+      "cours": [
+        "COURS_N06_SYNTHESE_NOMBRES_CALCULS.pdf"
+      ],
+      "td": [
+        "TD_N06_SYNTHESE_NOMBRES_CALCULS.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.pdf"
+      ]
+    },
+    "N07": {
+      "cours": [
+        "COURS_N07_VECTEURS_DU_PLAN.pdf"
+      ],
+      "td": [
+        "TD_N07_VECTEURS_DU_PLAN.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N07_VECTEURS_DU_PLAN.pdf"
+      ]
+    },
+    "N08": {
+      "cours": [
+        "COURS_N08_DROITES_DU_PLAN.pdf"
+      ],
+      "td": [
+        "TD_N08_DROITES_DU_PLAN.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N08_DROITES_DU_PLAN.pdf"
+      ]
+    },
+    "N09": {
+      "cours": [
+        "COURS_N09_FONCTIONS_REGISTRES.pdf"
+      ],
+      "td": [
+        "TD_N09_FONCTIONS_REGISTRES.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N09_FONCTIONS_REGISTRES.pdf"
+      ]
+    },
+    "N10": {
+      "cours": [
+        "COURS_N10_FONCTIONS_AFFINES.pdf"
+      ],
+      "td": [
+        "TD_N10_FONCTIONS_AFFINES.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N10_FONCTIONS_AFFINES.pdf"
+      ]
+    },
+    "N11": {
+      "cours": [
+        "COURS_N11_FONCTIONS_REFERENCE.pdf"
+      ],
+      "td": [
+        "TD_N11_FONCTIONS_REFERENCE.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N11_FONCTIONS_REFERENCE.pdf"
+      ]
+    },
+    "N12": {
+      "cours": [
+        "COURS_N12_VARIATIONS_EXTREMUMS.pdf"
+      ],
+      "td": [
+        "TD_N12_VARIATIONS_EXTREMUMS.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N12_VARIATIONS_EXTREMUMS.pdf"
+      ]
+    },
+    "N13": {
+      "cours": [
+        "COURS_N13_EQUATIONS_INEQUATIONS_FONCTIONS.pdf"
+      ],
+      "td": [
+        "TD_N13_EQUATIONS_INEQUATIONS_FONCTIONS.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N13_EQUATIONS_INEQUATIONS_FONCTIONS.pdf"
+      ]
+    },
+    "N14": {
+      "cours": [
+        "COURS_N14_SYNTHESE_FONCTIONS_MODELISATION.pdf"
+      ],
+      "td": [
+        "TD_N14_SYNTHESE_FONCTIONS_MODELISATION.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N14_SYNTHESE_FONCTIONS_MODELISATION.pdf"
+      ]
+    },
+    "N15": {
+      "cours": [
+        "COURS_N15_GEOMETRIE_PLANE_PROBLEMES.pdf"
+      ],
+      "td": [
+        "TD_N15_GEOMETRIE_PLANE_PROBLEMES.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N15_GEOMETRIE_PLANE_PROBLEMES.pdf"
+      ]
+    },
+    "N16": {
+      "cours": [
+        "COURS_N16_INFORMATION_CHIFFREE_STATISTIQUES.pdf"
+      ],
+      "td": [
+        "TD_N16_INFORMATION_CHIFFREE_STATISTIQUES.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N16_INFORMATION_CHIFFREE_STATISTIQUES.pdf"
+      ]
+    },
+    "N17": {
+      "cours": [
+        "COURS_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf"
+      ],
+      "td": [
+        "TD_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf"
+      ]
+    },
+    "N18": {
+      "cours": [
+        "COURS_N18_PROBABILITES_ECHANTILLONNAGE.pdf"
+      ],
+      "td": [
+        "TD_N18_PROBABILITES_ECHANTILLONNAGE.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N18_PROBABILITES_ECHANTILLONNAGE.pdf"
+      ]
+    },
+    "N19": {
+      "cours": [
+        "COURS_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf"
+      ],
+      "td": [
+        "TD_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf"
+      ]
+    },
+    "N20": {
+      "cours": [
+        "COURS_N20_SYNTHESE_ANNUELLE_TRANSITION_PREMIERE.pdf"
+      ],
+      "td": [
+        "TD_N20_SYNTHESE_ANNUELLE_TRANSITION_PREMIERE.pdf"
+      ],
+      "automatismes": [
+        "AUTOMATISMES_N20_SYNTHESE_ANNUELLE_TRANSITION_PREMIERE.pdf"
+      ]
+    }
+  }
+}
