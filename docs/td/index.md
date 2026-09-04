@@ -6,9 +6,6 @@ Exercices d'application donnés en classe ou à la maison, classés par notion.
 ## N01 — Logique, ensembles et raisonnement
 
 - [TD N01](TD_N01_LOGIQUE_ENSEMBLES.pdf)
-- [TD N01](TD_N01_LOGIQUE_ENSEMBLES_impression.pdf)
-- [TD N01](TD_N01_LOGIQUE_ENSEMBLES_impression_EXOS.pdf)
-- [TD N01](TD_N01_LOGIQUE_ENSEMBLES_impression_EXOS_1-10-12_20260901_110209.pdf)
 
 ## N02 — Nombres réels, intervalles et valeur absolue
 
