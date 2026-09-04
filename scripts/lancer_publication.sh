@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
-# Lance la synchronisation + le build du site, quel que soit le dossier
+# Lance la régénération + le build du site, quel que soit le dossier
 # depuis lequel on l'appelle.
 #
-#   ./scripts/lancer_publication.sh              synchronise + mkdocs build
-#   ./scripts/lancer_publication.sh --deploy     + publication GitHub Pages
-#   ./scripts/lancer_publication.sh --sync-only  synchronise sans build
-#   ./scripts/lancer_publication.sh --gui        interface graphique de sélection des PDF
+#   ./scripts/lancer_publication.sh                    régénère + mkdocs build
+#   ./scripts/lancer_publication.sh --deploy           + publication GitHub Pages
+#   ./scripts/lancer_publication.sh --sync-only        régénère sans build
+#   ./scripts/lancer_publication.sh --gui              interface graphique (cocher l'état publié)
+#   ./scripts/lancer_publication.sh --bootstrap-manifest  reconstruire le manifeste (migration, une fois)
 #
-# --sync-only, le mode par défaut et --deploy ne publient automatiquement
-# que les COURS et TD (déjà relus). Les automatismes, mini-tests, corrigés
-# et DS nouveaux ou modifiés doivent être relus et publiés via --gui.
+# --sync-only, le mode par défaut et --deploy ne changent JAMAIS ce qui
+# est publié : ils régénèrent docs/ pour qu'il corresponde exactement à
+# publication_manifest.json. Pour ajouter ou retirer une ressource
+# (Cours, TD, automatismes, corrigés, DS...), utiliser --gui.
 #
 # --deploy vérifie d'abord que le dépôt local est propre et synchronisé
 # avec origin/main (même garde-fou que le bouton « Déployer » du GUI) :
-# s'il y a du nouveau contenu à synchroniser, ce premier lancement va
+# s'il y a du nouveau contenu à régénérer, ce premier lancement va
 # l'écrire sans le publier — il faut le relire, le committer, puis
 # relancer --deploy.
 
@@ -33,13 +35,20 @@ if [[ "$MODE" == "--gui" ]]; then
     exec python3 scripts/publier_ressources_gui.py
 fi
 
+if [[ "$MODE" == "--bootstrap-manifest" ]]; then
+    if [[ "${2:-}" == "--force" ]]; then
+        exec python3 scripts/publier_ressources_site.py --bootstrap-manifest --force
+    fi
+    exec python3 scripts/publier_ressources_site.py --bootstrap-manifest
+fi
+
 if [[ -n "$MODE" && "$MODE" != "--sync-only" && "$MODE" != "--deploy" ]]; then
     echo "Option inconnue : $MODE" >&2
-    echo "Options disponibles : --gui, --sync-only, --deploy (ou aucune)." >&2
+    echo "Options disponibles : --gui, --sync-only, --deploy, --bootstrap-manifest (ou aucune)." >&2
     exit 1
 fi
 
-python3 scripts/publier_ressources_site.py --non-interactive
+python3 scripts/publier_ressources_site.py
 
 if [[ "$MODE" == "--sync-only" ]]; then
     exit 0

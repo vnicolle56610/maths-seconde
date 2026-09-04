@@ -25,6 +25,7 @@ DOCS_ROOT = PROJECT_ROOT / "docs"
 _CONFIG = charger_configuration(PROJECT_ROOT / "config_site.yaml")
 SOURCE_ROOT = _CONFIG.source
 NIVEAU = _CONFIG.niveau
+MANIFEST_PATH = PROJECT_ROOT / "publication_manifest.json"
 
 AUTO_DOCS_START = "<!-- AUTO-DOCS:START -->"
 AUTO_DOCS_END = "<!-- AUTO-DOCS:END -->"
@@ -84,21 +85,6 @@ KIND_ORDER = {
 }
 
 SAFE_DEFAULT_KINDS = frozenset({"COURS", "TD"})
-
-
-def is_safe_default(resource: Resource) -> bool:
-    """Un document présélectionnable sans risque de suppression.
-
-    C'est le cas d'un COURS/TD (relu par principe), ou de tout document
-    déjà publié : le préselectionner évite qu'une publication rapide
-    (« Sélection sûre » sans revue manuelle) ne supprime silencieusement
-    des automatismes/corrigés déjà en ligne simplement parce qu'ils
-    n'étaient pas cochés.
-    """
-    return (
-        resource.kind in SAFE_DEFAULT_KINDS
-        or resource.destination.is_file()
-    )
 
 # Dossiers non publiables à ignorer partout sous source_root, quel que soit
 # le niveau d'imbrication (archives et sauvegardes locales de travail).
@@ -172,10 +158,6 @@ class PublicationReport:
     missing_pages: list[str] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
     dry_run: bool = False
-
-
-class SelectionCancelled(Exception):
-    """Signaler une sélection interrompue avant toute écriture."""
 
 
 def classify_pdf(path: Path) -> tuple[str, str] | None:
@@ -256,47 +238,6 @@ def copy_resources(resources: list[Resource], report: PublicationReport) -> None
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(resource.source, destination)
         report.copied_files.append(destination)
-
-
-def find_present_unselected_files(
-    resources: list[Resource],
-    selected_resources: list[Resource],
-    docs_root: Path,
-) -> list[Path]:
-    selected_destinations = {
-        resource.destination.resolve(strict=False)
-        for resource in selected_resources
-    }
-    present_files = {
-        resource.destination
-        for resource in resources
-        if (
-            resource.destination.is_file()
-            and resource.destination.resolve(strict=False)
-            not in selected_destinations
-        )
-    }
-
-    # Inclure aussi les anciens PDF reconnus qui seraient restés dans docs/
-    # alors que leur fichier source n'existe plus, ou qui auraient été placés
-    # dans un mauvais sous-dossier par une ancienne version du script.
-    for directory_name in set(DESTINATION_DIRS.values()):
-        directory = docs_root / directory_name
-        if not directory.is_dir():
-            continue
-        ensure_inside_docs(directory, docs_root)
-        for path in directory.rglob("*"):
-            if (
-                path.is_file()
-                and classify_pdf(path) is not None
-                and path.resolve(strict=False) not in selected_destinations
-            ):
-                present_files.add(path)
-
-    return sorted(
-        present_files,
-        key=lambda path: str(path).casefold(),
-    )
 
 
 def find_notion_page(docs_root: Path, notion: str) -> Path | None:
@@ -846,150 +787,6 @@ def notion_display_topic(
     return notion_topic_from_heading(text, notion)
 
 
-def selection_label(resource: Resource, duplicate_kind: bool) -> str:
-    label = LABELS[resource.kind]
-    if duplicate_kind:
-        return f"{label} — {resource.source.name}"
-    return label
-
-
-def parse_selection(
-    answer: str,
-    option_count: int,
-    default_numbers: set[int],
-) -> set[int]:
-    """Analyser une liste telle que « 1, 2, 5-7 »."""
-    normalized = answer.strip().casefold()
-    if not normalized:
-        return set(default_numbers)
-    if normalized in {"aucun", "aucune"}:
-        return set()
-    if normalized in {"tous", "toutes"}:
-        return set(range(1, option_count + 1))
-
-    selected: set[int] = set()
-    tokens = [
-        token
-        for token in re.split(r"[,;\s]+", normalized)
-        if token
-    ]
-    for token in tokens:
-        range_match = re.fullmatch(r"(\d+)-(\d+)", token)
-        if range_match:
-            start, end = map(int, range_match.groups())
-            if start > end:
-                raise ValueError(f"plage décroissante interdite : {token}")
-            selected.update(range(start, end + 1))
-            continue
-        if not token.isdigit():
-            raise ValueError(f"choix incompréhensible : {token}")
-        selected.add(int(token))
-
-    invalid = sorted(number for number in selected if not 1 <= number <= option_count)
-    if invalid:
-        values = ", ".join(str(number) for number in invalid)
-        raise ValueError(f"numéro hors liste : {values}")
-    return selected
-
-
-def choose_resources(
-    resources: list[Resource],
-    docs_root: Path,
-    non_interactive: bool,
-) -> list[Resource]:
-    """Faire valider les ressources avant la première écriture."""
-    ordered_resources = sorted(
-        resources,
-        key=lambda item: (
-            item.notion,
-            KIND_ORDER[item.kind],
-            item.source.name.casefold(),
-        ),
-    )
-
-    if non_interactive:
-        selected = [
-            resource
-            for resource in ordered_resources
-            if resource.kind in SAFE_DEFAULT_KINDS
-        ]
-        print(
-            "\nMode non interactif : seuls les COURS et TD "
-            "sont sélectionnés."
-        )
-        return selected
-
-    if not ordered_resources:
-        print("\nAucun PDF reconnu à sélectionner.")
-        return []
-
-    print("\n=== Documents disponibles ===")
-    print("[x] présélectionné ; [ ] non présélectionné")
-
-    options: list[tuple[int, Resource]] = []
-    resources_by_notion: dict[str, list[Resource]] = defaultdict(list)
-    for resource in ordered_resources:
-        resources_by_notion[resource.notion].append(resource)
-
-    number = 1
-    for notion in sorted(resources_by_notion):
-        notion_resources = resources_by_notion[notion]
-        topic = notion_display_topic(notion, notion_resources, docs_root)
-        heading = f"{notion} — {topic}" if topic else notion
-        print(f"\n{heading}")
-
-        kind_counts = Counter(resource.kind for resource in notion_resources)
-        for resource in notion_resources:
-            preselected = is_safe_default(resource)
-            checkbox = "[x]" if preselected else "[ ]"
-            label = selection_label(
-                resource,
-                duplicate_kind=kind_counts[resource.kind] > 1,
-            )
-            print(f"  {number:>2}. {checkbox} {label}")
-            options.append((number, resource))
-            number += 1
-
-    default_numbers = {
-        option_number
-        for option_number, resource in options
-        if is_safe_default(resource)
-    }
-    print(
-        "\nSaisissez la liste complète des numéros à publier "
-        "(ex. 1,2,5-7)."
-    )
-    print(
-        "Entrée valide la présélection ; « aucun » vide la sélection ; "
-        "« tous » sélectionne tout."
-    )
-
-    while True:
-        try:
-            answer = input("Votre sélection : ")
-        except (EOFError, KeyboardInterrupt) as error:
-            print("\nSélection annulée : aucun fichier n’a été modifié.")
-            raise SelectionCancelled from error
-
-        try:
-            selected_numbers = parse_selection(
-                answer,
-                option_count=len(options),
-                default_numbers=default_numbers,
-            )
-        except ValueError as error:
-            print(f"Sélection invalide ({error}). Réessayez.")
-            continue
-
-        selected = [
-            resource
-            for option_number, resource in options
-            if option_number in selected_numbers
-        ]
-        print(f"{len(selected)} document(s) validé(s).")
-        return selected
-
-
 def detect_newline(text: str) -> str:
     return "\r\n" if "\r\n" in text else "\n"
 
@@ -1267,54 +1064,6 @@ def update_section_indexes(
         )
 
 
-def publish_selected_resources(
-    resources: list[Resource],
-    selected_resources: list[Resource],
-    docs_root: Path,
-    pdf_count: int,
-    ignored_pdf_count: int,
-    dry_run: bool,
-    considered_kinds: frozenset[str] | None = None,
-) -> PublicationReport:
-    selected = set(selected_resources)
-    report = PublicationReport(
-        pdf_count=pdf_count,
-        ignored_pdf_count=ignored_pdf_count,
-        resources=resources,
-        selected_resources=selected_resources,
-        ignored_resources=[
-            resource for resource in resources if resource not in selected
-        ],
-        present_unselected_files=find_present_unselected_files(
-            resources, selected_resources, docs_root
-        ),
-        dry_run=dry_run,
-    )
-
-    copy_resources(selected_resources, report)
-    update_notion_pages(
-        resources,
-        selected_resources,
-        docs_root,
-        report,
-        considered_kinds=considered_kinds,
-    )
-    update_section_indexes(
-        resources,
-        selected_resources,
-        docs_root,
-        report,
-        considered_kinds=considered_kinds,
-    )
-    update_index_quick_access(docs_root, report)
-    update_mkdocs_nav_if_safe(
-        docs_root,
-        docs_root.parent,
-        report,
-    )
-    return report
-
-
 class CommitError(RuntimeError):
     """Une étape Git a échoué pendant commit_publication."""
 
@@ -1337,22 +1086,26 @@ def git_output(completed: subprocess.CompletedProcess[str]) -> str:
     )
 
 
-def commit_publication(report: PublicationReport, project_root: Path) -> str | None:
+def commit_publication(
+    report: PublicationReport,
+    project_root: Path,
+    extra_paths: tuple[Path, ...] = (),
+) -> str | None:
     """Committer, à la fin d'une publication réelle, uniquement ce qu'elle a écrit.
 
     Le but est que suivre le protocole de publication (GUI ou CLI) laisse
     toujours l'arbre de travail propre, prêt pour le pré-vol de
     déploiement. On ne fait donc jamais un ``git add -A`` : seuls les
-    fichiers copiés et les pages modifiées par CETTE exécution sont
-    ajoutés, pour ne jamais embarquer une modification étrangère déjà
-    présente dans l'arbre de travail. Renvoie le SHA du commit créé, ou
-    ``None`` si rien n'a changé (simulation, ou publication sans écriture
-    réelle).
+    fichiers copiés, les pages modifiées par CETTE exécution, et
+    ``extra_paths`` (ex. le manifeste de publication) sont ajoutés, pour
+    ne jamais embarquer une modification étrangère déjà présente dans
+    l'arbre de travail. Renvoie le SHA du commit créé, ou ``None`` si
+    rien n'a changé (simulation, ou publication sans écriture réelle).
     """
     if report.dry_run:
         return None
 
-    changed_paths = [*report.copied_files, *report.modified_pages]
+    changed_paths = [*report.copied_files, *report.modified_pages, *extra_paths]
     if not changed_paths:
         return None
 
@@ -1390,6 +1143,13 @@ def commit_publication(report: PublicationReport, project_root: Path) -> str | N
         message_lines.extend(
             f"  - {displayed(path)}"
             for path in sorted(report.modified_pages, key=displayed)
+        )
+        message_lines.append("")
+    if extra_paths:
+        message_lines.append("Autres fichiers :")
+        message_lines.extend(
+            f"  - {displayed(path)}"
+            for path in sorted(extra_paths, key=displayed)
         )
         message_lines.append("")
     message_lines.append(
@@ -1488,32 +1248,102 @@ def display_report(report: PublicationReport, project_root: Path) -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Publie les PDF de travail dans docs/ et met à jour les pages "
-            "de notions."
+            "Régénère docs/ pour qu'il corresponde exactement à l'état "
+            "enregistré dans publication_manifest.json. Ne change jamais "
+            "ce qui est publié : seul --gui permet de cocher/décocher des "
+            "ressources."
         )
     )
     parser.add_argument(
         "--non-interactive",
         action="store_true",
-        help="publie sans question uniquement les COURS et TD",
+        help=(
+            "conservé pour compatibilité avec lancer_publication.sh ; "
+            "sans effet, le CLI ne propose plus de sélection interactive"
+        ),
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="simule la publication sans écrire aucun fichier",
+        help="simule la régénération sans écrire aucun fichier",
     )
     parser.add_argument(
         "--serve",
         action="store_true",
-        help="lance « mkdocs serve » après la publication",
+        help="lance « mkdocs serve » après la régénération",
+    )
+    parser.add_argument(
+        "--bootstrap-manifest",
+        action="store_true",
+        help=(
+            "reconstruire publication_manifest.json depuis les blocs "
+            "AUTO-DOCS déjà publiés (n'écrit que le manifeste ; "
+            "opération de migration, à ne pas relancer à chaque exécution)"
+        ),
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="avec --bootstrap-manifest, écraser un manifeste déjà existant",
     )
     return parser.parse_args()
 
 
+def _bootstrap_manifest_command(pm, resources: list[Resource], args) -> int:
+    """Reconstruire publication_manifest.json depuis les blocs AUTO-DOCS.
+
+    Opération de migration explicite (§5/§23) : ne modifie que le
+    manifeste, jamais docs/. À ne relancer qu'en connaissance de cause
+    (--force pour écraser un manifeste existant).
+    """
+    if MANIFEST_PATH.is_file() and not args.force:
+        print(
+            f"\nERREUR : {MANIFEST_PATH} existe déjà. "
+            "Utilisez --force pour le reconstruire quand même."
+        )
+        return 1
+
+    new_manifest = pm.bootstrap_manifest_from_auto_docs(resources, DOCS_ROOT)
+    new_keys = pm.manifest_entries(new_manifest)
+
+    existing_manifest = pm.load_publication_manifest(MANIFEST_PATH)
+    state_before = pm.compute_publication_state(resources, existing_manifest, DOCS_ROOT)
+    diff = pm.compute_publication_diff(state_before.items, new_keys)
+
+    print(f"\n=== Reconstruction du manifeste depuis l'état publié ===")
+    print(f"Ressources retenues comme déjà publiées : {len(new_keys)}")
+    if diff.added or diff.removed:
+        print(
+            "\nÉcart avec le manifeste actuellement enregistré "
+            f"({MANIFEST_PATH.name if MANIFEST_PATH.is_file() else 'inexistant'}) :"
+        )
+        for item in diff.added:
+            print(f"  + {item.notion} {LABELS[item.kind]} : {item.filename}")
+        for item in diff.removed:
+            print(f"  - {item.notion} {LABELS[item.kind]} : {item.filename}")
+    else:
+        print("Aucun écart avec le manifeste actuellement enregistré.")
+
+    if args.dry_run:
+        print("\n--dry-run : manifeste non écrit.")
+        return 0
+
+    MANIFEST_PATH.write_bytes(pm.save_publication_manifest(MANIFEST_PATH, new_manifest))
+    print(f"\nManifeste écrit : {MANIFEST_PATH}")
+    print(
+        "Ce fichier n'est pas commité automatiquement : committez-le "
+        "vous-même après relecture."
+    )
+    return 0
+
+
 def main() -> int:
+    import publication_manifest as pm
+
     args = parse_args()
-    print(f"Source : {SOURCE_ROOT}")
-    print(f"Docs   : {DOCS_ROOT}")
+    print(f"Source     : {SOURCE_ROOT}")
+    print(f"Docs       : {DOCS_ROOT}")
+    print(f"Manifeste  : {MANIFEST_PATH}")
 
     try:
         if not SOURCE_ROOT.is_dir():
@@ -1528,56 +1358,58 @@ def main() -> int:
         resources, pdf_count, ignored_pdf_count = discover_resources(
             SOURCE_ROOT, DOCS_ROOT
         )
-        selected_resources = choose_resources(
-            resources,
-            DOCS_ROOT,
-            non_interactive=args.non_interactive,
-        )
 
-        present_unselected_files = find_present_unselected_files(
-            resources, selected_resources, DOCS_ROOT
-        )
-        if present_unselected_files:
-            print("\nDocuments déjà publiés mais non sélectionnés :")
-            for path in present_unselected_files:
-                displayed_path = path.relative_to(PROJECT_ROOT)
-                print(
-                    "  AVERTISSEMENT : Ce fichier est déjà présent dans "
-                    "docs/ mais n’a pas été sélectionné : "
-                    f"{displayed_path}"
-                )
+        if args.bootstrap_manifest:
+            return _bootstrap_manifest_command(pm, resources, args)
 
-        report = publish_selected_resources(
-            resources,
-            selected_resources,
+        if not MANIFEST_PATH.is_file():
+            print(
+                f"\nERREUR : aucun manifeste à {MANIFEST_PATH}.\n"
+                "Lancez d'abord : python3 scripts/publier_ressources_site.py "
+                "--bootstrap-manifest"
+            )
+            return 1
+
+        manifest = pm.load_publication_manifest(MANIFEST_PATH)
+        state = pm.compute_publication_state(resources, manifest, DOCS_ROOT)
+        desired_keys = {item.key for item in state.items if item.published}
+
+        if state.orphans:
+            print(
+                f"\n{len(state.orphans)} fichier(s) orphelin(s) dans docs/ "
+                "(ni publiés, ni disponibles dans la source) :"
+            )
+            for orphan in state.orphans:
+                print(f"  - {orphan.path.relative_to(PROJECT_ROOT)}")
+
+        result = pm.apply_publication_state(
+            state.items,
+            desired_keys,
             DOCS_ROOT,
-            pdf_count,
-            ignored_pdf_count,
+            PROJECT_ROOT,
+            MANIFEST_PATH,
             dry_run=args.dry_run,
-            considered_kinds=(
-                SAFE_DEFAULT_KINDS if args.non_interactive else None
-            ),
+            pdf_count=pdf_count,
+            ignored_pdf_count=ignored_pdf_count,
         )
-    except SelectionCancelled:
-        return 130
-    except (FileNotFoundError, OSError, ValueError) as error:
+    except (
+        FileNotFoundError,
+        OSError,
+        ValueError,
+        pm.ManifestError,
+        pm.PublicationStateError,
+        pm.ConcurrencyError,
+    ) as error:
         print(f"\nERREUR : {error}")
         return 1
 
-    display_report(report, PROJECT_ROOT)
+    display_report(result.report, PROJECT_ROOT)
 
-    try:
-        commit_sha = commit_publication(report, PROJECT_ROOT)
-    except CommitError as error:
-        print(f"\nERREUR : {error}")
-        print(
-            "Les fichiers ont bien été écrits mais n’ont pas pu être "
-            "commités automatiquement. Committez-les manuellement avant "
-            "de déployer."
-        )
+    if result.blocked_reason:
+        print(f"\nERREUR : {result.blocked_reason}")
         return 1
-    if commit_sha:
-        print(f"\nCommit créé : {commit_sha[:12]}")
+    if result.commit_sha:
+        print(f"\nCommit créé : {result.commit_sha[:12]}")
     elif not args.dry_run:
         print("\nAucun changement à committer (rien de nouveau à publier).")
 

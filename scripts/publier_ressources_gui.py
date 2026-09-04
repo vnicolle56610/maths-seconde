@@ -21,11 +21,17 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 import publier_ressources_site as publisher
+import publication_manifest as pm
 
 
 PUBLIC_SITE_URL = (
     f"https://vnicolle56610.github.io/{publisher.PROJECT_ROOT.name}/"
 )
+
+STATUS_BADGES = {
+    pm.STATUS_NEW_AVAILABLE: "NOUVEAU",
+    pm.STATUS_PUBLISHED_MISSING_SOURCE: "ABSENT DE LA SOURCE ⚠",
+}
 
 
 def find_mkdocs_executable() -> str | None:
@@ -47,12 +53,6 @@ def relative_path(path: Path, root: Path) -> str:
         return str(path.relative_to(root))
     except ValueError:
         return str(path)
-
-
-def resource_description(resource: publisher.Resource) -> str:
-    source = relative_path(resource.source, publisher.SOURCE_ROOT)
-    label = publisher.LABELS[resource.kind]
-    return f"{resource.notion} — {label} : {source}"
 
 
 def path_description(path: Path) -> str:
@@ -180,6 +180,83 @@ def check_deploy_preflight(project_root: Path) -> DeployPreflightResult:
     )
 
 
+@dataclass(frozen=True)
+class GitStateSummary:
+    branch: str
+    head_sha: str | None
+    origin_sha: str | None
+    ahead: int
+    behind: int
+    clean: bool
+    error: str | None = None
+
+
+def read_git_state(project_root: Path, fetch: bool = True) -> GitStateSummary:
+    """État Git affichable dans le GUI (#17), sans jamais rien écrire."""
+    branch = run_git(project_root, "branch", "--show-current").stdout.strip() or "?"
+    if fetch:
+        fetched = run_git(project_root, "fetch", "origin")
+        if fetched.returncode != 0:
+            return GitStateSummary(
+                branch=branch,
+                head_sha=None,
+                origin_sha=None,
+                ahead=0,
+                behind=0,
+                clean=False,
+                error=f"git fetch a échoué :\n{git_output(fetched)}",
+            )
+
+    head = run_git(project_root, "rev-parse", "HEAD")
+    origin = run_git(project_root, "rev-parse", "--verify", f"origin/{branch}")
+    status = run_git(project_root, "status", "--porcelain")
+    head_sha = head.stdout.strip() if head.returncode == 0 else None
+    origin_sha = origin.stdout.strip() if origin.returncode == 0 else None
+    clean = status.returncode == 0 and not status.stdout.strip()
+
+    ahead = behind = 0
+    if head_sha and origin_sha:
+        counts = run_git(
+            project_root, "rev-list", "--left-right", "--count", f"HEAD...origin/{branch}"
+        )
+        if counts.returncode == 0:
+            parts = counts.stdout.split()
+            if len(parts) == 2:
+                ahead, behind = int(parts[0]), int(parts[1])
+
+    return GitStateSummary(
+        branch=branch,
+        head_sha=head_sha,
+        origin_sha=origin_sha,
+        ahead=ahead,
+        behind=behind,
+        clean=clean,
+    )
+
+
+def format_git_state(state: GitStateSummary) -> str:
+    if state.error:
+        return f"Git : {state.error}"
+    if state.head_sha is None or state.origin_sha is None:
+        return f"Git : branche {state.branch}, état distant indisponible."
+    local = state.head_sha[:12]
+    remote = state.origin_sha[:12]
+    if state.head_sha == state.origin_sha and state.clean:
+        sync = "à jour avec origin"
+    else:
+        bits = []
+        if state.ahead:
+            bits.append(f"{state.ahead} commit(s) à pousser")
+        if state.behind:
+            bits.append(f"{state.behind} commit(s) en retard sur origin")
+        if not state.clean:
+            bits.append("modifications locales non commitées")
+        sync = ", ".join(bits) if bits else "divergent"
+    return (
+        f"Git : branche {state.branch} — local {local} / origin {remote} — {sync}"
+    )
+
+
 def add_section(lines: list[str], title: str, items: list[str]) -> None:
     lines.append(f"{title} : {len(items)}")
     if items:
@@ -189,81 +266,78 @@ def add_section(lines: list[str], title: str, items: list[str]) -> None:
     lines.append("")
 
 
-def format_report(report: publisher.PublicationReport) -> str:
-    """Produire un bilan adapté à la zone de texte de l'interface."""
-    if report.dry_run:
-        heading = "PRÉVISUALISATION — aucune écriture effectuée"
-        copied_title = "Fichiers qui seraient copiés"
-        pages_title = "Pages Markdown qui seraient modifiées"
-    else:
-        heading = "BILAN DE LA PUBLICATION"
-        copied_title = "Fichiers copiés"
-        pages_title = "Pages Markdown modifiées"
+def describe_item(item: pm.PublicationItem) -> str:
+    label = publisher.LABELS[item.kind]
+    badge = STATUS_BADGES.get(item.status)
+    text = f"{item.notion} — {label} : {item.filename}"
+    return f"{text}  [{badge}]" if badge else text
 
-    lines = [
-        heading,
-        "=" * len(heading),
-        "",
-        f"PDF trouvés : {report.pdf_count}",
-        f"PDF reconnus : {len(report.resources)}",
-        f"PDF non reconnus : {report.ignored_pdf_count}",
-        "",
-    ]
 
-    add_section(
-        lines,
-        "Fichiers sélectionnés",
-        [
-            resource_description(resource)
-            for resource in report.selected_resources
-        ],
+def format_diff_preview(
+    diff: pm.PublicationDiff,
+    result: "pm.ApplyResult | None",
+    dry_run: bool,
+    max_unchanged_shown: int = 12,
+) -> str:
+    """§9 : diff sémantique état actuel vs état demandé, avant toute écriture."""
+    heading = (
+        "PRÉVISUALISATION — état actuel vs état demandé"
+        if dry_run
+        else "BILAN DE L'APPLICATION"
     )
-    add_section(
-        lines,
-        copied_title,
-        [path_description(path) for path in report.copied_files],
-    )
-    add_section(
-        lines,
-        "Fichiers sélectionnés déjà à jour",
-        [path_description(path) for path in report.unchanged_files],
-    )
-    add_section(
-        lines,
-        pages_title,
-        [path_description(path) for path in report.modified_pages],
-    )
-    add_section(
-        lines,
-        "Pages Markdown déjà à jour",
-        [path_description(path) for path in report.unchanged_pages],
-    )
-    add_section(
-        lines,
-        "Fichiers ignorés car non sélectionnés",
-        [
-            resource_description(resource)
-            for resource in report.ignored_resources
-        ],
-    )
-    add_section(
-        lines,
-        "Fichiers déjà présents dans docs/ mais non sélectionnés",
-        [
-            path_description(path)
-            for path in report.present_unselected_files
-        ],
-    )
-    add_section(
-        lines,
-        "Pages Markdown introuvables",
-        list(report.missing_pages),
-    )
-    add_section(lines, "Avertissements", list(report.warnings))
+    lines = [heading, "=" * len(heading), ""]
+
+    lines.append(f"AJOUTS ({len(diff.added)})")
+    lines.append("-" * 20)
+    lines.extend(f"+ {describe_item(item)}" for item in diff.added)
+    if not diff.added:
+        lines.append("  (aucun)")
+    lines.append("")
+
+    lines.append(f"RETRAITS ({len(diff.removed)})")
+    lines.append("-" * 20)
+    lines.extend(f"- {describe_item(item)}" for item in diff.removed)
+    if not diff.removed:
+        lines.append("  (aucun)")
+    lines.append("")
+
+    lines.append(f"INCHANGÉS ({len(diff.unchanged_published)})")
+    lines.append("-" * 20)
+    shown = diff.unchanged_published[:max_unchanged_shown]
+    lines.extend(f"= {describe_item(item)}" for item in shown)
+    remaining = len(diff.unchanged_published) - len(shown)
+    if remaining > 0:
+        lines.append(f"  … et {remaining} de plus")
+    if not diff.unchanged_published:
+        lines.append("  (aucun)")
+    lines.append("")
+
+    if result is not None:
+        warnings = []
+        if result.report and result.report.warnings:
+            warnings.extend(result.report.warnings)
+        if result.blocked_reason:
+            warnings.append(result.blocked_reason)
+        add_section(lines, "AVERTISSEMENTS", warnings)
+        if not dry_run:
+            copied = len(result.report.copied_files) if result.report else 0
+            pages = len(result.report.modified_pages) if result.report else 0
+            lines.append(
+                f"Fichiers copiés : {copied} — Pages mises à jour : {pages} "
+                f"— Manifeste modifié : {'oui' if result.manifest_changed else 'non'}"
+            )
+            if result.build is not None:
+                lines.append(
+                    f"mkdocs build --strict : {'OK' if result.build.ok else 'ÉCHEC'}"
+                )
+                if not result.build.ok:
+                    lines.append(result.build.output)
+            if result.commit_sha:
+                lines.append(f"Commit créé : {result.commit_sha[:12]}")
 
     lines.append(
-        "Aucun fichier PDF déjà présent dans docs/ n'est supprimé "
-        "automatiquement."
+        "Les PDF déjà présents dans docs/ ne sont jamais supprimés "
+        "automatiquement par un retrait."
     )
     return "\n".join(lines)
 
@@ -274,40 +348,54 @@ class PublicationApp:
         self.resources: list[publisher.Resource] = []
         self.pdf_count = 0
         self.ignored_pdf_count = 0
-        self.variables: dict[publisher.Resource, tk.BooleanVar] = {}
+        self.state: pm.PublicationState | None = None
+        self.variables: dict[pm.ResourceKey, tk.BooleanVar] = {}
+        self.items_by_key: dict[pm.ResourceKey, pm.PublicationItem] = {}
+        self.origin_sha_at_load: str | None = None
         self.mkdocs_process: subprocess.Popen[bytes] | None = None
 
         self.status = tk.StringVar(value="Analyse des ressources…")
+        self.git_state_text = tk.StringVar(value="Git : …")
         self._build_interface()
         self.root.protocol("WM_DELETE_WINDOW", self.quit)
         self.root.after(0, self.scan_resources)
 
     def _build_interface(self) -> None:
         self.root.title(f"Publication des ressources — Maths {publisher.NIVEAU}")
-        self.root.geometry("980x820")
-        self.root.minsize(780, 620)
+        self.root.geometry("980x860")
+        self.root.minsize(780, 640)
 
         main = ttk.Frame(self.root, padding=12)
         main.grid(row=0, column=0, sticky="nsew")
         self.root.rowconfigure(0, weight=1)
         self.root.columnconfigure(0, weight=1)
         main.columnconfigure(0, weight=1)
-        main.rowconfigure(2, weight=3)
-        main.rowconfigure(7, weight=2)
+        main.rowconfigure(3, weight=3)
+        main.rowconfigure(9, weight=2)
 
         ttk.Label(
             main,
-            text="Choisir les documents à publier",
+            text="État de publication",
             font=("TkDefaultFont", 16, "bold"),
         ).grid(row=0, column=0, sticky="w")
 
         ttk.Label(
             main,
-            text=f"Source : {publisher.SOURCE_ROOT}",
-        ).grid(row=1, column=0, sticky="w", pady=(2, 8))
+            text=(
+                f"Source : {publisher.SOURCE_ROOT}\n"
+                f"Manifeste : {publisher.MANIFEST_PATH}\n"
+                "Les cases cochées décrivent l'état final souhaité : ce qui "
+                "sera visible sur le site après application."
+            ),
+            justify="left",
+        ).grid(row=1, column=0, sticky="w", pady=(2, 4))
 
-        documents_box = ttk.LabelFrame(main, text="Documents disponibles")
-        documents_box.grid(row=2, column=0, sticky="nsew")
+        ttk.Label(main, textvariable=self.git_state_text).grid(
+            row=2, column=0, sticky="w", pady=(0, 8)
+        )
+
+        documents_box = ttk.LabelFrame(main, text="Documents")
+        documents_box.grid(row=3, column=0, sticky="nsew")
         documents_box.rowconfigure(0, weight=1)
         documents_box.columnconfigure(0, weight=1)
 
@@ -346,16 +434,16 @@ class PublicationApp:
         )
 
         selection_buttons = ttk.Frame(main)
-        selection_buttons.grid(row=3, column=0, sticky="ew", pady=(8, 4))
+        selection_buttons.grid(row=4, column=0, sticky="ew", pady=(8, 4))
         self.safe_button = ttk.Button(
             selection_buttons,
-            text="Sélection sûre",
-            command=self.select_safe,
+            text="Ajouter les nouveautés Cours/TD",
+            command=self.add_new_standard,
         )
         self.safe_button.pack(side="left", padx=(0, 6))
         self.clear_button = ttk.Button(
             selection_buttons,
-            text="Tout décocher",
+            text="Tout décocher (retrait complet)",
             command=self.clear_all,
         )
         self.clear_button.pack(side="left", padx=6)
@@ -367,7 +455,7 @@ class PublicationApp:
         self.all_button.pack(side="left", padx=6)
 
         action_buttons = ttk.Frame(main)
-        action_buttons.grid(row=4, column=0, sticky="ew", pady=(4, 8))
+        action_buttons.grid(row=5, column=0, sticky="ew", pady=(4, 4))
         self.preview_button = ttk.Button(
             action_buttons,
             text="Prévisualiser",
@@ -376,17 +464,10 @@ class PublicationApp:
         self.preview_button.pack(side="left", padx=(0, 6))
         self.publish_button = ttk.Button(
             action_buttons,
-            text="Publier la sélection",
-            command=self.publish,
+            text="Appliquer les changements",
+            command=self.apply_changes,
         )
         self.publish_button.pack(side="left", padx=6)
-        self.deploy_button = ttk.Button(
-            action_buttons,
-            text="Déployer sur GitHub Pages",
-            command=self.deploy_github_pages,
-            state="disabled",
-        )
-        self.deploy_button.pack(side="left", padx=6)
         self.serve_button = ttk.Button(
             action_buttons,
             text="Aperçu local (mkdocs serve)",
@@ -399,21 +480,39 @@ class PublicationApp:
             command=self.quit,
         ).pack(side="right")
 
+        deploy_buttons = ttk.Frame(main)
+        deploy_buttons.grid(row=6, column=0, sticky="ew", pady=(0, 8))
+        self.push_button = ttk.Button(
+            deploy_buttons,
+            text="Pousser vers GitHub",
+            command=self.push_to_github,
+            state="disabled",
+        )
+        self.push_button.pack(side="left", padx=(0, 6))
+        self.deploy_button = ttk.Button(
+            deploy_buttons,
+            text="Déployer sur GitHub Pages",
+            command=self.deploy_github_pages,
+            state="disabled",
+        )
+        self.deploy_button.pack(side="left", padx=6)
+
         ttk.Label(
             main,
             text=(
-                "Publier la sélection met à jour les fichiers locaux ; "
-                "l’aperçu local reste sur cet ordinateur ; déployer sur "
-                "GitHub Pages met le site en ligne."
+                "Appliquer les changements met à jour les fichiers locaux "
+                "et crée un commit ; pousser vers GitHub envoie ce commit "
+                "sur origin/main ; déployer sur GitHub Pages met le site "
+                "en ligne. Trois étapes distinctes, chacune sous contrôle."
             ),
             wraplength=920,
-        ).grid(row=5, column=0, sticky="w", pady=(0, 8))
+        ).grid(row=7, column=0, sticky="w", pady=(0, 8))
 
         ttk.Label(
             main,
             text="Prévisualisation et bilan",
             font=("TkDefaultFont", 11, "bold"),
-        ).grid(row=6, column=0, sticky="w")
+        ).grid(row=8, column=0, sticky="w")
 
         self.output = scrolledtext.ScrolledText(
             main,
@@ -422,11 +521,11 @@ class PublicationApp:
             font=("TkFixedFont", 10),
             state="disabled",
         )
-        self.output.grid(row=7, column=0, sticky="nsew", pady=(4, 8))
+        self.output.grid(row=9, column=0, sticky="nsew", pady=(4, 8))
 
-        ttk.Separator(main).grid(row=8, column=0, sticky="ew")
+        ttk.Separator(main).grid(row=10, column=0, sticky="ew")
         ttk.Label(main, textvariable=self.status).grid(
-            row=9,
+            row=11,
             column=0,
             sticky="w",
             pady=(6, 0),
@@ -478,6 +577,12 @@ class PublicationApp:
         return None
 
     def scan_resources(self) -> None:
+        self.status.set("Vérification de l'état Git (git fetch)…")
+        self.root.update_idletasks()
+        git_state = read_git_state(publisher.PROJECT_ROOT, fetch=True)
+        self.git_state_text.set(format_git_state(git_state))
+        self.origin_sha_at_load = git_state.origin_sha
+
         try:
             if not publisher.SOURCE_ROOT.is_dir():
                 raise FileNotFoundError(
@@ -502,6 +607,28 @@ class PublicationApp:
             messagebox.showerror("Erreur d'analyse", str(error), parent=self.root)
             return
 
+        if not publisher.MANIFEST_PATH.is_file():
+            if not self._offer_bootstrap_manifest():
+                self.status.set("Aucun manifeste : ouverture annulée.")
+                self._set_output(
+                    f"Aucun {publisher.MANIFEST_PATH.name} et sa reconstruction "
+                    "a été refusée. Relancez le GUI quand vous serez prêt."
+                )
+                return
+
+        try:
+            manifest = pm.load_publication_manifest(publisher.MANIFEST_PATH)
+        except pm.ManifestError as error:
+            self.status.set("Manifeste illisible.")
+            self._set_output(f"ERREUR\n\n{error}")
+            messagebox.showerror("Manifeste invalide", str(error), parent=self.root)
+            return
+
+        self.state = pm.compute_publication_state(
+            self.resources, manifest, publisher.DOCS_ROOT
+        )
+        self.items_by_key = {item.key: item for item in self.state.items}
+
         self._display_resource_checkboxes()
 
         if self.pdf_count == 0:
@@ -514,61 +641,67 @@ class PublicationApp:
             messagebox.showwarning("Aucun PDF", message, parent=self.root)
             return
 
-        if not self.resources:
-            message = (
-                f"{self.pdf_count} PDF trouvé(s), mais aucun nom de fichier "
-                "n'est reconnu."
-            )
-            self.status.set("Aucun PDF reconnu.")
-            self._set_output(message)
-            messagebox.showwarning(
-                "Aucun PDF reconnu",
-                message,
-                parent=self.root,
-            )
-            return
-
         self._set_resource_buttons_state("normal")
         self._update_selection_status()
+        published_count = sum(1 for item in self.state.items if item.published)
         self._set_output(
-            f"{len(self.resources)} document(s) reconnu(s) parmi "
-            f"{self.pdf_count} PDF.\n\n"
-            "Choisissez les documents puis utilisez « Prévisualiser » "
-            "avant de publier."
+            f"{len(self.state.items)} document(s) suivi(s) "
+            f"({published_count} publié(s) actuellement), "
+            f"{len(self.state.orphans)} orphelin(s) dans docs/.\n\n"
+            "Cochez/décochez l'état final souhaité, puis « Prévisualiser » "
+            "avant d'appliquer."
         )
+
+    def _offer_bootstrap_manifest(self) -> bool:
+        confirmed = messagebox.askyesno(
+            "Manifeste de publication introuvable",
+            f"Aucun {publisher.MANIFEST_PATH.name} n'existe encore pour ce "
+            "site.\n\nLe reconstruire maintenant depuis ce qui est déjà "
+            "publié (liens présents dans les blocs AUTO-DOCS) ? Cette "
+            "opération n'écrit que le manifeste, jamais les pages.",
+            parent=self.root,
+        )
+        if not confirmed:
+            return False
+        manifest = pm.bootstrap_manifest_from_auto_docs(
+            self.resources, publisher.DOCS_ROOT
+        )
+        publisher.MANIFEST_PATH.write_bytes(
+            pm.save_publication_manifest(publisher.MANIFEST_PATH, manifest)
+        )
+        return True
 
     def _display_resource_checkboxes(self) -> None:
         for child in self.documents_frame.winfo_children():
             child.destroy()
         self.variables.clear()
 
-        if not self.resources:
+        if not self.state or not self.state.items:
             ttk.Label(
                 self.documents_frame,
-                text="Aucun document reconnu.",
+                text="Aucun document suivi.",
             ).grid(row=0, column=0, sticky="w")
             return
 
-        resources_by_notion: dict[
-            str, list[publisher.Resource]
-        ] = defaultdict(list)
-        for resource in sorted(
-            self.resources,
-            key=lambda item: (
-                item.notion,
-                publisher.KIND_ORDER[item.kind],
-                item.source.name.casefold(),
+        items_by_notion: dict[str, list[pm.PublicationItem]] = defaultdict(list)
+        for item in sorted(
+            self.state.items,
+            key=lambda i: (
+                i.notion,
+                publisher.KIND_ORDER[i.kind],
+                i.filename.casefold(),
             ),
         ):
-            resources_by_notion[resource.notion].append(resource)
+            items_by_notion[item.notion].append(item)
 
         self.documents_frame.columnconfigure(0, weight=1)
-        for row, notion in enumerate(sorted(resources_by_notion)):
-            notion_resources = resources_by_notion[notion]
+        row = 0
+        for notion in sorted(items_by_notion):
+            notion_items = items_by_notion[notion]
             try:
                 topic = publisher.notion_display_topic(
                     notion,
-                    notion_resources,
+                    [item.resource for item in notion_items if item.resource],
                     publisher.DOCS_ROOT,
                 )
             except (OSError, ValueError):
@@ -580,68 +713,99 @@ class PublicationApp:
                 text=title,
                 padding=(10, 5),
             )
-            notion_frame.grid(
-                row=row,
-                column=0,
-                sticky="ew",
-                pady=(0, 8),
-            )
+            notion_frame.grid(row=row, column=0, sticky="ew", pady=(0, 8))
             notion_frame.columnconfigure(0, weight=1)
+            row += 1
 
-            kind_counts = Counter(
-                resource.kind for resource in notion_resources
-            )
-            for resource_row, resource in enumerate(notion_resources):
-                variable = tk.BooleanVar(
-                    value=publisher.is_safe_default(resource)
-                )
-                self.variables[resource] = variable
-                label = publisher.selection_label(
-                    resource,
-                    duplicate_kind=kind_counts[resource.kind] > 1,
-                )
+            kind_counts = Counter(item.kind for item in notion_items)
+            for item_row, item in enumerate(notion_items):
+                variable = tk.BooleanVar(value=item.published)
+                self.variables[item.key] = variable
+                label = publisher.LABELS[item.kind]
+                if kind_counts[item.kind] > 1:
+                    label = f"{label} — {item.filename}"
+                badge = STATUS_BADGES.get(item.status)
+                if badge:
+                    label = f"{label}  [{badge}]"
                 ttk.Checkbutton(
                     notion_frame,
                     text=label,
                     variable=variable,
                     command=self._update_selection_status,
-                ).grid(
-                    row=resource_row,
-                    column=0,
-                    sticky="w",
-                    pady=2,
-                )
+                ).grid(row=item_row, column=0, sticky="w", pady=2)
 
-    def selected_resources(self) -> list[publisher.Resource]:
-        return [
-            resource
-            for resource in self.resources
-            if self.variables[resource].get()
-        ]
+        if self.state.orphans:
+            orphan_frame = ttk.LabelFrame(
+                self.documents_frame,
+                text=(
+                    "Fichiers orphelins dans docs/ (ni publiés, ni dans la "
+                    "source — maintenance uniquement)"
+                ),
+                padding=(10, 5),
+            )
+            orphan_frame.grid(row=row, column=0, sticky="ew", pady=(0, 8))
+            orphan_frame.columnconfigure(0, weight=1)
+            for orphan_row, orphan in enumerate(self.state.orphans):
+                ttk.Label(
+                    orphan_frame,
+                    text=path_description(orphan.path),
+                ).grid(row=orphan_row, column=0, sticky="w", pady=1)
+
+    def selected_keys(self) -> set[pm.ResourceKey]:
+        return {key for key, variable in self.variables.items() if variable.get()}
 
     def _update_selection_status(self) -> None:
+        self.push_button.configure(state="disabled")
         self.deploy_button.configure(state="disabled")
-        selected_count = len(self.selected_resources())
+        desired = self.selected_keys()
+        published_count = sum(1 for item in self.state.items if item.published)
         self.status.set(
-            f"{selected_count} document(s) sélectionné(s) sur "
-            f"{len(self.resources)}."
+            f"{len(desired)} document(s) coché(s) sur {len(self.state.items)} "
+            f"({published_count} publié(s) actuellement)."
         )
 
-    def select_safe(self) -> None:
-        for resource, variable in self.variables.items():
-            variable.set(publisher.is_safe_default(resource))
+    def add_new_standard(self) -> None:
+        """N'ajoute que les Cours/TD pas encore publiés ; ne décoche jamais rien."""
+        added = 0
+        for item in self.state.items:
+            if (
+                item.status == pm.STATUS_NEW_AVAILABLE
+                and item.kind in publisher.SAFE_DEFAULT_KINDS
+            ):
+                variable = self.variables[item.key]
+                if not variable.get():
+                    variable.set(True)
+                    added += 1
         self._update_selection_status()
+        if added == 0:
+            messagebox.showinfo(
+                "Rien à ajouter",
+                "Aucun nouveau Cours/TD non encore publié.",
+                parent=self.root,
+            )
 
     def clear_all(self) -> None:
+        published_count = sum(1 for item in self.state.items if item.published)
+        if not messagebox.askyesno(
+            "Tout décocher : retrait complet",
+            f"Cela demandera le RETRAIT des {published_count} ressource(s) "
+            "actuellement publiée(s) du catalogue (les liens disparaîtront "
+            "des pages ; les PDF resteront physiquement dans docs/).\n\n"
+            "Continuer ?",
+            parent=self.root,
+        ):
+            return
         for variable in self.variables.values():
             variable.set(False)
         self._update_selection_status()
 
     def select_all(self) -> None:
         confirmed = messagebox.askyesno(
-            "Tout sélectionner",
+            "Tout cocher",
             "Cette sélection inclura les mini-tests, les devoirs et tous "
-            "les corrigés.\n\nVoulez-vous vraiment tout cocher ?",
+            "les corrigés, y compris les ressources absentes de la source "
+            "(à publier telles quelles).\n\nVoulez-vous vraiment tout "
+            "cocher ?",
             parent=self.root,
         )
         if not confirmed:
@@ -650,40 +814,20 @@ class PublicationApp:
             variable.set(True)
         self._update_selection_status()
 
-    def _run_publication(
-        self,
-        selected: list[publisher.Resource],
-        dry_run: bool,
-    ) -> publisher.PublicationReport:
-        if not publisher.SOURCE_ROOT.is_dir():
-            raise FileNotFoundError(
-                f"Dossier source introuvable : {publisher.SOURCE_ROOT}"
-            )
-        if not publisher.DOCS_ROOT.is_dir():
-            raise FileNotFoundError(
-                f"Dossier MkDocs introuvable : {publisher.DOCS_ROOT}"
-            )
-        for resource in selected:
-            if not resource.source.is_file():
-                raise FileNotFoundError(
-                    f"PDF source introuvable : {resource.source}"
-                )
-
-        return publisher.publish_selected_resources(
-            self.resources,
-            selected,
-            publisher.DOCS_ROOT,
-            self.pdf_count,
-            self.ignored_pdf_count,
-            dry_run=dry_run,
-        )
-
     def preview(self) -> None:
-        selected = self.selected_resources()
+        desired = self.selected_keys()
         self._set_busy(True)
         try:
-            report = self._run_publication(selected, dry_run=True)
-        except (OSError, ValueError) as error:
+            result = pm.apply_publication_state(
+                self.state.items,
+                desired,
+                publisher.DOCS_ROOT,
+                publisher.PROJECT_ROOT,
+                publisher.MANIFEST_PATH,
+                dry_run=True,
+                skip_git_guards=True,
+            )
+        except (OSError, ValueError, pm.PublicationStateError) as error:
             self._set_output(f"ERREUR DE PRÉVISUALISATION\n\n{error}")
             messagebox.showerror(
                 "Prévisualisation impossible",
@@ -695,114 +839,174 @@ class PublicationApp:
         finally:
             self._set_busy(False)
 
-        self._set_output(format_report(report))
+        self._set_output(format_diff_preview(result.diff, result, dry_run=True))
         self.status.set(
             "Prévisualisation terminée : aucune écriture effectuée."
         )
 
-    def publish(self) -> None:
-        selected = self.selected_resources()
-        confirmation = (
-            f"Publier {len(selected)} document(s) sélectionné(s) ?\n\n"
-            "Les liens des documents non sélectionnés seront retirés des "
-            "zones AUTO-DOCS. Les PDF déjà présents dans docs/ ne seront "
-            "pas supprimés."
-        )
+    def apply_changes(self) -> None:
+        desired = self.selected_keys()
+        diff = pm.compute_publication_diff(self.state.items, desired)
+
+        if not diff.has_changes:
+            messagebox.showinfo(
+                "Rien à appliquer",
+                "L'état demandé est identique à l'état déjà publié.",
+                parent=self.root,
+            )
+            return
+
+        summary_lines = [
+            f"{len(diff.added)} ajout(s), {len(diff.removed)} retrait(s).",
+        ]
+        if diff.added:
+            summary_lines.append("")
+            summary_lines.append("Ajouts :")
+            summary_lines.extend(f"  + {describe_item(item)}" for item in diff.added)
+        if diff.removed:
+            summary_lines.append("")
+            summary_lines.append("Retraits :")
+            summary_lines.extend(f"  - {describe_item(item)}" for item in diff.removed)
+            summary_lines.append("")
+            summary_lines.append(
+                "Les fichiers PDF physiques ne seront pas supprimés de docs/."
+            )
+        summary_lines.append("")
+        summary_lines.append("Confirmer l'application de ces changements ?")
         if not messagebox.askyesno(
-            "Confirmer la publication",
-            confirmation,
+            "Confirmer l'application", "\n".join(summary_lines), parent=self.root
+        ):
+            return
+
+        if diff.removed and not messagebox.askyesno(
+            "Confirmer le retrait",
+            f"Vous demandez le retrait de {len(diff.removed)} ressource(s) "
+            "du catalogue. Cette confirmation est distincte de la "
+            "précédente : le retrait est une action plus sensible qu'un "
+            "ajout.\n\nConfirmer le retrait ?",
             parent=self.root,
         ):
             return
 
+        self.push_button.configure(state="disabled")
         self.deploy_button.configure(state="disabled")
         self._set_busy(True)
         try:
-            report = self._run_publication(selected, dry_run=False)
-        except (OSError, ValueError) as error:
+            result = pm.apply_publication_state(
+                self.state.items,
+                desired,
+                publisher.DOCS_ROOT,
+                publisher.PROJECT_ROOT,
+                publisher.MANIFEST_PATH,
+                dry_run=False,
+                origin_sha_at_load=self.origin_sha_at_load,
+                pdf_count=self.pdf_count,
+                ignored_pdf_count=self.ignored_pdf_count,
+            )
+        except pm.ConcurrencyError as error:
+            self._set_output(f"ERREUR DE CONCURRENCE\n\n{error}")
+            messagebox.showerror(
+                "origin/main a changé",
+                f"{error}\n\nFermez et rouvrez le GUI pour actualiser "
+                "l'état avant de continuer.",
+                parent=self.root,
+            )
+            self.status.set(
+                "Application bloquée : origin/main a changé depuis l'ouverture."
+            )
+            return
+        except (OSError, ValueError, pm.PublicationStateError) as error:
             message = (
-                f"{error}\n\nLa publication a été interrompue. Certains "
+                f"{error}\n\nL'application a été interrompue. Certains "
                 "fichiers ont éventuellement été copiés avant l'erreur ; "
                 "aucun PDF existant n'a été supprimé."
             )
-            self._set_output(f"ERREUR DE PUBLICATION\n\n{message}")
-            messagebox.showerror(
-                "Erreur de publication",
-                message,
-                parent=self.root,
-            )
-            self.status.set("Publication interrompue.")
+            self._set_output(f"ERREUR\n\n{message}")
+            messagebox.showerror("Application impossible", message, parent=self.root)
+            self.status.set("Application interrompue.")
             return
         finally:
             self._set_busy(False)
 
-        self._set_output(format_report(report))
+        self._set_output(format_diff_preview(result.diff, result, dry_run=False))
 
-        try:
-            commit_sha = publisher.commit_publication(
-                report, publisher.PROJECT_ROOT
-            )
-        except publisher.CommitError as error:
-            self._append_output(
-                "\n\nERREUR : impossible de committer automatiquement "
-                f"cette publication.\n{error}\n\n"
-                "Les fichiers ont bien été écrits, mais l'arbre de travail "
-                "n'est pas propre : committez-les manuellement avant de "
-                "déployer."
-            )
+        if result.blocked_reason:
             messagebox.showerror(
-                "Échec du commit automatique",
-                f"{error}\n\nLes fichiers ont été écrits mais pas commités. "
-                "Committez-les manuellement avant de déployer.",
-                parent=self.root,
+                "Application bloquée", result.blocked_reason, parent=self.root
             )
-            self.status.set(
-                "Publication écrite mais non commitée : voir le détail "
-                "ci-dessus."
-            )
+            self.status.set("Application bloquée : voir le détail ci-dessus.")
             return
 
-        self.deploy_button.configure(state="normal")
-        if commit_sha:
-            self._append_output(f"\n\nCommit créé : {commit_sha[:12]}")
+        manifest = pm.load_publication_manifest(publisher.MANIFEST_PATH)
+        self.state = pm.compute_publication_state(
+            self.resources, manifest, publisher.DOCS_ROOT
+        )
+        self.items_by_key = {item.key: item for item in self.state.items}
+        self._display_resource_checkboxes()
+
+        git_state = read_git_state(publisher.PROJECT_ROOT, fetch=False)
+        self.git_state_text.set(format_git_state(git_state))
+        if git_state.ahead > 0:
+            self.push_button.configure(state="normal")
+        if git_state.clean and git_state.head_sha == git_state.origin_sha:
+            self.deploy_button.configure(state="normal")
+
+        if result.commit_sha:
             self.status.set(
-                f"Publication commitée ({commit_sha[:12]}) : "
-                f"{len(report.copied_files)} fichier(s) copié(s), "
-                f"{len(report.modified_pages)} page(s) modifiée(s). "
-                "Le déploiement GitHub Pages est maintenant disponible."
+                f"Changements appliqués et commités ({result.commit_sha[:12]}). "
+                "Vous pouvez maintenant pousser vers GitHub."
+            )
+            messagebox.showinfo(
+                "Changements appliqués",
+                f"Commit créé : {result.commit_sha[:12]}\n\n"
+                "Cliquez sur « Pousser vers GitHub » pour l'envoyer vers "
+                "origin/main.",
+                parent=self.root,
             )
         else:
             self.status.set(
-                "Publication terminée : rien de nouveau à committer. "
-                "Le déploiement GitHub Pages est maintenant disponible."
+                "Application terminée : rien de nouveau à committer."
             )
 
-        if report.missing_pages or report.warnings:
-            details = []
-            if report.missing_pages:
-                details.append(
-                    "Pages introuvables : "
-                    + ", ".join(report.missing_pages)
-                )
-            if report.warnings:
-                details.append(
-                    f"{len(report.warnings)} autre(s) avertissement(s)."
-                )
-            messagebox.showwarning(
-                "Publication terminée avec avertissements",
-                "\n".join(details)
-                + "\n\nConsultez le bilan pour plus de détails. Vous "
-                "pouvez ensuite déployer les pages disponibles.",
+    def push_to_github(self) -> None:
+        if not messagebox.askyesno(
+            "Pousser vers GitHub",
+            "Pousser la branche main locale vers origin/main ?",
+            parent=self.root,
+        ):
+            return
+
+        self._set_busy(True)
+        try:
+            pushed = run_git(publisher.PROJECT_ROOT, "push", "origin", "main")
+        finally:
+            self._set_busy(False)
+
+        self._append_output(
+            "PUSH VERS GITHUB\n=================\n\n" + git_output(pushed)
+        )
+        if pushed.returncode != 0:
+            messagebox.showerror(
+                "Échec du push",
+                git_output(pushed) or "Le push a échoué.",
                 parent=self.root,
             )
+            self.status.set("Le push a échoué.")
+            return
+
+        git_state = read_git_state(publisher.PROJECT_ROOT, fetch=False)
+        self.git_state_text.set(format_git_state(git_state))
+        self.push_button.configure(state="disabled")
+        if git_state.clean and git_state.head_sha == git_state.origin_sha:
+            self.deploy_button.configure(state="normal")
+            self.status.set("Poussé vers GitHub. Vous pouvez maintenant déployer.")
         else:
-            messagebox.showinfo(
-                "Publication terminée",
-                "Les fichiers locaux ont été mis à jour.\n\n"
-                "Cliquez maintenant sur « Déployer sur GitHub Pages » "
-                "pour actualiser le site public.",
-                parent=self.root,
-            )
+            self.status.set("Poussé vers GitHub.")
+        messagebox.showinfo(
+            "Push terminé",
+            "main est maintenant aligné avec origin/main.",
+            parent=self.root,
+        )
 
     def deploy_github_pages(self) -> None:
         executable = self._mkdocs_executable_or_error()
