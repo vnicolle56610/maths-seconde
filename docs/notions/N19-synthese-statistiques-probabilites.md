@@ -29,8 +29,9 @@ Cette synthèse met en relation les statistiques, les tableaux croisés, les pro
 ## Documents
 
 <!-- AUTO-DOCS:START -->
-- [Cours N19 — Synthese statistiques probabilités](../cours/COURS_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf)
-- [TD N19 — Synthese statistiques probabilités](../td/TD_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf)
+- [Cours N19 — Synthèse statistiques et probabilités](../cours/COURS_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf)
+- [TD N19 — Synthèse statistiques et probabilités](../td/TD_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf)
+- [Automatismes N19 — Synthèse statistiques et probabilités](../automatismes/AUTOMATISMES_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

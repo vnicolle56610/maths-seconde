@@ -29,8 +29,9 @@ Les probabilités transforment une situation aléatoire en modèle calculable. L
 ## Documents
 
 <!-- AUTO-DOCS:START -->
-- [Cours N18 — Probabilités echantillonnage](../cours/COURS_N18_PROBABILITES_ECHANTILLONNAGE.pdf)
-- [TD N18 — Probabilités echantillonnage](../td/TD_N18_PROBABILITES_ECHANTILLONNAGE.pdf)
+- [Cours N18 — Probabilités et échantillonnage](../cours/COURS_N18_PROBABILITES_ECHANTILLONNAGE.pdf)
+- [TD N18 — Probabilités et échantillonnage](../td/TD_N18_PROBABILITES_ECHANTILLONNAGE.pdf)
+- [Automatismes N18 — Probabilités et échantillonnage](../automatismes/AUTOMATISMES_N18_PROBABILITES_ECHANTILLONNAGE.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

@@ -29,8 +29,9 @@ Un tableau croisé organise deux variables qualitatives dans une même lecture. 
 ## Documents
 
 <!-- AUTO-DOCS:START -->
-- [Cours N17 — Croisement variables qualitatives](../cours/COURS_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf)
-- [TD N17 — Croisement variables qualitatives](../td/TD_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf)
+- [Cours N17 — Tableaux croisés et variables qualitatives](../cours/COURS_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf)
+- [TD N17 — Tableaux croisés et variables qualitatives](../td/TD_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf)
+- [Automatismes N17 — Tableaux croisés et variables qualitatives](../automatismes/AUTOMATISMES_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

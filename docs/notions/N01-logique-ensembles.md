@@ -22,9 +22,16 @@ Les notations d’ensembles aident à nommer précisément les objets manipulés
 ## Documents
 
 <!-- AUTO-DOCS:START -->
-- [Cours N01 — Logique ensembles](../cours/COURS_N01_LOGIQUE_ENSEMBLES.pdf)
-- [TD N01 — Logique ensembles](../td/TD_N01_LOGIQUE_ENSEMBLES.pdf)
-- [TD N01 — Logique ensembles](../td/TD_N01_LOGIQUE_ENSEMBLES_impression.pdf)
+- [Cours N01 — Logique, ensembles et raisonnement](../cours/COURS_N01_LOGIQUE_ENSEMBLES.pdf)
+- [Cours N01 — Logique, ensembles et raisonnement](../cours/COURS_N01_LOGIQUE_ENSEMBLES_SOURCE_UNIQUE.pdf)
+- [Cours N01 — Logique, ensembles et raisonnement](../cours/COURS_N01_LOGIQUE_ENSEMBLES_SOURCE_UNIQUE_eleve.pdf)
+- [TD N01 — Logique, ensembles et raisonnement](../td/TD_N01_LOGIQUE_ENSEMBLES.pdf)
+- [TD N01 — Logique, ensembles et raisonnement](../td/TD_N01_LOGIQUE_ENSEMBLES_impression.pdf)
+- [TD N01 — Logique, ensembles et raisonnement](../td/TD_N01_LOGIQUE_ENSEMBLES_impression_EXOS.pdf)
+- [TD N01 — Logique, ensembles et raisonnement](../td/TD_N01_LOGIQUE_ENSEMBLES_impression_EXOS_1-10-12_20260901_110209.pdf)
+- [Automatismes N01 — Logique, ensembles et raisonnement](../automatismes/AUTOMATISMES_N01_LOGIQUE_ENSEMBLES.pdf)
+- [Automatismes N01 — Logique, ensembles et raisonnement](../automatismes/AUTOMATISMES_N01_LOGIQUE_ENSEMBLES_4_enonce.pdf)
+- [Corrigé TD N01](../corriges/CORRIGE_TD_N01_LOGIQUE_ENSEMBLES.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

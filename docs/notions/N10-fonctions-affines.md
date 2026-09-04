@@ -25,6 +25,7 @@ Une fonction affine modélise une évolution à rythme constant. Les documents r
 <!-- AUTO-DOCS:START -->
 - [Cours N10 — Fonctions affines](../cours/COURS_N10_FONCTIONS_AFFINES.pdf)
 - [TD N10 — Fonctions affines](../td/TD_N10_FONCTIONS_AFFINES.pdf)
+- [Automatismes N10 — Fonctions affines](../automatismes/AUTOMATISMES_N10_FONCTIONS_AFFINES.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

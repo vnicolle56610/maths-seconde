@@ -29,8 +29,9 @@ Une fonction associe une grandeur de départ à une grandeur d’arrivée. Les r
 ## Documents
 
 <!-- AUTO-DOCS:START -->
-- [Cours N09 — Fonctions registres](../cours/COURS_N09_FONCTIONS_REGISTRES.pdf)
-- [TD N09 — Fonctions registres](../td/TD_N09_FONCTIONS_REGISTRES.pdf)
+- [Cours N09 — Fonctions : images, antécédents et registres](../cours/COURS_N09_FONCTIONS_REGISTRES.pdf)
+- [TD N09 — Fonctions : images, antécédents et registres](../td/TD_N09_FONCTIONS_REGISTRES.pdf)
+- [Automatismes N09 — Fonctions : images, antécédents et registres](../automatismes/AUTOMATISMES_N09_FONCTIONS_REGISTRES.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

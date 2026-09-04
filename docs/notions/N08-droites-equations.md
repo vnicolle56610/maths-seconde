@@ -29,8 +29,9 @@ Une droite peut être décrite par un point, une direction, une pente ou une éq
 ## Documents
 
 <!-- AUTO-DOCS:START -->
-- [Cours N08 — Droites équations](../cours/COURS_N08_DROITES_DU_PLAN.pdf)
-- [TD N08 — Droites équations](../td/TD_N08_DROITES_DU_PLAN.pdf)
+- [Cours N08 — Droites et équations dans le plan](../cours/COURS_N08_DROITES_DU_PLAN.pdf)
+- [TD N08 — Droites et équations dans le plan](../td/TD_N08_DROITES_DU_PLAN.pdf)
+- [Automatismes N08 — Droites et équations dans le plan](../automatismes/AUTOMATISMES_N08_DROITES_DU_PLAN.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

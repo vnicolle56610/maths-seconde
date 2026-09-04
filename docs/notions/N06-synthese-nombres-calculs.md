@@ -23,8 +23,9 @@ Cette synthèse rassemble les premiers outils numériques et algébriques de l�
 ## Documents
 
 <!-- AUTO-DOCS:START -->
-- [Cours N06 — Synthese nombres calculs](../cours/COURS_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
-- [TD N06 — Synthese nombres calculs](../td/TD_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
+- [Cours N06 — Synthèse nombres et calculs](../cours/COURS_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
+- [TD N06 — Synthèse nombres et calculs](../td/TD_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
+- [Automatismes N06 — Synthèse nombres et calculs](../automatismes/AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

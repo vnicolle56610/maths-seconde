@@ -29,8 +29,9 @@ Les variations décrivent comment les valeurs d’une fonction évoluent sur un 
 ## Documents
 
 <!-- AUTO-DOCS:START -->
-- [Cours N12 — Variations extremums](../cours/COURS_N12_VARIATIONS_EXTREMUMS.pdf)
-- [TD N12 — Variations extremums](../td/TD_N12_VARIATIONS_EXTREMUMS.pdf)
+- [Cours N12 — Variations et extremums](../cours/COURS_N12_VARIATIONS_EXTREMUMS.pdf)
+- [TD N12 — Variations et extremums](../td/TD_N12_VARIATIONS_EXTREMUMS.pdf)
+- [Automatismes N12 — Variations et extremums](../automatismes/AUTOMATISMES_N12_VARIATIONS_EXTREMUMS.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

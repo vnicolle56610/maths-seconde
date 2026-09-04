@@ -23,8 +23,10 @@ Les nombres réels se représentent sur une droite graduée et se décrivent ave
 ## Documents
 
 <!-- AUTO-DOCS:START -->
-- [Cours N02 — Nombres reels intervalles](../cours/COURS_N02_NOMBRES_REELS_INTERVALLES.pdf)
-- [TD N02 — Nombres reels intervalles](../td/TD_N02_NOMBRES_REELS_INTERVALLES.pdf)
+- [Cours N02 — Nombres réels, intervalles et valeur absolue](../cours/COURS_N02_NOMBRES_REELS_INTERVALLES.pdf)
+- [TD N02 — Nombres réels, intervalles et valeur absolue](../td/TD_N02_NOMBRES_REELS_INTERVALLES.pdf)
+- [Automatismes N02 — Nombres réels, intervalles et valeur absolue](../automatismes/AUTOMATISMES_N02_NOMBRES_REELS_INTERVALLES.pdf)
+- [Corrigé TD N02](../corriges/CORRIGE_TD_N02_NOMBRES_REELS_INTERVALLES.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi

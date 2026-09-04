@@ -25,6 +25,7 @@ Un vecteur code un déplacement et permet de calculer dans le plan. Les ressourc
 <!-- AUTO-DOCS:START -->
 - [Cours N07 — Vecteurs du plan](../cours/COURS_N07_VECTEURS_DU_PLAN.pdf)
 - [TD N07 — Vecteurs du plan](../td/TD_N07_VECTEURS_DU_PLAN.pdf)
+- [Automatismes N07 — Vecteurs du plan](../automatismes/AUTOMATISMES_N07_VECTEURS_DU_PLAN.pdf)
 <!-- AUTO-DOCS:END -->
 
 ## Voir aussi
