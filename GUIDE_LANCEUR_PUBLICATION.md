@@ -19,14 +19,14 @@ mais le plus simple est de toujours se placer dans le dossier du projet
 avant de l'appeler :
 
 ```bash
-cd ~/ENSEIGNEMENT/maths-seconde
+cd ~/ENSEIGNEMENT/SITES_INTERNET/maths-seconde
 ./scripts/lancer_publication.sh
 ```
 
 Il fonctionne aussi en donnant le chemin complet depuis n'importe où :
 
 ```bash
-~/ENSEIGNEMENT/maths-seconde/scripts/lancer_publication.sh
+~/ENSEIGNEMENT/SITES_INTERNET/maths-seconde/scripts/lancer_publication.sh
 ```
 
 ⚠️ Attention à ne pas mettre le `~` avant `scripts` : `~scripts/...` n'est
@@ -40,7 +40,7 @@ l'interface avec les cases à cocher, il faut explicitement ajouter
 `--gui` :
 
 ```bash
-cd ~/ENSEIGNEMENT/maths-seconde
+cd ~/ENSEIGNEMENT/SITES_INTERNET/maths-seconde
 ./scripts/lancer_publication.sh --gui
 ```
 
@@ -107,7 +107,7 @@ mkdir -p ~/bin
 
 cat > ~/bin/lancer_publication_seconde <<'EOF'
 #!/usr/bin/env bash
-exec "$HOME/ENSEIGNEMENT/maths-seconde/scripts/lancer_publication.sh" --gui "$@"
+exec "$HOME/ENSEIGNEMENT/SITES_INTERNET/maths-seconde/scripts/lancer_publication.sh" --gui "$@"
 EOF
 
 chmod +x ~/bin/lancer_publication_seconde
@@ -139,4 +139,4 @@ Tu devrais obtenir quelque chose comme :
 ```
 
 Il existe une commande symétrique `lancer_publication_premiere` pour le
-site de Première spécialité (`~/ENSEIGNEMENT/maths-premiere-specialite`).
+site de Première spécialité (`~/ENSEIGNEMENT/SITES_INTERNET/maths-premiere-specialite`).

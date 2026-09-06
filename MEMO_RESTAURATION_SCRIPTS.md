@@ -6,7 +6,7 @@ par accident dans le site Seconde.
 Le site concerne :
 
 ```bash
-~/ENSEIGNEMENT/maths-seconde
+~/ENSEIGNEMENT/SITES_INTERNET/maths-seconde
 ```
 
 La commande habituelle de publication est :
@@ -47,7 +47,7 @@ C'est le cas le plus simple.
 Ouvrir un terminal, puis taper :
 
 ```bash
-cd ~/ENSEIGNEMENT/maths-seconde
+cd ~/ENSEIGNEMENT/SITES_INTERNET/maths-seconde
 git status
 ```
 
@@ -78,7 +78,7 @@ fe70465 - Sauvegarder les scripts de publication utiles
 Pour remettre `scripts/` et `scripts_old/` exactement comme dans ce commit :
 
 ```bash
-cd ~/ENSEIGNEMENT/maths-seconde
+cd ~/ENSEIGNEMENT/SITES_INTERNET/maths-seconde
 git restore --source fe70465 -- scripts scripts_old
 ```
 
@@ -105,7 +105,7 @@ S'il est efface, le recreer avec ces commandes :
 mkdir -p ~/bin
 cat > ~/bin/lancer_publication_seconde <<'EOF'
 #!/usr/bin/env bash
-exec "$HOME/ENSEIGNEMENT/maths-seconde/scripts/lancer_publication.sh" --gui "$@"
+exec "$HOME/ENSEIGNEMENT/SITES_INTERNET/maths-seconde/scripts/lancer_publication.sh" --gui "$@"
 EOF
 chmod +x ~/bin/lancer_publication_seconde
 ```
@@ -128,7 +128,7 @@ Sans lancer la publication graphique, on peut verifier que le moteur principal
 charge la bonne configuration :
 
 ```bash
-cd ~/ENSEIGNEMENT/maths-seconde
+cd ~/ENSEIGNEMENT/SITES_INTERNET/maths-seconde
 python3 -B -c "import sys; sys.path.insert(0, 'scripts'); import publier_ressources_site as p; print(p.NIVEAU)"
 ```
 
@@ -158,7 +158,7 @@ soient pousses sur GitHub.
 Pour voir si le depot contient des commits locaux non pousses :
 
 ```bash
-cd ~/ENSEIGNEMENT/maths-seconde
+cd ~/ENSEIGNEMENT/SITES_INTERNET/maths-seconde
 git status --short --branch
 ```
 
