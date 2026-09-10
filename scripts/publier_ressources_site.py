@@ -714,11 +714,28 @@ def update_mkdocs_nav_if_safe(
     add_modified_page(report, mkdocs_path)
 
 
+def normalize_for_comparison(text: str) -> str:
+    """Réduire un texte à ses seuls caractères alphanumériques, sans accent."""
+    normalized = unicodedata.normalize("NFKD", text.casefold())
+    without_accents = "".join(
+        character for character in normalized if not unicodedata.combining(character)
+    )
+    return re.sub(r"[^a-z0-9]+", "", without_accents)
+
+
 def student_link_title(
     resource: Resource,
     fallback_topic: str | None = None,
+    duplicate_kind: bool = False,
 ) -> str:
-    """Construire uniquement le texte visible du lien destiné aux élèves."""
+    """Construire uniquement le texte visible du lien destiné aux élèves.
+
+    Quand deux ressources du même type existent pour la même notion (ex.
+    deux Cours, deux Mini-tests), un titre identique les rendrait
+    indiscernables sur la page. On ajoute alors, entre parenthèses, un
+    intitulé dérivé du nom de fichier — sauf s'il n'apporterait aucune
+    information nouvelle (déjà présent dans le titre).
+    """
     notion = resource.notion
 
     if resource.kind in {
@@ -727,11 +744,21 @@ def student_link_title(
         "CORRIGE",
         "CORRIGE_TD",
     }:
-        return f"{LABELS[resource.kind]} {notion}"
+        title = f"{LABELS[resource.kind]} {notion}"
+    else:
+        topic = topic_title_for_resource(resource, fallback_topic)
+        title = f"{LABELS[resource.kind]} {notion}"
+        if topic:
+            title = f"{title} — {topic}"
 
-    topic = topic_title_for_resource(resource, fallback_topic)
-    title = f"{LABELS[resource.kind]} {notion}"
-    return f"{title} — {topic}" if topic else title
+    if duplicate_kind:
+        distinguishing = humanize_topic_slug(topic_slug_from_filename(resource.source))
+        if distinguishing and normalize_for_comparison(
+            distinguishing
+        ) not in normalize_for_comparison(title):
+            title = f"{title} ({distinguishing})"
+
+    return title
 
 
 def relative_link(markdown_page: Path, target: Path) -> str:
@@ -744,6 +771,7 @@ def render_document_lines(
     resources: list[Resource],
     fallback_topic: str | None = None,
 ) -> str:
+    kind_counts = Counter(resource.kind for resource in resources)
     lines = []
     for resource in sorted(
         resources,
@@ -752,7 +780,11 @@ def render_document_lines(
             item.destination.name.casefold(),
         ),
     ):
-        title = student_link_title(resource, fallback_topic)
+        title = student_link_title(
+            resource,
+            fallback_topic,
+            duplicate_kind=kind_counts[resource.kind] > 1,
+        )
         link = relative_link(markdown_page, resource.destination)
         lines.append(f"- [{title}]({link})")
     return "\n".join(lines)
