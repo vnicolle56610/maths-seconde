@@ -22,8 +22,8 @@ Les notations d’ensembles aident à nommer précisément les objets manipulés
 ## Documents
 
 <!-- AUTO-DOCS:START -->
+- [Cours N01 — Logique, ensembles et raisonnement](../cours/COURS_N01_Eleve.pdf)
 - [Cours N01 — Logique, ensembles et raisonnement](../cours/COURS_N01_LOGIQUE_ENSEMBLES.pdf)
-- [Cours N01 — Logique, ensembles et raisonnement](../cours/COURS_N01_LOGIQUE_ENSEMBLES_SOURCE_UNIQUE_eleve.pdf)
 - [TD N01 — Logique, ensembles et raisonnement](../td/TD_N01_LOGIQUE_ENSEMBLES.pdf)
 - [Automatismes N01 — Logique, ensembles et raisonnement](../automatismes/AUTOMATISMES_N01_LOGIQUE_ENSEMBLES.pdf)
 - [Corrigé TD N01](../corriges/CORRIGE_TD_N01_LOGIQUE_ENSEMBLES.pdf)
