@@ -134,6 +134,12 @@ RESOURCE_PATTERNS = (
     ),
 )
 
+# Un Cours dont le nom de fichier contient le jeton « ELEVE » (ex.
+# COURS_N01_Eleve.pdf, COURS_N01_VERSION_ELEVE.pdf) est une version
+# simplifiée destinée aux élèves : titre dédié plutôt que le sujet de la
+# notion, pour rester lisible et cohérent d'une notion à l'autre.
+ELEVE_TOKEN_PATTERN = re.compile(r"(?:^|_)ELEVE(?:_|$)")
+
 
 @dataclass(frozen=True)
 class Resource:
@@ -737,6 +743,11 @@ def student_link_title(
     information nouvelle (déjà présent dans le titre).
     """
     notion = resource.notion
+
+    if resource.kind == "COURS" and ELEVE_TOKEN_PATTERN.search(
+        topic_slug_from_filename(resource.source) or ""
+    ):
+        return f"Cours {notion} — version élève"
 
     if resource.kind in {
         "MINITEST",
