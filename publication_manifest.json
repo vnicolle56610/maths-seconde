@@ -3,13 +3,17 @@
   "notions": {
     "N01": {
       "cours": [
-        "COURS_N01_LOGIQUE_ENSEMBLES.pdf"
+        "COURS_N01_LOGIQUE_ENSEMBLES.pdf",
+        "COURS_N01_LOGIQUE_ENSEMBLES_SOURCE_UNIQUE_eleve.pdf"
       ],
       "td": [
         "TD_N01_LOGIQUE_ENSEMBLES.pdf"
       ],
       "automatismes": [
         "AUTOMATISMES_N01_LOGIQUE_ENSEMBLES.pdf"
+      ],
+      "corrige_td": [
+        "CORRIGE_TD_N01_LOGIQUE_ENSEMBLES.pdf"
       ]
     },
     "N02": {
@@ -21,9 +25,6 @@
       ],
       "automatismes": [
         "AUTOMATISMES_N02_NOMBRES_REELS_INTERVALLES.pdf"
-      ],
-      "corrige_td": [
-        "CORRIGE_TD_N02_NOMBRES_REELS_INTERVALLES.pdf"
       ]
     },
     "N03": {
