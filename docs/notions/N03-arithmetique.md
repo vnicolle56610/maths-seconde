@@ -12,7 +12,7 @@ description: Cours et exercices de Seconde pour travailler multiples, restes, fr
 </nav>
 <!-- NOTION-NAV:END -->
 
-L’arithmétique donne des outils simples pour raisonner sur les entiers. Les documents font travailler les multiples, les restes, la réduction de fractions et la rédaction de petites démonstrations. L’enjeu n’est pas seulement de calculer, mais de reconnaître la structure d’un nombre et de justifier une conclusion.
+L'arithmétique donne des outils simples pour raisonner sur les entiers. Les documents font travailler les multiples, les restes, la réduction de fractions et la rédaction de petites démonstrations. L'enjeu n'est pas seulement de calculer, mais de reconnaître la structure d'un nombre et de justifier une conclusion.
 
 ## Objectifs
 
@@ -27,3 +27,21 @@ L’arithmétique donne des outils simples pour raisonner sur les entiers. Les d
 - [TD N03 — Arithmétique](../td/TD_N03_ARITHMETIQUE.pdf)
 - [Automatismes N03 — Arithmétique](../automatismes/AUTOMATISMES_N03_ARITHMETIQUE.pdf)
 <!-- AUTO-DOCS:END -->
+
+## Notions essentielles
+
+Dire que `a` est un multiple de `b` signifie qu'il existe un entier `k` tel que `a = b × k`.
+
+Dans une division euclidienne, un nombre est divisible par un autre lorsque le reste est nul.
+
+Un nombre pair peut s'écrire `2k`. Un nombre impair peut s'écrire `2k + 1`.
+
+Une fraction est irréductible lorsque son numérateur et son dénominateur n'ont aucun diviseur commun autre que 1.
+
+Pour démontrer une propriété sur les entiers, on utilise souvent une écriture générale comme `dk`, `2k` ou `2k + 1`.
+
+## Exemple
+
+`42 = 6 × 7`, donc 42 est un multiple de 6 et 6 est un diviseur de 42.
+
+En revanche, `44 = 6 × 7 + 2` : le reste n'est pas nul, donc 44 n'est pas divisible par 6.

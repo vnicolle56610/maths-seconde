@@ -16,7 +16,7 @@ Les nombres réels se représentent sur une droite graduée et se décrivent ave
 
 ## Objectifs
 
-- Passer d’une inégalité à un intervalle.
+- Passer d'une inégalité à un intervalle.
 - Interpréter une valeur absolue comme une distance.
 - Produire un encadrement décimal fiable.
 
@@ -27,6 +27,22 @@ Les nombres réels se représentent sur une droite graduée et se décrivent ave
 - [TD N02 — Nombres réels, intervalles et valeur absolue](../td/TD_N02_NOMBRES_REELS_INTERVALLES.pdf)
 - [Automatismes N02 — Nombres réels, intervalles et valeur absolue](../automatismes/AUTOMATISMES_N02_NOMBRES_REELS_INTERVALLES.pdf)
 <!-- AUTO-DOCS:END -->
+
+## Notions essentielles
+
+Les nombres réels sont les nombres que l'on peut placer sur une droite graduée.
+
+Un intervalle traduit une inégalité : par exemple `x ∈ [−2 ; 3[` signifie `−2 ≤ x < 3`.
+
+La valeur absolue se lit comme une distance : `|a|` est la distance entre `a` et 0, et `|a - b|` est la distance entre `a` et `b`.
+
+Un encadrement décimal donne deux valeurs entre lesquelles le nombre se trouve.
+
+## Exemple
+
+L'écriture `x ∈ [−2 ; 3[` signifie que `x` est au moins égal à −2 et strictement inférieur à 3.
+
+On peut donc écrire : `−2 ≤ x < 3`.
 
 ## Voir aussi
 
