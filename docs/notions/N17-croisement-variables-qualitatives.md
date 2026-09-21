@@ -34,6 +34,20 @@ Un tableau croisé organise deux variables qualitatives dans une même lecture. 
 - [Automatismes N17 — Tableaux croisés et variables qualitatives](../automatismes/AUTOMATISMES_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Un tableau croisé d'effectifs présente les effectifs d'une population selon deux variables qualitatives ; les totaux de lignes et de colonnes sont appelés des marges. Une fréquence marginale utilise le total de la population comme référence. Une fréquence conditionnelle utilise un sous-groupe comme référence : si `A` et `B` sont deux caractères, la fréquence de `A` parmi les individus de `B` est `f_B(A) = effectif(A∩B) / effectif(B)`.
+
+Avant tout calcul de pourcentage, il faut écrire une phrase du type « on se place parmi les… » : le dénominateur est alors l'effectif de ce groupe. En général, `f_B(A) ≠ f_A(B)` : ces deux fréquences répondent à des questions différentes.
+
+Les filtres ET, OU, NON permettent de traduire des critères sur une liste d'individus : « A ET B » garde les individus vérifiant les deux conditions, « A OU B » garde ceux qui en vérifient au moins une, « NON A » garde ceux qui ne vérifient pas A.
+
+## Exemple
+
+Dans une enquête sur 120 élèves, 30 viennent à vélo, dont 20 pratiquent un sport en club. La fréquence des sportifs parmi les cyclistes est `f_vélo(sport) = 20/30 ≈ 66,7 %`.
+
+Ce n'est pas la même chose que la fréquence des cyclistes parmi les sportifs, qui se calcule avec un dénominateur différent.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N16](N16-information-chiffree-statistiques.md) (Les populations de référence sont déjà travaillées.)
