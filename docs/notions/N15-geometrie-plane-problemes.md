@@ -34,6 +34,20 @@ Les problèmes de géométrie plane demandent souvent de choisir entre plusieurs
 - [Automatismes N15 — Géométrie plane : problèmes et méthodes](../automatismes/AUTOMATISMES_N15_GEOMETRIE_PLANE_PROBLEMES.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Le projeté orthogonal d'un point `A` sur une droite `(d)` est le point `H` de `(d)` tel que `AH ⊥ (d)`. Il vérifie une propriété importante : pour tout point `M` de `(d)`, `AM ≥ AH`, avec égalité seulement lorsque `M = H`. Cette propriété se démontre grâce à Pythagore, dans le triangle `AHM` rectangle en `H`.
+
+Un même problème de géométrie peut se résoudre par plusieurs voies : géométrie classique (Pythagore, Thalès, trigonométrie), géométrie repérée (coordonnées, distances, milieux), vecteurs (colinéarité, alignement, parallélisme) ou fonctions (aire, longueur ou coût dépendant d'une variable). Repérer les indices de l'énoncé aide à choisir la méthode la plus efficace.
+
+Optimiser une grandeur géométrique, c'est chercher sa valeur maximale ou minimale en respectant les contraintes du problème. La méthode suit toujours les mêmes étapes : faire une figure et nommer la variable, déterminer l'intervalle des valeurs possibles, exprimer la grandeur à optimiser en fonction de la variable, étudier ses variations, puis conclure dans le contexte.
+
+## Exemple
+
+On veut construire un rectangle de périmètre 20 cm. Si une dimension vaut `x`, l'autre vaut `10 - x`, avec `0 < x < 10`. L'aire est `A(x) = x(10 - x)`.
+
+Le tableau de variations de `A` montre un maximum égal à 25 pour `x = 5` : le rectangle d'aire maximale est donc le carré de côté 5 cm.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N07](N07-vecteurs-du-plan.md) (Les vecteurs peuvent servir dans les configurations.)

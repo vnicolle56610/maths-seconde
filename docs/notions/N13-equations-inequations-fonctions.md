@@ -34,6 +34,22 @@ Les équations et inéquations de fonctions se lisent sur une courbe ou se réso
 - [Automatismes N13 — Équations et inéquations avec fonctions](../automatismes/AUTOMATISMES_N13_EQUATIONS_INEQUATIONS_FONCTIONS.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Résoudre `f(x) = g(x)`, c'est chercher toutes les abscisses `x` pour lesquelles les deux fonctions ont la même image. Graphiquement, ce sont les abscisses des points d'intersection des courbes. Trois méthodes sont possibles : une lecture graphique (vue globale, valeur parfois approchée), une résolution algébrique (transformer en `f(x) - g(x) = 0` puis factoriser) ou une méthode numérique (table de valeurs, encadrement) lorsqu'aucune valeur exacte simple n'est accessible.
+
+Le signe d'un produit se déduit du signe de ses facteurs, et ses zéros sont les zéros des facteurs. Pour résoudre une inéquation avec un produit, on factorise, on repère et on ordonne les zéros, puis on construit un tableau de signes.
+
+Un quotient `A(x)/B(x)` n'est défini que si `B(x) ≠ 0` : toute valeur qui annule le dénominateur est une valeur interdite et n'appartient jamais à l'ensemble des solutions, même si elle apparaît comme une borne naturelle du tableau.
+
+Résoudre `f(x) > g(x)` revient à résoudre `f(x) - g(x) > 0` : graphiquement, on repère où la courbe de `f` est au-dessus de celle de `g` ; algébriquement, on étudie le signe de `f - g`.
+
+## Exemple
+
+Pour résoudre `(x-1)/(x+2) ≤ 0`, on commence par le domaine : `x = -2` est une valeur interdite. Le numérateur s'annule en `x = 1`.
+
+Le tableau de signes donne `S = ]-2 ; 1]` : l'intervalle contient `1`, où le quotient est nul, mais exclut `-2`, valeur interdite.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N05](N05-equations-inequations.md) (Les équations et inéquations sont le socle algébrique.)

@@ -34,6 +34,20 @@ Cette synthèse regroupe les outils de fonctions travaillés jusque-là : lectur
 - [Automatismes N14 — Synthèse fonctions et modélisation](../automatismes/AUTOMATISMES_N14_SYNTHESE_FONCTIONS_MODELISATION.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Modéliser une situation par une fonction, c'est choisir une variable `x`, préciser son domaine de valeurs possibles, puis associer à chaque valeur de `x` une grandeur `f(x)` qui en dépend. Une fonction se lit alors de plusieurs façons : `f(x)` est la grandeur associée, `f(x) = k` traduit une valeur atteinte, `f(x) ≤ k` traduit une contrainte, un maximum ou un minimum traduit une situation optimale.
+
+Une même fonction peut être étudiée avec plusieurs représentations : une formule pour calculer exactement, un graphique pour lire et comparer, un tableau de valeurs pour organiser des essais, un tableau de signes ou de variations pour justifier. Comparer deux grandeurs `f(x)` et `g(x)` revient souvent à étudier le signe de `f(x) - g(x)`.
+
+Une solution mathématique doit toujours être interprétée dans le contexte : il faut vérifier qu'elle appartient au domaine du problème, puis répondre avec les mots de la situation. Une rédaction complète introduit la variable, écrit le modèle, résout, confronte le résultat au domaine, puis conclut.
+
+## Exemple
+
+Un club propose un tarif A à 14 € par personne et un tarif B à 50 € de forfait puis 8 € par personne, pour `x` participants entiers.
+
+Comparer les tarifs revient à résoudre `B(x) < A(x)`, soit `50 + 8x < 14x`, donc `50 < 6x`, donc `x > 25/3`. Comme `x` est un entier, le tarif B devient avantageux à partir de 9 participants.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N09](N09-fonctions-registres.md) (Les registres de fonctions sont réinvestis.)
