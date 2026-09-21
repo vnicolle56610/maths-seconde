@@ -34,6 +34,22 @@ Cette synthèse met en relation les statistiques, les tableaux croisés, les pro
 - [Automatismes N19 — Synthèse statistiques et probabilités](../automatismes/AUTOMATISMES_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Points essentiels à maîtriser
+
+Avant tout calcul, il faut identifier trois choses : l'ensemble de référence, le type de grandeur en jeu (effectif, proportion ou fréquence, fréquence conditionnelle, probabilité, taux d'évolution) et la représentation adaptée (tableau, tableau croisé, arbre, graphique, simulation).
+
+Pour reconnaître un taux d'évolution, on cherche une situation avant/après. Pour reconnaître une fréquence conditionnelle, on cherche un « parmi » dans une population observée. Pour reconnaître une probabilité, on cherche un modèle aléatoire ou un tirage au hasard. Le symbole `%` ne suffit pas à lui seul à dire ce que l'on calcule.
+
+Un tableau croisé sert à lire des fréquences marginales et conditionnelles ; un arbre pondéré sert à organiser un modèle probabiliste ; une simulation sert à observer une fluctuation, sans remplacer un calcul exact lorsqu'il est accessible.
+
+Une réponse complète comporte trois éléments : le calcul ou la lecture, la nature du nombre obtenu, et une phrase d'interprétation qui précise la population ou le modèle de référence.
+
+## Exemple de synthèse
+
+Dans un groupe A de 60 individus (18 succès, 42 échecs) et un groupe B de 140 individus (32 succès, 108 échecs), la fréquence de succès est `18/60 = 30 %` dans le groupe A et `32/140 ≈ 22,9 %` dans le groupe B.
+
+Ce sont des fréquences conditionnelles, et non des probabilités : elles proviennent d'une population observée, pas d'un modèle aléatoire.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N16](N16-information-chiffree-statistiques.md) (Les indicateurs statistiques sont repris.)
