@@ -34,6 +34,24 @@ Les fonctions de référence forment un répertoire de courbes et de comportemen
 - [Automatismes N11 — Fonctions de référence](../automatismes/AUTOMATISMES_N11_FONCTIONS_REFERENCE.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Les fonctions de référence servent de modèles : on connaît leur courbe, leur domaine de définition, leur signe et leurs variations.
+
+En Seconde, on rencontre notamment la fonction carré `x²`, la fonction inverse `1/x`, la fonction racine carrée `√x`, la fonction cube `x³` et la valeur absolue `|x|`.
+
+Le domaine de définition fait partie de l'identité d'une fonction. Par exemple, `1/x` n'est pas défini pour `x = 0`, et `√x` est définie seulement pour `x ≥ 0`.
+
+Les fonctions carré, racine carrée et valeur absolue prennent des valeurs positives ou nulles. Les fonctions cube et inverse ont le signe de `x` sur leur domaine.
+
+Connaître les variations des fonctions de référence permet de comparer des images, de résoudre des équations simples et de choisir un modèle adapté.
+
+## Exemple
+
+Pour la fonction carré, `(-3)² = 9` et `2² = 4`.
+
+On a donc `(-3)² > 2²`. Ici, le calcul direct est plus sûr qu'une lecture trop rapide des variations, car -3 et 2 sont de part et d'autre de 0.
+
 ## Voir aussi
 
 - PROLONGEMENT : [N12](N12-variations-extremums.md) (Les variations approfondissent la lecture des fonctions.)

@@ -28,6 +28,24 @@ Une fonction affine modélise une évolution à rythme constant. Les documents r
 - [Automatismes N10 — Fonctions affines](../automatismes/AUTOMATISMES_N10_FONCTIONS_AFFINES.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Une fonction affine est une fonction qui peut s'écrire sous la forme `f(x) = mx + p`.
+
+Le nombre `m` est le coefficient directeur : il indique la pente de la droite représentative. Le nombre `p` est l'ordonnée à l'origine : c'est l'image de 0.
+
+La courbe représentative d'une fonction affine est une droite. Si `m > 0`, la fonction est croissante ; si `m < 0`, elle est décroissante ; si `m = 0`, elle est constante.
+
+Pour étudier le signe d'une fonction affine non constante, on commence par chercher sa racine, c'est-à-dire la valeur de `x` pour laquelle `f(x) = 0`.
+
+Dans une situation concrète, une fonction affine modélise une évolution à rythme constant : à chaque même augmentation de `x` correspond une même variation de `f(x)`.
+
+## Exemple
+
+Pour `f(x) = 2x - 3`, le coefficient directeur est 2 et l'ordonnée à l'origine est -3.
+
+Comme `2 > 0`, la fonction est croissante. Sa racine vérifie `2x - 3 = 0`, donc `x = 1,5`.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N09](N09-fonctions-registres.md) (Les lectures de fonctions sont nécessaires.)

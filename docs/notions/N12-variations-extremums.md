@@ -34,6 +34,24 @@ Les variations décrivent comment les valeurs d’une fonction évoluent sur un 
 - [Automatismes N12 — Variations et extremums](../automatismes/AUTOMATISMES_N12_VARIATIONS_EXTREMUMS.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Dire qu'une fonction est croissante sur un intervalle signifie que les images augmentent lorsque `x` augmente sur cet intervalle.
+
+Dire qu'une fonction est décroissante sur un intervalle signifie que les images diminuent lorsque `x` augmente sur cet intervalle.
+
+Un maximum est la plus grande valeur prise par une fonction sur un intervalle. Un minimum est la plus petite valeur prise par une fonction sur un intervalle.
+
+Un tableau de variations résume les intervalles sur lesquels la fonction augmente ou diminue, ainsi que les valeurs importantes aux bornes et aux extremums.
+
+Pour résoudre un problème d'optimisation, on choisit une variable, on précise son domaine, puis on cherche la valeur qui rend une grandeur maximale ou minimale.
+
+## Exemple
+
+Si une fonction est décroissante sur `[−1 ; 3]` et si `0 < 2`, alors `f(0) ≥ f(2)`.
+
+Sur cet intervalle, l'ordre des images est inversé parce que la fonction décroît.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N09](N09-fonctions-registres.md) (La lecture d’une fonction est nécessaire.)
