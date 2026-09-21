@@ -34,6 +34,24 @@ Une fonction associe une grandeur de départ à une grandeur d’arrivée. Les r
 - [Automatismes N09 — Fonctions : images, antécédents et registres](../automatismes/AUTOMATISMES_N09_FONCTIONS_REGISTRES.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Une fonction associe à une valeur de départ au plus une valeur d'arrivée. La valeur de départ est souvent notée `x`, et son image par la fonction `f` se note `f(x)`.
+
+Si `f(a) = b`, alors `b` est l'image de `a` par `f`, et `a` est un antécédent de `b`.
+
+Une même valeur peut avoir plusieurs antécédents, un seul antécédent ou aucun. En revanche, une valeur de départ ne peut pas avoir deux images différentes pour une même fonction.
+
+La courbe représentative d'une fonction est formée de points de coordonnées `(x ; f(x))`. Lire une image revient à partir d'une abscisse ; lire un antécédent revient à chercher une abscisse associée à une ordonnée donnée.
+
+Une fonction peut être donnée par une formule, un tableau, une courbe, une phrase, un programme de calcul ou une fonction Python. Changer de registre aide à choisir l'information la plus lisible.
+
+## Exemple
+
+Pour `f(x) = 2x + 1`, l'image de 3 est `f(3) = 2 × 3 + 1 = 7`.
+
+Chercher un antécédent de 9 revient à résoudre `2x + 1 = 9`, donc `x = 4`.
+
 ## Voir aussi
 
 - PROLONGEMENT : [N10](N10-fonctions-affines.md) (Les fonctions affines sont un premier modèle précis.)

@@ -28,6 +28,24 @@ Un vecteur code un déplacement et permet de calculer dans le plan. Les ressourc
 - [Automatismes N07 — Vecteurs du plan](../automatismes/AUTOMATISMES_N07_VECTEURS_DU_PLAN.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Un vecteur représente un déplacement : il possède une direction, un sens et une longueur appelée norme.
+
+Deux vecteurs sont égaux lorsqu'ils décrivent le même déplacement. Le point de départ choisi pour les représenter n'est pas ce qui compte.
+
+Dans un repère, les coordonnées de `AB` se calculent en faisant arrivée moins départ : abscisse de `B` moins abscisse de `A`, puis ordonnée de `B` moins ordonnée de `A`.
+
+La norme d'un vecteur donne une distance. Les coordonnées du milieu d'un segment se calculent en faisant la moyenne des coordonnées des extrémités.
+
+Deux vecteurs colinéaires ont la même direction. On peut tester la colinéarité avec la proportionnalité des coordonnées ou avec un déterminant nul. Cela sert à prouver des alignements ou des parallélismes.
+
+## Exemple
+
+Si `A(1 ; 2)` et `B(4 ; -1)`, alors le vecteur `AB` a pour coordonnées `(4 - 1 ; -1 - 2)`, donc `(3 ; -3)`.
+
+Ce vecteur indique que l'on avance de 3 unités horizontalement et que l'on descend de 3 unités verticalement.
+
 ## Voir aussi
 
 - PROLONGEMENT : [N08](N08-droites-equations.md) (Les droites utilisent directions et déterminants.)

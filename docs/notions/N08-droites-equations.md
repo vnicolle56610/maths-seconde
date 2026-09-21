@@ -34,6 +34,24 @@ Une droite peut être décrite par un point, une direction, une pente ou une éq
 - [Automatismes N08 — Droites et équations dans le plan](../automatismes/AUTOMATISMES_N08_DROITES_DU_PLAN.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Une droite peut être décrite par un point et un vecteur directeur non nul. Le vecteur directeur donne la direction de la droite.
+
+Une équation cartésienne de droite s'écrit sous la forme `ax + by + c = 0`, avec `a` et `b` qui ne sont pas tous les deux nuls.
+
+Lorsqu'une droite n'est pas verticale, elle peut aussi s'écrire sous forme réduite `y = mx + p`. Le nombre `m` est le coefficient directeur, ou pente, et `p` est l'ordonnée à l'origine.
+
+Une droite verticale s'écrit sous la forme `x = k` et n'a pas de coefficient directeur.
+
+Pour étudier deux droites, on choisit l'outil adapté : comparer des directions pour le parallélisme, résoudre un système pour une intersection, ou vérifier qu'un point satisfait une équation.
+
+## Exemple
+
+La droite d'équation `y = 2x - 1` a pour coefficient directeur 2 et pour ordonnée à l'origine -1.
+
+Le point `A(3 ; 5)` appartient à cette droite car `2 × 3 - 1 = 5`.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N07](N07-vecteurs-du-plan.md) (Les vecteurs donnent les directions et le déterminant.)
