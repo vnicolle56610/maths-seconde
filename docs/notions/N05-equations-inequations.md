@@ -34,6 +34,24 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 - [Automatismes N05 — Équations et inéquations](../automatismes/AUTOMATISMES_N05_EQUATIONS_INEQUATIONS.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Résoudre une équation, c'est déterminer toutes les valeurs qui rendent l'égalité vraie. Tester une valeur ne suffit pas à résoudre.
+
+Une résolution s'écrit par équivalences : chaque transformation doit conserver exactement le même ensemble de solutions.
+
+Pour une inéquation, on applique les mêmes opérations aux deux membres, mais le sens change lorsqu'on multiplie ou divise par un nombre négatif.
+
+Les solutions d'une inéquation se donnent souvent sous forme d'intervalle. Pour une expression avec un dénominateur, les valeurs interdites sont traitées avant la résolution.
+
+## Exemple
+
+Résoudre `2x - 3 ≥ 5` :
+
+`2x ≥ 8`, donc `x ≥ 4`.
+
+L'ensemble des solutions est `[4 ; +∞[`.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N02](N02-nombres-reels-intervalles.md) (Les intervalles servent à écrire les solutions d’inéquations.)

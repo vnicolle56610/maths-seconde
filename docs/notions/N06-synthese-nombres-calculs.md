@@ -28,6 +28,24 @@ Cette synthèse rassemble les premiers outils numériques et algébriques de l�
 - [Automatismes N06 — Synthèse nombres et calculs](../automatismes/AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Cette notion sert à réinvestir les méthodes de N01 à N05. Elle n'ajoute pas une nouvelle technique : elle demande surtout de reconnaître la situation.
+
+Avant de calculer, on identifie l'objet manipulé : nombre, expression, équation, inéquation, intervalle, ensemble ou proposition.
+
+Le choix de la méthode dépend ensuite de la question. On peut calculer, transformer une expression, résoudre, représenter un ensemble ou justifier une affirmation.
+
+Une conclusion doit répondre à la question posée, avec la bonne forme : valeur, ensemble de solutions, intervalle ou phrase.
+
+## Exemple
+
+`3x - 5` est une expression : on peut la calculer pour une valeur de `x`, la réduire si besoin ou l'utiliser dans une équation.
+
+`3x - 5 = 16` est une équation : on cherche les valeurs de `x` qui la rendent vraie.
+
+`[-2 ; 5[` est un intervalle : il représente tous les réels compris entre −2 inclus et 5 exclu.
+
 ## Voir aussi
 
 - PRÉREQUIS : [N02](N02-nombres-reels-intervalles.md) (Les intervalles font partie du bloc nombres.)

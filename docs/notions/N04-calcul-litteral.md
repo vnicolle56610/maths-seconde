@@ -34,6 +34,24 @@ Le calcul littéral sert à transformer une expression sans changer sa valeur. L
 - [Automatismes N04 — Calcul littéral](../automatismes/AUTOMATISMES_N04_CALCUL_LITTERAL.pdf)
 <!-- AUTO-DOCS:END -->
 
+## Notions essentielles
+
+Une expression littérale contient des nombres et des lettres. On peut la transformer, la réduire ou la calculer pour une valeur donnée.
+
+Développer transforme un produit en somme. Factoriser transforme une somme en produit. Réduire consiste à regrouper les termes semblables.
+
+Une même expression peut donc avoir plusieurs formes. La forme utile dépend de la question : calculer, comparer, résoudre ou isoler une variable.
+
+Les règles de puissances et de racines demandent de respecter les priorités et les signes. En particulier, une racine carrée est toujours positive ou nulle.
+
+## Exemple
+
+L'expression `3(x + 2)` est factorisée.
+
+En développant, on obtient `3 × x + 3 × 2 = 3x + 6`.
+
+Les deux écritures ont la même valeur, mais elles ne servent pas toujours au même moment.
+
 ## Voir aussi
 
 - PROLONGEMENT : [N05](N05-equations-inequations.md) (Les équations réutilisent directement les transformations algébriques.)
