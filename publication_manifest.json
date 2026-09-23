@@ -3,7 +3,8 @@
   "notions": {
     "N01": {
       "cours": [
-        "COURS_N01_LOGIQUE_ENSEMBLES.pdf"
+        "COURS_N01_LOGIQUE_ENSEMBLES.pdf",
+        "COURS_N01_LOGIQUE_ENSEMBLES_eleve.pdf"
       ],
       "td": [
         "TD_N01_LOGIQUE_ENSEMBLES.pdf"
@@ -17,7 +18,8 @@
     },
     "N02": {
       "cours": [
-        "COURS_N02_NOMBRES_REELS_INTERVALLES.pdf"
+        "COURS_N02_NOMBRES_REELS_INTERVALLES.pdf",
+        "COURS_N02_NOMBRES_REELS_INTERVALLES_eleve.pdf"
       ],
       "td": [
         "TD_N02_NOMBRES_REELS_INTERVALLES.pdf"
@@ -28,7 +30,8 @@
     },
     "N03": {
       "cours": [
-        "COURS_N03_ARITHMETIQUE.pdf"
+        "COURS_N03_ARITHMETIQUE.pdf",
+        "COURS_N03_ARITHMETIQUE_eleve.pdf"
       ],
       "td": [
         "TD_N03_ARITHMETIQUE.pdf"
@@ -39,7 +42,8 @@
     },
     "N04": {
       "cours": [
-        "COURS_N04_CALCUL_LITTERAL.pdf"
+        "COURS_N04_CALCUL_LITTERAL.pdf",
+        "COURS_N04_CALCUL_LITTERAL_eleve.pdf"
       ],
       "td": [
         "TD_N04_CALCUL_LITTERAL.pdf"
@@ -50,7 +54,8 @@
     },
     "N05": {
       "cours": [
-        "COURS_N05_EQUATIONS_INEQUATIONS.pdf"
+        "COURS_N05_EQUATIONS_INEQUATIONS.pdf",
+        "COURS_N05_EQUATIONS_INEQUATIONS_eleve.pdf"
       ],
       "td": [
         "TD_N05_EQUATIONS_INEQUATIONS.pdf"

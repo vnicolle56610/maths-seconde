@@ -30,6 +30,7 @@ Le calcul littéral sert à transformer une expression sans changer sa valeur. L
 
 <!-- AUTO-DOCS:START -->
 - [Cours N04 — Calcul littéral](../cours/COURS_N04_CALCUL_LITTERAL.pdf)
+- [Cours N04 — version élève](../cours/COURS_N04_CALCUL_LITTERAL_eleve.pdf)
 - [TD N04 — Calcul littéral](../td/TD_N04_CALCUL_LITTERAL.pdf)
 - [Automatismes N04 — Calcul littéral](../automatismes/AUTOMATISMES_N04_CALCUL_LITTERAL.pdf)
 <!-- AUTO-DOCS:END -->

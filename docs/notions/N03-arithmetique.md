@@ -24,6 +24,7 @@ L'arithmétique donne des outils simples pour raisonner sur les entiers. Les doc
 
 <!-- AUTO-DOCS:START -->
 - [Cours N03 — Arithmétique](../cours/COURS_N03_ARITHMETIQUE.pdf)
+- [Cours N03 — version élève](../cours/COURS_N03_ARITHMETIQUE_eleve.pdf)
 - [TD N03 — Arithmétique](../td/TD_N03_ARITHMETIQUE.pdf)
 - [Automatismes N03 — Arithmétique](../automatismes/AUTOMATISMES_N03_ARITHMETIQUE.pdf)
 <!-- AUTO-DOCS:END -->
