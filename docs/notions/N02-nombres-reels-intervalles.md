@@ -24,7 +24,6 @@ Les nombres réels se représentent sur une droite graduée et se décrivent ave
 
 <!-- AUTO-DOCS:START -->
 - [Cours N02 — Nombres réels, intervalles et valeur absolue](../cours/COURS_N02_NOMBRES_REELS_INTERVALLES.pdf)
-- [Cours N02 — version élève](../cours/COURS_N02_NOMBRES_REELS_INTERVALLES_eleve.pdf)
 - [TD N02 — Nombres réels, intervalles et valeur absolue](../td/TD_N02_NOMBRES_REELS_INTERVALLES.pdf)
 - [Automatismes N02 — Nombres réels, intervalles et valeur absolue](../automatismes/AUTOMATISMES_N02_NOMBRES_REELS_INTERVALLES.pdf)
 <!-- AUTO-DOCS:END -->
