@@ -84,7 +84,18 @@ KIND_ORDER = {
     "CORRIGE_TD": 6,
 }
 
-SAFE_DEFAULT_KINDS = frozenset({"COURS", "TD"})
+SAFE_DEFAULT_KINDS = frozenset({"COURS", "TD", "AUTOMATISMES"})
+
+# Suffixes de fichier COURS qui ne sont jamais la version publique (site) :
+# copie de préparation professeur (mini-déroulé visible) ou copie élève à
+# zones vides. Seule la version sans suffixe (COURS_N0X_....pdf) est la
+# version "site" proposée par défaut.
+COURS_NON_SITE_SUFFIXES = ("_prof.pdf", "_PROF.pdf", "_eleve.pdf", "_ELEVE.pdf")
+
+
+def is_site_cours_filename(filename: str) -> bool:
+    """True si ce fichier COURS est la version publique (site), pas prof/élève."""
+    return not filename.endswith(COURS_NON_SITE_SUFFIXES)
 
 # Dossiers non publiables à ignorer partout sous source_root, quel que soit
 # le niveau d'imbrication (archives et sauvegardes locales de travail).

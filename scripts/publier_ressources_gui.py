@@ -451,7 +451,7 @@ class PublicationApp:
         selection_buttons.grid(row=4, column=0, sticky="ew", pady=(8, 4))
         self.safe_button = ttk.Button(
             selection_buttons,
-            text="Ajouter les nouveautés Cours/TD",
+            text="Ajouter les nouveautés Cours (site)/TD/Automatismes",
             command=self.add_new_standard,
         )
         self.safe_button.pack(side="left", padx=(0, 6))
@@ -799,22 +799,27 @@ class PublicationApp:
         )
 
     def add_new_standard(self) -> None:
-        """N'ajoute que les Cours/TD pas encore publiés ; ne décoche jamais rien."""
+        """N'ajoute que les Cours (site)/TD/Automatismes pas encore publiés ;
+        ne décoche jamais rien. Pour les COURS, seule la version publique
+        (sans suffixe _prof/_eleve) est ajoutée : les copies professeur
+        (mini-déroulé visible) et élève ne sont jamais cochées par défaut."""
         added = 0
         for item in self.state.items:
-            if (
-                item.status == pm.STATUS_NEW_AVAILABLE
-                and item.kind in publisher.SAFE_DEFAULT_KINDS
-            ):
-                variable = self.variables[item.key]
-                if not variable.get():
-                    variable.set(True)
-                    added += 1
+            if item.status != pm.STATUS_NEW_AVAILABLE:
+                continue
+            if item.kind not in publisher.SAFE_DEFAULT_KINDS:
+                continue
+            if item.kind == "COURS" and not publisher.is_site_cours_filename(item.filename):
+                continue
+            variable = self.variables[item.key]
+            if not variable.get():
+                variable.set(True)
+                added += 1
         self._update_selection_status()
         if added == 0:
             messagebox.showinfo(
                 "Rien à ajouter",
-                "Aucun nouveau Cours/TD non encore publié.",
+                "Aucun nouveau Cours (site)/TD/Automatismes non encore publié.",
                 parent=self.root,
             )
 
