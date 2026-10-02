@@ -27,7 +27,19 @@ Corrigés destinés aux élèves, classés par notion.
 
 
 
+## N07 — Vecteurs du plan
+
+
+
+## N08 — Droites et équations dans le plan
+
+
+
 ## N13 — Équations et inéquations avec fonctions
+
+
+
+## N15 — Géométrie plane : problèmes et méthodes
 
 
 <!-- AUTO-DOCS:END -->
