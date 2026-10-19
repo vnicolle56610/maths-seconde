@@ -35,6 +35,11 @@ Le calcul littéral sert à transformer une expression sans changer sa valeur. L
 - [Corrigé TD N04](../corriges/CORRIGE_TD_N04_CALCUL_LITTERAL.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTO-EVAL:START -->
+- 🎯 Évaluée au mini-test 2 du mercredi 4 ou jeudi 5 novembre : [devoir blanc en ligne le mercredi 28 octobre](../preparer-evaluation/index.md#mt2-2026-2027)
+- 🎯 Évaluée au DS1 du mardi 24 novembre : [devoir blanc en ligne le lundi 16 novembre](../preparer-evaluation/index.md#ds1-2026-2027)
+<!-- AUTO-EVAL:END -->
+
 ## Notions essentielles
 
 Une expression littérale contient des nombres et des lettres. On peut la transformer, la réduire ou la calculer pour une valeur donnée.

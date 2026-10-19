@@ -29,6 +29,10 @@ Les nombres réels se représentent sur une droite graduée et se décrivent ave
 - [Corrigé TD N02](../corriges/CORRIGE_TD_N02_NOMBRES_REELS_INTERVALLES.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTO-EVAL:START -->
+- 🎯 Évaluée au DS1 du mardi 24 novembre : [devoir blanc en ligne le lundi 16 novembre](../preparer-evaluation/index.md#ds1-2026-2027)
+<!-- AUTO-EVAL:END -->
+
 ## Notions essentielles
 
 Les nombres réels sont les nombres que l'on peut placer sur une droite graduée.

@@ -34,6 +34,10 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 - [Automatismes N05 — Équations et inéquations](../automatismes/AUTOMATISMES_N05_EQUATIONS_INEQUATIONS.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTO-EVAL:START -->
+- 🎯 Évaluée au DS1 du mardi 24 novembre : [devoir blanc en ligne le lundi 16 novembre](../preparer-evaluation/index.md#ds1-2026-2027)
+<!-- AUTO-EVAL:END -->
+
 ## Notions essentielles
 
 Résoudre une équation, c'est déterminer toutes les valeurs qui rendent l'égalité vraie. Tester une valeur ne suffit pas à résoudre.

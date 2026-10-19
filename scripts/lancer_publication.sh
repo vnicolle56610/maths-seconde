@@ -11,7 +11,8 @@
 # --sync-only, le mode par défaut et --deploy ne changent JAMAIS ce qui
 # est publié : ils régénèrent docs/ pour qu'il corresponde exactement à
 # publication_manifest.json. Pour ajouter ou retirer une ressource
-# (Cours, TD, automatismes, corrigés, DS...), utiliser --gui.
+# (Cours, TD, automatismes, corrigés, DS...), utiliser --gui ; pour un
+# devoir blanc, changer son état dans devoirs_blancs.yaml (ou outils_pedago).
 #
 # --deploy vérifie d'abord que le dépôt local est propre et synchronisé
 # avec origin/main (même garde-fou que le bouton « Déployer » du GUI) :
@@ -49,6 +50,12 @@ if [[ -n "$MODE" && "$MODE" != "--sync-only" && "$MODE" != "--deploy" ]]; then
 fi
 
 python3 scripts/publier_ressources_site.py
+
+# Rubrique « Préparer une évaluation » : seuls les devoirs blancs déclarés
+# dans devoirs_blancs.yaml, selon l'état choisi par le professeur.
+if [[ -f "devoirs_blancs.yaml" ]]; then
+    python3 scripts/publier_devoirs_blancs.py
+fi
 
 if [[ "$MODE" == "--sync-only" ]]; then
     exit 0
