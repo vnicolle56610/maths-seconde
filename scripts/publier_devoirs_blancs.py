@@ -16,7 +16,8 @@ Le script :
   - régénère la zone AUTO-EVAL de docs/preparer-evaluation/index.md
     (« À venir », puis « Pour réviser ») ;
   - ajoute, dans chaque page notion concernée, une zone AUTO-EVAL qui renvoie
-    au devoir blanc ;
+    au devoir blanc, et tient à jour la ligne « Prochaine évaluation » de la
+    carte de la page d'accueil (si ses marqueurs AUTO-EVAL y sont placés) ;
   - signale les mises en ligne en retard sur le calendrier déclaré, sans
     jamais les faire à la place du professeur ;
   - committe uniquement ce qu'il a écrit (comme publier_ressources_site.py),
@@ -48,6 +49,7 @@ DECLARATION_PATH = PROJECT_ROOT / "devoirs_blancs.yaml"
 RUBRIQUE = "preparer-evaluation"
 RUBRIQUE_ROOT = DOCS_ROOT / RUBRIQUE
 INDEX_PATH = RUBRIQUE_ROOT / "index.md"
+ACCUEIL_PATH = DOCS_ROOT / "index.md"
 
 ZONE_START = "<!-- AUTO-EVAL:START -->"
 ZONE_END = "<!-- AUTO-EVAL:END -->"
@@ -419,6 +421,40 @@ def mettre_a_jour_notions(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapp
         ecrire_si_change(page, remplacer_zone(texte, contenu, AUTO_DOCS_END), rapport, dry_run)
 
 
+def contenu_accueil(devoirs: list[DevoirBlanc], aujourd_hui: dt.date) -> str:
+    """Ligne « Prochaine évaluation » de la carte de la page d'accueil."""
+    a_venir = sorted(
+        (d for d in devoirs if d.etat != "non_publie" and d.date >= aujourd_hui), key=lambda d: d.date
+    )
+    if not a_venir:
+        return '    <p class="maths-card-next">Le prochain devoir blanc sera publié environ une semaine avant l\'évaluation.</p>'
+    prochain = a_venir[0]
+    if prochain.etat == "annonce":
+        suite = (
+            f"devoir blanc en ligne le {date_longue(prochain.sujet_prevu)}"
+            if prochain.sujet_prevu else "devoir blanc bientôt en ligne"
+        )
+    elif prochain.etat == "sujet":
+        suite = "devoir blanc en ligne"
+    else:
+        suite = "devoir blanc et corrigé en ligne"
+    return (
+        f'    <p class="maths-card-next">Prochaine évaluation : <strong>{prochain.titre}</strong>, '
+        f"{prochain.libelle_date()} — {suite}.</p>"
+    )
+
+
+def mettre_a_jour_accueil(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapport: Rapport, dry_run: bool) -> None:
+    # La carte de l'accueil est écrite à la main ; on ne remplit sa zone que si
+    # les marqueurs y ont été placés, sans jamais en créer.
+    if not ACCUEIL_PATH.is_file():
+        return
+    texte = ACCUEIL_PATH.read_text(encoding="utf-8")
+    if ZONE_START not in texte:
+        return
+    ecrire_si_change(ACCUEIL_PATH, remplacer_zone(texte, contenu_accueil(devoirs, aujourd_hui), None), rapport, dry_run)
+
+
 def verifier_calendrier(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapport: Rapport) -> None:
     for devoir in devoirs:
         if devoir.date < aujourd_hui:
@@ -483,6 +519,7 @@ def main() -> int:
         synchroniser_pdf(devoirs, rapport, args.dry_run)
         mettre_a_jour_index(devoirs, aujourd_hui, rapport, args.dry_run)
         mettre_a_jour_notions(devoirs, aujourd_hui, rapport, args.dry_run)
+        mettre_a_jour_accueil(devoirs, aujourd_hui, rapport, args.dry_run)
         verifier_calendrier(devoirs, aujourd_hui, rapport)
     except (DeclarationError, OSError, ValueError, yaml.YAMLError) as error:
         print(f"\nERREUR : {error}")

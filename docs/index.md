@@ -55,10 +55,21 @@ hide:
   </a>
   <a class="maths-card maths-card--purple" href="progression/">
     <div class="maths-card-head">
-      <span class="maths-card-icon">🎯</span>
+      <span class="maths-card-icon">📈</span>
       <h3>Progression</h3>
     </div>
     <p>Suivre les notions de l'année et les échéances importantes.</p>
+    <span class="maths-card-arrow">→</span>
+  </a>
+  <a class="maths-card maths-card--coral maths-card--wide" href="preparer-evaluation/">
+    <div class="maths-card-head">
+      <span class="maths-card-icon">🎯</span>
+      <h3>Préparer une évaluation</h3>
+    </div>
+    <p>Devoirs blancs et corrigés pour s'entraîner avant chaque mini-test et chaque DS.</p>
+<!-- AUTO-EVAL:START -->
+    <p class="maths-card-next">Prochaine évaluation : <strong>Mini-test 2</strong>, mercredi 4 ou jeudi 5 novembre — devoir blanc en ligne.</p>
+<!-- AUTO-EVAL:END -->
     <span class="maths-card-arrow">→</span>
   </a>
 </section>
