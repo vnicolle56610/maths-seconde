@@ -81,5 +81,5 @@ Exercices d'automatismes et mini-tests, classés par notion.
 
 ## N20 — Synthèse annuelle et transition vers la Première
 
-- [Automatismes N20](AUTOMATISMES_N20_SYNTHESE_ANNUELLE_TRANSITION_PREMIERE.pdf)
+
 <!-- AUTO-DOCS:END -->
