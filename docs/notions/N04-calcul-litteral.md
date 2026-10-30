@@ -58,6 +58,14 @@ En développant, on obtient `3 × x + 3 × 2 = 3x + 6`.
 
 Les deux écritures ont la même valeur, mais elles ne servent pas toujours au même moment.
 
+## Repère historique — Viète : calculer aussi avec les quantités connues
+
+En 1591, François Viète publie l’*In artem analyticam isagoge*. Il y organise un calcul dans lequel les lettres représentent aussi bien des quantités connues que des inconnues. Il emploie des voyelles pour les inconnues et des consonnes pour les quantités connues. Nos conventions et nos écritures actuelles sont différentes : une formule du cours n’est donc pas une transcription de ses pages.
+
+L’intérêt est de traiter ensemble plusieurs problèmes qui ont la même structure. Dans un exemple moderne, un rectangle de côtés `a` et `b + c` a pour aire `a(b + c)`. Le partager en deux rectangles donne aussi `ab + ac`. La distributivité exprime cette égalité pour toutes les longueurs positives, puis le calcul algébrique actuel l’étend à tous les réels `a`, `b` et `c`. Les lettres permettent ainsi de transformer une expression avant de remplacer les quantités par des nombres. Développer et factoriser deviennent deux façons de lire une même relation, adaptées à des questions différentes.
+
+Source : [MacTutor, université de St Andrews, biographie de François Viète](https://mathshistory.st-andrews.ac.uk/Biographies/Viete/).
+
 ## Voir aussi
 
 - PROLONGEMENT : [N05](N05-equations-inequations.md) (Les équations réutilisent directement les transformations algébriques.)

@@ -50,3 +50,11 @@ Pour démontrer une propriété sur les entiers, on utilise souvent une écritur
 `42 = 6 × 7`, donc 42 est un multiple de 6 et 6 est un diviseur de 42.
 
 En revanche, `44 = 6 × 7 + 2` : le reste n'est pas nul, donc 44 n'est pas divisible par 6.
+
+## Repère historique — Euclide : pourquoi la liste des nombres premiers ne s’arrête pas
+
+Dans le livre IX des *Éléments*, la proposition 20 établit qu’aucune liste finie ne peut contenir tous les nombres premiers. Le problème dépasse une simple recherche de grands nombres : il s’agit de démontrer une propriété valable quelle que soit la liste choisie. Euclide raisonne à partir d’un multiple commun des nombres proposés, auquel il ajoute une unité.
+
+Voici une illustration moderne, avec 2, 3 et 5. Leur produit vaut 30 ; le nombre `30 + 1 = 31` laisse un reste de 1 lorsqu’on le divise par chacun d’eux. Aucun des trois ne le divise. Dans cet exemple, 31 est premier. Plus généralement, le nombre construit pourrait être composé : on chercherait alors un de ses diviseurs premiers, forcément absent de la liste initiale. Le raisonnement relie donc multiples, restes et diviseurs. Il rappelle aussi qu’observer quelques exemples ne suffit pas à démontrer une affirmation générale sur les entiers.
+
+Source : [Euclide, *Éléments*, IX.20, édition commentée de David E. Joyce, université Clark](https://mathcs.clarku.edu/~djoyce/elements/bookIX/propIX20.html).

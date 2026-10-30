@@ -56,6 +56,14 @@ Résoudre `2x - 3 ≥ 5` :
 
 L'ensemble des solutions est `[4 ; +∞[`.
 
+## Repère historique — Les signes d’inégalité : écrire une comparaison pour la transformer
+
+Les signes `<` et `>` apparaissent dans l’*Artis Analyticae Praxis*, ouvrage publié en 1631 après la mort de Thomas Harriot, à partir de ses travaux. Il serait imprudent de lui en attribuer personnellement l’invention : les manuscrits conservés emploient d’autres signes, et l’édition a été préparée par d’autres personnes. Cette histoire rappelle que les notations mathématiques se construisent et se diffusent progressivement.
+
+Une notation brève rend les comparaisons plus faciles à enchaîner, mais elle ne dispense pas de justifier les transformations. Dans un exemple moderne, `2 < 5` devient `−2 > −5` lorsqu’on multiplie les deux nombres par −1 : sur la droite graduée, les opposés se trouvent dans l’ordre inverse. De même, résoudre `−2x < 6` donne `x > −3`. Le changement de sens vient de l’ordre des nombres, et non de la forme du signe. L’ensemble des solutions s’écrit aujourd’hui `]−3 ; +∞[` : les symboles condensent un raisonnement qu’il faut comprendre.
+
+Source : [MacTutor, université de St Andrews, *Earliest Uses of Symbols of Relation*](https://mathshistory.st-andrews.ac.uk/Miller/mathsym/relation/).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N02](N02-nombres-reels-intervalles.md) (Les intervalles servent à écrire les solutions d’inéquations.)

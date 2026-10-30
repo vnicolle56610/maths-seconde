@@ -46,6 +46,14 @@ Si `A = {1 ; 2 ; 4}` et `B = {2 ; 3 ; 4}`, alors `A ∩ B = {2 ; 4}`.
 
 Les nombres 2 et 4 sont les éléments communs aux deux ensembles.
 
+## Repère historique — Venn : représenter les relations logiques
+
+En 1880, John Venn publie des diagrammes pour représenter des relations logiques. Des dessins apparentés existaient déjà, notamment chez Euler : Venn ne part donc pas de rien. Son dispositif permet de distinguer les différentes combinaisons d’appartenance à des ensembles, y compris celles qui ne contiennent aucun élément dans une situation donnée.
+
+Dans une lecture actuelle, deux ensembles sont représentés par deux régions qui se chevauchent. Leur partie commune figure l’intersection ; l’ensemble des deux régions figure l’union. Prenons un exemple moderne : parmi les entiers de 1 à 12, on appelle `A` l’ensemble des multiples de 2 et `B` celui des multiples de 3. L’intersection contient 6 et 12. Mais 2 appartient à `A` sans appartenir à `B` : il suffit à réfuter l’affirmation « tout multiple de 2 est multiple de 3 ». Le dessin aide ainsi à chercher un contre-exemple ; la justification repose sur les propriétés des nombres.
+
+Source : [NIST, *Venn diagram*, notice de Paul E. Black](https://xlinux.nist.gov/dads/HTML/venndiagram.html).
+
 ## Voir aussi
 
 - PROLONGEMENT : [N02](N02-nombres-reels-intervalles.md) (Les intervalles réutilisent le langage des ensembles.)
