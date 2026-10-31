@@ -7,14 +7,6 @@ description: Cours et exercices de Seconde pour résoudre équations et inéquat
 
 Une équation ou une inéquation demande de transformer une relation tout en conservant les solutions. Les ressources font travailler les équivalences, la représentation des ensembles de solutions, les valeurs interdites et la conclusion dans un contexte. Les intervalles et le calcul littéral y sont réinvestis.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Résoudre une équation ou une inéquation par équivalences.
-    - Représenter un ensemble de solutions.
-    - Traiter les valeurs interdites dans une expression.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N04-calcul-litteral/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N04 — Calcul littéral</span></span></a>

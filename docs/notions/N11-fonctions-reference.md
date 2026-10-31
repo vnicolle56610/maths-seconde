@@ -7,14 +7,6 @@ description: Cours et exercices de Seconde sur les courbes de référence, leurs
 
 Les fonctions de référence forment un répertoire de courbes et de comportements à reconnaître. Les ressources font construire et exploiter ces courbes, comparer des images, lire des variations et résoudre des équations ou inéquations simples. Ce répertoire sert ensuite dans les problèmes de fonctions.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Reconnaître les courbes de référence.
-    - Exploiter variations et comparaisons d’images.
-    - Résoudre des équations ou inéquations simples.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N10-fonctions-affines/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N10 — Fonctions affines</span></span></a>

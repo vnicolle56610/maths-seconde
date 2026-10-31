@@ -7,14 +7,6 @@ description: Révisions de Seconde pour choisir un registre de fonction, modéli
 
 Cette synthèse regroupe les outils de fonctions travaillés jusque-là : lectures graphiques, formules, tableaux, variations, équations et inéquations. Les exercices demandent de choisir un registre adapté, de modéliser une situation, puis d’interpréter le résultat obtenu. La page reste large car elle sert de carrefour entre calcul, graphique et raisonnement.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Choisir le registre adapté à une fonction.
-    - Modéliser une situation par une fonction.
-    - Résoudre puis interpréter le résultat.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N13-equations-inequations-fonctions/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N13 — Équations et inéquations avec fonctions</span></span></a>

@@ -7,14 +7,6 @@ description: Cours et exercices de Seconde pour décrire une droite par une dire
 
 Une droite peut être décrite par un point, une direction, une pente ou une équation. Les documents travaillent l’équation cartésienne avec le déterminant, le passage à l’équation réduite et l’étude d’alignements, de parallélismes ou d’intersections. Le périmètre reste strictement géométrique et analytique autour des droites du plan.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Décrire une droite par un point et une direction.
-    - Passer entre équation cartésienne et équation réduite.
-    - Étudier alignement, parallélisme et intersection.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N07-vecteurs-du-plan/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N07 — Vecteurs du plan</span></span></a>

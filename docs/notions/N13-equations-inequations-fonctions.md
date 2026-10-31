@@ -7,14 +7,6 @@ description: Cours et exercices de Seconde pour résoudre graphiquement ou par c
 
 Les équations et inéquations de fonctions se lisent sur une courbe ou se résolvent par le calcul. Les documents font comparer des images, utiliser des tableaux de signes et choisir entre lecture graphique et méthode algébrique. La conclusion doit préciser l’ensemble des solutions.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Résoudre par lecture graphique.
-    - Résoudre par calcul ou tableau de signes.
-    - Choisir une méthode adaptée.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N12-variations-extremums/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N12 — Variations et extremums</span></span></a>

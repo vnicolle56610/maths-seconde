@@ -7,14 +7,6 @@ description: Cours et exercices de Seconde pour lire un tableau croisé, interpr
 
 Un tableau croisé organise deux variables qualitatives dans une même lecture. Les documents font compléter des tableaux, interpréter des effectifs croisés et garder la population de référence sous contrôle. Cette rigueur prépare les raisonnements de probabilités conditionnelles simples, où le choix de la ligne ou de la colonne devient décisif.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Lire et compléter un tableau croisé.
-    - Interpréter des effectifs croisés.
-    - Identifier la population de référence.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N16-information-chiffree-statistiques/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N16 — Information chiffrée et statistiques</span></span></a>

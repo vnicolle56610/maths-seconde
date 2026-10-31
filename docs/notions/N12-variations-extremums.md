@@ -7,14 +7,6 @@ description: Cours et exercices de Seconde pour lire ou construire un tableau de
 
 Les variations décrivent comment les valeurs d’une fonction évoluent sur un intervalle. Les ressources font lire et construire des tableaux de variations, repérer des extremums et traiter des problèmes simples d’optimisation. Le travail reste graphique et numérique, avec une attention portée à l’interprétation.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Lire et construire un tableau de variations.
-    - Déterminer un extremum.
-    - Traiter un problème simple d’optimisation.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N11-fonctions-reference/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N11 — Fonctions de référence</span></span></a>

@@ -7,14 +7,6 @@ description: Cours et exercices de Seconde pour résoudre des problèmes avec Py
 
 Les problèmes de géométrie plane demandent souvent de choisir entre plusieurs outils. Les ressources mobilisent Pythagore, Thalès, la trigonométrie, les vecteurs, les droites et parfois les fonctions. L’enjeu est d’identifier la méthode pertinente, d’organiser les calculs et de justifier les étapes.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Choisir une méthode de géométrie plane adaptée.
-    - Utiliser Pythagore, Thalès ou la trigonométrie.
-    - Combiner vecteurs, droites et fonctions.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N14-synthese-fonctions-modelisation/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N14 — Synthèse fonctions et modélisation</span></span></a>

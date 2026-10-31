@@ -7,14 +7,6 @@ description: Cours et exercices de Seconde pour transformer des expressions, uti
 
 Le calcul littéral sert à transformer une expression sans changer sa valeur. Les ressources insistent sur les règles de puissances et de racines, les formes développée, factorisée ou réduite, ainsi que l’isolement d’une variable. Ces gestes préparent la résolution d’équations et la comparaison de quantités.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Utiliser les règles de puissances et de racines.
-    - Choisir une forme développée, factorisée ou réduite.
-    - Isoler une variable dans une relation.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N03-arithmetique/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N03 — Arithmétique</span></span></a>

@@ -7,14 +7,6 @@ description: Révisions de Seconde pour croiser statistiques, probabilités, tab
 
 Cette synthèse met en relation les statistiques, les tableaux croisés, les probabilités et les situations d’échantillonnage. Les exercices obligent à choisir le bon dénominateur, le bon modèle et la bonne représentation. La priorité est d’interpréter correctement les données avant de calculer ou de conclure.
 
-## Objectifs
-
-!!! objectifs ""
-
-    - Réinvestir statistiques et probabilités.
-    - Choisir le bon dénominateur et le bon modèle.
-    - Choisir une représentation adaptée.
-
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N18-probabilites-echantillonnage/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N18 — Probabilités et échantillonnage</span></span></a>
