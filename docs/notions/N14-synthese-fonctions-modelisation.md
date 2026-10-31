@@ -48,6 +48,14 @@ Un club propose un tarif A à 14 € par personne et un tarif B à 50 € de for
 
 Comparer les tarifs revient à résoudre `B(x) < A(x)`, soit `50 + 8x < 14x`, donc `50 < 6x`, donc `x > 25/3`. Comme `x` est un entier, le tarif B devient avantageux à partir de 9 participants.
 
+## Repère historique — Galilée : choisir un modèle pour décrire un mouvement
+
+Dans ses travaux sur le mouvement, exposés notamment dans les *Discours* de 1638, Galilée établit qu’un mouvement uniformément accéléré à partir du repos conduit à une distance parcourue proportionnelle au carré du temps. Cette relation donne un exemple historique de mathématisation : choisir des grandeurs mesurables, formuler des hypothèses et chercher une loi qui relie les mesures. Elle ne signifie pas que tous les mouvements suivent cette règle.
+
+Dans un exemple moderne simplifié, on modélise une distance par `d(t) = 2t²`, en mètres, avec `t` en secondes et `0 ≤ t ≤ 3`. Le coefficient 2 est choisi pour l’exercice, sans prétendre reproduire une expérience de Galilée. Un tableau donne 2 mètres à 1 seconde et 8 mètres à 2 secondes : doubler le temps multiplie ici la distance par quatre. Chercher quand la distance atteint 8 mètres revient à résoudre `2t² = 8`. Le calcul donne −2 et 2, mais seul `t = 2` appartient au domaine. Interpréter le résultat fait ainsi partie intégrante de la modélisation.
+
+Source : [MacTutor, université de St Andrews, biographie de Galilée](https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N09](N09-fonctions-registres.md) (Les registres de fonctions sont réinvestis.)

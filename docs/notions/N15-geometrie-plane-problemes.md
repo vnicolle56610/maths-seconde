@@ -48,6 +48,14 @@ On veut construire un rectangle de périmètre 20 cm. Si une dimension vaut `x`,
 
 Le tableau de variations de `A` montre un maximum égal à 25 pour `x = 5` : le rectangle d'aire maximale est donc le carré de côté 5 cm.
 
+## Repère historique — Ératosthène : mesurer loin grâce aux angles
+
+Au IIIe siècle avant notre ère, Ératosthène estime la circonférence terrestre en comparant la direction du Soleil à Syène et à Alexandrie. Son ouvrage est perdu ; sa méthode nous est connue par des auteurs postérieurs. Le raisonnement suppose une Terre sphérique et des rayons solaires pratiquement parallèles. L’angle observé grâce à une ombre permet alors de retrouver un angle au centre de la Terre.
+
+Dans une reconstitution scolaire simplifiée, on suppose deux villes sur un même méridien, séparées par un arc de 800 km, et un angle au centre de `7,2°`. Cet angle vaut `360°/50` : l’arc représente donc un cinquantième du tour, d’où une circonférence estimée à `50 × 800 = 40 000 km`. Ces données modernes arrondies illustrent la méthode, sans être les mesures exactes d’Ératosthène. La longueur de l’unité antique, le stade, reste d’ailleurs discutée. L’exemple montre comment parallélisme, angles et proportionnalité permettent de calculer une distance inaccessible, à condition d’expliciter les hypothèses et la précision des données.
+
+Source : [MacTutor, université de St Andrews, biographie d’Ératosthène](https://mathshistory.st-andrews.ac.uk/Biographies/Eratosthenes/).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N07](N07-vecteurs-du-plan.md) (Les vecteurs peuvent servir dans les configurations.)

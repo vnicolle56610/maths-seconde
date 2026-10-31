@@ -52,6 +52,14 @@ Si une fonction est décroissante sur `[−1 ; 3]` et si `0 < 2`, alors `f(0) �
 
 Sur cet intervalle, l'ordre des images est inversé parce que la fonction décroît.
 
+## Repère historique — Euclide : un carré pour comprendre un maximum
+
+Dans le livre II des *Éléments*, la proposition 5 d’Euclide relie l’aire d’un rectangle à celles de deux carrés. Un segment est partagé en deux parties inégales ; le rectangle construit sur ces longueurs, augmenté d’un certain carré, a la même aire que le carré construit sur la moitié du segment initial. Le raisonnement repose sur un découpage géométrique, sans fonction ni tableau de variations.
+
+On peut aujourd’hui traduire cette relation par un exemple algébrique. Si deux longueurs positives ont pour somme 12, on les écrit `x` et `12 − x`, avec `0 < x < 12`. Leur produit vérifie `x(12 − x) = 36 − (x − 6)²`. Comme un carré est positif ou nul, ce produit est au plus égal à 36 ; cette valeur est atteinte pour `x = 6`. L’identité justifie ainsi un maximum exact, là où un tableau de valeurs ne donnerait que des indices. Elle distingue la valeur maximale, 36, de la valeur de la variable qui la réalise, 6.
+
+Source : [Euclide, *Éléments*, II.5, édition commentée de David E. Joyce, université Clark](https://mathcs.clarku.edu/~djoyce/elements/bookII/propII5.html).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N09](N09-fonctions-registres.md) (La lecture d’une fonction est nécessaire.)

@@ -52,6 +52,14 @@ Pour la fonction carré, `(-3)² = 9` et `2² = 4`.
 
 On a donc `(-3)² > 2²`. Ici, le calcul direct est plus sûr qu'une lecture trop rapide des variations, car -3 et 2 sont de part et d'autre de 0.
 
+## Repère historique — Apollonius : une courbe avant son équation
+
+Dans l’Antiquité grecque, les coniques sont étudiées comme des sections d’un cône par un plan. Apollonius de Perge, actif autour du IIIe siècle avant notre ère, en développe une étude systématique dans les *Coniques*. Les termes parabole, ellipse et hyperbole apparaissent dans cet ouvrage. Il prolonge des recherches antérieures : ces courbes ont donc une histoire géométrique bien avant leur description par nos formules de fonctions.
+
+Avec les notations actuelles, la courbe de la fonction carré `f(x) = x²` est une parabole. Les égalités `f(−2) = f(2) = 4` illustrent sa symétrie par rapport à l’axe des ordonnées. Mais cette symétrie ne signifie pas que les variations soient les mêmes des deux côtés de 0 : la fonction décroît sur les réels négatifs et croît sur les réels positifs. Cet exemple moderne montre l’intérêt d’un répertoire de référence : reconnaître une forme de courbe aide à prévoir des propriétés, puis la formule permet de les vérifier. On ne prête pas pour autant à Apollonius notre langage de fonctions.
+
+Source : [MacTutor, université de St Andrews, biographie d’Apollonius de Perge](https://mathshistory.st-andrews.ac.uk/Biographies/Apollonius/).
+
 ## Voir aussi
 
 - PROLONGEMENT : [N12](N12-variations-extremums.md) (Les variations approfondissent la lecture des fonctions.)

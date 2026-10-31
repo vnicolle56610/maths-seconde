@@ -50,6 +50,14 @@ Pour résoudre `(x-1)/(x+2) ≤ 0`, on commence par le domaine : `x = -2` est un
 
 Le tableau de signes donne `S = ]-2 ; 1]` : l'intervalle contient `1`, où le quotient est nul, mais exclut `-2`, valeur interdite.
 
+## Repère historique — Khayyam : résoudre en faisant se rencontrer des courbes
+
+Au XIe siècle, Omar Khayyam étudie des équations du troisième degré et organise leur résolution géométrique à l’aide d’intersections de coniques, comme les cercles et les paraboles. Le point commun à deux courbes permet d’obtenir une longueur recherchée. Il ne travaille pas avec notre notation de fonctions ni avec un simple tracé approximatif : ses constructions s’appuient sur des relations géométriques démontrées.
+
+Une illustration moderne plus simple, adaptée à la Seconde, consiste à comparer `f(x) = x²` et `g(x) = 2x`. Les intersections de leurs courbes ont pour abscisses les solutions de `x² = 2x`. Le calcul donne `x(x − 2) = 0`, donc 0 et 2. Entre ces deux abscisses, `x(x − 2)` est négatif : la parabole est alors sous la droite, ce qui résout aussi `x² ≤ 2x` sur `[0 ; 2]`. Graphique et factorisation décrivent donc la même situation. Le dessin aide à voir les solutions ; le calcul précise leurs valeurs et justifie les bornes de l’intervalle.
+
+Source : [MacTutor, université de St Andrews, biographie d’Omar Khayyam](https://mathshistory.st-andrews.ac.uk/Biographies/Khayyam/).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N05](N05-equations-inequations.md) (Les équations et inéquations sont le socle algébrique.)
