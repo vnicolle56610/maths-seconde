@@ -52,6 +52,14 @@ La droite d'équation `y = 2x - 1` a pour coefficient directeur 2 et pour ordonn
 
 Le point `A(3 ; 5)` appartient à cette droite car `2 × 3 - 1 = 5`.
 
+## Repère historique — Descartes : reconnaître un lieu grâce à une équation
+
+Dans *La Géométrie*, publiée en 1637, René Descartes développe une méthode qui traduit des relations entre longueurs en équations. Un problème de lieu géométrique consiste à chercher tous les points satisfaisant une condition : le calcul peut alors aider à reconnaître la courbe obtenue. Cette articulation entre algèbre et géométrie est une étape majeure de la géométrie analytique ; elle ne se présente toutefois pas encore sous la forme exacte de nos repères scolaires et de notre langage vectoriel.
+
+Prenons un exemple moderne : on cherche les points `M(x ; y)` équidistants de `A(0 ; 0)` et de `B(4 ; 0)`. Dans un repère orthonormé, l’égalité des carrés des distances s’écrit `x² + y² = (x − 4)² + y²`. Après développement et réduction, elle devient `x = 2`. On reconnaît la médiatrice de `[AB]`, une droite verticale. Cet exemple montre pourquoi l’équation cartésienne est utile : certaines droites se décrivent très simplement, même lorsqu’aucune écriture `y = mx + p` n’est possible.
+
+Source : [Stanford Encyclopedia of Philosophy, *Descartes’ Mathematics*](https://plato.stanford.edu/entries/descartes-mathematics/).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N07](N07-vecteurs-du-plan.md) (Les vecteurs donnent les directions et le déterminant.)

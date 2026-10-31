@@ -46,6 +46,14 @@ Si `A(1 ; 2)` et `B(4 ; -1)`, alors le vecteur `AB` a pour coordonnées `(4 - 1 
 
 Ce vecteur indique que l'on avance de 3 unités horizontalement et que l'on descend de 3 unités verticalement.
 
+## Repère historique — Wessel : composer des déplacements pour dresser des cartes
+
+Caspar Wessel travaille au XVIIIe siècle comme arpenteur et cartographe. Ses relevés de terrain le conduisent à réfléchir au calcul géométrique des directions et des longueurs. Dans un mémoire présenté en 1797 et publié en 1799, il développe une représentation géométrique de nombres que l’on appellera complexes. Sans étudier ces nombres en Seconde, on peut comprendre une idée de son travail : composer des segments orientés pour calculer un déplacement résultant.
+
+Voici une lecture moderne en coordonnées : un premier déplacement fait avancer de 3 unités vers l’est et de 2 vers le nord ; un second, de 1 vers l’ouest et de 4 vers le nord. Le déplacement total a pour coordonnées `(3 ; 2) + (−1 ; 4) = (2 ; 6)`. Le point de départ sert à situer le trajet, mais il ne change pas ce bilan. C’est l’intérêt du vecteur : conserver direction, sens et longueur d’un déplacement tout en permettant de le représenter ailleurs dans le plan. Les coordonnées rendent cette composition calculable.
+
+Source : [MacTutor, université de St Andrews, biographie de Caspar Wessel](https://mathshistory.st-andrews.ac.uk/Biographies/Wessel/).
+
 ## Voir aussi
 
 - PROLONGEMENT : [N08](N08-droites-equations.md) (Les droites utilisent directions et déterminants.)

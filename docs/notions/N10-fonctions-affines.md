@@ -46,6 +46,14 @@ Pour `f(x) = 2x - 3`, le coefficient directeur est 2 et l'ordonnée à l'origine
 
 Comme `2 > 0`, la fonction est croissante. Sa racine vérifie `2x - 3 = 0`, donc `x = 1,5`.
 
+## Repère historique — Des échelles de température aux fonctions affines
+
+Au XVIIIe siècle, plusieurs échelles de température se développent pour rendre les mesures comparables. Fahrenheit présente la sienne en 1724 ; Celsius propose ensuite une échelle dont les repères sont initialement inversés par rapport à l’usage actuel. Ces choix historiques expliquent qu’une même température puisse recevoir des nombres différents. Convertir exige de tenir compte à la fois de la taille des graduations et du décalage des zéros.
+
+Avec les conventions actuelles, si `C` désigne la valeur en degrés Celsius et `F` celle en degrés Fahrenheit, la conversion s’écrit `F = 1,8C + 32`. C’est une relation affine. Dans cet exemple moderne, `0 °C` correspond à `32 °F` et `20 °C` à `68 °F`. Une hausse de `10 °C` correspond toujours à une hausse de `18 °F` : le coefficient 1,8 décrit le rapport des variations. Le terme 32 indique le décalage des origines. La conversion n’est donc pas proportionnelle : doubler la valeur en Celsius ne double généralement pas la valeur en Fahrenheit.
+
+Sources : NIST, [*Kelvin: History*](https://www.nist.gov/si-redefinition/kelvin/kelvin-history) et [*SI Units – Temperature*, conversions exactes](https://www.nist.gov/pml/owm/si-units-temperature).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N09](N09-fonctions-registres.md) (Les lectures de fonctions sont nécessaires.)

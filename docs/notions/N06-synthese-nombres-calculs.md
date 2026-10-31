@@ -46,6 +46,14 @@ Une conclusion doit répondre à la question posée, avec la bonne forme : valeu
 
 `[-2 ; 5[` est un intervalle : il représente tous les réels compris entre −2 inclus et 5 exclu.
 
+## Repère historique — Stevin : rapprocher les façons de calculer
+
+En 1585, Simon Stevin publie *La Thiende*, un petit ouvrage qui explique le calcul avec les fractions décimales à un public de praticiens : arpenteurs, marchands ou artisans. Il n’invente pas les décimaux, déjà employés dans d’autres traditions mathématiques. Il contribue à leur diffusion en Europe et défend aussi une conception des nombres qui accueille les racines et les nombres négatifs. Sa notation décimale diffère de notre écriture à virgule.
+
+Cette recherche d’outils communs éclaire le rôle d’une synthèse : relier les écritures plutôt que juxtaposer des recettes. Dans un exemple moderne, `3/8 = 0,375` est une égalité exacte, tandis que `1/3 ≈ 0,333` est une approximation. La première égalité se vérifie par multiplication ; la seconde conduit à l’encadrement `0,333 < 1/3 < 0,334`. Fractions, calcul décimal, comparaison et intervalles coopèrent ainsi pour décrire un même nombre. Avant de conclure, il faut identifier ce que fournit le calcul : une valeur exacte, une approximation ou un encadrement.
+
+Source : [MacTutor, université de St Andrews, biographie de Simon Stevin](https://mathshistory.st-andrews.ac.uk/Biographies/Stevin/).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N02](N02-nombres-reels-intervalles.md) (Les intervalles font partie du bloc nombres.)
