@@ -48,6 +48,14 @@ Une population de 200 pièces contient 30 pièces défectueuses. La probabilité
 
 Sur 50 tirages simulés, on n'obtient pas nécessairement exactement `50 × 0,15 = 7,5` pièces défectueuses : le résultat fluctue d'une simulation à l'autre autour de cette valeur attendue.
 
+## Repère historique — Bernoulli : relier la fréquence au modèle probabiliste
+
+Dans l’*Ars conjectandi*, publié en 1713 après sa mort, Jacques Bernoulli développe un résultat fondateur de la loi des grands nombres. Il s’intéresse au lien entre une probabilité et la fréquence observée lors d’expériences répétées. Dans le cadre actuel d’essais indépendants ayant la même probabilité de succès, augmenter le nombre d’essais rend très probable une fréquence proche de cette probabilité. Cela ne garantit ni une égalité exacte ni un rapprochement régulier à chaque nouvel essai.
+
+Prenons un exemple moderne : une simulation répète des lancers indépendants d’un dé équilibré et compte les six. La probabilité théorique est `1/6`, mais dix lancers peuvent donner zéro, un ou plusieurs six. Même sur 600 lancers, obtenir exactement 100 six n’est pas obligatoire. Une série plus longue aide à étudier la stabilisation des fréquences ; elle ne prouve pas à elle seule que le dé est équilibré. Le modèle, ses hypothèses et les résultats observés jouent donc des rôles distincts. Cette distinction permet de lire une simulation sans confondre fluctuation et erreur de calcul.
+
+Source : [MacTutor, université de St Andrews, biographie de Jacques Bernoulli](https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N17](N17-croisement-variables-qualitatives.md) (Les tableaux croisés aident à organiser les informations.)

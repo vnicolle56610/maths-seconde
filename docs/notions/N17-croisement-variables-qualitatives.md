@@ -48,6 +48,14 @@ Dans une enquête sur 120 élèves, 30 viennent à vélo, dont 20 pratiquent un 
 
 Ce n'est pas la même chose que la fréquence des cyclistes parmi les sportifs, qui se calcule avec un dénominateur différent.
 
+## Repère historique — John Snow : croiser les groupes pour comparer
+
+Lors de l’épidémie de choléra de 1854 à Londres, John Snow étudie notamment des habitations desservies par deux compagnies d’eau. Leurs clients vivent dans des quartiers en partie mêlés, mais les compagnies ne prélèvent plus leur eau au même endroit dans la Tamise. Classer les observations selon l’approvisionnement permet de comparer des groupes autrement que par leur seule localisation. Cette enquête historique dépasse ainsi la célèbre carte de la pompe de Broad Street.
+
+Dans un exemple moderne fictif, on classe 200 foyers selon leur fournisseur et la présence d’un incident : 12 foyers sur 80 chez A, 6 sur 120 chez B. Le tableau croisé associe deux variables qualitatives, fournisseur et incident. La fréquence d’incident parmi les clients de A vaut `12/80 = 15 %`. La fréquence des clients de A parmi les foyers avec incident vaut au contraire `12/18 ≈ 66,7 %`. Le numérateur est identique, mais le groupe de référence change. Organiser les données en tableau aide à rendre cette différence visible ; une association observée ne suffit cependant pas, à elle seule, à établir une cause.
+
+Source : [UCLA, John Snow Archive, *The Grand Experiment*](https://epi-snow.ph.ucla.edu/Stream3_GrandExperiment_d.html).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N16](N16-information-chiffree-statistiques.md) (Les populations de référence sont déjà travaillées.)

@@ -41,3 +41,11 @@ Pour préparer la Première, les sources n'annoncent pas de notion nouvelle mais
 On donne `A(2 ; -1)` et `B(8 ; 2)`. Le coefficient directeur de la droite `(AB)` est `m = (2-(-1))/(8-2) = 3/6 = 0,5`, d'où l'équation réduite `y = 0,5x - 2`.
 
 Pour `C(10 ; 3)` : `0,5 × 10 - 2 = 3`, ce qui correspond bien à l'ordonnée de `C`. Le point `C` appartient donc à la droite `(AB)`.
+
+## Repère historique — Pólya : organiser la recherche d’une solution
+
+En 1945, George Pólya publie *How to Solve It*, consacré à la résolution de problèmes. Il propose quatre grandes phases : comprendre la question, concevoir un plan, le mettre en œuvre, puis examiner la solution obtenue. Ses conseils invitent notamment à dessiner une figure, introduire des notations, chercher un problème voisin ou vérifier le résultat par une autre méthode. Ce sont des pistes de recherche, pas une recette assurant automatiquement la réussite.
+
+Un exemple moderne relie cette démarche aux acquis de Seconde : pour décider si trois points sont alignés, on commence par identifier les données et la conclusion attendue. On peut ensuite choisir un calcul de déterminant ou une équation de droite. Après les calculs, un contrôle avec la seconde méthode aide à repérer une erreur ; une figure seule ne constitue pas une preuve. La synthèse annuelle poursuit ce même objectif : disposer de plusieurs outils, savoir pourquoi l’un convient à la situation, puis formuler une conclusion justifiée. Revenir sur une solution permet aussi de reconnaître une méthode réutilisable dans un autre problème.
+
+Source : [Harvey Mudd College, présentation de *How to Solve It* de Pólya](https://www.cs.hmc.edu/~keller/how_to_solve_it.html).

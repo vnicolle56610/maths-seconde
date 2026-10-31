@@ -48,6 +48,14 @@ Comparer deux séries exige au moins un indicateur de position et un indicateur 
 
 Un prix augmente de 12 %, puis baisse de 10 %. Le coefficient multiplicateur global est `1,12 × 0,90 = 1,008` : le prix final est donc `0,8 %` plus élevé que le prix initial, malgré l'apparente compensation des deux pourcentages.
 
+## Repère historique — Graunt : interroger les données avant de les comparer
+
+Au XVIIe siècle, John Graunt analyse les relevés de décès publiés à Londres, les *Bills of Mortality*. Au lieu de considérer chaque liste isolément, il cherche des régularités et examine la façon dont les informations sont recueillies. Les causes de décès sont alors identifiées par des personnes sans formation médicale ; certaines catégories sont ambiguës. Comprendre les données suppose donc aussi de connaître leur origine et leurs limites.
+
+Cette démarche éclaire une difficulté actuelle : un effectif ne suffit pas à comparer deux situations. Dans un exemple moderne fictif, un groupe de 1 000 personnes compte 20 cas d’un événement, contre 30 dans un groupe de 3 000 personnes. Le second effectif est plus élevé, mais les proportions sont respectivement `20/1 000 = 2 %` et `30/3 000 = 1 %`. Le classement s’inverse lorsqu’on tient compte des populations de référence. Avant de calculer une évolution ou de comparer un indicateur, il faut donc vérifier ce qui est compté, sur quelle période et parmi quels individus.
+
+Source : [Gresham College, Gill Newton, *Parochial registration and the Bills of Mortality*](https://www.gresham.ac.uk/watch-now/parochial-registration-and-bills-mortality).
+
 ## Voir aussi
 
 - PROLONGEMENT : [N17](N17-croisement-variables-qualitatives.md) (Les tableaux croisés prolongent l’analyse de données.)

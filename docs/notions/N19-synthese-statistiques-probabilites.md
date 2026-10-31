@@ -50,6 +50,14 @@ Dans un groupe A de 60 individus (18 succès, 42 échecs) et un groupe B de 140 
 
 Ce sont des fréquences conditionnelles, et non des probabilités : elles proviennent d'une population observée, pas d'un modèle aléatoire.
 
+## Repère historique — Nightingale : choisir un graphique qui explique les données
+
+Au XIXe siècle, Florence Nightingale utilise les statistiques pour documenter les conditions sanitaires de l’armée britannique. Ses diagrammes d’aires polaires représentent notamment des décès par catégories pendant la guerre de Crimée, de 1854 à 1856. Dans ces représentations, c’est l’aire des secteurs colorés qui traduit la grandeur étudiée. Leur lecture exige donc de comprendre le codage graphique, et pas seulement de regarder quelle forme paraît la plus longue.
+
+Cette démarche relie plusieurs outils de la synthèse : classer les observations, choisir une référence et construire une représentation fidèle. Dans un exemple moderne fictif, 30 incidents sont relevés parmi 300 opérations une année, puis 40 parmi 800 l’année suivante. Un graphique des seuls effectifs suggère une hausse ; les fréquences passent pourtant de `10 %` à `5 %`. Il faut préciser quelle question on pose avant de choisir le graphique. Ces fréquences décrivent les observations recueillies ; les employer comme probabilités pour une future opération demanderait un modèle et des hypothèses supplémentaires. Une présentation convaincante doit ainsi rester accompagnée de ses unités, de ses références et d’une interprétation prudente.
+
+Source : [MacTutor, université de St Andrews, biographie de Florence Nightingale](https://mathshistory.st-andrews.ac.uk/Biographies/Nightingale/).
+
 ## Voir aussi
 
 - PRÉREQUIS : [N16](N16-information-chiffree-statistiques.md) (Les indicateurs statistiques sont repris.)
