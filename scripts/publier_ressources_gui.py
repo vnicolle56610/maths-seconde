@@ -9,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 import tkinter as tk
+import webbrowser
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -366,6 +367,9 @@ class PublicationApp:
         self.origin_sha_at_load: str | None = None
         self.mkdocs_process: subprocess.Popen[bytes] | None = None
 
+        self.mkdocs_url: str | None = None
+        self.preview_url_text = tk.StringVar()
+
         self.status = tk.StringVar(value="Analyse des ressources…")
         self.git_state_text = tk.StringVar(value="Git : …")
         self._build_interface()
@@ -544,6 +548,20 @@ class PublicationApp:
             sticky="w",
             pady=(6, 0),
         )
+
+        self.preview_link = ttk.Label(
+            main,
+            textvariable=self.preview_url_text,
+            foreground="#1558b0",
+            cursor="hand2",
+            font=("TkDefaultFont", 10, "underline"),
+            takefocus=True,
+        )
+        self.preview_link.grid(row=12, column=0, sticky="w", pady=(4, 0))
+        self.preview_link.grid_remove()
+        self.preview_link.bind("<Button-1>", lambda event: self.open_local_preview())
+        self.preview_link.bind("<Return>", lambda event: self.open_local_preview())
+        self.preview_link.bind("<space>", lambda event: self.open_local_preview())
 
         self.resource_buttons = (
             self.safe_button,
@@ -1151,16 +1169,20 @@ class PublicationApp:
             parent=self.root,
         )
 
+    def open_local_preview(self) -> None:
+        if (
+            self.mkdocs_url
+            and self.mkdocs_process is not None
+            and self.mkdocs_process.poll() is None
+        ):
+            webbrowser.open(self.mkdocs_url)
+
     def launch_mkdocs(self) -> None:
         if (
             self.mkdocs_process is not None
             and self.mkdocs_process.poll() is None
         ):
-            messagebox.showinfo(
-                "Serveur déjà lancé",
-                "mkdocs serve est déjà en cours d'exécution.",
-                parent=self.root,
-            )
+            self.open_local_preview()
             return
 
         executable = self._mkdocs_executable_or_error()
@@ -1185,6 +1207,9 @@ class PublicationApp:
             self.status.set("Échec du lancement de MkDocs.")
             return
 
+        self.mkdocs_url = f"http://127.0.0.1:{port}/"
+        self.preview_url_text.set(f"Ouvrir l'aperçu local : {self.mkdocs_url}")
+        self.preview_link.grid()
         self.status.set(
             f"Aperçu local disponible sur http://127.0.0.1:{port}/ — "
             "il ne modifie pas le site public."
@@ -1219,6 +1244,8 @@ class PublicationApp:
                 parent=self.root,
             )
         self.mkdocs_process = None
+        self.mkdocs_url = None
+        self.preview_link.grid_remove()
 
     def quit(self) -> None:
         if (
