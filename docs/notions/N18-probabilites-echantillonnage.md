@@ -9,9 +9,11 @@ Les probabilités transforment une situation aléatoire en modèle calculable. L
 
 ## Objectifs
 
-- Construire un modèle probabiliste simple.
-- Interpréter une probabilité conditionnelle.
-- Lire une simulation.
+!!! objectifs ""
+
+    - Construire un modèle probabiliste simple.
+    - Interpréter une probabilité conditionnelle.
+    - Lire une simulation.
 
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
@@ -22,9 +24,11 @@ Les probabilités transforment une situation aléatoire en modèle calculable. L
 
 ## Objectifs
 
-- Passer d'une situation à un modèle probabiliste.
-- Interpréter une probabilité conditionnelle.
-- Lire une simulation.
+!!! objectifs ""
+
+    - Passer d'une situation à un modèle probabiliste.
+    - Interpréter une probabilité conditionnelle.
+    - Lire une simulation.
 
 ## Documents
 
@@ -36,25 +40,34 @@ Les probabilités transforment une situation aléatoire en modèle calculable. L
 
 ## Notions essentielles
 
-Dans une expérience aléatoire, l'univers `Ω` est l'ensemble des issues possibles et un événement est une partie de `Ω`. Une loi de probabilité associe à chaque issue un nombre compris entre 0 et 1, de sorte que la somme des probabilités de toutes les issues vaut 1. En cas d'équiprobabilité, `P(A) = Card(A) / Card(Ω)`. Si `Ā` désigne l'événement contraire de `A`, alors `P(Ā) = 1 - P(A)`.
+!!! essentiel ""
 
-La probabilité de `B` sachant `A`, notée `P_A(B)`, mesure la probabilité de `B` lorsqu'on se place dans la situation où `A` est réalisé : `P_A(B) = P(A∩B) / P(A)`. En général, `P_A(B) ≠ P_B(A)` : le dénominateur n'est pas le même. Dans un arbre pondéré, les branches portent des probabilités, souvent conditionnelles à partir du deuxième niveau, et la probabilité d'un chemin est le produit des probabilités portées par ses branches.
+    Dans une expérience aléatoire, l'univers `Ω` est l'ensemble des issues possibles et un événement est une partie de `Ω`. Une loi de probabilité associe à chaque issue un nombre compris entre 0 et 1, de sorte que la somme des probabilités de toutes les issues vaut 1. En cas d'équiprobabilité, `P(A) = Card(A) / Card(Ω)`. Si `Ā` désigne l'événement contraire de `A`, alors `P(Ā) = 1 - P(A)`.
 
-Un échantillon est un ensemble d'observations obtenu en répétant une expérience. La fréquence observée peut varier d'un échantillon à l'autre : c'est la fluctuation d'échantillonnage. Lorsque le nombre d'essais est grand, la fréquence observée est en général proche de la probabilité, mais une simulation ne démontre pas une valeur exacte.
+    La probabilité de `B` sachant `A`, notée `P_A(B)`, mesure la probabilité de `B` lorsqu'on se place dans la situation où `A` est réalisé : `P_A(B) = P(A∩B) / P(A)`. En général, `P_A(B) ≠ P_B(A)` : le dénominateur n'est pas le même. Dans un arbre pondéré, les branches portent des probabilités, souvent conditionnelles à partir du deuxième niveau, et la probabilité d'un chemin est le produit des probabilités portées par ses branches.
+
+    Un échantillon est un ensemble d'observations obtenu en répétant une expérience. La fréquence observée peut varier d'un échantillon à l'autre : c'est la fluctuation d'échantillonnage. Lorsque le nombre d'essais est grand, la fréquence observée est en général proche de la probabilité, mais une simulation ne démontre pas une valeur exacte.
 
 ## Exemple
 
-Une population de 200 pièces contient 30 pièces défectueuses. La probabilité de tirer une pièce défectueuse au hasard est `P = 30/200 = 0,15`.
+!!! exemple ""
 
-Sur 50 tirages simulés, on n'obtient pas nécessairement exactement `50 × 0,15 = 7,5` pièces défectueuses : le résultat fluctue d'une simulation à l'autre autour de cette valeur attendue.
+    Une population de 200 pièces contient 30 pièces défectueuses. La probabilité de tirer une pièce défectueuse au hasard est `P = 30/200 = 0,15`.
+
+    Sur 50 tirages simulés, on n'obtient pas nécessairement exactement `50 × 0,15 = 7,5` pièces défectueuses : le résultat fluctue d'une simulation à l'autre autour de cette valeur attendue.
 
 ## Repère historique — Bernoulli : relier la fréquence au modèle probabiliste
 
-Dans l’*Ars conjectandi*, publié en 1713 après sa mort, Jacques Bernoulli développe un résultat fondateur de la loi des grands nombres. Il s’intéresse au lien entre une probabilité et la fréquence observée lors d’expériences répétées. Dans le cadre actuel d’essais indépendants ayant la même probabilité de succès, augmenter le nombre d’essais rend très probable une fréquence proche de cette probabilité. Cela ne garantit ni une égalité exacte ni un rapprochement régulier à chaque nouvel essai.
+!!! historique ""
 
-Prenons un exemple moderne : une simulation répète des lancers indépendants d’un dé équilibré et compte les six. La probabilité théorique est `1/6`, mais dix lancers peuvent donner zéro, un ou plusieurs six. Même sur 600 lancers, obtenir exactement 100 six n’est pas obligatoire. Une série plus longue aide à étudier la stabilisation des fréquences ; elle ne prouve pas à elle seule que le dé est équilibré. Le modèle, ses hypothèses et les résultats observés jouent donc des rôles distincts. Cette distinction permet de lire une simulation sans confondre fluctuation et erreur de calcul.
+    Jacques Bernoulli, *Ars conjectandi*, 1713
+    {: .frise data-annee="1713" }
 
-Source : [MacTutor, université de St Andrews, biographie de Jacques Bernoulli](https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/).
+    Dans l’*Ars conjectandi*, publié en 1713 après sa mort, Jacques Bernoulli développe un résultat fondateur de la loi des grands nombres. Il s’intéresse au lien entre une probabilité et la fréquence observée lors d’expériences répétées. Dans le cadre actuel d’essais indépendants ayant la même probabilité de succès, augmenter le nombre d’essais rend très probable une fréquence proche de cette probabilité. Cela ne garantit ni une égalité exacte ni un rapprochement régulier à chaque nouvel essai.
+
+    Prenons un exemple moderne : une simulation répète des lancers indépendants d’un dé équilibré et compte les six. La probabilité théorique est `1/6`, mais dix lancers peuvent donner zéro, un ou plusieurs six. Même sur 600 lancers, obtenir exactement 100 six n’est pas obligatoire. Une série plus longue aide à étudier la stabilisation des fréquences ; elle ne prouve pas à elle seule que le dé est équilibré. Le modèle, ses hypothèses et les résultats observés jouent donc des rôles distincts. Cette distinction permet de lire une simulation sans confondre fluctuation et erreur de calcul.
+
+    Source : [MacTutor, université de St Andrews, biographie de Jacques Bernoulli](https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/).
 
 ## Voir aussi
 

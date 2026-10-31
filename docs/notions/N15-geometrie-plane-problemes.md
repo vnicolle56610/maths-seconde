@@ -9,9 +9,11 @@ Les problèmes de géométrie plane demandent souvent de choisir entre plusieurs
 
 ## Objectifs
 
-- Choisir une méthode de géométrie plane adaptée.
-- Utiliser Pythagore, Thalès ou la trigonométrie.
-- Combiner vecteurs, droites et fonctions.
+!!! objectifs ""
+
+    - Choisir une méthode de géométrie plane adaptée.
+    - Utiliser Pythagore, Thalès ou la trigonométrie.
+    - Combiner vecteurs, droites et fonctions.
 
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
@@ -22,9 +24,11 @@ Les problèmes de géométrie plane demandent souvent de choisir entre plusieurs
 
 ## Objectifs
 
-- Choisir une méthode de géométrie plane adaptée.
-- Utiliser Pythagore, Thalès ou la trigonométrie.
-- Combiner vecteurs, droites et fonctions.
+!!! objectifs ""
+
+    - Choisir une méthode de géométrie plane adaptée.
+    - Utiliser Pythagore, Thalès ou la trigonométrie.
+    - Combiner vecteurs, droites et fonctions.
 
 ## Documents
 
@@ -36,25 +40,34 @@ Les problèmes de géométrie plane demandent souvent de choisir entre plusieurs
 
 ## Notions essentielles
 
-Le projeté orthogonal d'un point `A` sur une droite `(d)` est le point `H` de `(d)` tel que `AH ⊥ (d)`. Il vérifie une propriété importante : pour tout point `M` de `(d)`, `AM ≥ AH`, avec égalité seulement lorsque `M = H`. Cette propriété se démontre grâce à Pythagore, dans le triangle `AHM` rectangle en `H`.
+!!! essentiel ""
 
-Un même problème de géométrie peut se résoudre par plusieurs voies : géométrie classique (Pythagore, Thalès, trigonométrie), géométrie repérée (coordonnées, distances, milieux), vecteurs (colinéarité, alignement, parallélisme) ou fonctions (aire, longueur ou coût dépendant d'une variable). Repérer les indices de l'énoncé aide à choisir la méthode la plus efficace.
+    Le projeté orthogonal d'un point `A` sur une droite `(d)` est le point `H` de `(d)` tel que `AH ⊥ (d)`. Il vérifie une propriété importante : pour tout point `M` de `(d)`, `AM ≥ AH`, avec égalité seulement lorsque `M = H`. Cette propriété se démontre grâce à Pythagore, dans le triangle `AHM` rectangle en `H`.
 
-Optimiser une grandeur géométrique, c'est chercher sa valeur maximale ou minimale en respectant les contraintes du problème. La méthode suit toujours les mêmes étapes : faire une figure et nommer la variable, déterminer l'intervalle des valeurs possibles, exprimer la grandeur à optimiser en fonction de la variable, étudier ses variations, puis conclure dans le contexte.
+    Un même problème de géométrie peut se résoudre par plusieurs voies : géométrie classique (Pythagore, Thalès, trigonométrie), géométrie repérée (coordonnées, distances, milieux), vecteurs (colinéarité, alignement, parallélisme) ou fonctions (aire, longueur ou coût dépendant d'une variable). Repérer les indices de l'énoncé aide à choisir la méthode la plus efficace.
+
+    Optimiser une grandeur géométrique, c'est chercher sa valeur maximale ou minimale en respectant les contraintes du problème. La méthode suit toujours les mêmes étapes : faire une figure et nommer la variable, déterminer l'intervalle des valeurs possibles, exprimer la grandeur à optimiser en fonction de la variable, étudier ses variations, puis conclure dans le contexte.
 
 ## Exemple
 
-On veut construire un rectangle de périmètre 20 cm. Si une dimension vaut `x`, l'autre vaut `10 - x`, avec `0 < x < 10`. L'aire est `A(x) = x(10 - x)`.
+!!! exemple ""
 
-Le tableau de variations de `A` montre un maximum égal à 25 pour `x = 5` : le rectangle d'aire maximale est donc le carré de côté 5 cm.
+    On veut construire un rectangle de périmètre 20 cm. Si une dimension vaut `x`, l'autre vaut `10 - x`, avec `0 < x < 10`. L'aire est `A(x) = x(10 - x)`.
+
+    Le tableau de variations de `A` montre un maximum égal à 25 pour `x = 5` : le rectangle d'aire maximale est donc le carré de côté 5 cm.
 
 ## Repère historique — Ératosthène : mesurer loin grâce aux angles
 
-Au IIIe siècle avant notre ère, Ératosthène estime la circonférence terrestre en comparant la direction du Soleil à Syène et à Alexandrie. Son ouvrage est perdu ; sa méthode nous est connue par des auteurs postérieurs. Le raisonnement suppose une Terre sphérique et des rayons solaires pratiquement parallèles. L’angle observé grâce à une ombre permet alors de retrouver un angle au centre de la Terre.
+!!! historique ""
 
-Dans une reconstitution scolaire simplifiée, on suppose deux villes sur un même méridien, séparées par un arc de 800 km, et un angle au centre de `7,2°`. Cet angle vaut `360°/50` : l’arc représente donc un cinquantième du tour, d’où une circonférence estimée à `50 × 800 = 40 000 km`. Ces données modernes arrondies illustrent la méthode, sans être les mesures exactes d’Ératosthène. La longueur de l’unité antique, le stade, reste d’ailleurs discutée. L’exemple montre comment parallélisme, angles et proportionnalité permettent de calculer une distance inaccessible, à condition d’expliciter les hypothèses et la précision des données.
+    Ératosthène, Alexandrie, IIIe siècle avant notre ère
+    {: .frise data-annee="-240" data-etiquette="IIIe s. av. J.-C." }
 
-Source : [MacTutor, université de St Andrews, biographie d’Ératosthène](https://mathshistory.st-andrews.ac.uk/Biographies/Eratosthenes/).
+    Au IIIe siècle avant notre ère, Ératosthène estime la circonférence terrestre en comparant la direction du Soleil à Syène et à Alexandrie. Son ouvrage est perdu ; sa méthode nous est connue par des auteurs postérieurs. Le raisonnement suppose une Terre sphérique et des rayons solaires pratiquement parallèles. L’angle observé grâce à une ombre permet alors de retrouver un angle au centre de la Terre.
+
+    Dans une reconstitution scolaire simplifiée, on suppose deux villes sur un même méridien, séparées par un arc de 800 km, et un angle au centre de `7,2°`. Cet angle vaut `360°/50` : l’arc représente donc un cinquantième du tour, d’où une circonférence estimée à `50 × 800 = 40 000 km`. Ces données modernes arrondies illustrent la méthode, sans être les mesures exactes d’Ératosthène. La longueur de l’unité antique, le stade, reste d’ailleurs discutée. L’exemple montre comment parallélisme, angles et proportionnalité permettent de calculer une distance inaccessible, à condition d’expliciter les hypothèses et la précision des données.
+
+    Source : [MacTutor, université de St Andrews, biographie d’Ératosthène](https://mathshistory.st-andrews.ac.uk/Biographies/Eratosthenes/).
 
 ## Voir aussi
 

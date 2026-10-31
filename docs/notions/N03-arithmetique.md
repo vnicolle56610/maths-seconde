@@ -16,9 +16,11 @@ L'arithmétique donne des outils simples pour raisonner sur les entiers. Les doc
 
 ## Objectifs
 
-- Reconnaître des multiples et exploiter des restes.
-- Réduire une fraction.
-- Rédiger une petite démonstration arithmétique.
+!!! objectifs ""
+
+    - Reconnaître des multiples et exploiter des restes.
+    - Réduire une fraction.
+    - Rédiger une petite démonstration arithmétique.
 
 ## Documents
 
@@ -35,26 +37,35 @@ L'arithmétique donne des outils simples pour raisonner sur les entiers. Les doc
 
 ## Notions essentielles
 
-Dire que `a` est un multiple de `b` signifie qu'il existe un entier `k` tel que `a = b × k`.
+!!! essentiel ""
 
-Dans une division euclidienne, un nombre est divisible par un autre lorsque le reste est nul.
+    Dire que `a` est un multiple de `b` signifie qu'il existe un entier `k` tel que `a = b × k`.
 
-Un nombre pair peut s'écrire `2k`. Un nombre impair peut s'écrire `2k + 1`.
+    Dans une division euclidienne, un nombre est divisible par un autre lorsque le reste est nul.
 
-Une fraction est irréductible lorsque son numérateur et son dénominateur n'ont aucun diviseur commun autre que 1.
+    Un nombre pair peut s'écrire `2k`. Un nombre impair peut s'écrire `2k + 1`.
 
-Pour démontrer une propriété sur les entiers, on utilise souvent une écriture générale comme `dk`, `2k` ou `2k + 1`.
+    Une fraction est irréductible lorsque son numérateur et son dénominateur n'ont aucun diviseur commun autre que 1.
+
+    Pour démontrer une propriété sur les entiers, on utilise souvent une écriture générale comme `dk`, `2k` ou `2k + 1`.
 
 ## Exemple
 
-`42 = 6 × 7`, donc 42 est un multiple de 6 et 6 est un diviseur de 42.
+!!! exemple ""
 
-En revanche, `44 = 6 × 7 + 2` : le reste n'est pas nul, donc 44 n'est pas divisible par 6.
+    `42 = 6 × 7`, donc 42 est un multiple de 6 et 6 est un diviseur de 42.
+
+    En revanche, `44 = 6 × 7 + 2` : le reste n'est pas nul, donc 44 n'est pas divisible par 6.
 
 ## Repère historique — Euclide : pourquoi la liste des nombres premiers ne s’arrête pas
 
-Dans le livre IX des *Éléments*, la proposition 20 établit qu’aucune liste finie ne peut contenir tous les nombres premiers. Le problème dépasse une simple recherche de grands nombres : il s’agit de démontrer une propriété valable quelle que soit la liste choisie. Euclide raisonne à partir d’un multiple commun des nombres proposés, auquel il ajoute une unité.
+!!! historique ""
 
-Voici une illustration moderne, avec 2, 3 et 5. Leur produit vaut 30 ; le nombre `30 + 1 = 31` laisse un reste de 1 lorsqu’on le divise par chacun d’eux. Aucun des trois ne le divise. Dans cet exemple, 31 est premier. Plus généralement, le nombre construit pourrait être composé : on chercherait alors un de ses diviseurs premiers, forcément absent de la liste initiale. Le raisonnement relie donc multiples, restes et diviseurs. Il rappelle aussi qu’observer quelques exemples ne suffit pas à démontrer une affirmation générale sur les entiers.
+    Euclide, *Éléments*, Alexandrie, vers −300
+    {: .frise data-annee="-300" data-etiquette="v. −300" }
 
-Source : [Euclide, *Éléments*, IX.20, édition commentée de David E. Joyce, université Clark](https://mathcs.clarku.edu/~djoyce/elements/bookIX/propIX20.html).
+    Dans le livre IX des *Éléments*, la proposition 20 établit qu’aucune liste finie ne peut contenir tous les nombres premiers. Le problème dépasse une simple recherche de grands nombres : il s’agit de démontrer une propriété valable quelle que soit la liste choisie. Euclide raisonne à partir d’un multiple commun des nombres proposés, auquel il ajoute une unité.
+
+    Voici une illustration moderne, avec 2, 3 et 5. Leur produit vaut 30 ; le nombre `30 + 1 = 31` laisse un reste de 1 lorsqu’on le divise par chacun d’eux. Aucun des trois ne le divise. Dans cet exemple, 31 est premier. Plus généralement, le nombre construit pourrait être composé : on chercherait alors un de ses diviseurs premiers, forcément absent de la liste initiale. Le raisonnement relie donc multiples, restes et diviseurs. Il rappelle aussi qu’observer quelques exemples ne suffit pas à démontrer une affirmation générale sur les entiers.
+
+    Source : [Euclide, *Éléments*, IX.20, édition commentée de David E. Joyce, université Clark](https://mathcs.clarku.edu/~djoyce/elements/bookIX/propIX20.html).

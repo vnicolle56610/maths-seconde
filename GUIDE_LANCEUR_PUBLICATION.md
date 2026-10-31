@@ -90,6 +90,25 @@ disparaître une ressource du catalogue.
 Pour ajouter une nouveauté ou retirer quoi que ce soit, il faut donc
 toujours passer par `--gui`.
 
+## Numéro de version des styles et scripts
+
+Les navigateurs gardent `extra.css` et les scripts en cache jusqu'à
+10 minutes : après une retouche du style, une page peut s'afficher avec
+l'ancienne feuille (encadrés sans couleur, frise en texte brut). Pour
+l'éviter, `mkdocs.yml` ajoute un numéro de version à ces fichiers :
+
+```yaml
+extra_css:
+  - stylesheets/extra.css?v=2026-10-31
+extra_javascript:
+  - javascripts/frise.js?v=2026-10-31
+```
+
+**À chaque modification de `extra.css` ou d'un script**, remplacer la
+date par celle du jour avant de déployer. Le nouveau nom force les
+navigateurs à recharger le fichier. Inutile de la changer quand seul le
+contenu des pages ou des PDF change.
+
 ## Prérequis
 
 - Être dans un terminal Linux, avec `bash`.

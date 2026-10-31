@@ -16,9 +16,11 @@ Une fonction affine modélise une évolution à rythme constant. Les documents r
 
 ## Objectifs
 
-- Relier une formule affine à sa droite représentative.
-- Utiliser coefficient directeur et ordonnée à l’origine.
-- Modéliser une situation affine.
+!!! objectifs ""
+
+    - Relier une formule affine à sa droite représentative.
+    - Utiliser coefficient directeur et ordonnée à l’origine.
+    - Modéliser une situation affine.
 
 ## Documents
 
@@ -30,29 +32,38 @@ Une fonction affine modélise une évolution à rythme constant. Les documents r
 
 ## Notions essentielles
 
-Une fonction affine est une fonction qui peut s'écrire sous la forme `f(x) = mx + p`.
+!!! essentiel ""
 
-Le nombre `m` est le coefficient directeur : il indique la pente de la droite représentative. Le nombre `p` est l'ordonnée à l'origine : c'est l'image de 0.
+    Une fonction affine est une fonction qui peut s'écrire sous la forme `f(x) = mx + p`.
 
-La courbe représentative d'une fonction affine est une droite. Si `m > 0`, la fonction est croissante ; si `m < 0`, elle est décroissante ; si `m = 0`, elle est constante.
+    Le nombre `m` est le coefficient directeur : il indique la pente de la droite représentative. Le nombre `p` est l'ordonnée à l'origine : c'est l'image de 0.
 
-Pour étudier le signe d'une fonction affine non constante, on commence par chercher sa racine, c'est-à-dire la valeur de `x` pour laquelle `f(x) = 0`.
+    La courbe représentative d'une fonction affine est une droite. Si `m > 0`, la fonction est croissante ; si `m < 0`, elle est décroissante ; si `m = 0`, elle est constante.
 
-Dans une situation concrète, une fonction affine modélise une évolution à rythme constant : à chaque même augmentation de `x` correspond une même variation de `f(x)`.
+    Pour étudier le signe d'une fonction affine non constante, on commence par chercher sa racine, c'est-à-dire la valeur de `x` pour laquelle `f(x) = 0`.
+
+    Dans une situation concrète, une fonction affine modélise une évolution à rythme constant : à chaque même augmentation de `x` correspond une même variation de `f(x)`.
 
 ## Exemple
 
-Pour `f(x) = 2x - 3`, le coefficient directeur est 2 et l'ordonnée à l'origine est -3.
+!!! exemple ""
 
-Comme `2 > 0`, la fonction est croissante. Sa racine vérifie `2x - 3 = 0`, donc `x = 1,5`.
+    Pour `f(x) = 2x - 3`, le coefficient directeur est 2 et l'ordonnée à l'origine est -3.
+
+    Comme `2 > 0`, la fonction est croissante. Sa racine vérifie `2x - 3 = 0`, donc `x = 1,5`.
 
 ## Repère historique — Des échelles de température aux fonctions affines
 
-Au XVIIIe siècle, plusieurs échelles de température se développent pour rendre les mesures comparables. Fahrenheit présente la sienne en 1724 ; Celsius propose ensuite une échelle dont les repères sont initialement inversés par rapport à l’usage actuel. Ces choix historiques expliquent qu’une même température puisse recevoir des nombres différents. Convertir exige de tenir compte à la fois de la taille des graduations et du décalage des zéros.
+!!! historique ""
 
-Avec les conventions actuelles, si `C` désigne la valeur en degrés Celsius et `F` celle en degrés Fahrenheit, la conversion s’écrit `F = 1,8C + 32`. C’est une relation affine. Dans cet exemple moderne, `0 °C` correspond à `32 °F` et `20 °C` à `68 °F`. Une hausse de `10 °C` correspond toujours à une hausse de `18 °F` : le coefficient 1,8 décrit le rapport des variations. Le terme 32 indique le décalage des origines. La conversion n’est donc pas proportionnelle : doubler la valeur en Celsius ne double généralement pas la valeur en Fahrenheit.
+    Fahrenheit (1724), puis Celsius, XVIIIe siècle
+    {: .frise data-annee="1724" data-fin="1742" data-etiquette="XVIIIe s." }
 
-Sources : NIST, [*Kelvin: History*](https://www.nist.gov/si-redefinition/kelvin/kelvin-history) et [*SI Units – Temperature*, conversions exactes](https://www.nist.gov/pml/owm/si-units-temperature).
+    Au XVIIIe siècle, plusieurs échelles de température se développent pour rendre les mesures comparables. Fahrenheit présente la sienne en 1724 ; Celsius propose ensuite une échelle dont les repères sont initialement inversés par rapport à l’usage actuel. Ces choix historiques expliquent qu’une même température puisse recevoir des nombres différents. Convertir exige de tenir compte à la fois de la taille des graduations et du décalage des zéros.
+
+    Avec les conventions actuelles, si `C` désigne la valeur en degrés Celsius et `F` celle en degrés Fahrenheit, la conversion s’écrit `F = 1,8C + 32`. C’est une relation affine. Dans cet exemple moderne, `0 °C` correspond à `32 °F` et `20 °C` à `68 °F`. Une hausse de `10 °C` correspond toujours à une hausse de `18 °F` : le coefficient 1,8 décrit le rapport des variations. Le terme 32 indique le décalage des origines. La conversion n’est donc pas proportionnelle : doubler la valeur en Celsius ne double généralement pas la valeur en Fahrenheit.
+
+    Sources : NIST, [*Kelvin: History*](https://www.nist.gov/si-redefinition/kelvin/kelvin-history) et [*SI Units – Temperature*, conversions exactes](https://www.nist.gov/pml/owm/si-units-temperature).
 
 ## Voir aussi
 

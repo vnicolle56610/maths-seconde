@@ -9,9 +9,11 @@ Un tableau croisé organise deux variables qualitatives dans une même lecture. 
 
 ## Objectifs
 
-- Lire et compléter un tableau croisé.
-- Interpréter des effectifs croisés.
-- Identifier la population de référence.
+!!! objectifs ""
+
+    - Lire et compléter un tableau croisé.
+    - Interpréter des effectifs croisés.
+    - Identifier la population de référence.
 
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
@@ -22,9 +24,11 @@ Un tableau croisé organise deux variables qualitatives dans une même lecture. 
 
 ## Objectifs
 
-- Lire et compléter un tableau croisé.
-- Interpréter des effectifs croisés.
-- Garder la population de référence sous contrôle.
+!!! objectifs ""
+
+    - Lire et compléter un tableau croisé.
+    - Interpréter des effectifs croisés.
+    - Garder la population de référence sous contrôle.
 
 ## Documents
 
@@ -36,25 +40,34 @@ Un tableau croisé organise deux variables qualitatives dans une même lecture. 
 
 ## Notions essentielles
 
-Un tableau croisé d'effectifs présente les effectifs d'une population selon deux variables qualitatives ; les totaux de lignes et de colonnes sont appelés des marges. Une fréquence marginale utilise le total de la population comme référence. Une fréquence conditionnelle utilise un sous-groupe comme référence : si `A` et `B` sont deux caractères, la fréquence de `A` parmi les individus de `B` est `f_B(A) = effectif(A∩B) / effectif(B)`.
+!!! essentiel ""
 
-Avant tout calcul de pourcentage, il faut écrire une phrase du type « on se place parmi les… » : le dénominateur est alors l'effectif de ce groupe. En général, `f_B(A) ≠ f_A(B)` : ces deux fréquences répondent à des questions différentes.
+    Un tableau croisé d'effectifs présente les effectifs d'une population selon deux variables qualitatives ; les totaux de lignes et de colonnes sont appelés des marges. Une fréquence marginale utilise le total de la population comme référence. Une fréquence conditionnelle utilise un sous-groupe comme référence : si `A` et `B` sont deux caractères, la fréquence de `A` parmi les individus de `B` est `f_B(A) = effectif(A∩B) / effectif(B)`.
 
-Les filtres ET, OU, NON permettent de traduire des critères sur une liste d'individus : « A ET B » garde les individus vérifiant les deux conditions, « A OU B » garde ceux qui en vérifient au moins une, « NON A » garde ceux qui ne vérifient pas A.
+    Avant tout calcul de pourcentage, il faut écrire une phrase du type « on se place parmi les… » : le dénominateur est alors l'effectif de ce groupe. En général, `f_B(A) ≠ f_A(B)` : ces deux fréquences répondent à des questions différentes.
+
+    Les filtres ET, OU, NON permettent de traduire des critères sur une liste d'individus : « A ET B » garde les individus vérifiant les deux conditions, « A OU B » garde ceux qui en vérifient au moins une, « NON A » garde ceux qui ne vérifient pas A.
 
 ## Exemple
 
-Dans une enquête sur 120 élèves, 30 viennent à vélo, dont 20 pratiquent un sport en club. La fréquence des sportifs parmi les cyclistes est `f_vélo(sport) = 20/30 ≈ 66,7 %`.
+!!! exemple ""
 
-Ce n'est pas la même chose que la fréquence des cyclistes parmi les sportifs, qui se calcule avec un dénominateur différent.
+    Dans une enquête sur 120 élèves, 30 viennent à vélo, dont 20 pratiquent un sport en club. La fréquence des sportifs parmi les cyclistes est `f_vélo(sport) = 20/30 ≈ 66,7 %`.
+
+    Ce n'est pas la même chose que la fréquence des cyclistes parmi les sportifs, qui se calcule avec un dénominateur différent.
 
 ## Repère historique — John Snow : croiser les groupes pour comparer
 
-Lors de l’épidémie de choléra de 1854 à Londres, John Snow étudie notamment des habitations desservies par deux compagnies d’eau. Leurs clients vivent dans des quartiers en partie mêlés, mais les compagnies ne prélèvent plus leur eau au même endroit dans la Tamise. Classer les observations selon l’approvisionnement permet de comparer des groupes autrement que par leur seule localisation. Cette enquête historique dépasse ainsi la célèbre carte de la pompe de Broad Street.
+!!! historique ""
 
-Dans un exemple moderne fictif, on classe 200 foyers selon leur fournisseur et la présence d’un incident : 12 foyers sur 80 chez A, 6 sur 120 chez B. Le tableau croisé associe deux variables qualitatives, fournisseur et incident. La fréquence d’incident parmi les clients de A vaut `12/80 = 15 %`. La fréquence des clients de A parmi les foyers avec incident vaut au contraire `12/18 ≈ 66,7 %`. Le numérateur est identique, mais le groupe de référence change. Organiser les données en tableau aide à rendre cette différence visible ; une association observée ne suffit cependant pas, à elle seule, à établir une cause.
+    John Snow, Londres, 1854
+    {: .frise data-annee="1854" }
 
-Source : [UCLA, John Snow Archive, *The Grand Experiment*](https://epi-snow.ph.ucla.edu/Stream3_GrandExperiment_d.html).
+    Lors de l’épidémie de choléra de 1854 à Londres, John Snow étudie notamment des habitations desservies par deux compagnies d’eau. Leurs clients vivent dans des quartiers en partie mêlés, mais les compagnies ne prélèvent plus leur eau au même endroit dans la Tamise. Classer les observations selon l’approvisionnement permet de comparer des groupes autrement que par leur seule localisation. Cette enquête historique dépasse ainsi la célèbre carte de la pompe de Broad Street.
+
+    Dans un exemple moderne fictif, on classe 200 foyers selon leur fournisseur et la présence d’un incident : 12 foyers sur 80 chez A, 6 sur 120 chez B. Le tableau croisé associe deux variables qualitatives, fournisseur et incident. La fréquence d’incident parmi les clients de A vaut `12/80 = 15 %`. La fréquence des clients de A parmi les foyers avec incident vaut au contraire `12/18 ≈ 66,7 %`. Le numérateur est identique, mais le groupe de référence change. Organiser les données en tableau aide à rendre cette différence visible ; une association observée ne suffit cependant pas, à elle seule, à établir une cause.
+
+    Source : [UCLA, John Snow Archive, *The Grand Experiment*](https://epi-snow.ph.ucla.edu/Stream3_GrandExperiment_d.html).
 
 ## Voir aussi
 

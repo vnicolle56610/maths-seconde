@@ -9,9 +9,11 @@ Une droite peut être décrite par un point, une direction, une pente ou une éq
 
 ## Objectifs
 
-- Décrire une droite par un point et une direction.
-- Passer entre équation cartésienne et équation réduite.
-- Étudier alignement, parallélisme et intersection.
+!!! objectifs ""
+
+    - Décrire une droite par un point et une direction.
+    - Passer entre équation cartésienne et équation réduite.
+    - Étudier alignement, parallélisme et intersection.
 
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
@@ -22,9 +24,11 @@ Une droite peut être décrite par un point, une direction, une pente ou une éq
 
 ## Objectifs
 
-- Décrire une droite par un point et une direction.
-- Construire une équation cartésienne ou réduite.
-- Étudier alignement, parallélisme et intersections.
+!!! objectifs ""
+
+    - Décrire une droite par un point et une direction.
+    - Construire une équation cartésienne ou réduite.
+    - Étudier alignement, parallélisme et intersections.
 
 ## Documents
 
@@ -36,29 +40,38 @@ Une droite peut être décrite par un point, une direction, une pente ou une éq
 
 ## Notions essentielles
 
-Une droite peut être décrite par un point et un vecteur directeur non nul. Le vecteur directeur donne la direction de la droite.
+!!! essentiel ""
 
-Une équation cartésienne de droite s'écrit sous la forme `ax + by + c = 0`, avec `a` et `b` qui ne sont pas tous les deux nuls.
+    Une droite peut être décrite par un point et un vecteur directeur non nul. Le vecteur directeur donne la direction de la droite.
 
-Lorsqu'une droite n'est pas verticale, elle peut aussi s'écrire sous forme réduite `y = mx + p`. Le nombre `m` est le coefficient directeur, ou pente, et `p` est l'ordonnée à l'origine.
+    Une équation cartésienne de droite s'écrit sous la forme `ax + by + c = 0`, avec `a` et `b` qui ne sont pas tous les deux nuls.
 
-Une droite verticale s'écrit sous la forme `x = k` et n'a pas de coefficient directeur.
+    Lorsqu'une droite n'est pas verticale, elle peut aussi s'écrire sous forme réduite `y = mx + p`. Le nombre `m` est le coefficient directeur, ou pente, et `p` est l'ordonnée à l'origine.
 
-Pour étudier deux droites, on choisit l'outil adapté : comparer des directions pour le parallélisme, résoudre un système pour une intersection, ou vérifier qu'un point satisfait une équation.
+    Une droite verticale s'écrit sous la forme `x = k` et n'a pas de coefficient directeur.
+
+    Pour étudier deux droites, on choisit l'outil adapté : comparer des directions pour le parallélisme, résoudre un système pour une intersection, ou vérifier qu'un point satisfait une équation.
 
 ## Exemple
 
-La droite d'équation `y = 2x - 1` a pour coefficient directeur 2 et pour ordonnée à l'origine -1.
+!!! exemple ""
 
-Le point `A(3 ; 5)` appartient à cette droite car `2 × 3 - 1 = 5`.
+    La droite d'équation `y = 2x - 1` a pour coefficient directeur 2 et pour ordonnée à l'origine -1.
+
+    Le point `A(3 ; 5)` appartient à cette droite car `2 × 3 - 1 = 5`.
 
 ## Repère historique — Descartes : reconnaître un lieu grâce à une équation
 
-Dans *La Géométrie*, publiée en 1637, René Descartes développe une méthode qui traduit des relations entre longueurs en équations. Un problème de lieu géométrique consiste à chercher tous les points satisfaisant une condition : le calcul peut alors aider à reconnaître la courbe obtenue. Cette articulation entre algèbre et géométrie est une étape majeure de la géométrie analytique ; elle ne se présente toutefois pas encore sous la forme exacte de nos repères scolaires et de notre langage vectoriel.
+!!! historique ""
 
-Prenons un exemple moderne : on cherche les points `M(x ; y)` équidistants de `A(0 ; 0)` et de `B(4 ; 0)`. Dans un repère orthonormé, l’égalité des carrés des distances s’écrit `x² + y² = (x − 4)² + y²`. Après développement et réduction, elle devient `x = 2`. On reconnaît la médiatrice de `[AB]`, une droite verticale. Cet exemple montre pourquoi l’équation cartésienne est utile : certaines droites se décrivent très simplement, même lorsqu’aucune écriture `y = mx + p` n’est possible.
+    René Descartes, *La Géométrie*, 1637
+    {: .frise data-annee="1637" }
 
-Source : [Stanford Encyclopedia of Philosophy, *Descartes’ Mathematics*](https://plato.stanford.edu/entries/descartes-mathematics/).
+    Dans *La Géométrie*, publiée en 1637, René Descartes développe une méthode qui traduit des relations entre longueurs en équations. Un problème de lieu géométrique consiste à chercher tous les points satisfaisant une condition : le calcul peut alors aider à reconnaître la courbe obtenue. Cette articulation entre algèbre et géométrie est une étape majeure de la géométrie analytique ; elle ne se présente toutefois pas encore sous la forme exacte de nos repères scolaires et de notre langage vectoriel.
+
+    Prenons un exemple moderne : on cherche les points `M(x ; y)` équidistants de `A(0 ; 0)` et de `B(4 ; 0)`. Dans un repère orthonormé, l’égalité des carrés des distances s’écrit `x² + y² = (x − 4)² + y²`. Après développement et réduction, elle devient `x = 2`. On reconnaît la médiatrice de `[AB]`, une droite verticale. Cet exemple montre pourquoi l’équation cartésienne est utile : certaines droites se décrivent très simplement, même lorsqu’aucune écriture `y = mx + p` n’est possible.
+
+    Source : [Stanford Encyclopedia of Philosophy, *Descartes’ Mathematics*](https://plato.stanford.edu/entries/descartes-mathematics/).
 
 ## Voir aussi
 

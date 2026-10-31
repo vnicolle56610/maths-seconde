@@ -9,9 +9,11 @@ Une fonction associe une grandeur de départ à une grandeur d’arrivée. Les r
 
 ## Objectifs
 
-- Utiliser la notation f(x), images et antécédents.
-- Passer d’un registre de fonction à un autre.
-- Modéliser une situation avec une fonction.
+!!! objectifs ""
+
+    - Utiliser la notation f(x), images et antécédents.
+    - Passer d’un registre de fonction à un autre.
+    - Modéliser une situation avec une fonction.
 
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
@@ -22,9 +24,11 @@ Une fonction associe une grandeur de départ à une grandeur d’arrivée. Les r
 
 ## Objectifs
 
-- Utiliser la notation \(f(x)\), images et antécédents.
-- Passer d'un registre à l'autre (courbe, tableau, formule).
-- Modéliser avec une fonction.
+!!! objectifs ""
+
+    - Utiliser la notation \(f(x)\), images et antécédents.
+    - Passer d'un registre à l'autre (courbe, tableau, formule).
+    - Modéliser avec une fonction.
 
 ## Documents
 
@@ -36,29 +40,38 @@ Une fonction associe une grandeur de départ à une grandeur d’arrivée. Les r
 
 ## Notions essentielles
 
-Une fonction associe à une valeur de départ au plus une valeur d'arrivée. La valeur de départ est souvent notée `x`, et son image par la fonction `f` se note `f(x)`.
+!!! essentiel ""
 
-Si `f(a) = b`, alors `b` est l'image de `a` par `f`, et `a` est un antécédent de `b`.
+    Une fonction associe à une valeur de départ au plus une valeur d'arrivée. La valeur de départ est souvent notée `x`, et son image par la fonction `f` se note `f(x)`.
 
-Une même valeur peut avoir plusieurs antécédents, un seul antécédent ou aucun. En revanche, une valeur de départ ne peut pas avoir deux images différentes pour une même fonction.
+    Si `f(a) = b`, alors `b` est l'image de `a` par `f`, et `a` est un antécédent de `b`.
 
-La courbe représentative d'une fonction est formée de points de coordonnées `(x ; f(x))`. Lire une image revient à partir d'une abscisse ; lire un antécédent revient à chercher une abscisse associée à une ordonnée donnée.
+    Une même valeur peut avoir plusieurs antécédents, un seul antécédent ou aucun. En revanche, une valeur de départ ne peut pas avoir deux images différentes pour une même fonction.
 
-Une fonction peut être donnée par une formule, un tableau, une courbe, une phrase, un programme de calcul ou une fonction Python. Changer de registre aide à choisir l'information la plus lisible.
+    La courbe représentative d'une fonction est formée de points de coordonnées `(x ; f(x))`. Lire une image revient à partir d'une abscisse ; lire un antécédent revient à chercher une abscisse associée à une ordonnée donnée.
+
+    Une fonction peut être donnée par une formule, un tableau, une courbe, une phrase, un programme de calcul ou une fonction Python. Changer de registre aide à choisir l'information la plus lisible.
 
 ## Exemple
 
-Pour `f(x) = 2x + 1`, l'image de 3 est `f(3) = 2 × 3 + 1 = 7`.
+!!! exemple ""
 
-Chercher un antécédent de 9 revient à résoudre `2x + 1 = 9`, donc `x = 4`.
+    Pour `f(x) = 2x + 1`, l'image de 3 est `f(3) = 2 × 3 + 1 = 7`.
+
+    Chercher un antécédent de 9 revient à résoudre `2x + 1 = 9`, donc `x = 4`.
 
 ## Repère historique — Oresme : donner une forme à une grandeur variable
 
-Au XIVe siècle, Nicole Oresme étudie la représentation géométrique de grandeurs variables, notamment dans son traité sur les configurations des qualités et des mouvements. Une longueur portée sur une ligne peut servir à représenter une grandeur, tandis que des hauteurs représentent ses intensités successives. Cette démarche permet de comparer des variations par des figures. Elle précède nos graphiques, sans être encore la définition moderne d’une fonction ni notre notation `f(x)`.
+!!! historique ""
 
-Dans un exemple actuel, on décrit le remplissage d’un réservoir par `V(t) = 2t`, avec `t` en minutes et `V(t)` en litres, pour `0 ≤ t ≤ 5`. Un tableau donne notamment `V(0) = 0`, `V(2) = 4` et `V(5) = 10`. La représentation graphique place les points `(0 ; 0)`, `(2 ; 4)` et `(5 ; 10)` ; la formule précise aussi les valeurs entre ces points. Chercher l’image de 2 ou l’antécédent de 4 exprime deux lectures de la même relation. Changer de registre conserve le phénomène étudié, mais rend certaines informations plus visibles.
+    Nicole Oresme, XIVe siècle
+    {: .frise data-annee="1350" data-etiquette="XIVe s." }
 
-Source : [MacTutor, université de St Andrews, biographie de Nicole Oresme](https://mathshistory.st-andrews.ac.uk/Biographies/Oresme/).
+    Au XIVe siècle, Nicole Oresme étudie la représentation géométrique de grandeurs variables, notamment dans son traité sur les configurations des qualités et des mouvements. Une longueur portée sur une ligne peut servir à représenter une grandeur, tandis que des hauteurs représentent ses intensités successives. Cette démarche permet de comparer des variations par des figures. Elle précède nos graphiques, sans être encore la définition moderne d’une fonction ni notre notation `f(x)`.
+
+    Dans un exemple actuel, on décrit le remplissage d’un réservoir par `V(t) = 2t`, avec `t` en minutes et `V(t)` en litres, pour `0 ≤ t ≤ 5`. Un tableau donne notamment `V(0) = 0`, `V(2) = 4` et `V(5) = 10`. La représentation graphique place les points `(0 ; 0)`, `(2 ; 4)` et `(5 ; 10)` ; la formule précise aussi les valeurs entre ces points. Chercher l’image de 2 ou l’antécédent de 4 exprime deux lectures de la même relation. Changer de registre conserve le phénomène étudié, mais rend certaines informations plus visibles.
+
+    Source : [MacTutor, université de St Andrews, biographie de Nicole Oresme](https://mathshistory.st-andrews.ac.uk/Biographies/Oresme/).
 
 ## Voir aussi
 

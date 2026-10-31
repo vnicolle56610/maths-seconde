@@ -15,9 +15,11 @@ La synthèse annuelle reprend les outils essentiels de Seconde dans des exercice
 
 ## Objectifs
 
-- Réinvestir les acquis essentiels de l’année.
-- Traiter des problèmes transversaux.
-- Préparer la transition vers la Première.
+!!! objectifs ""
+
+    - Réinvestir les acquis essentiels de l’année.
+    - Traiter des problèmes transversaux.
+    - Préparer la transition vers la Première.
 
 ## Documents
 
@@ -28,24 +30,33 @@ La synthèse annuelle reprend les outils essentiels de Seconde dans des exercice
 
 ## Points essentiels à maîtriser
 
-Un problème transversal ne donne pas directement la méthode à utiliser : avant de calculer, il faut préciser ce que l'on cherche, ce que l'on connaît, et l'outil adapté (calcul littéral, vecteurs, fonctions, statistiques, probabilités ou simulation).
+!!! essentiel ""
 
-Un même objet peut changer de registre. Une droite, par exemple, se décrit par une figure et deux points, par un vecteur directeur, par une équation cartésienne, ou par une fonction affine lorsqu'elle n'est pas verticale : changer de registre permet de choisir l'outil le plus efficace. Dans un calcul de proportion, de fréquence conditionnelle ou de probabilité conditionnelle, le dénominateur est toujours lié à la population ou à l'événement de référence : deux pourcentages ne se comparent pas sans vérifier qu'ils portent sur la même référence.
+    Un problème transversal ne donne pas directement la méthode à utiliser : avant de calculer, il faut préciser ce que l'on cherche, ce que l'on connaît, et l'outil adapté (calcul littéral, vecteurs, fonctions, statistiques, probabilités ou simulation).
 
-À maîtriser en fin de Seconde : calcul numérique et algébrique (fractions, puissances, développements, factorisations), proportions et évolutions, fonctions (images, antécédents, signes, variations, lectures graphiques), géométrie repérée (coordonnées, vecteurs, droites, alignement, distance), statistiques et probabilités (indicateurs, tableaux croisés, arbres, simulation).
+    Un même objet peut changer de registre. Une droite, par exemple, se décrit par une figure et deux points, par un vecteur directeur, par une équation cartésienne, ou par une fonction affine lorsqu'elle n'est pas verticale : changer de registre permet de choisir l'outil le plus efficace. Dans un calcul de proportion, de fréquence conditionnelle ou de probabilité conditionnelle, le dénominateur est toujours lié à la population ou à l'événement de référence : deux pourcentages ne se comparent pas sans vérifier qu'ils portent sur la même référence.
 
-Pour préparer la Première, les sources n'annoncent pas de notion nouvelle mais un enjeu de méthode : savoir choisir un outil, le justifier, et rédiger une conclusion complète dans le contexte.
+    À maîtriser en fin de Seconde : calcul numérique et algébrique (fractions, puissances, développements, factorisations), proportions et évolutions, fonctions (images, antécédents, signes, variations, lectures graphiques), géométrie repérée (coordonnées, vecteurs, droites, alignement, distance), statistiques et probabilités (indicateurs, tableaux croisés, arbres, simulation).
+
+    Pour préparer la Première, les sources n'annoncent pas de notion nouvelle mais un enjeu de méthode : savoir choisir un outil, le justifier, et rédiger une conclusion complète dans le contexte.
 
 ## Exemple de synthèse
 
-On donne `A(2 ; -1)` et `B(8 ; 2)`. Le coefficient directeur de la droite `(AB)` est `m = (2-(-1))/(8-2) = 3/6 = 0,5`, d'où l'équation réduite `y = 0,5x - 2`.
+!!! exemple ""
 
-Pour `C(10 ; 3)` : `0,5 × 10 - 2 = 3`, ce qui correspond bien à l'ordonnée de `C`. Le point `C` appartient donc à la droite `(AB)`.
+    On donne `A(2 ; -1)` et `B(8 ; 2)`. Le coefficient directeur de la droite `(AB)` est `m = (2-(-1))/(8-2) = 3/6 = 0,5`, d'où l'équation réduite `y = 0,5x - 2`.
+
+    Pour `C(10 ; 3)` : `0,5 × 10 - 2 = 3`, ce qui correspond bien à l'ordonnée de `C`. Le point `C` appartient donc à la droite `(AB)`.
 
 ## Repère historique — Pólya : organiser la recherche d’une solution
 
-En 1945, George Pólya publie *How to Solve It*, consacré à la résolution de problèmes. Il propose quatre grandes phases : comprendre la question, concevoir un plan, le mettre en œuvre, puis examiner la solution obtenue. Ses conseils invitent notamment à dessiner une figure, introduire des notations, chercher un problème voisin ou vérifier le résultat par une autre méthode. Ce sont des pistes de recherche, pas une recette assurant automatiquement la réussite.
+!!! historique ""
 
-Un exemple moderne relie cette démarche aux acquis de Seconde : pour décider si trois points sont alignés, on commence par identifier les données et la conclusion attendue. On peut ensuite choisir un calcul de déterminant ou une équation de droite. Après les calculs, un contrôle avec la seconde méthode aide à repérer une erreur ; une figure seule ne constitue pas une preuve. La synthèse annuelle poursuit ce même objectif : disposer de plusieurs outils, savoir pourquoi l’un convient à la situation, puis formuler une conclusion justifiée. Revenir sur une solution permet aussi de reconnaître une méthode réutilisable dans un autre problème.
+    George Pólya, *How to Solve It*, 1945
+    {: .frise data-annee="1945" }
 
-Source : [Harvey Mudd College, présentation de *How to Solve It* de Pólya](https://www.cs.hmc.edu/~keller/how_to_solve_it.html).
+    En 1945, George Pólya publie *How to Solve It*, consacré à la résolution de problèmes. Il propose quatre grandes phases : comprendre la question, concevoir un plan, le mettre en œuvre, puis examiner la solution obtenue. Ses conseils invitent notamment à dessiner une figure, introduire des notations, chercher un problème voisin ou vérifier le résultat par une autre méthode. Ce sont des pistes de recherche, pas une recette assurant automatiquement la réussite.
+
+    Un exemple moderne relie cette démarche aux acquis de Seconde : pour décider si trois points sont alignés, on commence par identifier les données et la conclusion attendue. On peut ensuite choisir un calcul de déterminant ou une équation de droite. Après les calculs, un contrôle avec la seconde méthode aide à repérer une erreur ; une figure seule ne constitue pas une preuve. La synthèse annuelle poursuit ce même objectif : disposer de plusieurs outils, savoir pourquoi l’un convient à la situation, puis formuler une conclusion justifiée. Revenir sur une solution permet aussi de reconnaître une méthode réutilisable dans un autre problème.
+
+    Source : [Harvey Mudd College, présentation de *How to Solve It* de Pólya](https://www.cs.hmc.edu/~keller/how_to_solve_it.html).

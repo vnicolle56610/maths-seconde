@@ -15,9 +15,11 @@ Les notations d'ensembles aident à nommer précisément les objets manipulés e
 
 ## Objectifs
 
-- Nommer des objets avec le vocabulaire des ensembles.
-- Passer d'une phrase à une notation ou un schéma.
-- Rédiger une justification courte.
+!!! objectifs ""
+
+    - Nommer des objets avec le vocabulaire des ensembles.
+    - Passer d'une phrase à une notation ou un schéma.
+    - Rédiger une justification courte.
 
 ## Documents
 
@@ -30,29 +32,38 @@ Les notations d'ensembles aident à nommer précisément les objets manipulés e
 
 ## Notions essentielles
 
-`x ∈ A` signifie que `x` est un élément de l'ensemble `A`.
+!!! essentiel ""
 
-`A ⊂ B` signifie que tout élément de `A` est aussi un élément de `B` : l'ensemble `A` est inclus dans l'ensemble `B`.
+    `x ∈ A` signifie que `x` est un élément de l'ensemble `A`.
 
-`A ∩ B` contient les éléments communs à `A` et `B`. `A ∪ B` contient les éléments qui sont dans `A` ou dans `B`.
+    `A ⊂ B` signifie que tout élément de `A` est aussi un élément de `B` : l'ensemble `A` est inclus dans l'ensemble `B`.
 
-Pour montrer qu'une phrase générale est fausse, un seul contre-exemple suffit.
+    `A ∩ B` contient les éléments communs à `A` et `B`. `A ∪ B` contient les éléments qui sont dans `A` ou dans `B`.
 
-Une implication peut être vraie même si sa réciproque est fausse.
+    Pour montrer qu'une phrase générale est fausse, un seul contre-exemple suffit.
+
+    Une implication peut être vraie même si sa réciproque est fausse.
 
 ## Exemple
 
-Si `A = {1 ; 2 ; 4}` et `B = {2 ; 3 ; 4}`, alors `A ∩ B = {2 ; 4}`.
+!!! exemple ""
 
-Les nombres 2 et 4 sont les éléments communs aux deux ensembles.
+    Si `A = {1 ; 2 ; 4}` et `B = {2 ; 3 ; 4}`, alors `A ∩ B = {2 ; 4}`.
+
+    Les nombres 2 et 4 sont les éléments communs aux deux ensembles.
 
 ## Repère historique — Venn : représenter les relations logiques
 
-En 1880, John Venn publie des diagrammes pour représenter des relations logiques. Des dessins apparentés existaient déjà, notamment chez Euler : Venn ne part donc pas de rien. Son dispositif permet de distinguer les différentes combinaisons d’appartenance à des ensembles, y compris celles qui ne contiennent aucun élément dans une situation donnée.
+!!! historique ""
 
-Dans une lecture actuelle, deux ensembles sont représentés par deux régions qui se chevauchent. Leur partie commune figure l’intersection ; l’ensemble des deux régions figure l’union. Prenons un exemple moderne : parmi les entiers de 1 à 12, on appelle `A` l’ensemble des multiples de 2 et `B` celui des multiples de 3. L’intersection contient 6 et 12. Mais 2 appartient à `A` sans appartenir à `B` : il suffit à réfuter l’affirmation « tout multiple de 2 est multiple de 3 ». Le dessin aide ainsi à chercher un contre-exemple ; la justification repose sur les propriétés des nombres.
+    John Venn, Angleterre, 1880
+    {: .frise data-annee="1880" }
 
-Source : [NIST, *Venn diagram*, notice de Paul E. Black](https://xlinux.nist.gov/dads/HTML/venndiagram.html).
+    En 1880, John Venn publie des diagrammes pour représenter des relations logiques. Des dessins apparentés existaient déjà, notamment chez Euler : Venn ne part donc pas de rien. Son dispositif permet de distinguer les différentes combinaisons d’appartenance à des ensembles, y compris celles qui ne contiennent aucun élément dans une situation donnée.
+
+    Dans une lecture actuelle, deux ensembles sont représentés par deux régions qui se chevauchent. Leur partie commune figure l’intersection ; l’ensemble des deux régions figure l’union. Prenons un exemple moderne : parmi les entiers de 1 à 12, on appelle `A` l’ensemble des multiples de 2 et `B` celui des multiples de 3. L’intersection contient 6 et 12. Mais 2 appartient à `A` sans appartenir à `B` : il suffit à réfuter l’affirmation « tout multiple de 2 est multiple de 3 ». Le dessin aide ainsi à chercher un contre-exemple ; la justification repose sur les propriétés des nombres.
+
+    Source : [NIST, *Venn diagram*, notice de Paul E. Black](https://xlinux.nist.gov/dads/HTML/venndiagram.html).
 
 ## Voir aussi
 

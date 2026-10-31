@@ -9,9 +9,11 @@ Cette synthèse regroupe les outils de fonctions travaillés jusque-là : lectur
 
 ## Objectifs
 
-- Choisir le registre adapté à une fonction.
-- Modéliser une situation par une fonction.
-- Résoudre puis interpréter le résultat.
+!!! objectifs ""
+
+    - Choisir le registre adapté à une fonction.
+    - Modéliser une situation par une fonction.
+    - Résoudre puis interpréter le résultat.
 
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
@@ -22,9 +24,11 @@ Cette synthèse regroupe les outils de fonctions travaillés jusque-là : lectur
 
 ## Objectifs
 
-- Choisir le registre adapté à une fonction.
-- Modéliser une situation.
-- Résoudre puis interpréter.
+!!! objectifs ""
+
+    - Choisir le registre adapté à une fonction.
+    - Modéliser une situation.
+    - Résoudre puis interpréter.
 
 ## Documents
 
@@ -36,25 +40,34 @@ Cette synthèse regroupe les outils de fonctions travaillés jusque-là : lectur
 
 ## Notions essentielles
 
-Modéliser une situation par une fonction, c'est choisir une variable `x`, préciser son domaine de valeurs possibles, puis associer à chaque valeur de `x` une grandeur `f(x)` qui en dépend. Une fonction se lit alors de plusieurs façons : `f(x)` est la grandeur associée, `f(x) = k` traduit une valeur atteinte, `f(x) ≤ k` traduit une contrainte, un maximum ou un minimum traduit une situation optimale.
+!!! essentiel ""
 
-Une même fonction peut être étudiée avec plusieurs représentations : une formule pour calculer exactement, un graphique pour lire et comparer, un tableau de valeurs pour organiser des essais, un tableau de signes ou de variations pour justifier. Comparer deux grandeurs `f(x)` et `g(x)` revient souvent à étudier le signe de `f(x) - g(x)`.
+    Modéliser une situation par une fonction, c'est choisir une variable `x`, préciser son domaine de valeurs possibles, puis associer à chaque valeur de `x` une grandeur `f(x)` qui en dépend. Une fonction se lit alors de plusieurs façons : `f(x)` est la grandeur associée, `f(x) = k` traduit une valeur atteinte, `f(x) ≤ k` traduit une contrainte, un maximum ou un minimum traduit une situation optimale.
 
-Une solution mathématique doit toujours être interprétée dans le contexte : il faut vérifier qu'elle appartient au domaine du problème, puis répondre avec les mots de la situation. Une rédaction complète introduit la variable, écrit le modèle, résout, confronte le résultat au domaine, puis conclut.
+    Une même fonction peut être étudiée avec plusieurs représentations : une formule pour calculer exactement, un graphique pour lire et comparer, un tableau de valeurs pour organiser des essais, un tableau de signes ou de variations pour justifier. Comparer deux grandeurs `f(x)` et `g(x)` revient souvent à étudier le signe de `f(x) - g(x)`.
+
+    Une solution mathématique doit toujours être interprétée dans le contexte : il faut vérifier qu'elle appartient au domaine du problème, puis répondre avec les mots de la situation. Une rédaction complète introduit la variable, écrit le modèle, résout, confronte le résultat au domaine, puis conclut.
 
 ## Exemple
 
-Un club propose un tarif A à 14 € par personne et un tarif B à 50 € de forfait puis 8 € par personne, pour `x` participants entiers.
+!!! exemple ""
 
-Comparer les tarifs revient à résoudre `B(x) < A(x)`, soit `50 + 8x < 14x`, donc `50 < 6x`, donc `x > 25/3`. Comme `x` est un entier, le tarif B devient avantageux à partir de 9 participants.
+    Un club propose un tarif A à 14 € par personne et un tarif B à 50 € de forfait puis 8 € par personne, pour `x` participants entiers.
+
+    Comparer les tarifs revient à résoudre `B(x) < A(x)`, soit `50 + 8x < 14x`, donc `50 < 6x`, donc `x > 25/3`. Comme `x` est un entier, le tarif B devient avantageux à partir de 9 participants.
 
 ## Repère historique — Galilée : choisir un modèle pour décrire un mouvement
 
-Dans ses travaux sur le mouvement, exposés notamment dans les *Discours* de 1638, Galilée établit qu’un mouvement uniformément accéléré à partir du repos conduit à une distance parcourue proportionnelle au carré du temps. Cette relation donne un exemple historique de mathématisation : choisir des grandeurs mesurables, formuler des hypothèses et chercher une loi qui relie les mesures. Elle ne signifie pas que tous les mouvements suivent cette règle.
+!!! historique ""
 
-Dans un exemple moderne simplifié, on modélise une distance par `d(t) = 2t²`, en mètres, avec `t` en secondes et `0 ≤ t ≤ 3`. Le coefficient 2 est choisi pour l’exercice, sans prétendre reproduire une expérience de Galilée. Un tableau donne 2 mètres à 1 seconde et 8 mètres à 2 secondes : doubler le temps multiplie ici la distance par quatre. Chercher quand la distance atteint 8 mètres revient à résoudre `2t² = 8`. Le calcul donne −2 et 2, mais seul `t = 2` appartient au domaine. Interpréter le résultat fait ainsi partie intégrante de la modélisation.
+    Galilée, *Discours*, 1638
+    {: .frise data-annee="1638" }
 
-Source : [MacTutor, université de St Andrews, biographie de Galilée](https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/).
+    Dans ses travaux sur le mouvement, exposés notamment dans les *Discours* de 1638, Galilée établit qu’un mouvement uniformément accéléré à partir du repos conduit à une distance parcourue proportionnelle au carré du temps. Cette relation donne un exemple historique de mathématisation : choisir des grandeurs mesurables, formuler des hypothèses et chercher une loi qui relie les mesures. Elle ne signifie pas que tous les mouvements suivent cette règle.
+
+    Dans un exemple moderne simplifié, on modélise une distance par `d(t) = 2t²`, en mètres, avec `t` en secondes et `0 ≤ t ≤ 3`. Le coefficient 2 est choisi pour l’exercice, sans prétendre reproduire une expérience de Galilée. Un tableau donne 2 mètres à 1 seconde et 8 mètres à 2 secondes : doubler le temps multiplie ici la distance par quatre. Chercher quand la distance atteint 8 mètres revient à résoudre `2t² = 8`. Le calcul donne −2 et 2, mais seul `t = 2` appartient au domaine. Interpréter le résultat fait ainsi partie intégrante de la modélisation.
+
+    Source : [MacTutor, université de St Andrews, biographie de Galilée](https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/).
 
 ## Voir aussi
 

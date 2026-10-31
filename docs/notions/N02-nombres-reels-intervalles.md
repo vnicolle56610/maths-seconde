@@ -16,9 +16,11 @@ Les nombres réels se représentent sur une droite graduée et se décrivent ave
 
 ## Objectifs
 
-- Passer d'une inégalité à un intervalle.
-- Interpréter une valeur absolue comme une distance.
-- Produire un encadrement décimal fiable.
+!!! objectifs ""
+
+    - Passer d'une inégalité à un intervalle.
+    - Interpréter une valeur absolue comme une distance.
+    - Produire un encadrement décimal fiable.
 
 ## Documents
 
@@ -35,27 +37,36 @@ Les nombres réels se représentent sur une droite graduée et se décrivent ave
 
 ## Notions essentielles
 
-Les nombres réels sont les nombres que l'on peut placer sur une droite graduée.
+!!! essentiel ""
 
-Un intervalle traduit une inégalité : par exemple `x ∈ [−2 ; 3[` signifie `−2 ≤ x < 3`.
+    Les nombres réels sont les nombres que l'on peut placer sur une droite graduée.
 
-La valeur absolue se lit comme une distance : `|a|` est la distance entre `a` et 0, et `|a - b|` est la distance entre `a` et `b`.
+    Un intervalle traduit une inégalité : par exemple `x ∈ [−2 ; 3[` signifie `−2 ≤ x < 3`.
 
-Un encadrement décimal donne deux valeurs entre lesquelles le nombre se trouve.
+    La valeur absolue se lit comme une distance : `|a|` est la distance entre `a` et 0, et `|a - b|` est la distance entre `a` et `b`.
+
+    Un encadrement décimal donne deux valeurs entre lesquelles le nombre se trouve.
 
 ## Exemple
 
-L'écriture `x ∈ [−2 ; 3[` signifie que `x` est au moins égal à −2 et strictement inférieur à 3.
+!!! exemple ""
 
-On peut donc écrire : `−2 ≤ x < 3`.
+    L'écriture `x ∈ [−2 ; 3[` signifie que `x` est au moins égal à −2 et strictement inférieur à 3.
+
+    On peut donc écrire : `−2 ≤ x < 3`.
 
 ## Repère historique — La diagonale du carré dépasse les fractions
 
-Dans les mathématiques grecques antiques, l’étude des longueurs fait apparaître une difficulté : le côté d’un carré et sa diagonale n’ont pas de commune mesure. Cela signifie qu’aucune petite longueur ne permet de mesurer exactement les deux par des nombres entiers de reports. L’identité précise du premier auteur de cette découverte reste incertaine ; il faut éviter de l’attribuer sans réserve à Pythagore.
+!!! historique ""
 
-Avec nos notations actuelles, un carré de côté 1 a une diagonale de longueur `√2`. Ce nombre n’est pas une fraction de deux entiers, mais c’est bien un réel que l’on peut placer sur une droite graduée. Un exemple moderne d’encadrement donne `1,41² = 1,9881` et `1,42² = 2,0164`, donc `1,41 < √2 < 1,42`. Les décimaux approchent ici une longueur exacte sans la remplacer. Cette distinction éclaire le chapitre : appartenir à un intervalle fournit une information sur un nombre, sans nécessairement donner sa valeur exacte.
+    Mathématiques grecques, Antiquité
+    {: .frise data-annee="-400" data-etiquette="Grèce antique" }
 
-Source : [MacTutor, université de St Andrews, *The real numbers: Pythagoras to Stevin*](https://mathshistory.st-andrews.ac.uk/HistTopics/Real_numbers_1/).
+    Dans les mathématiques grecques antiques, l’étude des longueurs fait apparaître une difficulté : le côté d’un carré et sa diagonale n’ont pas de commune mesure. Cela signifie qu’aucune petite longueur ne permet de mesurer exactement les deux par des nombres entiers de reports. L’identité précise du premier auteur de cette découverte reste incertaine ; il faut éviter de l’attribuer sans réserve à Pythagore.
+
+    Avec nos notations actuelles, un carré de côté 1 a une diagonale de longueur `√2`. Ce nombre n’est pas une fraction de deux entiers, mais c’est bien un réel que l’on peut placer sur une droite graduée. Un exemple moderne d’encadrement donne `1,41² = 1,9881` et `1,42² = 2,0164`, donc `1,41 < √2 < 1,42`. Les décimaux approchent ici une longueur exacte sans la remplacer. Cette distinction éclaire le chapitre : appartenir à un intervalle fournit une information sur un nombre, sans nécessairement donner sa valeur exacte.
+
+    Source : [MacTutor, université de St Andrews, *The real numbers: Pythagoras to Stevin*](https://mathshistory.st-andrews.ac.uk/HistTopics/Real_numbers_1/).
 
 ## Voir aussi
 

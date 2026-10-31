@@ -9,9 +9,11 @@ Le calcul littéral sert à transformer une expression sans changer sa valeur. L
 
 ## Objectifs
 
-- Utiliser les règles de puissances et de racines.
-- Choisir une forme développée, factorisée ou réduite.
-- Isoler une variable dans une relation.
+!!! objectifs ""
+
+    - Utiliser les règles de puissances et de racines.
+    - Choisir une forme développée, factorisée ou réduite.
+    - Isoler une variable dans une relation.
 
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
@@ -22,9 +24,11 @@ Le calcul littéral sert à transformer une expression sans changer sa valeur. L
 
 ## Objectifs
 
-- Utiliser les règles de puissances et de racines.
-- Choisir entre forme développée, factorisée ou réduite.
-- Isoler une variable et comparer des quantités.
+!!! objectifs ""
+
+    - Utiliser les règles de puissances et de racines.
+    - Choisir entre forme développée, factorisée ou réduite.
+    - Isoler une variable et comparer des quantités.
 
 ## Documents
 
@@ -42,29 +46,38 @@ Le calcul littéral sert à transformer une expression sans changer sa valeur. L
 
 ## Notions essentielles
 
-Une expression littérale contient des nombres et des lettres. On peut la transformer, la réduire ou la calculer pour une valeur donnée.
+!!! essentiel ""
 
-Développer transforme un produit en somme. Factoriser transforme une somme en produit. Réduire consiste à regrouper les termes semblables.
+    Une expression littérale contient des nombres et des lettres. On peut la transformer, la réduire ou la calculer pour une valeur donnée.
 
-Une même expression peut donc avoir plusieurs formes. La forme utile dépend de la question : calculer, comparer, résoudre ou isoler une variable.
+    Développer transforme un produit en somme. Factoriser transforme une somme en produit. Réduire consiste à regrouper les termes semblables.
 
-Les règles de puissances et de racines demandent de respecter les priorités et les signes. En particulier, une racine carrée est toujours positive ou nulle.
+    Une même expression peut donc avoir plusieurs formes. La forme utile dépend de la question : calculer, comparer, résoudre ou isoler une variable.
+
+    Les règles de puissances et de racines demandent de respecter les priorités et les signes. En particulier, une racine carrée est toujours positive ou nulle.
 
 ## Exemple
 
-L'expression `3(x + 2)` est factorisée.
+!!! exemple ""
 
-En développant, on obtient `3 × x + 3 × 2 = 3x + 6`.
+    L'expression `3(x + 2)` est factorisée.
 
-Les deux écritures ont la même valeur, mais elles ne servent pas toujours au même moment.
+    En développant, on obtient `3 × x + 3 × 2 = 3x + 6`.
+
+    Les deux écritures ont la même valeur, mais elles ne servent pas toujours au même moment.
 
 ## Repère historique — Viète : calculer aussi avec les quantités connues
 
-En 1591, François Viète publie l’*In artem analyticam isagoge*. Il y organise un calcul dans lequel les lettres représentent aussi bien des quantités connues que des inconnues. Il emploie des voyelles pour les inconnues et des consonnes pour les quantités connues. Nos conventions et nos écritures actuelles sont différentes : une formule du cours n’est donc pas une transcription de ses pages.
+!!! historique ""
 
-L’intérêt est de traiter ensemble plusieurs problèmes qui ont la même structure. Dans un exemple moderne, un rectangle de côtés `a` et `b + c` a pour aire `a(b + c)`. Le partager en deux rectangles donne aussi `ab + ac`. La distributivité exprime cette égalité pour toutes les longueurs positives, puis le calcul algébrique actuel l’étend à tous les réels `a`, `b` et `c`. Les lettres permettent ainsi de transformer une expression avant de remplacer les quantités par des nombres. Développer et factoriser deviennent deux façons de lire une même relation, adaptées à des questions différentes.
+    François Viète, *In artem analyticam isagoge*, 1591
+    {: .frise data-annee="1591" }
 
-Source : [MacTutor, université de St Andrews, biographie de François Viète](https://mathshistory.st-andrews.ac.uk/Biographies/Viete/).
+    En 1591, François Viète publie l’*In artem analyticam isagoge*. Il y organise un calcul dans lequel les lettres représentent aussi bien des quantités connues que des inconnues. Il emploie des voyelles pour les inconnues et des consonnes pour les quantités connues. Nos conventions et nos écritures actuelles sont différentes : une formule du cours n’est donc pas une transcription de ses pages.
+
+    L’intérêt est de traiter ensemble plusieurs problèmes qui ont la même structure. Dans un exemple moderne, un rectangle de côtés `a` et `b + c` a pour aire `a(b + c)`. Le partager en deux rectangles donne aussi `ab + ac`. La distributivité exprime cette égalité pour toutes les longueurs positives, puis le calcul algébrique actuel l’étend à tous les réels `a`, `b` et `c`. Les lettres permettent ainsi de transformer une expression avant de remplacer les quantités par des nombres. Développer et factoriser deviennent deux façons de lire une même relation, adaptées à des questions différentes.
+
+    Source : [MacTutor, université de St Andrews, biographie de François Viète](https://mathshistory.st-andrews.ac.uk/Biographies/Viete/).
 
 ## Voir aussi
 

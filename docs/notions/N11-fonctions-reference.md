@@ -9,9 +9,11 @@ Les fonctions de référence forment un répertoire de courbes et de comportemen
 
 ## Objectifs
 
-- Reconnaître les courbes de référence.
-- Exploiter variations et comparaisons d’images.
-- Résoudre des équations ou inéquations simples.
+!!! objectifs ""
+
+    - Reconnaître les courbes de référence.
+    - Exploiter variations et comparaisons d’images.
+    - Résoudre des équations ou inéquations simples.
 
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
@@ -22,9 +24,11 @@ Les fonctions de référence forment un répertoire de courbes et de comportemen
 
 ## Objectifs
 
-- Construire un répertoire de courbes de référence.
-- Exploiter des variations et comparer des images.
-- Résoudre des équations ou inéquations simples.
+!!! objectifs ""
+
+    - Construire un répertoire de courbes de référence.
+    - Exploiter des variations et comparer des images.
+    - Résoudre des équations ou inéquations simples.
 
 ## Documents
 
@@ -36,29 +40,38 @@ Les fonctions de référence forment un répertoire de courbes et de comportemen
 
 ## Notions essentielles
 
-Les fonctions de référence servent de modèles : on connaît leur courbe, leur domaine de définition, leur signe et leurs variations.
+!!! essentiel ""
 
-En Seconde, on rencontre notamment la fonction carré `x²`, la fonction inverse `1/x`, la fonction racine carrée `√x`, la fonction cube `x³` et la valeur absolue `|x|`.
+    Les fonctions de référence servent de modèles : on connaît leur courbe, leur domaine de définition, leur signe et leurs variations.
 
-Le domaine de définition fait partie de l'identité d'une fonction. Par exemple, `1/x` n'est pas défini pour `x = 0`, et `√x` est définie seulement pour `x ≥ 0`.
+    En Seconde, on rencontre notamment la fonction carré `x²`, la fonction inverse `1/x`, la fonction racine carrée `√x`, la fonction cube `x³` et la valeur absolue `|x|`.
 
-Les fonctions carré, racine carrée et valeur absolue prennent des valeurs positives ou nulles. Les fonctions cube et inverse ont le signe de `x` sur leur domaine.
+    Le domaine de définition fait partie de l'identité d'une fonction. Par exemple, `1/x` n'est pas défini pour `x = 0`, et `√x` est définie seulement pour `x ≥ 0`.
 
-Connaître les variations des fonctions de référence permet de comparer des images, de résoudre des équations simples et de choisir un modèle adapté.
+    Les fonctions carré, racine carrée et valeur absolue prennent des valeurs positives ou nulles. Les fonctions cube et inverse ont le signe de `x` sur leur domaine.
+
+    Connaître les variations des fonctions de référence permet de comparer des images, de résoudre des équations simples et de choisir un modèle adapté.
 
 ## Exemple
 
-Pour la fonction carré, `(-3)² = 9` et `2² = 4`.
+!!! exemple ""
 
-On a donc `(-3)² > 2²`. Ici, le calcul direct est plus sûr qu'une lecture trop rapide des variations, car -3 et 2 sont de part et d'autre de 0.
+    Pour la fonction carré, `(-3)² = 9` et `2² = 4`.
+
+    On a donc `(-3)² > 2²`. Ici, le calcul direct est plus sûr qu'une lecture trop rapide des variations, car -3 et 2 sont de part et d'autre de 0.
 
 ## Repère historique — Apollonius : une courbe avant son équation
 
-Dans l’Antiquité grecque, les coniques sont étudiées comme des sections d’un cône par un plan. Apollonius de Perge, actif autour du IIIe siècle avant notre ère, en développe une étude systématique dans les *Coniques*. Les termes parabole, ellipse et hyperbole apparaissent dans cet ouvrage. Il prolonge des recherches antérieures : ces courbes ont donc une histoire géométrique bien avant leur description par nos formules de fonctions.
+!!! historique ""
 
-Avec les notations actuelles, la courbe de la fonction carré `f(x) = x²` est une parabole. Les égalités `f(−2) = f(2) = 4` illustrent sa symétrie par rapport à l’axe des ordonnées. Mais cette symétrie ne signifie pas que les variations soient les mêmes des deux côtés de 0 : la fonction décroît sur les réels négatifs et croît sur les réels positifs. Cet exemple moderne montre l’intérêt d’un répertoire de référence : reconnaître une forme de courbe aide à prévoir des propriétés, puis la formule permet de les vérifier. On ne prête pas pour autant à Apollonius notre langage de fonctions.
+    Apollonius de Perge, *Coniques*, IIIe siècle avant notre ère
+    {: .frise data-annee="-225" data-etiquette="IIIe s. av. J.-C." }
 
-Source : [MacTutor, université de St Andrews, biographie d’Apollonius de Perge](https://mathshistory.st-andrews.ac.uk/Biographies/Apollonius/).
+    Dans l’Antiquité grecque, les coniques sont étudiées comme des sections d’un cône par un plan. Apollonius de Perge, actif autour du IIIe siècle avant notre ère, en développe une étude systématique dans les *Coniques*. Les termes parabole, ellipse et hyperbole apparaissent dans cet ouvrage. Il prolonge des recherches antérieures : ces courbes ont donc une histoire géométrique bien avant leur description par nos formules de fonctions.
+
+    Avec les notations actuelles, la courbe de la fonction carré `f(x) = x²` est une parabole. Les égalités `f(−2) = f(2) = 4` illustrent sa symétrie par rapport à l’axe des ordonnées. Mais cette symétrie ne signifie pas que les variations soient les mêmes des deux côtés de 0 : la fonction décroît sur les réels négatifs et croît sur les réels positifs. Cet exemple moderne montre l’intérêt d’un répertoire de référence : reconnaître une forme de courbe aide à prévoir des propriétés, puis la formule permet de les vérifier. On ne prête pas pour autant à Apollonius notre langage de fonctions.
+
+    Source : [MacTutor, université de St Andrews, biographie d’Apollonius de Perge](https://mathshistory.st-andrews.ac.uk/Biographies/Apollonius/).
 
 ## Voir aussi
 

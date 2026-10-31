@@ -9,9 +9,11 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 
 ## Objectifs
 
-- Résoudre une équation ou une inéquation par équivalences.
-- Représenter un ensemble de solutions.
-- Traiter les valeurs interdites dans une expression.
+!!! objectifs ""
+
+    - Résoudre une équation ou une inéquation par équivalences.
+    - Représenter un ensemble de solutions.
+    - Traiter les valeurs interdites dans une expression.
 
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
@@ -22,9 +24,11 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 
 ## Objectifs
 
-- Résoudre équations et inéquations par équivalences.
-- Représenter des solutions et traiter les valeurs interdites.
-- Conclure dans un contexte donné.
+!!! objectifs ""
+
+    - Résoudre équations et inéquations par équivalences.
+    - Représenter des solutions et traiter les valeurs interdites.
+    - Conclure dans un contexte donné.
 
 ## Documents
 
@@ -40,29 +44,38 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 
 ## Notions essentielles
 
-Résoudre une équation, c'est déterminer toutes les valeurs qui rendent l'égalité vraie. Tester une valeur ne suffit pas à résoudre.
+!!! essentiel ""
 
-Une résolution s'écrit par équivalences : chaque transformation doit conserver exactement le même ensemble de solutions.
+    Résoudre une équation, c'est déterminer toutes les valeurs qui rendent l'égalité vraie. Tester une valeur ne suffit pas à résoudre.
 
-Pour une inéquation, on applique les mêmes opérations aux deux membres, mais le sens change lorsqu'on multiplie ou divise par un nombre négatif.
+    Une résolution s'écrit par équivalences : chaque transformation doit conserver exactement le même ensemble de solutions.
 
-Les solutions d'une inéquation se donnent souvent sous forme d'intervalle. Pour une expression avec un dénominateur, les valeurs interdites sont traitées avant la résolution.
+    Pour une inéquation, on applique les mêmes opérations aux deux membres, mais le sens change lorsqu'on multiplie ou divise par un nombre négatif.
+
+    Les solutions d'une inéquation se donnent souvent sous forme d'intervalle. Pour une expression avec un dénominateur, les valeurs interdites sont traitées avant la résolution.
 
 ## Exemple
 
-Résoudre `2x - 3 ≥ 5` :
+!!! exemple ""
 
-`2x ≥ 8`, donc `x ≥ 4`.
+    Résoudre `2x - 3 ≥ 5` :
 
-L'ensemble des solutions est `[4 ; +∞[`.
+    `2x ≥ 8`, donc `x ≥ 4`.
+
+    L'ensemble des solutions est `[4 ; +∞[`.
 
 ## Repère historique — Les signes d’inégalité : écrire une comparaison pour la transformer
 
-Les signes `<` et `>` apparaissent dans l’*Artis Analyticae Praxis*, ouvrage publié en 1631 après la mort de Thomas Harriot, à partir de ses travaux. Il serait imprudent de lui en attribuer personnellement l’invention : les manuscrits conservés emploient d’autres signes, et l’édition a été préparée par d’autres personnes. Cette histoire rappelle que les notations mathématiques se construisent et se diffusent progressivement.
+!!! historique ""
 
-Une notation brève rend les comparaisons plus faciles à enchaîner, mais elle ne dispense pas de justifier les transformations. Dans un exemple moderne, `2 < 5` devient `−2 > −5` lorsqu’on multiplie les deux nombres par −1 : sur la droite graduée, les opposés se trouvent dans l’ordre inverse. De même, résoudre `−2x < 6` donne `x > −3`. Le changement de sens vient de l’ordre des nombres, et non de la forme du signe. L’ensemble des solutions s’écrit aujourd’hui `]−3 ; +∞[` : les symboles condensent un raisonnement qu’il faut comprendre.
+    Thomas Harriot (publication posthume), *Artis Analyticae Praxis*, 1631
+    {: .frise data-annee="1631" }
 
-Source : [MacTutor, université de St Andrews, *Earliest Uses of Symbols of Relation*](https://mathshistory.st-andrews.ac.uk/Miller/mathsym/relation/).
+    Les signes `<` et `>` apparaissent dans l’*Artis Analyticae Praxis*, ouvrage publié en 1631 après la mort de Thomas Harriot, à partir de ses travaux. Il serait imprudent de lui en attribuer personnellement l’invention : les manuscrits conservés emploient d’autres signes, et l’édition a été préparée par d’autres personnes. Cette histoire rappelle que les notations mathématiques se construisent et se diffusent progressivement.
+
+    Une notation brève rend les comparaisons plus faciles à enchaîner, mais elle ne dispense pas de justifier les transformations. Dans un exemple moderne, `2 < 5` devient `−2 > −5` lorsqu’on multiplie les deux nombres par −1 : sur la droite graduée, les opposés se trouvent dans l’ordre inverse. De même, résoudre `−2x < 6` donne `x > −3`. Le changement de sens vient de l’ordre des nombres, et non de la forme du signe. L’ensemble des solutions s’écrit aujourd’hui `]−3 ; +∞[` : les symboles condensent un raisonnement qu’il faut comprendre.
+
+    Source : [MacTutor, université de St Andrews, *Earliest Uses of Symbols of Relation*](https://mathshistory.st-andrews.ac.uk/Miller/mathsym/relation/).
 
 ## Voir aussi
 

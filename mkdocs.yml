@@ -58,9 +58,10 @@ markdown_extensions:
   - attr_list
   - pymdownx.superfences
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/extra.css?v=2026-10-31
 extra_javascript:
   - javascripts/pdf-new-tab.js
   - javascripts/toutatice-header.js
+  - javascripts/frise.js?v=2026-10-31
   - javascripts/goatcounter.js
   - javascripts/compteur-visites.js
