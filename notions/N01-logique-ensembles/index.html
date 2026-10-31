@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1473,11 +1473,13 @@
 
 <p>Les notations d'ensembles aident à nommer précisément les objets manipulés en mathématiques. Le travail porte sur l'appartenance, l'inclusion, les changements de représentation et les justifications courtes. Ces repères rendent les raisonnements plus lisibles avant les intervalles, les équations et les problèmes où il faut conclure avec précision.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Nommer des objets avec le vocabulaire des ensembles.</li>
 <li>Passer d'une phrase à une notation ou un schéma.</li>
 <li>Rédiger une justification courte.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1489,18 +1491,25 @@
 <!-- AUTO-DOCS:END -->
 
 <h2 id="notions-essentielles">Notions essentielles</h2>
+<div class="admonition essentiel">
 <p><code>x ∈ A</code> signifie que <code>x</code> est un élément de l'ensemble <code>A</code>.</p>
 <p><code>A ⊂ B</code> signifie que tout élément de <code>A</code> est aussi un élément de <code>B</code> : l'ensemble <code>A</code> est inclus dans l'ensemble <code>B</code>.</p>
 <p><code>A ∩ B</code> contient les éléments communs à <code>A</code> et <code>B</code>. <code>A ∪ B</code> contient les éléments qui sont dans <code>A</code> ou dans <code>B</code>.</p>
 <p>Pour montrer qu'une phrase générale est fausse, un seul contre-exemple suffit.</p>
 <p>Une implication peut être vraie même si sa réciproque est fausse.</p>
+</div>
 <h2 id="exemple">Exemple</h2>
+<div class="admonition exemple">
 <p>Si <code>A = {1 ; 2 ; 4}</code> et <code>B = {2 ; 3 ; 4}</code>, alors <code>A ∩ B = {2 ; 4}</code>.</p>
 <p>Les nombres 2 et 4 sont les éléments communs aux deux ensembles.</p>
+</div>
 <h2 id="repere-historique-venn-representer-les-relations-logiques">Repère historique — Venn : représenter les relations logiques</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="1880">John Venn, Angleterre, 1880</p>
 <p>En 1880, John Venn publie des diagrammes pour représenter des relations logiques. Des dessins apparentés existaient déjà, notamment chez Euler : Venn ne part donc pas de rien. Son dispositif permet de distinguer les différentes combinaisons d’appartenance à des ensembles, y compris celles qui ne contiennent aucun élément dans une situation donnée.</p>
 <p>Dans une lecture actuelle, deux ensembles sont représentés par deux régions qui se chevauchent. Leur partie commune figure l’intersection ; l’ensemble des deux régions figure l’union. Prenons un exemple moderne : parmi les entiers de 1 à 12, on appelle <code>A</code> l’ensemble des multiples de 2 et <code>B</code> celui des multiples de 3. L’intersection contient 6 et 12. Mais 2 appartient à <code>A</code> sans appartenir à <code>B</code> : il suffit à réfuter l’affirmation « tout multiple de 2 est multiple de 3 ». Le dessin aide ainsi à chercher un contre-exemple ; la justification repose sur les propriétés des nombres.</p>
 <p>Source : <a href="https://xlinux.nist.gov/dads/HTML/venndiagram.html">NIST, <em>Venn diagram</em>, notice de Paul E. Black</a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PROLONGEMENT : <a href="../N02-nombres-reels-intervalles/">N02</a> (Les intervalles réutilisent le langage des ensembles.)</li>
@@ -1576,6 +1585,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

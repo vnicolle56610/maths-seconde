@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1489,11 +1489,13 @@
 <h1 id="n19-synthese-statistiques-et-probabilites">N19 — Synthèse statistiques et probabilités</h1>
 <p>Cette synthèse met en relation les statistiques, les tableaux croisés, les probabilités et les situations d’échantillonnage. Les exercices obligent à choisir le bon dénominateur, le bon modèle et la bonne représentation. La priorité est d’interpréter correctement les données avant de calculer ou de conclure.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Réinvestir statistiques et probabilités.</li>
 <li>Choisir le bon dénominateur et le bon modèle.</li>
 <li>Choisir une représentation adaptée.</li>
 </ul>
+</div>
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N18-probabilites-echantillonnage/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N18 — Probabilités et échantillonnage</span></span></a>
@@ -1502,11 +1504,13 @@
 <!-- NOTION-NAV:END -->
 
 <h2 id="objectifs_1">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Réinvestir statistiques et probabilités.</li>
 <li>Choisir le bon dénominateur et le bon modèle.</li>
 <li>Choisir la bonne représentation.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1517,17 +1521,24 @@
 <!-- AUTO-DOCS:END -->
 
 <h2 id="points-essentiels-a-maitriser">Points essentiels à maîtriser</h2>
+<div class="admonition essentiel">
 <p>Avant tout calcul, il faut identifier trois choses : l'ensemble de référence, le type de grandeur en jeu (effectif, proportion ou fréquence, fréquence conditionnelle, probabilité, taux d'évolution) et la représentation adaptée (tableau, tableau croisé, arbre, graphique, simulation).</p>
 <p>Pour reconnaître un taux d'évolution, on cherche une situation avant/après. Pour reconnaître une fréquence conditionnelle, on cherche un « parmi » dans une population observée. Pour reconnaître une probabilité, on cherche un modèle aléatoire ou un tirage au hasard. Le symbole <code>%</code> ne suffit pas à lui seul à dire ce que l'on calcule.</p>
 <p>Un tableau croisé sert à lire des fréquences marginales et conditionnelles ; un arbre pondéré sert à organiser un modèle probabiliste ; une simulation sert à observer une fluctuation, sans remplacer un calcul exact lorsqu'il est accessible.</p>
 <p>Une réponse complète comporte trois éléments : le calcul ou la lecture, la nature du nombre obtenu, et une phrase d'interprétation qui précise la population ou le modèle de référence.</p>
+</div>
 <h2 id="exemple-de-synthese">Exemple de synthèse</h2>
+<div class="admonition exemple">
 <p>Dans un groupe A de 60 individus (18 succès, 42 échecs) et un groupe B de 140 individus (32 succès, 108 échecs), la fréquence de succès est <code>18/60 = 30 %</code> dans le groupe A et <code>32/140 ≈ 22,9 %</code> dans le groupe B.</p>
 <p>Ce sont des fréquences conditionnelles, et non des probabilités : elles proviennent d'une population observée, pas d'un modèle aléatoire.</p>
+</div>
 <h2 id="repere-historique-nightingale-choisir-un-graphique-qui-explique-les-donnees">Repère historique — Nightingale : choisir un graphique qui explique les données</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="1854" data-etiquette="1854–1856" data-fin="1856">Florence Nightingale, guerre de Crimée, 1854–1856</p>
 <p>Au XIXe siècle, Florence Nightingale utilise les statistiques pour documenter les conditions sanitaires de l’armée britannique. Ses diagrammes d’aires polaires représentent notamment des décès par catégories pendant la guerre de Crimée, de 1854 à 1856. Dans ces représentations, c’est l’aire des secteurs colorés qui traduit la grandeur étudiée. Leur lecture exige donc de comprendre le codage graphique, et pas seulement de regarder quelle forme paraît la plus longue.</p>
 <p>Cette démarche relie plusieurs outils de la synthèse : classer les observations, choisir une référence et construire une représentation fidèle. Dans un exemple moderne fictif, 30 incidents sont relevés parmi 300 opérations une année, puis 40 parmi 800 l’année suivante. Un graphique des seuls effectifs suggère une hausse ; les fréquences passent pourtant de <code>10 %</code> à <code>5 %</code>. Il faut préciser quelle question on pose avant de choisir le graphique. Ces fréquences décrivent les observations recueillies ; les employer comme probabilités pour une future opération demanderait un modèle et des hypothèses supplémentaires. Une présentation convaincante doit ainsi rester accompagnée de ses unités, de ses références et d’une interprétation prudente.</p>
 <p>Source : <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Nightingale/">MacTutor, université de St Andrews, biographie de Florence Nightingale</a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PRÉREQUIS : <a href="../N16-information-chiffree-statistiques/">N16</a> (Les indicateurs statistiques sont repris.)</li>
@@ -1604,6 +1615,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

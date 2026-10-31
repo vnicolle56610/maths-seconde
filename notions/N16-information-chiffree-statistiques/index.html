@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1489,11 +1489,13 @@
 <h1 id="n16-information-chiffree-et-statistiques">N16 — Information chiffrée et statistiques</h1>
 <p>L’information chiffrée demande de savoir ce que l’on mesure et par rapport à quelle population. Les ressources font travailler les évolutions, les pourcentages et les indicateurs statistiques. Le point important est de relier le calcul à une interprétation fiable des données.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Choisir la bonne population de référence.</li>
 <li>Calculer une évolution.</li>
 <li>Interpréter un indicateur statistique.</li>
 </ul>
+</div>
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N15-geometrie-plane-problemes/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N15 — Géométrie plane : problèmes et méthodes</span></span></a>
@@ -1502,11 +1504,13 @@
 <!-- NOTION-NAV:END -->
 
 <h2 id="objectifs_1">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Choisir la bonne population de référence.</li>
 <li>Calculer une évolution.</li>
 <li>Interpréter un indicateur statistique.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1517,16 +1521,23 @@
 <!-- AUTO-DOCS:END -->
 
 <h2 id="notions-essentielles">Notions essentielles</h2>
+<div class="admonition essentiel">
 <p>Un pourcentage n'a de sens que rapporté à son ensemble de référence : si <code>A</code> représente une proportion <code>p</code> de <code>E</code>, et <code>B</code> une proportion <code>q</code> de <code>A</code>, alors <code>B</code> représente une proportion <code>p × q</code> de <code>E</code>.</p>
 <p>Pour une évolution de <code>V1</code> vers <code>V2</code>, le coefficient multiplicateur est <code>V2/V1</code> et le taux d'évolution est <code>(V2-V1)/V1</code>. Augmenter de <code>t %</code>, c'est multiplier par <code>1 + t/100</code> ; diminuer de <code>t %</code>, c'est multiplier par <code>1 - t/100</code>. Pour des évolutions successives, on multiplie les coefficients multiplicateurs ; l'évolution réciproque a pour coefficient l'inverse.</p>
 <p>La moyenne, la médiane, les quartiles, l'étendue et l'écart type ne décrivent pas la même information : la moyenne résume un niveau moyen (elle est sensible aux valeurs extrêmes), la médiane partage la série ordonnée en deux groupes de même effectif (elle y est beaucoup moins sensible), les quartiles encadrent la moitié centrale, l'étendue mesure l'amplitude totale, et l'écart type mesure la dispersion autour de la moyenne. Pour une série regroupée en classes, on estime souvent la moyenne en remplaçant chaque classe par son centre.</p>
 <p>Comparer deux séries exige au moins un indicateur de position et un indicateur de dispersion, et une conclusion rédigée avec prudence.</p>
+</div>
 <h2 id="exemple">Exemple</h2>
+<div class="admonition exemple">
 <p>Un prix augmente de 12 %, puis baisse de 10 %. Le coefficient multiplicateur global est <code>1,12 × 0,90 = 1,008</code> : le prix final est donc <code>0,8 %</code> plus élevé que le prix initial, malgré l'apparente compensation des deux pourcentages.</p>
+</div>
 <h2 id="repere-historique-graunt-interroger-les-donnees-avant-de-les-comparer">Repère historique — Graunt : interroger les données avant de les comparer</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="1662">John Graunt, Londres, 1662</p>
 <p>Au XVIIe siècle, John Graunt analyse les relevés de décès publiés à Londres, les <em>Bills of Mortality</em>. Au lieu de considérer chaque liste isolément, il cherche des régularités et examine la façon dont les informations sont recueillies. Les causes de décès sont alors identifiées par des personnes sans formation médicale ; certaines catégories sont ambiguës. Comprendre les données suppose donc aussi de connaître leur origine et leurs limites.</p>
 <p>Cette démarche éclaire une difficulté actuelle : un effectif ne suffit pas à comparer deux situations. Dans un exemple moderne fictif, un groupe de 1 000 personnes compte 20 cas d’un événement, contre 30 dans un groupe de 3 000 personnes. Le second effectif est plus élevé, mais les proportions sont respectivement <code>20/1 000 = 2 %</code> et <code>30/3 000 = 1 %</code>. Le classement s’inverse lorsqu’on tient compte des populations de référence. Avant de calculer une évolution ou de comparer un indicateur, il faut donc vérifier ce qui est compté, sur quelle période et parmi quels individus.</p>
 <p>Source : <a href="https://www.gresham.ac.uk/watch-now/parochial-registration-and-bills-mortality">Gresham College, Gill Newton, <em>Parochial registration and the Bills of Mortality</em></a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PROLONGEMENT : <a href="../N17-croisement-variables-qualitatives/">N17</a> (Les tableaux croisés prolongent l’analyse de données.)</li>
@@ -1602,6 +1613,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

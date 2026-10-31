@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1489,11 +1489,13 @@
 <h1 id="n14-synthese-fonctions-et-modelisation">N14 — Synthèse fonctions et modélisation</h1>
 <p>Cette synthèse regroupe les outils de fonctions travaillés jusque-là : lectures graphiques, formules, tableaux, variations, équations et inéquations. Les exercices demandent de choisir un registre adapté, de modéliser une situation, puis d’interpréter le résultat obtenu. La page reste large car elle sert de carrefour entre calcul, graphique et raisonnement.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Choisir le registre adapté à une fonction.</li>
 <li>Modéliser une situation par une fonction.</li>
 <li>Résoudre puis interpréter le résultat.</li>
 </ul>
+</div>
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N13-equations-inequations-fonctions/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N13 — Équations et inéquations avec fonctions</span></span></a>
@@ -1502,11 +1504,13 @@
 <!-- NOTION-NAV:END -->
 
 <h2 id="objectifs_1">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Choisir le registre adapté à une fonction.</li>
 <li>Modéliser une situation.</li>
 <li>Résoudre puis interpréter.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1517,16 +1521,23 @@
 <!-- AUTO-DOCS:END -->
 
 <h2 id="notions-essentielles">Notions essentielles</h2>
+<div class="admonition essentiel">
 <p>Modéliser une situation par une fonction, c'est choisir une variable <code>x</code>, préciser son domaine de valeurs possibles, puis associer à chaque valeur de <code>x</code> une grandeur <code>f(x)</code> qui en dépend. Une fonction se lit alors de plusieurs façons : <code>f(x)</code> est la grandeur associée, <code>f(x) = k</code> traduit une valeur atteinte, <code>f(x) ≤ k</code> traduit une contrainte, un maximum ou un minimum traduit une situation optimale.</p>
 <p>Une même fonction peut être étudiée avec plusieurs représentations : une formule pour calculer exactement, un graphique pour lire et comparer, un tableau de valeurs pour organiser des essais, un tableau de signes ou de variations pour justifier. Comparer deux grandeurs <code>f(x)</code> et <code>g(x)</code> revient souvent à étudier le signe de <code>f(x) - g(x)</code>.</p>
 <p>Une solution mathématique doit toujours être interprétée dans le contexte : il faut vérifier qu'elle appartient au domaine du problème, puis répondre avec les mots de la situation. Une rédaction complète introduit la variable, écrit le modèle, résout, confronte le résultat au domaine, puis conclut.</p>
+</div>
 <h2 id="exemple">Exemple</h2>
+<div class="admonition exemple">
 <p>Un club propose un tarif A à 14 € par personne et un tarif B à 50 € de forfait puis 8 € par personne, pour <code>x</code> participants entiers.</p>
 <p>Comparer les tarifs revient à résoudre <code>B(x) &lt; A(x)</code>, soit <code>50 + 8x &lt; 14x</code>, donc <code>50 &lt; 6x</code>, donc <code>x &gt; 25/3</code>. Comme <code>x</code> est un entier, le tarif B devient avantageux à partir de 9 participants.</p>
+</div>
 <h2 id="repere-historique-galilee-choisir-un-modele-pour-decrire-un-mouvement">Repère historique — Galilée : choisir un modèle pour décrire un mouvement</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="1638">Galilée, <em>Discours</em>, 1638</p>
 <p>Dans ses travaux sur le mouvement, exposés notamment dans les <em>Discours</em> de 1638, Galilée établit qu’un mouvement uniformément accéléré à partir du repos conduit à une distance parcourue proportionnelle au carré du temps. Cette relation donne un exemple historique de mathématisation : choisir des grandeurs mesurables, formuler des hypothèses et chercher une loi qui relie les mesures. Elle ne signifie pas que tous les mouvements suivent cette règle.</p>
 <p>Dans un exemple moderne simplifié, on modélise une distance par <code>d(t) = 2t²</code>, en mètres, avec <code>t</code> en secondes et <code>0 ≤ t ≤ 3</code>. Le coefficient 2 est choisi pour l’exercice, sans prétendre reproduire une expérience de Galilée. Un tableau donne 2 mètres à 1 seconde et 8 mètres à 2 secondes : doubler le temps multiplie ici la distance par quatre. Chercher quand la distance atteint 8 mètres revient à résoudre <code>2t² = 8</code>. Le calcul donne −2 et 2, mais seul <code>t = 2</code> appartient au domaine. Interpréter le résultat fait ainsi partie intégrante de la modélisation.</p>
 <p>Source : <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Galileo/">MacTutor, université de St Andrews, biographie de Galilée</a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PRÉREQUIS : <a href="../N09-fonctions-registres/">N09</a> (Les registres de fonctions sont réinvestis.)</li>
@@ -1603,6 +1614,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

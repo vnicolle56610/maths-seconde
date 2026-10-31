@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1474,11 +1474,13 @@
 
 <p>Un vecteur code un déplacement et permet de calculer dans le plan. Les ressources portent sur les coordonnées, les normes, les milieux et le déterminant, avec des applications à l’alignement. Cette approche prépare l’étude des droites et donne une méthode de preuve dans un repère.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Calculer les coordonnées d’un vecteur.</li>
 <li>Utiliser normes et milieux.</li>
 <li>Prouver un alignement avec le déterminant.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1489,18 +1491,25 @@
 <!-- AUTO-DOCS:END -->
 
 <h2 id="notions-essentielles">Notions essentielles</h2>
+<div class="admonition essentiel">
 <p>Un vecteur représente un déplacement : il possède une direction, un sens et une longueur appelée norme.</p>
 <p>Deux vecteurs sont égaux lorsqu'ils décrivent le même déplacement. Le point de départ choisi pour les représenter n'est pas ce qui compte.</p>
 <p>Dans un repère, les coordonnées de <code>AB</code> se calculent en faisant arrivée moins départ : abscisse de <code>B</code> moins abscisse de <code>A</code>, puis ordonnée de <code>B</code> moins ordonnée de <code>A</code>.</p>
 <p>La norme d'un vecteur donne une distance. Les coordonnées du milieu d'un segment se calculent en faisant la moyenne des coordonnées des extrémités.</p>
 <p>Deux vecteurs colinéaires ont la même direction. On peut tester la colinéarité avec la proportionnalité des coordonnées ou avec un déterminant nul. Cela sert à prouver des alignements ou des parallélismes.</p>
+</div>
 <h2 id="exemple">Exemple</h2>
+<div class="admonition exemple">
 <p>Si <code>A(1 ; 2)</code> et <code>B(4 ; -1)</code>, alors le vecteur <code>AB</code> a pour coordonnées <code>(4 - 1 ; -1 - 2)</code>, donc <code>(3 ; -3)</code>.</p>
 <p>Ce vecteur indique que l'on avance de 3 unités horizontalement et que l'on descend de 3 unités verticalement.</p>
+</div>
 <h2 id="repere-historique-wessel-composer-des-deplacements-pour-dresser-des-cartes">Repère historique — Wessel : composer des déplacements pour dresser des cartes</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="1797" data-etiquette="1797">Caspar Wessel, Danemark, 1797–1799</p>
 <p>Caspar Wessel travaille au XVIIIe siècle comme arpenteur et cartographe. Ses relevés de terrain le conduisent à réfléchir au calcul géométrique des directions et des longueurs. Dans un mémoire présenté en 1797 et publié en 1799, il développe une représentation géométrique de nombres que l’on appellera complexes. Sans étudier ces nombres en Seconde, on peut comprendre une idée de son travail : composer des segments orientés pour calculer un déplacement résultant.</p>
 <p>Voici une lecture moderne en coordonnées : un premier déplacement fait avancer de 3 unités vers l’est et de 2 vers le nord ; un second, de 1 vers l’ouest et de 4 vers le nord. Le déplacement total a pour coordonnées <code>(3 ; 2) + (−1 ; 4) = (2 ; 6)</code>. Le point de départ sert à situer le trajet, mais il ne change pas ce bilan. C’est l’intérêt du vecteur : conserver direction, sens et longueur d’un déplacement tout en permettant de le représenter ailleurs dans le plan. Les coordonnées rendent cette composition calculable.</p>
 <p>Source : <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Wessel/">MacTutor, université de St Andrews, biographie de Caspar Wessel</a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PROLONGEMENT : <a href="../N08-droites-equations/">N08</a> (Les droites utilisent directions et déterminants.)</li>
@@ -1576,6 +1585,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

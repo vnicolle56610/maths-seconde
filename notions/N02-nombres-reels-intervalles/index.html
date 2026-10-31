@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1474,11 +1474,13 @@
 
 <p>Les nombres réels se représentent sur une droite graduée et se décrivent avec des inégalités ou des intervalles. Les ressources font travailler la lecture des bornes, le passage entre écriture symbolique et représentation graphique, la valeur absolue comme distance et les encadrements décimaux fiables.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Passer d'une inégalité à un intervalle.</li>
 <li>Interpréter une valeur absolue comme une distance.</li>
 <li>Produire un encadrement décimal fiable.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1496,17 +1498,24 @@
 <!-- AUTO-EVAL:END -->
 
 <h2 id="notions-essentielles">Notions essentielles</h2>
+<div class="admonition essentiel">
 <p>Les nombres réels sont les nombres que l'on peut placer sur une droite graduée.</p>
 <p>Un intervalle traduit une inégalité : par exemple <code>x ∈ [−2 ; 3[</code> signifie <code>−2 ≤ x &lt; 3</code>.</p>
 <p>La valeur absolue se lit comme une distance : <code>|a|</code> est la distance entre <code>a</code> et 0, et <code>|a - b|</code> est la distance entre <code>a</code> et <code>b</code>.</p>
 <p>Un encadrement décimal donne deux valeurs entre lesquelles le nombre se trouve.</p>
+</div>
 <h2 id="exemple">Exemple</h2>
+<div class="admonition exemple">
 <p>L'écriture <code>x ∈ [−2 ; 3[</code> signifie que <code>x</code> est au moins égal à −2 et strictement inférieur à 3.</p>
 <p>On peut donc écrire : <code>−2 ≤ x &lt; 3</code>.</p>
+</div>
 <h2 id="repere-historique-la-diagonale-du-carre-depasse-les-fractions">Repère historique — La diagonale du carré dépasse les fractions</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="-400" data-etiquette="Grèce antique">Mathématiques grecques, Antiquité</p>
 <p>Dans les mathématiques grecques antiques, l’étude des longueurs fait apparaître une difficulté : le côté d’un carré et sa diagonale n’ont pas de commune mesure. Cela signifie qu’aucune petite longueur ne permet de mesurer exactement les deux par des nombres entiers de reports. L’identité précise du premier auteur de cette découverte reste incertaine ; il faut éviter de l’attribuer sans réserve à Pythagore.</p>
 <p>Avec nos notations actuelles, un carré de côté 1 a une diagonale de longueur <code>√2</code>. Ce nombre n’est pas une fraction de deux entiers, mais c’est bien un réel que l’on peut placer sur une droite graduée. Un exemple moderne d’encadrement donne <code>1,41² = 1,9881</code> et <code>1,42² = 2,0164</code>, donc <code>1,41 &lt; √2 &lt; 1,42</code>. Les décimaux approchent ici une longueur exacte sans la remplacer. Cette distinction éclaire le chapitre : appartenir à un intervalle fournit une information sur un nombre, sans nécessairement donner sa valeur exacte.</p>
 <p>Source : <a href="https://mathshistory.st-andrews.ac.uk/HistTopics/Real_numbers_1/">MacTutor, université de St Andrews, <em>The real numbers: Pythagoras to Stevin</em></a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PRÉREQUIS : <a href="../N01-logique-ensembles/">N01</a> (Le vocabulaire des ensembles facilite l’écriture des intervalles.)</li>
@@ -1583,6 +1592,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1489,11 +1489,13 @@
 <h1 id="n18-probabilites-et-echantillonnage">N18 — Probabilités et échantillonnage</h1>
 <p>Les probabilités transforment une situation aléatoire en modèle calculable. Les ressources font passer d’un contexte à un modèle, interpréter une probabilité conditionnelle et lire une simulation. Le vocabulaire des données reste important pour éviter de confondre effectifs, fréquences et probabilités.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Construire un modèle probabiliste simple.</li>
 <li>Interpréter une probabilité conditionnelle.</li>
 <li>Lire une simulation.</li>
 </ul>
+</div>
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N17-croisement-variables-qualitatives/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N17 — Tableaux croisés et variables qualitatives</span></span></a>
@@ -1502,11 +1504,13 @@
 <!-- NOTION-NAV:END -->
 
 <h2 id="objectifs_1">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Passer d'une situation à un modèle probabiliste.</li>
 <li>Interpréter une probabilité conditionnelle.</li>
 <li>Lire une simulation.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1517,16 +1521,23 @@
 <!-- AUTO-DOCS:END -->
 
 <h2 id="notions-essentielles">Notions essentielles</h2>
+<div class="admonition essentiel">
 <p>Dans une expérience aléatoire, l'univers <code>Ω</code> est l'ensemble des issues possibles et un événement est une partie de <code>Ω</code>. Une loi de probabilité associe à chaque issue un nombre compris entre 0 et 1, de sorte que la somme des probabilités de toutes les issues vaut 1. En cas d'équiprobabilité, <code>P(A) = Card(A) / Card(Ω)</code>. Si <code>Ā</code> désigne l'événement contraire de <code>A</code>, alors <code>P(Ā) = 1 - P(A)</code>.</p>
 <p>La probabilité de <code>B</code> sachant <code>A</code>, notée <code>P_A(B)</code>, mesure la probabilité de <code>B</code> lorsqu'on se place dans la situation où <code>A</code> est réalisé : <code>P_A(B) = P(A∩B) / P(A)</code>. En général, <code>P_A(B) ≠ P_B(A)</code> : le dénominateur n'est pas le même. Dans un arbre pondéré, les branches portent des probabilités, souvent conditionnelles à partir du deuxième niveau, et la probabilité d'un chemin est le produit des probabilités portées par ses branches.</p>
 <p>Un échantillon est un ensemble d'observations obtenu en répétant une expérience. La fréquence observée peut varier d'un échantillon à l'autre : c'est la fluctuation d'échantillonnage. Lorsque le nombre d'essais est grand, la fréquence observée est en général proche de la probabilité, mais une simulation ne démontre pas une valeur exacte.</p>
+</div>
 <h2 id="exemple">Exemple</h2>
+<div class="admonition exemple">
 <p>Une population de 200 pièces contient 30 pièces défectueuses. La probabilité de tirer une pièce défectueuse au hasard est <code>P = 30/200 = 0,15</code>.</p>
 <p>Sur 50 tirages simulés, on n'obtient pas nécessairement exactement <code>50 × 0,15 = 7,5</code> pièces défectueuses : le résultat fluctue d'une simulation à l'autre autour de cette valeur attendue.</p>
+</div>
 <h2 id="repere-historique-bernoulli-relier-la-frequence-au-modele-probabiliste">Repère historique — Bernoulli : relier la fréquence au modèle probabiliste</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="1713">Jacques Bernoulli, <em>Ars conjectandi</em>, 1713</p>
 <p>Dans l’<em>Ars conjectandi</em>, publié en 1713 après sa mort, Jacques Bernoulli développe un résultat fondateur de la loi des grands nombres. Il s’intéresse au lien entre une probabilité et la fréquence observée lors d’expériences répétées. Dans le cadre actuel d’essais indépendants ayant la même probabilité de succès, augmenter le nombre d’essais rend très probable une fréquence proche de cette probabilité. Cela ne garantit ni une égalité exacte ni un rapprochement régulier à chaque nouvel essai.</p>
 <p>Prenons un exemple moderne : une simulation répète des lancers indépendants d’un dé équilibré et compte les six. La probabilité théorique est <code>1/6</code>, mais dix lancers peuvent donner zéro, un ou plusieurs six. Même sur 600 lancers, obtenir exactement 100 six n’est pas obligatoire. Une série plus longue aide à étudier la stabilisation des fréquences ; elle ne prouve pas à elle seule que le dé est équilibré. Le modèle, ses hypothèses et les résultats observés jouent donc des rôles distincts. Cette distinction permet de lire une simulation sans confondre fluctuation et erreur de calcul.</p>
 <p>Source : <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/">MacTutor, université de St Andrews, biographie de Jacques Bernoulli</a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PRÉREQUIS : <a href="../N17-croisement-variables-qualitatives/">N17</a> (Les tableaux croisés aident à organiser les informations.)</li>
@@ -1602,6 +1613,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

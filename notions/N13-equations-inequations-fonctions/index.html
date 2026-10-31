@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1489,11 +1489,13 @@
 <h1 id="n13-equations-et-inequations-avec-fonctions">N13 — Équations et inéquations avec fonctions</h1>
 <p>Les équations et inéquations de fonctions se lisent sur une courbe ou se résolvent par le calcul. Les documents font comparer des images, utiliser des tableaux de signes et choisir entre lecture graphique et méthode algébrique. La conclusion doit préciser l’ensemble des solutions.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Résoudre par lecture graphique.</li>
 <li>Résoudre par calcul ou tableau de signes.</li>
 <li>Choisir une méthode adaptée.</li>
 </ul>
+</div>
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N12-variations-extremums/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N12 — Variations et extremums</span></span></a>
@@ -1502,11 +1504,13 @@
 <!-- NOTION-NAV:END -->
 
 <h2 id="objectifs_1">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Résoudre par lecture graphique.</li>
 <li>Résoudre par calcul et tableau de signes.</li>
 <li>Choisir la méthode adaptée.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1517,17 +1521,24 @@
 <!-- AUTO-DOCS:END -->
 
 <h2 id="notions-essentielles">Notions essentielles</h2>
+<div class="admonition essentiel">
 <p>Résoudre <code>f(x) = g(x)</code>, c'est chercher toutes les abscisses <code>x</code> pour lesquelles les deux fonctions ont la même image. Graphiquement, ce sont les abscisses des points d'intersection des courbes. Trois méthodes sont possibles : une lecture graphique (vue globale, valeur parfois approchée), une résolution algébrique (transformer en <code>f(x) - g(x) = 0</code> puis factoriser) ou une méthode numérique (table de valeurs, encadrement) lorsqu'aucune valeur exacte simple n'est accessible.</p>
 <p>Le signe d'un produit se déduit du signe de ses facteurs, et ses zéros sont les zéros des facteurs. Pour résoudre une inéquation avec un produit, on factorise, on repère et on ordonne les zéros, puis on construit un tableau de signes.</p>
 <p>Un quotient <code>A(x)/B(x)</code> n'est défini que si <code>B(x) ≠ 0</code> : toute valeur qui annule le dénominateur est une valeur interdite et n'appartient jamais à l'ensemble des solutions, même si elle apparaît comme une borne naturelle du tableau.</p>
 <p>Résoudre <code>f(x) &gt; g(x)</code> revient à résoudre <code>f(x) - g(x) &gt; 0</code> : graphiquement, on repère où la courbe de <code>f</code> est au-dessus de celle de <code>g</code> ; algébriquement, on étudie le signe de <code>f - g</code>.</p>
+</div>
 <h2 id="exemple">Exemple</h2>
+<div class="admonition exemple">
 <p>Pour résoudre <code>(x-1)/(x+2) ≤ 0</code>, on commence par le domaine : <code>x = -2</code> est une valeur interdite. Le numérateur s'annule en <code>x = 1</code>.</p>
 <p>Le tableau de signes donne <code>S = ]-2 ; 1]</code> : l'intervalle contient <code>1</code>, où le quotient est nul, mais exclut <code>-2</code>, valeur interdite.</p>
+</div>
 <h2 id="repere-historique-khayyam-resoudre-en-faisant-se-rencontrer-des-courbes">Repère historique — Khayyam : résoudre en faisant se rencontrer des courbes</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="1070" data-etiquette="XIe s.">Omar Khayyam, XIe siècle</p>
 <p>Au XIe siècle, Omar Khayyam étudie des équations du troisième degré et organise leur résolution géométrique à l’aide d’intersections de coniques, comme les cercles et les paraboles. Le point commun à deux courbes permet d’obtenir une longueur recherchée. Il ne travaille pas avec notre notation de fonctions ni avec un simple tracé approximatif : ses constructions s’appuient sur des relations géométriques démontrées.</p>
 <p>Une illustration moderne plus simple, adaptée à la Seconde, consiste à comparer <code>f(x) = x²</code> et <code>g(x) = 2x</code>. Les intersections de leurs courbes ont pour abscisses les solutions de <code>x² = 2x</code>. Le calcul donne <code>x(x − 2) = 0</code>, donc 0 et 2. Entre ces deux abscisses, <code>x(x − 2)</code> est négatif : la parabole est alors sous la droite, ce qui résout aussi <code>x² ≤ 2x</code> sur <code>[0 ; 2]</code>. Graphique et factorisation décrivent donc la même situation. Le dessin aide à voir les solutions ; le calcul précise leurs valeurs et justifie les bornes de l’intervalle.</p>
 <p>Source : <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Khayyam/">MacTutor, université de St Andrews, biographie d’Omar Khayyam</a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PRÉREQUIS : <a href="../N05-equations-inequations/">N05</a> (Les équations et inéquations sont le socle algébrique.)</li>
@@ -1604,6 +1615,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

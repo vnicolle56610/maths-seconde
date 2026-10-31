@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1489,11 +1489,13 @@
 <h1 id="n15-geometrie-plane-problemes-et-methodes">N15 — Géométrie plane : problèmes et méthodes</h1>
 <p>Les problèmes de géométrie plane demandent souvent de choisir entre plusieurs outils. Les ressources mobilisent Pythagore, Thalès, la trigonométrie, les vecteurs, les droites et parfois les fonctions. L’enjeu est d’identifier la méthode pertinente, d’organiser les calculs et de justifier les étapes.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Choisir une méthode de géométrie plane adaptée.</li>
 <li>Utiliser Pythagore, Thalès ou la trigonométrie.</li>
 <li>Combiner vecteurs, droites et fonctions.</li>
 </ul>
+</div>
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N14-synthese-fonctions-modelisation/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N14 — Synthèse fonctions et modélisation</span></span></a>
@@ -1502,11 +1504,13 @@
 <!-- NOTION-NAV:END -->
 
 <h2 id="objectifs_1">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Choisir une méthode de géométrie plane adaptée.</li>
 <li>Utiliser Pythagore, Thalès ou la trigonométrie.</li>
 <li>Combiner vecteurs, droites et fonctions.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1517,16 +1521,23 @@
 <!-- AUTO-DOCS:END -->
 
 <h2 id="notions-essentielles">Notions essentielles</h2>
+<div class="admonition essentiel">
 <p>Le projeté orthogonal d'un point <code>A</code> sur une droite <code>(d)</code> est le point <code>H</code> de <code>(d)</code> tel que <code>AH ⊥ (d)</code>. Il vérifie une propriété importante : pour tout point <code>M</code> de <code>(d)</code>, <code>AM ≥ AH</code>, avec égalité seulement lorsque <code>M = H</code>. Cette propriété se démontre grâce à Pythagore, dans le triangle <code>AHM</code> rectangle en <code>H</code>.</p>
 <p>Un même problème de géométrie peut se résoudre par plusieurs voies : géométrie classique (Pythagore, Thalès, trigonométrie), géométrie repérée (coordonnées, distances, milieux), vecteurs (colinéarité, alignement, parallélisme) ou fonctions (aire, longueur ou coût dépendant d'une variable). Repérer les indices de l'énoncé aide à choisir la méthode la plus efficace.</p>
 <p>Optimiser une grandeur géométrique, c'est chercher sa valeur maximale ou minimale en respectant les contraintes du problème. La méthode suit toujours les mêmes étapes : faire une figure et nommer la variable, déterminer l'intervalle des valeurs possibles, exprimer la grandeur à optimiser en fonction de la variable, étudier ses variations, puis conclure dans le contexte.</p>
+</div>
 <h2 id="exemple">Exemple</h2>
+<div class="admonition exemple">
 <p>On veut construire un rectangle de périmètre 20 cm. Si une dimension vaut <code>x</code>, l'autre vaut <code>10 - x</code>, avec <code>0 &lt; x &lt; 10</code>. L'aire est <code>A(x) = x(10 - x)</code>.</p>
 <p>Le tableau de variations de <code>A</code> montre un maximum égal à 25 pour <code>x = 5</code> : le rectangle d'aire maximale est donc le carré de côté 5 cm.</p>
+</div>
 <h2 id="repere-historique-eratosthene-mesurer-loin-grace-aux-angles">Repère historique — Ératosthène : mesurer loin grâce aux angles</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="-240" data-etiquette="IIIe s. av. J.-C.">Ératosthène, Alexandrie, IIIe siècle avant notre ère</p>
 <p>Au IIIe siècle avant notre ère, Ératosthène estime la circonférence terrestre en comparant la direction du Soleil à Syène et à Alexandrie. Son ouvrage est perdu ; sa méthode nous est connue par des auteurs postérieurs. Le raisonnement suppose une Terre sphérique et des rayons solaires pratiquement parallèles. L’angle observé grâce à une ombre permet alors de retrouver un angle au centre de la Terre.</p>
 <p>Dans une reconstitution scolaire simplifiée, on suppose deux villes sur un même méridien, séparées par un arc de 800 km, et un angle au centre de <code>7,2°</code>. Cet angle vaut <code>360°/50</code> : l’arc représente donc un cinquantième du tour, d’où une circonférence estimée à <code>50 × 800 = 40 000 km</code>. Ces données modernes arrondies illustrent la méthode, sans être les mesures exactes d’Ératosthène. La longueur de l’unité antique, le stade, reste d’ailleurs discutée. L’exemple montre comment parallélisme, angles et proportionnalité permettent de calculer une distance inaccessible, à condition d’expliciter les hypothèses et la précision des données.</p>
 <p>Source : <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Eratosthenes/">MacTutor, université de St Andrews, biographie d’Ératosthène</a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PRÉREQUIS : <a href="../N07-vecteurs-du-plan/">N07</a> (Les vecteurs peuvent servir dans les configurations.)</li>
@@ -1603,6 +1614,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

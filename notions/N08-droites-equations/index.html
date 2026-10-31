@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=2026-10-31">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -1489,11 +1489,13 @@
 <h1 id="n08-droites-et-equations-dans-le-plan">N08 — Droites et équations dans le plan</h1>
 <p>Une droite peut être décrite par un point, une direction, une pente ou une équation. Les documents travaillent l’équation cartésienne avec le déterminant, le passage à l’équation réduite et l’étude d’alignements, de parallélismes ou d’intersections. Le périmètre reste strictement géométrique et analytique autour des droites du plan.</p>
 <h2 id="objectifs">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Décrire une droite par un point et une direction.</li>
 <li>Passer entre équation cartésienne et équation réduite.</li>
 <li>Étudier alignement, parallélisme et intersection.</li>
 </ul>
+</div>
 <!-- NOTION-NAV:START -->
 <nav class="notion-nav" aria-label="Navigation entre notions">
 <a class="notion-nav__btn notion-nav__btn--prev" href="../N07-vecteurs-du-plan/"><span class="notion-nav__icon"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M16 6v12L6 12z" fill="currentColor"/></svg></span><span class="notion-nav__text"><small>Notion précédente</small><span class="notion-nav__title">N07 — Vecteurs du plan</span></span></a>
@@ -1502,11 +1504,13 @@
 <!-- NOTION-NAV:END -->
 
 <h2 id="objectifs_1">Objectifs</h2>
+<div class="admonition objectifs">
 <ul>
 <li>Décrire une droite par un point et une direction.</li>
 <li>Construire une équation cartésienne ou réduite.</li>
 <li>Étudier alignement, parallélisme et intersections.</li>
 </ul>
+</div>
 <h2 id="documents">Documents</h2>
 <!-- AUTO-DOCS:START -->
 <ul>
@@ -1517,18 +1521,25 @@
 <!-- AUTO-DOCS:END -->
 
 <h2 id="notions-essentielles">Notions essentielles</h2>
+<div class="admonition essentiel">
 <p>Une droite peut être décrite par un point et un vecteur directeur non nul. Le vecteur directeur donne la direction de la droite.</p>
 <p>Une équation cartésienne de droite s'écrit sous la forme <code>ax + by + c = 0</code>, avec <code>a</code> et <code>b</code> qui ne sont pas tous les deux nuls.</p>
 <p>Lorsqu'une droite n'est pas verticale, elle peut aussi s'écrire sous forme réduite <code>y = mx + p</code>. Le nombre <code>m</code> est le coefficient directeur, ou pente, et <code>p</code> est l'ordonnée à l'origine.</p>
 <p>Une droite verticale s'écrit sous la forme <code>x = k</code> et n'a pas de coefficient directeur.</p>
 <p>Pour étudier deux droites, on choisit l'outil adapté : comparer des directions pour le parallélisme, résoudre un système pour une intersection, ou vérifier qu'un point satisfait une équation.</p>
+</div>
 <h2 id="exemple">Exemple</h2>
+<div class="admonition exemple">
 <p>La droite d'équation <code>y = 2x - 1</code> a pour coefficient directeur 2 et pour ordonnée à l'origine -1.</p>
 <p>Le point <code>A(3 ; 5)</code> appartient à cette droite car <code>2 × 3 - 1 = 5</code>.</p>
+</div>
 <h2 id="repere-historique-descartes-reconnaitre-un-lieu-grace-a-une-equation">Repère historique — Descartes : reconnaître un lieu grâce à une équation</h2>
+<div class="admonition historique">
+<p class="frise" data-annee="1637">René Descartes, <em>La Géométrie</em>, 1637</p>
 <p>Dans <em>La Géométrie</em>, publiée en 1637, René Descartes développe une méthode qui traduit des relations entre longueurs en équations. Un problème de lieu géométrique consiste à chercher tous les points satisfaisant une condition : le calcul peut alors aider à reconnaître la courbe obtenue. Cette articulation entre algèbre et géométrie est une étape majeure de la géométrie analytique ; elle ne se présente toutefois pas encore sous la forme exacte de nos repères scolaires et de notre langage vectoriel.</p>
 <p>Prenons un exemple moderne : on cherche les points <code>M(x ; y)</code> équidistants de <code>A(0 ; 0)</code> et de <code>B(4 ; 0)</code>. Dans un repère orthonormé, l’égalité des carrés des distances s’écrit <code>x² + y² = (x − 4)² + y²</code>. Après développement et réduction, elle devient <code>x = 2</code>. On reconnaît la médiatrice de <code>[AB]</code>, une droite verticale. Cet exemple montre pourquoi l’équation cartésienne est utile : certaines droites se décrivent très simplement, même lorsqu’aucune écriture <code>y = mx + p</code> n’est possible.</p>
 <p>Source : <a href="https://plato.stanford.edu/entries/descartes-mathematics/">Stanford Encyclopedia of Philosophy, <em>Descartes’ Mathematics</em></a>.</p>
+</div>
 <h2 id="voir-aussi">Voir aussi</h2>
 <ul>
 <li>PRÉREQUIS : <a href="../N07-vecteurs-du-plan/">N07</a> (Les vecteurs donnent les directions et le déterminant.)</li>
@@ -1604,6 +1615,8 @@
         <script src="../../javascripts/pdf-new-tab.js"></script>
       
         <script src="../../javascripts/toutatice-header.js"></script>
+      
+        <script src="../../javascripts/frise.js?v=2026-10-31"></script>
       
         <script src="../../javascripts/goatcounter.js"></script>
       

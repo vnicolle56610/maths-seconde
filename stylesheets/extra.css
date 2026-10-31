@@ -498,3 +498,159 @@
 .maths-card--coral { --maths-card-accent: #e0533d; background: linear-gradient(180deg, #ffffff 0%, #fdeeea 100%); }
 .maths-card--wide { grid-column: 1 / -1; }
 .maths-card p.maths-card-next { margin: 0.35rem 0 1.8rem; font-weight: 600; color: #8a2f20; }
+
+/* Encadré « Repère historique » : effet parchemin.
+   Usage : garder le titre « ## Repère historique — … » (table des matières, SEO)
+   puis mettre le texte dans un encadré sans titre : !!! historique "" */
+.md-typeset .admonition.historique {
+  position: relative;
+  border: 1px solid #d9c49a;
+  border-left: 4px solid #a8793f;
+  border-radius: 6px;
+  padding: 0.9rem 1.4rem 0.6rem;
+  color: #3b2f1e;
+  background:
+    radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.55), transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(168, 121, 63, 0.14), transparent 65%),
+    #f6ecd6;
+  box-shadow: inset 0 0 28px rgba(140, 100, 50, 0.16), 0 6px 18px rgba(13, 27, 42, 0.06);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.8rem;
+}
+.md-typeset .admonition.historique::after {
+  content: "📜";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  font-size: 1.1rem;
+  opacity: 0.75;
+}
+.md-typeset .admonition.historique > p:first-child { margin-top: 0; padding-right: 1.6rem; }
+.md-typeset .admonition.historique code {
+  background: rgba(255, 255, 255, 0.55);
+  color: #3b2f1e;
+}
+.md-typeset .admonition.historique a { color: #8a4b12; }
+.md-typeset .admonition.historique strong { color: #5a3a12; }
+
+/* Encadrés des sections de notion (même principe que « historique ») :
+   titre « ## … » conservé, texte dans !!! objectifs "" / essentiel "" / exemple "" */
+.md-typeset .admonition.objectifs,
+.md-typeset .admonition.essentiel,
+.md-typeset .admonition.exemple {
+  position: relative;
+  border: 1px solid var(--cadre-bord);
+  border-left: 4px solid var(--cadre-accent);
+  border-radius: 6px;
+  padding: 0.8rem 1.4rem 0.5rem;
+  background: var(--cadre-fond);
+  box-shadow: 0 6px 18px rgba(13, 27, 42, 0.05);
+  font-size: 0.8rem;
+}
+.md-typeset .admonition.objectifs::after,
+.md-typeset .admonition.essentiel::after,
+.md-typeset .admonition.exemple::after {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+.md-typeset .admonition.objectifs > :first-child,
+.md-typeset .admonition.essentiel > :first-child,
+.md-typeset .admonition.exemple > :first-child { margin-top: 0; padding-right: 1.6rem; }
+.md-typeset .admonition.objectifs code,
+.md-typeset .admonition.essentiel code,
+.md-typeset .admonition.exemple code { background: rgba(255, 255, 255, 0.7); }
+
+.md-typeset .admonition.objectifs {
+  --cadre-fond: var(--maths-blue-soft);
+  --cadre-bord: #c9dcf5;
+  --cadre-accent: #2f6fb7;
+}
+.md-typeset .admonition.objectifs::after { content: "🧭"; }
+
+.md-typeset .admonition.essentiel {
+  --cadre-fond: var(--maths-yellow-soft);
+  --cadre-bord: #f0dca6;
+  --cadre-accent: #d9a21b;
+}
+.md-typeset .admonition.essentiel::after { content: "💡"; }
+
+.md-typeset .admonition.exemple {
+  --cadre-fond: var(--maths-purple-soft);
+  --cadre-bord: #d8d0f5;
+  --cadre-accent: #6a52c4;
+}
+.md-typeset .admonition.exemple::after { content: "✏️"; }
+
+/* Mini-frise des repères historiques (construite par javascripts/frise.js). */
+.md-typeset .admonition.historique p.frise {
+  margin: 0.2rem 0 0.9rem;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: #6b5332;
+  text-align: center;
+}
+.frise-barre {
+  position: relative;
+  display: flex;
+  margin: 1.6rem 1.6rem 0.3rem 0;
+  border: 1px solid #c9ad7a;
+  border-radius: 4px;
+  overflow: visible;
+  font-family: var(--md-text-font-family, sans-serif);
+}
+.frise-periode {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0.25rem 0.1rem;
+  font-size: 0.58rem;
+  line-height: 1.2;
+  text-align: center;
+  color: #7a6040;
+  background: rgba(255, 255, 255, 0.35);
+  border-left: 1px solid #d9c49a;
+  overflow-wrap: anywhere;
+}
+.frise-periode:first-child { border-left: 0; border-radius: 3px 0 0 3px; }
+.frise-periode:last-child { border-radius: 0 3px 3px 0; }
+.frise-periode--active {
+  background: rgba(168, 121, 63, 0.22);
+  color: #4a3416;
+  font-weight: 700;
+}
+.frise-plage {
+  position: absolute;
+  top: -4px;
+  height: 4px;
+  background: #a8793f;
+  border-radius: 2px;
+}
+.frise-point {
+  position: absolute;
+  top: -6px;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border-radius: 50%;
+  background: #8a4b12;
+  border: 2px solid #f6ecd6;
+  box-shadow: 0 0 0 1px #8a4b12;
+}
+.frise-annee {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #8a4b12;
+}
+.frise-annee--gauche { left: 0; transform: none; }
+.frise-annee--droite { left: auto; right: 0; transform: none; }
+@media (max-width: 480px) {
+  .frise-barre { margin-right: 0; }
+  .frise-periode { font-size: 0.5rem; }
+}
