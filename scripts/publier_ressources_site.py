@@ -98,9 +98,10 @@ def is_site_cours_filename(filename: str) -> bool:
     return not filename.endswith(COURS_NON_SITE_SUFFIXES)
 
 # Dossiers non publiables à ignorer partout sous source_root, quel que soit
-# le niveau d'imbrication (archives et sauvegardes locales de travail).
+# le niveau d'imbrication (archives et sauvegardes locales de travail,
+# fichiers destinés aux plugins/GPT).
 IGNORED_DIR_NAME_PATTERN = re.compile(
-    r"^_(ANCIEN|ARCHIVE|SAUVEGARDE)", re.IGNORECASE
+    r"^(_(ANCIEN|ARCHIVE|SAUVEGARDE)|A_telecharger_dans_GPT)", re.IGNORECASE
 )
 
 # CORRIGE_TD doit être testé avant CORRIGE afin de conserver deux choix
