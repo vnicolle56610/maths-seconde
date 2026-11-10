@@ -37,4 +37,13 @@ Notions : [N04 — Calcul littéral](../notions/N04-calcul-litteral.md)
 
 - 📄 [Devoir blanc : fiche « Ce que je dois savoir faire » et sujet](2026-2027/DEVOIR_BLANC_MT2_N04.pdf)
 - ✅ [Corrigé et grille d'auto-évaluation](2026-2027/CORRIGE_DEVOIR_BLANC_MT2_N04.pdf)
+
+**Après l'évaluation**
+
+- 📝 Le mini-test : [sujet A](2026-2027/apres-mt2/MT2_N04_SUJET_A.pdf) · [sujet B](2026-2027/apres-mt2/MT2_N04_SUJET_B.pdf) · [corrigé A](2026-2027/apres-mt2/CORRIGE_MT2_N04_A_ELEVES.pdf) · [corrigé B](2026-2027/apres-mt2/CORRIGE_MT2_N04_B_ELEVES.pdf)
+- 🔁 Retravailler : [parcours R — Reprendre](2026-2027/apres-mt2/FICHE_INDIVIDUELLE_MT2_N04_2nde_R.pdf) · [parcours C — Consolider](2026-2027/apres-mt2/FICHE_INDIVIDUELLE_MT2_N04_2nde_C.pdf) · [parcours A — Approfondir](2026-2027/apres-mt2/FICHE_INDIVIDUELLE_MT2_N04_2nde_A.pdf) · [complément « isoler une variable »](2026-2027/apres-mt2/COMPLEMENT_ISOLER_VARIABLE.pdf)
+- ✔️ Corrigés détaillés : [parcours R](2026-2027/apres-mt2/CORRIGE_FICHE_MT2_N04_2nde_R.pdf) · [parcours C](2026-2027/apres-mt2/CORRIGE_FICHE_MT2_N04_2nde_C.pdf) · [parcours A](2026-2027/apres-mt2/CORRIGE_FICHE_MT2_N04_2nde_A.pdf) · [complément](2026-2027/apres-mt2/CORRIGE_COMPLEMENT_ISOLER_VARIABLE.pdf)
+- 👥 Pour les enseignants : [présentation du dispositif (3 pages)](2026-2027/apres-mt2/PRESENTATION_REMEDIATION_MT2_N04_2nde.pdf)
+
+> Quelle fiche prendre ? Faites d'abord le recto, commun à tous, puis le verso du parcours indiqué en classe. Si vous n'étiez pas là, commencez par R et passez au parcours suivant si c'est facile. Ne lisez le corrigé qu'après avoir cherché.
 <!-- AUTO-EVAL:END -->

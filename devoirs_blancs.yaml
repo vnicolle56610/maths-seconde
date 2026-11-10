@@ -37,7 +37,7 @@ devoirs_blancs:
     # passée et rattrapages_termines: true ; fichiers lus dans apres_evaluation/ ;
     # jamais de fichier _PROF. États : non_publie | publie.
     apres_evaluation:
-      etat: non_publie
+      etat: publie
       rattrapages_termines: true
       dossier: Evaluations/MINITESTS/MT2_N04_2026_11_04/apres_evaluation
       rubriques:
