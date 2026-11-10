@@ -32,6 +32,40 @@ devoirs_blancs:
     sujet_prevu: 2026-10-28
     corrige_prevu: 2026-11-02
     etat: sujet_et_corrige
+    # Bloc facultatif « Après l'évaluation » (sous l'entrée, dans « Pour réviser ») :
+    # vrais sujets, corrigés élèves, remédiation. Publié seulement si la date est
+    # passée et rattrapages_termines: true ; fichiers lus dans apres_evaluation/ ;
+    # jamais de fichier _PROF. États : non_publie | publie.
+    apres_evaluation:
+      etat: non_publie
+      rattrapages_termines: true
+      dossier: Evaluations/MINITESTS/MT2_N04_2026_11_04/apres_evaluation
+      rubriques:
+        - titre: 📝 Le mini-test
+          documents:
+            - {fichier: MT2_N04_SUJET_A.pdf, libelle: sujet A}
+            - {fichier: MT2_N04_SUJET_B.pdf, libelle: sujet B}
+            - {fichier: CORRIGE_MT2_N04_A_ELEVES.pdf, libelle: corrigé A}
+            - {fichier: CORRIGE_MT2_N04_B_ELEVES.pdf, libelle: corrigé B}
+        - titre: 🔁 Retravailler
+          documents:
+            - {fichier: FICHE_INDIVIDUELLE_MT2_N04_2nde_R.pdf, libelle: parcours R — Reprendre}
+            - {fichier: FICHE_INDIVIDUELLE_MT2_N04_2nde_C.pdf, libelle: parcours C — Consolider}
+            - {fichier: FICHE_INDIVIDUELLE_MT2_N04_2nde_A.pdf, libelle: parcours A — Approfondir}
+            - {fichier: COMPLEMENT_ISOLER_VARIABLE.pdf, libelle: complément « isoler une variable »}
+        - titre: ✔️ Corrigés détaillés
+          documents:
+            - {fichier: CORRIGE_FICHE_MT2_N04_2nde_R.pdf, libelle: parcours R}
+            - {fichier: CORRIGE_FICHE_MT2_N04_2nde_C.pdf, libelle: parcours C}
+            - {fichier: CORRIGE_FICHE_MT2_N04_2nde_A.pdf, libelle: parcours A}
+            - {fichier: CORRIGE_COMPLEMENT_ISOLER_VARIABLE.pdf, libelle: complément}
+        - titre: 👥 Pour les enseignants
+          documents:
+            - {fichier: PRESENTATION_REMEDIATION_MT2_N04_2nde.pdf, libelle: présentation du dispositif (3 pages)}
+      conseil: >-
+        Quelle fiche prendre ? Faites d'abord le recto, commun à tous, puis le verso du
+        parcours indiqué en classe. Si vous n'étiez pas là, commencez par R et passez au
+        parcours suivant si c'est facile. Ne lisez le corrigé qu'après avoir cherché.
 
   - id: DS1
     date: 2026-11-24
