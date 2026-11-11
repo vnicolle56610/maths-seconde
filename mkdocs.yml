@@ -31,7 +31,10 @@ nav:
       - "N19 — Synthese statistiques probabilités": notions/N19-synthese-statistiques-probabilites.md
       - "N20 — Synthese annuelle transition premiere": notions/N20-synthese-annuelle-transition-premiere.md
   - "📝 TD": td/index.md
-  - "⚡ Automatismes": automatismes/index.md
+  - "⚡ Automatismes":
+      - automatismes/index.md
+      - "N04 — Calcul littéral (en ligne)": automatismes/automatismes-N04-calcul-litteral.md
+      - "N04 — QCM interactif": automatismes/qcm-N04-calcul-litteral.md
   - "🎯 Préparer une évaluation": preparer-evaluation/index.md
   - "✅ Corrigés publiés": corriges/index.md
   - "ℹ️ À propos & licence": a-propos.md
@@ -57,11 +60,19 @@ markdown_extensions:
   - admonition
   - attr_list
   - pymdownx.superfences
+  - pymdownx.details
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
 extra_css:
   - stylesheets/extra.css?v=2026-10-31
+  - stylesheets/automatismes.css?v=2026-11-11
 extra_javascript:
   - javascripts/pdf-new-tab.js
   - javascripts/toutatice-header.js
   - javascripts/frise.js?v=2026-10-31
   - javascripts/goatcounter.js
   - javascripts/compteur-visites.js
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+  - javascripts/automatismes-qcm.js?v=2026-11-11

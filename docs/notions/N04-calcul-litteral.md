@@ -31,6 +31,8 @@ Le calcul littéral sert à transformer une expression sans changer sa valeur. L
 - [Corrigé TD N04](../corriges/CORRIGE_TD_N04_CALCUL_LITTERAL.pdf)
 <!-- AUTO-DOCS:END -->
 
+- ⚡ [Automatismes N04 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N04-calcul-litteral.md)
+
 <!-- AUTO-EVAL:START -->
 - 🎯 Pour réviser : [devoir blanc du mini-test 2 du mercredi 4 ou jeudi 5 novembre 2026](../preparer-evaluation/index.md#mt2-2026-2027)
 - 🔁 Après le mini-test 2 : [sujet, fiches pour retravailler et corrigés](../preparer-evaluation/index.md#mt2-2026-2027)

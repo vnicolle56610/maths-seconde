@@ -2,6 +2,10 @@
 
 Exercices d'automatismes et mini-tests, classés par notion.
 
+!!! tip "Nouveau : les automatismes en ligne"
+
+    Pour **N04 — Calcul littéral**, les questions sont aussi disponibles directement en ligne : [énoncés et corrigés](automatismes-N04-calcul-litteral.md) et [QCM interactif chronométré](qcm-N04-calcul-litteral.md).
+
 <!-- AUTO-DOCS:START -->
 ## N01 — Logique, ensembles et raisonnement
 
