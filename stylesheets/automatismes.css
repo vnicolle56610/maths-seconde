@@ -115,3 +115,7 @@
 /* Toute formule insécable plus large que l'écran défile sur place (méthodes, coups de pouce…). */
 .md-typeset mjx-container[jax="CHTML"], .auto-qcm mjx-container[jax="CHTML"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
 .md-typeset details, .md-typeset .auto-methode, .md-typeset .auto-vigilance, .md-typeset .auto-consigne { overflow-x: clip; }
+
+/* Début de la série, replié : filet de sécurité quand aucune dépendance n'est repérée. */
+.qcm-contexte--replie > summary { cursor: pointer; color: #3d4b5c; font-weight: 600; }
+.qcm-contexte--replie[open] > summary { margin-bottom: .3rem; }
