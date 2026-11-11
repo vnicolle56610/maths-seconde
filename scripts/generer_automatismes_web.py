@@ -183,7 +183,11 @@ class Macro:
     corps: str
 
 
-GARDEES = {"bandeau", "numq", "resultat", "resultattexte",
+# Environnements définis par \newenvironment dans la source en cours : nom -> (début, fin).
+ENVIRONNEMENTS: dict[str, tuple[Macro, str]] = {}
+
+
+GARDEES = {"bandeau", "numq", "pastille", "resultat", "resultattexte",
            "choixA", "choixB", "choixC", "choixD"}
 MOTIF_FIGURE = re.compile(r"\\begin\{(?:tikzpicture|tabular|axis)\}|\\includegraphics|\\tkzTab")
 MOTIF_STRUCTURE = re.compile(r"\\numq|\\choix|\\begin\{frame\}|#")
@@ -199,6 +203,14 @@ def lire_definition(t: str, i: int, nom_cmd: str, macros: dict[str, Macro]) -> i
         corps, fin = lire_groupe(t, k)
         macros[nom] = Macro(nargs, None, corps)
         return fin
+    if nom_cmd in ("newenvironment", "renewenvironment"):
+        nom, j = lire_argument(t, i)
+        n, j = lire_optionnel(t, j)
+        defaut, j = lire_optionnel(t, j)
+        debut, j = lire_argument(t, j)
+        fin_env, j = lire_argument(t, j)
+        ENVIRONNEMENTS[nom.strip()] = (Macro(int(n) if n else 0, defaut, debut), fin_env)
+        return j
     if nom_cmd == "DeclareMathOperator":
         j = i
         if t[j:j + 1] == "*":
@@ -230,11 +242,13 @@ def substituer(corps: str, args: list[str]) -> str:
 
 
 DEFINITIONS = ("newcommand", "renewcommand", "providecommand",
-               "def", "gdef", "edef", "xdef", "DeclareMathOperator")
+               "def", "gdef", "edef", "xdef", "DeclareMathOperator",
+               "newenvironment", "renewenvironment")
 
 
 def lire_preambule(preambule: str) -> dict[str, Macro]:
     macros: dict[str, Macro] = {}
+    ENVIRONNEMENTS.clear()
     motif = re.compile(r"\\(" + "|".join(DEFINITIONS) + r")(?![A-Za-z])")
     pos = 0
     while (m := motif.search(preambule, pos)):
@@ -271,6 +285,25 @@ def developper(texte: str, macros: dict[str, Macro], gardees: set[str]) -> str:
         if nom in DEFINITIONS:
             i = lire_definition(texte, j, nom, macros)
             continue
+        if nom in ("begin", "end") and texte[j:j + 1] == "{":
+            env, k = lire_groupe(texte, j)
+            if env in ENVIRONNEMENTS:
+                mac, fin_env = ENVIRONNEMENTS[env]
+                if nom == "end":
+                    texte = fin_env + texte[k:]
+                    i = 0
+                    continue
+                args, n = [], mac.nargs
+                if mac.defaut is not None:
+                    opt, k = lire_optionnel(texte, k)
+                    args.append(mac.defaut if opt is None else opt)
+                    n -= 1
+                for _ in range(n):
+                    a, k = lire_argument(texte, k)
+                    args.append(a)
+                texte = substituer(mac.corps, args) + texte[k:]
+                i = 0
+                continue
         if nom in macros and nom not in gardees:
             etapes += 1
             if etapes > 20000:
@@ -417,6 +450,7 @@ AVERTISSEMENTS: list[str] = []
 def segments_math(texte: str) -> list[tuple[bool, str]]:
     """Découpe en segments (est_math, contenu) selon $…$, \\(…\\) et \\[…\\]."""
     morceaux, dans_math, courant, i = [], False, [], 0
+    imbrique = 0   # formule écrite dans une boîte de texte, elle-même dans une formule
 
     def couper(bascule: bool) -> None:
         nonlocal courant, dans_math
@@ -427,6 +461,16 @@ def segments_math(texte: str) -> list[tuple[bool, str]]:
         deux = texte[i:i + 2]
         if deux in ("\\(", "\\[") and not dans_math:
             couper(True)
+            i += 2
+            continue
+        if deux == "\\(" and dans_math:
+            imbrique += 1
+            courant.append(deux)
+            i += 2
+            continue
+        if deux == "\\)" and dans_math and imbrique:
+            imbrique -= 1
+            courant.append(deux)
             i += 2
             continue
         if deux in ("\\)", "\\]") and dans_math:
@@ -447,6 +491,20 @@ def segments_math(texte: str) -> list[tuple[bool, str]]:
     return [(m, s) for m, s in morceaux if s]
 
 
+def normaliser_resultats(tex: str) -> str:
+    """\\resultat{\\(x\\)} ou \\resultattexte{\\(x\\)} (formule dans la boîte) -> \\resultat{x}."""
+    def un(a: str, nom: str) -> str:
+        m = re.fullmatch(r"\s*\\\((.*)\\\)\s*", a, re.S)
+        if m and "\\(" not in m.group(1):
+            return "\\resultat{" + m.group(1) + "}"
+        if "\\(" in a:          # texte et formule mêlés : boîte de texte
+            return "\\resultattexte{" + a + "}"
+        return "\\" + nom + "{" + a + "}"
+    for nom in ("resultat", "resultattexte"):
+        tex = remplacer_commande(tex, nom, lambda a, n=nom: un(a, n))
+    return tex
+
+
 def recomposer(segments: list[tuple[bool, str]]) -> str:
     return "".join(f"\\({s}\\)" if m else s for m, s in segments)
 
@@ -459,7 +517,7 @@ def couper_egalites(tex: str) -> list[str]:
     while i < len(tex):
         c = tex[i]
         if c == "\\":
-            m = re.match(r"\\Longleftrightarrow(?![A-Za-z])", tex[i:])
+            m = re.match(r"\\(?:Longleftrightarrow|iff|Leftrightarrow)(?![A-Za-z])", tex[i:])
             if m and profondeur == 0:
                 i += m.end()
                 morceaux.append(tex[debut:i])
@@ -478,11 +536,12 @@ def couper_egalites(tex: str) -> list[str]:
     morceaux.append(tex[debut:])
     morceaux = [m for m in morceaux if m.strip()]
     # Avec des équivalences, couper seulement entre les équations, jamais au milieu.
-    if any(m.rstrip().endswith("\\Longleftrightarrow") for m in morceaux):
+    equiv = ("\\Longleftrightarrow", "\\iff", "\\Leftrightarrow")
+    if any(m.rstrip().endswith(equiv) for m in morceaux):
         regroupes, courant = [], ""
         for m in morceaux:
             courant += m
-            if m.rstrip().endswith("\\Longleftrightarrow"):
+            if m.rstrip().endswith(equiv):
                 regroupes.append(courant)
                 courant = ""
         if courant:
@@ -501,6 +560,9 @@ def preparer_math(tex: str) -> str:
     tex = re.sub(r"\\begin\{psmallmatrix\}", r"\\left(\\begin{smallmatrix}", tex)
     tex = re.sub(r"\\end\{psmallmatrix\}", r"\\end{smallmatrix}\\right)", tex)
     tex = re.sub(MISE_EN_FORME, "", tex)
+    tex = re.sub(r"\\mj(textbf|textit|texttt|underline)", r"\\\1", tex)
+    # formule dans une boîte de texte, dans une formule : \text{… $x$ …}
+    tex = tex.replace("\\(", "$").replace("\\)", "$")
     return tex.strip()
 
 
@@ -531,12 +593,14 @@ class Convertisseur:
         tex = re.sub(r"\\[vh]space\*?\{[^{}]*\}", " ", tex)
         tex = re.sub(r"\\(?:begin|end)\{(?:center|flushleft|flushright)\}", " ", tex)
         # Commandes de texte écrites dans une formule : on les traduit pour MathJax.
-        tex = recomposer([(m, remplacer_commande(remplacer_commande(
-            s, "resultattexte", lambda a: r"\boxed{\text{" + a + "}}"), "emph", lambda a: r"\textit{" + a + "}")
+        # (\textbf, \texttt… dans une formule : MathJax les connaît, on les met à l'abri.)
+        tex = recomposer([(m, re.sub(r"\\(textbf|textit|texttt|underline)(?![A-Za-z])", r"\\mj\1",
+                                     remplacer_commande(remplacer_commande(
+            s, "resultattexte", lambda a: r"\boxed{\text{" + a + "}}"), "emph", lambda a: r"\textit{" + a + "}"))
             if m else s) for m, s in segments_math(tex)])
         tex = re.sub(r"\\FIGURE\{(\d+)\}", lambda m: garder(self.figures[int(m.group(1))].html), tex)
         for nom, balise in (("resultattexte", "R"), ("textbf", "B"), ("textit", "I"),
-                            ("emph", "I"), ("underline", "U")):
+                            ("emph", "I"), ("underline", "U"), ("texttt", "T")):
             tex = remplacer_commande(tex, nom, lambda a, b=balise: f"\x01{b}{a}\x02")
         morceaux = []
         for est_math, s in segments_math(tex):
@@ -561,8 +625,8 @@ class Convertisseur:
             morceaux.append(html.escape(s, quote=False))
         h = "".join(morceaux)
         balises = {"R": ('<strong class="auto-resultat">', "</strong>"), "B": ("<strong>", "</strong>"),
-                   "I": ("<em>", "</em>"), "U": ("<u>", "</u>")}
-        motif = re.compile(r"\x01([RBIU])([^\x01\x02]*)\x02")
+                   "I": ("<em>", "</em>"), "U": ("<u>", "</u>"), "T": ("<code>", "</code>")}
+        motif = re.compile(r"\x01([RBIUT])([^\x01\x02]*)\x02")
         while motif.search(h):
             h = motif.sub(lambda m: balises[m.group(1)][0] + m.group(2) + balises[m.group(1)][1], h)
         h = re.sub(r"\x00(\d+)\x00", lambda m: speciaux[int(m.group(1))], h)
@@ -612,11 +676,18 @@ class Serie:
         return bool(self.questions) and all(q.choix for q in self.questions)
 
 
+SUITE_DE_LIGNE = re.compile(r"\\\\(?:\[[^\]]*\])?\s*(?:\\(?:numq|pastille)\b|\\end\b|\\hline\b|\}|$)")
+
+
 def fin_de_cellule(t: str, i: int) -> int:
-    """Depuis i, avance jusqu'à la fin de la cellule : « \\\\ » ou « & » de premier
-    niveau, ou \\end du tableau englobant."""
+    """Depuis i, avance jusqu'à la fin de la cellule : la question suivante, un
+    « \\\\ » de premier niveau suivi d'une autre question (ou de la fin du bloc),
+    un « & » de premier niveau, ou \\end du tableau englobant. Un « \\\\ » suivi
+    d'autre chose (propositions de QCM sur une seconde ligne) ne coupe pas."""
     prof, envs = 0, []
     while i < len(t):
+        if prof == 0 and not envs and re.match(r"\\(?:numq|pastille)\s*\{", t[i:]):
+            return i
         if t.startswith("\\begin{", i):
             nom, j = lire_groupe(t, i + 6)
             envs.append(nom)
@@ -631,7 +702,7 @@ def fin_de_cellule(t: str, i: int) -> int:
             continue
         c = t[i]
         if c == "\\":
-            if t.startswith("\\\\", i) and prof == 0 and not envs:
+            if t.startswith("\\\\", i) and prof == 0 and not envs and SUITE_DE_LIGNE.match(t, i):
                 return i
             i += 2
             continue
@@ -650,7 +721,7 @@ def fin_de_cellule(t: str, i: int) -> int:
 def lignes_numerotees(frame: str) -> list[tuple[int, str, int, int]]:
     """Lignes « \\numq{n} & contenu » : (n, contenu, début, fin)."""
     res = []
-    for m in re.finditer(r"\\numq\s*\{(\d+)\}\s*&", frame):
+    for m in re.finditer(r"\\(?:numq|pastille)\s*\{(\d+)\}\s*&?", frame):
         fin = fin_de_cellule(frame, m.end())
         res.append((int(m.group(1)), frame[m.end():fin].strip(), m.start(), fin))
     return res
@@ -736,11 +807,14 @@ def separer_choix(contenu: str) -> tuple[str, list[str]]:
     return nettoyer_bords(enonce), [nettoyer_bords(x) for x in choix]
 
 
-MOTIF_BONNE = re.compile(r"\\resultattexte\s*\{\s*(?:[Rr]éponse\s+)?([A-D])(?=[\s.:,)}])[^{}]*\}")
+MOTIF_BONNE = re.compile(r"\\resultat(?:texte)?\s*\{\s*(?:[Rr]éponse\s+)?([A-D])(?=[\s.:,)}])[^{}]*\}")
+
+
+MOTIF_BONNE_TEXTE = re.compile(r"(?<![A-Za-z])(?:bonne\s+)?[Rr]éponse\s*:?\s*([A-D])(?![A-Za-z])")
 
 
 def analyser_corrige(contenu: str) -> tuple[int | None, str]:
-    m = MOTIF_BONNE.search(contenu)
+    m = MOTIF_BONNE.search(contenu) or MOTIF_BONNE_TEXTE.search(contenu)
     if not m:
         return None, contenu
     reste = contenu[:m.start()] + contenu[m.end():]
@@ -776,12 +850,14 @@ def marquer_figures(frame: str, figures: list[Figure], noms_fig: set[str],
     return frame
 
 
-def texte_libre(frame: str, lignes: list[tuple[int, str, int, int]]) -> str:
+def texte_libre(frame: str, lignes: list[tuple[int, str, int, int]], nb_bandeau: int) -> str:
     """Ce qui reste dans une frame une fois retirés bandeau, blocs, tableau de
     questions et mise en page : une consigne écrite hors bloc, par exemple."""
     t = frame
+    for _, _, d, f in lignes:                   # questions : remplacées par des blancs
+        t = t[:d] + " " * (f - d) + t[f:]
     for d, f, contenu in reversed(environnements(t, "tabular")):
-        if "\\numq" in contenu:
+        if not re.search(r"[A-Za-zÀ-ÿ]{3}", re.sub(r"\\begin\{tabular\}\{(?:[^{}]|\{[^{}]*\})*\}|\\end\{tabular\}|\\[A-Za-z]+", "", contenu)):
             t = t[:d] + t[f:]
     for env in ("blocconsigne", "blocconseils", "blocvigilance", "blocmethode"):
         for d, f, _ in reversed(environnements(t, env)):
@@ -789,9 +865,10 @@ def texte_libre(frame: str, lignes: list[tuple[int, str, int, int]]) -> str:
     m = re.search(r"\\bandeau", t)
     if m:
         j = m.end()
-        for _ in range(3):
+        for _ in range(nb_bandeau):
             _, j = lire_argument(t, j)
         t = t[:m.start()] + t[j:]
+    t = re.sub(r"\\\\(?:\[[^\]]*\])?|&", " ", t)
     t = re.sub(r"\\begin\{columns\}(\[[^\]]*\])?|\\end\{columns\}", " ", t)
     t = re.sub(r"\\begin\{column\}(\[[^\]]*\])?\{[^{}]*\}|\\end\{column\}", " ", t)
     t = re.sub(r"\\(begin|end)\{(center|flushleft|flushright)\}", " ", t)
@@ -824,6 +901,19 @@ def dependances(serie: Serie) -> None:
         q.contexte = sorted(r for r in refs if r != q.numero and any(p.numero == r for p in avant))
 
 
+VIRGULE_ENTRE_NOMBRES = re.compile(r"(?<![\d.{])-?\d+(?:\{,\}\d+)?\s*,\s*(?:\\[ ,]|~)*\s*-?\d")
+
+
+def signaler_virgules(corps: str) -> None:
+    """Liste de nombres séparés par « , » dans une formule : ambigu en français
+    (2,5 = 2 + 5/10). La source doit écrire « ; » (charte 02, § Séparateur)."""
+    for est_math, s in segments_math(corps):
+        if est_math:
+            s = re.sub(r"\\texttt\{[^}]*\}", "", s)
+            for m in VIRGULE_ENTRE_NOMBRES.finditer(s):
+                AVERTISSEMENTS.append(f"nombres séparés par une virgule (écrire « ; ») : {s[max(0, m.start() - 15):m.end() + 10]!r}")
+
+
 def lire_series(source: str, rendu: Rendu | None) -> list[Serie]:
     source = sans_commentaires(source)
     if "\\begin{document}" not in source:
@@ -833,7 +923,10 @@ def lire_series(source: str, rendu: Rendu | None) -> list[Serie]:
     macros = lire_preambule(preambule)
     noms_fig = macros_figures(macros)
     corps = developper(corps, macros, GARDEES | noms_fig)
+    corps = normaliser_resultats(corps)
+    signaler_virgules(corps)
 
+    nb_bandeau = macros["bandeau"].nargs if "bandeau" in macros else 3
     figures: list[Figure] = []
     conv = Convertisseur(figures)
     series: dict[str, Serie] = {}
@@ -844,7 +937,7 @@ def lire_series(source: str, rendu: Rendu | None) -> list[Serie]:
             continue
         a1, j = lire_argument(frame, mb.end())
         a2, j = lire_argument(frame, j)
-        a3, j = lire_argument(frame, j)
+        a3, j = lire_argument(frame, j) if nb_bandeau >= 3 else ("", j)
         ml = re.search(r"Série\s+([A-Z])", a2) or re.search(r"Série\s+([A-Z])", a1 + a3)
         if not ml:
             continue
@@ -859,13 +952,14 @@ def lire_series(source: str, rendu: Rendu | None) -> list[Serie]:
         for _, contenu, _, _ in lignes:
             dans_lignes.update(int(x) for x in re.findall(r"\\FIGURE\{(\d+)\}", contenu))
         figures_frame = [figures[k].html for k in range(n0, len(figures)) if k not in dans_lignes]
-        libre = texte_libre(frame, lignes)
+        libre = texte_libre(frame, lignes, nb_bandeau)
+        correction = bool(re.search(r"(?i)correction|corrig", a1 + " " + a2))
 
-        if a1.upper().startswith("AUTOMATISMES"):
+        if not correction:
             serie = series.setdefault(lettre, Serie(lettre))
             md = DUREE.search(a2)
             serie.duree = md.group(1) if md else ""
-            serie.theme = theme
+            serie.theme = theme if nb_bandeau >= 3 else ""
             consigne = conv.texte_html(bloc_env(frame, "blocconsigne"))
             if libre:
                 consigne = (consigne + " " + conv.texte_html(libre)).strip()
@@ -877,7 +971,7 @@ def lire_series(source: str, rendu: Rendu | None) -> list[Serie]:
                 enonce, choix = separer_choix(contenu)
                 serie.questions.append(Question(num, enonce, conv.texte_html(enonce),
                                                 [conv.texte_html(c) for c in choix]))
-        elif a1.upper().startswith("CORRECTION"):
+        else:
             if lettre not in series:
                 raise ErreurSource(f"correction de la série {lettre} avant ses questions")
             serie = series[lettre]

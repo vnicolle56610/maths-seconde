@@ -111,7 +111,7 @@ description: "24 questions d'automatismes de Seconde (logique, ensembles et rais
     <li value="1"><strong class="auto-resultat">Il existe au moins un nombre de <span class="arithmatex">\(A\)</span> qui n'est pas pair.</strong></li>
     <li value="2"><strong class="auto-resultat">Vrai</strong> : si <span class="arithmatex">\(x=4\)</span>, alors <span class="arithmatex">\(x^2=16\)</span>.</li>
     <li value="3"><strong class="auto-resultat">Si <span class="arithmatex">\(x^2=16\)</span>, alors <span class="arithmatex">\(x=4\)</span>.</strong></li>
-    <li value="4"><strong class="auto-resultat"><span class="arithmatex">\(x=-4\)</span></strong> car <span class="arithmatex">\((-4)^2=16\)</span> mais <span class="arithmatex">\(-4\neq4\)</span>.</li>
+    <li value="4"><span class="arithmatex">\(\boxed{x=-4}\)</span> car <span class="arithmatex">\((-4)^2=16\)</span> mais <span class="arithmatex">\(-4\neq4\)</span>.</li>
     <li value="5"><strong class="auto-resultat">Vrai</strong> : tous les nombres de <span class="arithmatex">\([2;5]\)</span> sont au moins égaux à <span class="arithmatex">\(2\)</span>.</li>
     <li value="6"><span class="arithmatex">\(\boxed{x\leqslant3}\)</span>.</li>
     </ol>

@@ -32,7 +32,7 @@ description: "24 questions d'automatismes de Seconde (arithmétique), sans calcu
 
 ??? tip "Coup de pouce"
 
-    <p><strong>Conseils</strong></p><ul><li>Utiliser les tables.</li><li>Regarder le dernier chiffre pour <span class="arithmatex">\(2\)</span>, <span class="arithmatex">\(5\)</span>, <span class="arithmatex">\(10\)</span>.</li><li>Simplifier une fraction par un diviseur commun.</li></ul>
+    <p><strong>Conseils</strong></p><ul><li>Utiliser les tables.</li><li>Regarder le dernier chiffre pour <span class="arithmatex">\(2\)</span> ; <span class="arithmatex">\(5\)</span> ; <span class="arithmatex">\(10\)</span>.</li><li>Simplifier une fraction par un diviseur commun.</li></ul>
     <p><strong>Vigilance</strong></p><ul><li>Le reste est toujours strictement inférieur au diviseur.</li><li>Ne pas confondre quotient et résultat décimal.</li></ul>
 
 ??? success "Corrigé de la série A"
@@ -113,7 +113,7 @@ description: "24 questions d'automatismes de Seconde (arithmétique), sans calcu
     <li value="3"><strong class="auto-resultat">Oui</strong> : ses diviseurs positifs sont <span class="arithmatex">\(1\)</span> et <span class="arithmatex">\(29\)</span>.</li>
     <li value="4"><span class="arithmatex">\(\boxed{84=2^2\times3\times7}\)</span>.</li>
     <li value="5"><strong class="auto-resultat"><span class="arithmatex">\(a+b\)</span> est un multiple de <span class="arithmatex">\(5\)</span></strong>.</li>
-    <li value="6"><strong class="auto-resultat"><span class="arithmatex">\(3+5=8\)</span></strong> : <span class="arithmatex">\(8\)</span> n'est pas impair.</li>
+    <li value="6"><span class="arithmatex">\(\boxed{3+5=8}\)</span> : <span class="arithmatex">\(8\)</span> n'est pas impair.</li>
     </ol>
     <div class="auto-methode"><strong>Méthode.</strong> Un raisonnement d'arithmétique commence souvent par une écriture générale : multiple de <span class="arithmatex">\(5\)</span> = <span class="arithmatex">\(5k\)</span>.</div>
     <div class="auto-vigilance"><strong>Vigilance.</strong> Ne pas confondre « constater sur un exemple » et « démontrer pour tous les entiers ».</div>
