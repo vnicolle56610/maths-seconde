@@ -250,7 +250,12 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Intersections et systèmes",
    "type": "flash",
    "enonce": "Combien de solutions a le système formé par deux équations de la même droite ?",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> Résoudre le système <span class=\"arithmatex\">\\(y=2x+1\\)<\/span> et <span class=\"arithmatex\">\\(y=-x+7\\)<\/span>.",
+    "<strong>Q2.<\/strong> Résoudre <span class=\"arithmatex\">\\(\\begin{cases}x+y=3\\\\x-y=1\\end{cases}\\)<\/span>.",
+    "<strong>Q3.<\/strong> Trouver l’intersection de <span class=\"arithmatex\">\\(x=4\\)<\/span> et <span class=\"arithmatex\">\\(y=-2x+1\\)<\/span>.",
+    "<strong>Q4.<\/strong> Les droites <span class=\"arithmatex\">\\(2x-y+1=0\\)<\/span> et <span class=\"arithmatex\">\\(4x-2y-3=0\\)<\/span> sont-elles parallèles ?"
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(\\boxed{\\text{une infinité}}\\)<\/span>.",

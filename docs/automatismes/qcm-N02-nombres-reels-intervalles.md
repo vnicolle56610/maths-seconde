@@ -166,7 +166,11 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Intervalles — appartenance et écriture",
    "type": "flash",
    "enonce": "Écrire les inégalités vérifiées par <span class=\"arithmatex\">\\(x\\in I\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> <span class=\"arithmatex\">\\(-2\\in I\\)<\/span> ?",
+    "<strong>Q2.<\/strong> <span class=\"arithmatex\">\\(3\\in I\\)<\/span> ?",
+    "<strong>Q3.<\/strong> <span class=\"arithmatex\">\\(0\\in I\\)<\/span> ?"
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(\\boxed{-2\\leqslant x&lt;3}\\)<\/span>.",

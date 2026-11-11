@@ -144,8 +144,30 @@
     if (q.contexte && q.contexte.length) {
       frag.appendChild(el("div", "qcm-contexte",
         "<strong>Dans la même série :</strong> " + q.contexte.join(" ")));
+    } else {
+      // Filet de sécurité : une question tirée seule peut reprendre des données
+      // posées plus haut sans que le générateur l'ait repéré.
+      var avant = this.precedentes(q);
+      if (avant.length) {
+        var r = el("details", "qcm-contexte qcm-contexte--replie");
+        r.appendChild(el("summary", "", "Revoir le début de la série (" +
+          (avant.length === 1 ? "question 1" : "questions 1 à " + avant.length) + ")"));
+        r.appendChild(el("div", "", avant.map(function (p) {
+          return "<strong>Q" + p.n + ".</strong> " + p.q.enonce;
+        }).join(" ")));
+        frag.appendChild(r);
+      }
     }
     return frag;
+  };
+
+  // Questions de la même série placées avant q (ordre de la source).
+  Application.prototype.precedentes = function (q) {
+    var res = [], n = 0, liste = this.banque.questions;
+    for (var i = 0; i < liste.length && liste[i] !== q; i++) {
+      if (liste[i].serie === q.serie) res.push({ n: ++n, q: liste[i] });
+    }
+    return res;
   };
 
   // ---------------------------------------------------------------- Mode QCM

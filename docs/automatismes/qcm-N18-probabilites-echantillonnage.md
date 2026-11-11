@@ -70,7 +70,9 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Réactivation – fractions et événements",
    "type": "flash",
    "enonce": "Avec la même urne, probabilité de ne pas tirer rouge.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> Dans une urne, <span class=\"arithmatex\">\\(3\\)<\/span> boules rouges et <span class=\"arithmatex\">\\(7\\)<\/span> bleues. Probabilité de tirer une rouge."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(\\dfrac{7}{10}=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{0{,}7}\\)<\/span>.",
@@ -154,7 +156,9 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Loi de probabilité et événements",
    "type": "flash",
    "enonce": "Calculer <span class=\"arithmatex\">\\(P(X\\neq 0)\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q2.<\/strong> Calculer <span class=\"arithmatex\">\\(P(X=1)\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(1-0{,}2=\\boxed{0{,}8}\\)<\/span>.",
@@ -166,7 +170,10 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Loi de probabilité et événements",
    "type": "flash",
    "enonce": "Calculer <span class=\"arithmatex\">\\(P(X\\geqslant1)\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q2.<\/strong> Calculer <span class=\"arithmatex\">\\(P(X=1)\\)<\/span>.",
+    "<strong>Q3.<\/strong> Calculer <span class=\"arithmatex\">\\(P(X\\neq 0)\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(P(X=\\)<\/span><wbr><span class=\"arithmatex\">\\(1)+P(X=\\)<\/span><wbr><span class=\"arithmatex\">\\(2)=\\)<\/span><wbr><span class=\"arithmatex\">\\(0{,}5+0{,}3=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{0{,}8}\\)<\/span>.",
@@ -178,7 +185,11 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Loi de probabilité et événements",
    "type": "flash",
    "enonce": "Calculer <span class=\"arithmatex\">\\(P(X&lt;2)\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q2.<\/strong> Calculer <span class=\"arithmatex\">\\(P(X=1)\\)<\/span>.",
+    "<strong>Q3.<\/strong> Calculer <span class=\"arithmatex\">\\(P(X\\neq 0)\\)<\/span>.",
+    "<strong>Q4.<\/strong> Calculer <span class=\"arithmatex\">\\(P(X\\geqslant1)\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(P(X=\\)<\/span><wbr><span class=\"arithmatex\">\\(0)+P(X=\\)<\/span><wbr><span class=\"arithmatex\">\\(1)=\\)<\/span><wbr><span class=\"arithmatex\">\\(0{,}2+0{,}5=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{0{,}7}\\)<\/span>.",
@@ -253,7 +264,12 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Arbres pondérés",
    "type": "flash",
    "enonce": "En déduire <span class=\"arithmatex\">\\(P(B)\\)<\/span> avec les données des questions 2 et 4.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> On a <span class=\"arithmatex\">\\(P(A)=0{,}4\\)<\/span>. Calculer <span class=\"arithmatex\">\\(P(\\overline A)\\)<\/span>.",
+    "<strong>Q2.<\/strong> On a <span class=\"arithmatex\">\\(P(A)=0{,}4\\)<\/span> et <span class=\"arithmatex\">\\(P_A(B)=0{,}25\\)<\/span>. Calculer <span class=\"arithmatex\">\\(P(A\\cap B)\\)<\/span>.",
+    "<strong>Q3.<\/strong> On a <span class=\"arithmatex\">\\(P(A)=0{,}4\\)<\/span> et <span class=\"arithmatex\">\\(P_A(\\overline B)=0{,}75\\)<\/span>. Vérifier la cohérence avec la question précédente.",
+    "<strong>Q4.<\/strong> On a <span class=\"arithmatex\">\\(P(\\overline A)=0{,}6\\)<\/span> et <span class=\"arithmatex\">\\(P_{\\overline A}(B)=0{,}5\\)<\/span>. Calculer <span class=\"arithmatex\">\\(P(\\overline A\\cap B)\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(P(B)=\\)<\/span><wbr><span class=\"arithmatex\">\\(0{,}10+0{,}30=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{0{,}40}\\)<\/span>.",

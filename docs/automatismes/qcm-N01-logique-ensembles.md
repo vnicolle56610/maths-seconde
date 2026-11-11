@@ -154,7 +154,10 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Ensembles — appartenance et inclusion",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\(A\\subset E\\)<\/span> : vrai ou faux ?",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> <span class=\"arithmatex\">\\(4\\in A\\)<\/span> : vrai ou faux ?",
+    "<strong>Q2.<\/strong> <span class=\"arithmatex\">\\(5\\in A\\)<\/span> : vrai ou faux ?"
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<strong class=\"auto-resultat\">Vrai<\/strong> : tous les éléments de <span class=\"arithmatex\">\\(A\\)<\/span> sont dans <span class=\"arithmatex\">\\(E\\)<\/span>.",
@@ -166,7 +169,11 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Ensembles — appartenance et inclusion",
    "type": "flash",
    "enonce": "Déterminer <span class=\"arithmatex\">\\(A\\cap B\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> <span class=\"arithmatex\">\\(4\\in A\\)<\/span> : vrai ou faux ?",
+    "<strong>Q2.<\/strong> <span class=\"arithmatex\">\\(5\\in A\\)<\/span> : vrai ou faux ?",
+    "<strong>Q3.<\/strong> <span class=\"arithmatex\">\\(A\\subset E\\)<\/span> : vrai ou faux ?"
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(A\\cap B=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{\\{2;4;6\\}}\\)<\/span>.",
@@ -178,7 +185,12 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Ensembles — appartenance et inclusion",
    "type": "flash",
    "enonce": "Déterminer <span class=\"arithmatex\">\\(A\\cup B\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> <span class=\"arithmatex\">\\(4\\in A\\)<\/span> : vrai ou faux ?",
+    "<strong>Q2.<\/strong> <span class=\"arithmatex\">\\(5\\in A\\)<\/span> : vrai ou faux ?",
+    "<strong>Q3.<\/strong> <span class=\"arithmatex\">\\(A\\subset E\\)<\/span> : vrai ou faux ?",
+    "<strong>Q4.<\/strong> Déterminer <span class=\"arithmatex\">\\(A\\cap B\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(A\\cup B=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{\\{1;2;3;4;5;6;8\\}}\\)<\/span>.",
@@ -190,7 +202,13 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Ensembles — appartenance et inclusion",
    "type": "flash",
    "enonce": "Donner <span class=\"arithmatex\">\\(\\operatorname{Card}(A)\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> <span class=\"arithmatex\">\\(4\\in A\\)<\/span> : vrai ou faux ?",
+    "<strong>Q2.<\/strong> <span class=\"arithmatex\">\\(5\\in A\\)<\/span> : vrai ou faux ?",
+    "<strong>Q3.<\/strong> <span class=\"arithmatex\">\\(A\\subset E\\)<\/span> : vrai ou faux ?",
+    "<strong>Q4.<\/strong> Déterminer <span class=\"arithmatex\">\\(A\\cap B\\)<\/span>.",
+    "<strong>Q5.<\/strong> Déterminer <span class=\"arithmatex\">\\(A\\cup B\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(\\boxed{\\operatorname{Card}(A)=4}\\)<\/span>.",

@@ -898,12 +898,64 @@ def dependances(serie: Serie) -> None:
             refs.add(int(m.group(1)))
         if re.search(r"(?i)correspondante?s?(?!\s+(?:à|au|aux)\b)|précédente?s?\b|ci-dessus|même figure|même fonction", q.tex):
             refs.update(p.numero for p in avant)
+        if MOTIF_REPRISE.search(q.tex):
+            refs.update(p.numero for p in avant)
         for p in avant:
             for lettre in set(re.findall(r"(?<![A-Za-z\\])([A-Za-z])\s*\(\s*x\s*\)\s*=", p.tex)):
                 definie_ici = re.search(r"(?<![A-Za-z\\])" + lettre + r"\s*\(\s*x\s*\)\s*=", q.tex)
                 if not definie_ici and re.search(r"(?<![A-Za-z\\])" + lettre + r"(?![A-Za-z])", q.tex):
                     refs.add(p.numero)
+        # Question sans données propres (« Calculer \(P(B)\) ») qui reprend un
+        # objet nommé plus haut (événement, variable, point, chemin d'arbre).
+        if not q.choix and not porte_ses_donnees(q.tex):
+            symboles = majuscules(q.tex)
+            for p in avant:
+                if symboles & majuscules(p.tex):
+                    refs.add(p.numero)
+        for p in avant:   # les questions reprises emportent leur propre contexte
+            if p.numero in refs:
+                refs.update(p.contexte)
         q.contexte = sorted(r for r in refs if r != q.numero and any(p.numero == r for p in avant))
+
+
+# Reprise explicite d'une question précédente : « avec la même suite », « ce tableau »…
+MOTIF_REPRISE = re.compile(
+    r"(?i)\b(?:la|le|les|du|des|au|aux)\s+m[êe]mes?\b|\bm[êe]mes\s+données\b|\b(?:ce|cet|cette|ces)\s+(?:tableau|liste|suite|droite|données|deux|points?|contexte|"
+    r"fréquence|nuage|arbre|programme|algorithme|valeurs?|résultats?|situation|modèle)\b|\bdéduire\b")
+# Mots qui introduisent des données dans l'énoncé lui-même.
+MOTIF_DONNEES = re.compile(r"(?i)\b(?:si|soit|pour|avec|on\s+a|on\s+répète|vérifie|passe|prend|vaut|valeurs?)\b")
+
+
+def porte_ses_donnees(tex: str) -> bool:
+    """Vrai si l'énoncé apporte ses propres données : mot introducteur, ou nombre
+    écrit hors parenthèses (« Calculer \\(P(X\\geqslant 10)\\) » n'en apporte pas)."""
+    if MOTIF_DONNEES.search(tex):
+        return True
+    sans_parentheses = re.sub(r"\\[()\[\]]", " ", tex)
+    if re.search(r"\(\s*-?\s*\d[^()]*;", sans_parentheses):   # coordonnées A(1;2)
+        return True
+    while True:
+        reduit = re.sub(r"\([^()]*\)", " ", sans_parentheses)
+        if reduit == sans_parentheses:
+            break
+        sans_parentheses = reduit
+    return bool(re.search(r"\d", re.sub(r"\\[A-Za-z]+", " ", sans_parentheses)))
+
+
+def majuscules(tex: str) -> set[str]:
+    """Lettres majuscules qui nomment un objet dans une formule (A, B, X, G, S…),
+    hors P (probabilité), E (espérance) et ensembles \\mathscr/\\mathbb."""
+    lettres: set[str] = set()
+    for est_math, s in segments_math(tex):
+        if not est_math:
+            continue
+        s = re.sub(r"\\(?:mathscr|mathcal|mathbb)\s*\{?[A-Z]\}?", " ", s)
+        s = re.sub(r"\\[A-Za-z]+", " ", s)
+        s = re.sub(r"\\text\{[^}]*\}", " ", s)
+        for mot in re.findall(r"(?<![A-Za-z])[A-Z]+(?![A-Za-z])", s):
+            if len(mot) <= 3:
+                lettres.update(mot)
+    return lettres - {"P", "E"}
 
 
 VIRGULE_ENTRE_NOMBRES = re.compile(r"(?<![\d.{])-?\d+(?:\{,\}\d+)?\s*,\s*(?:\\[ ,]|~)*\s*-?\d")

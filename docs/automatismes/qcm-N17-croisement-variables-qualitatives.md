@@ -118,7 +118,9 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Réactivation – proportions et tableaux",
    "type": "flash",
    "enonce": "Compléter : <span class=\"arithmatex\">\\(A\\cup B\\)<\/span> signifie <span class=\"arithmatex\">\\(A\\)<\/span> ... <span class=\"arithmatex\">\\(B\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q5.<\/strong> Compléter : si <span class=\"arithmatex\">\\(A\\)<\/span> et <span class=\"arithmatex\">\\(B\\)<\/span> sont deux conditions, <span class=\"arithmatex\">\\(A\\cap B\\)<\/span> signifie <span class=\"arithmatex\">\\(A\\)<\/span> ... <span class=\"arithmatex\">\\(B\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(\\boxed{\\text{ou}}\\)<\/span>.",
@@ -238,7 +240,12 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Fréquences conditionnelles",
    "type": "flash",
    "enonce": "Vrai ou faux : « parmi les filles » et « parmi les musiciens » donnent le même dénominateur.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> Parmi <span class=\"arithmatex\">\\(120\\)<\/span> secondes, <span class=\"arithmatex\">\\(72\\)<\/span> apprennent l'espagnol. Donner la fréquence.",
+    "<strong>Q2.<\/strong> Parmi <span class=\"arithmatex\">\\(50\\)<\/span> internes, <span class=\"arithmatex\">\\(30\\)<\/span> sont des filles. Donner la fréquence.",
+    "<strong>Q3.<\/strong> Il y a <span class=\"arithmatex\">\\(30\\)<\/span> filles, dont <span class=\"arithmatex\">\\(15\\)<\/span> musiciennes. Fréquence des musiciennes parmi les filles ?",
+    "<strong>Q4.<\/strong> Il y a <span class=\"arithmatex\">\\(25\\)<\/span> musiciens, dont <span class=\"arithmatex\">\\(15\\)<\/span> filles. Fréquence des filles parmi les musiciens ?"
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(\\boxed{\\text{faux}}\\)<\/span> : les populations de référence changent.",
@@ -298,7 +305,9 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Type épreuve anticipée – QCM tableaux",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\(A\\cup B\\)<\/span> signifie : A <span class=\"arithmatex\">\\(A\\)<\/span> et <span class=\"arithmatex\">\\(B\\)<\/span>, B ni <span class=\"arithmatex\">\\(A\\)<\/span> ni <span class=\"arithmatex\">\\(B\\)<\/span>, C <span class=\"arithmatex\">\\(A\\)<\/span> ou <span class=\"arithmatex\">\\(B\\)<\/span>, D seulement <span class=\"arithmatex\">\\(A\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q3.<\/strong> <span class=\"arithmatex\">\\(A\\cap B\\)<\/span> signifie : A <span class=\"arithmatex\">\\(A\\)<\/span> ou <span class=\"arithmatex\">\\(B\\)<\/span>, B <span class=\"arithmatex\">\\(A\\)<\/span> et <span class=\"arithmatex\">\\(B\\)<\/span>, C pas <span class=\"arithmatex\">\\(A\\)<\/span>, D pas <span class=\"arithmatex\">\\(B\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<strong class=\"auto-resultat\">réponse C<\/strong>.",
@@ -310,7 +319,10 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Type épreuve anticipée – QCM tableaux",
    "type": "flash",
    "enonce": "Le complémentaire de <span class=\"arithmatex\">\\(A\\cup B\\)<\/span> signifie : A ni <span class=\"arithmatex\">\\(A\\)<\/span> ni <span class=\"arithmatex\">\\(B\\)<\/span>, B <span class=\"arithmatex\">\\(A\\)<\/span> et <span class=\"arithmatex\">\\(B\\)<\/span>, C <span class=\"arithmatex\">\\(A\\)<\/span> ou <span class=\"arithmatex\">\\(B\\)<\/span>, D pas <span class=\"arithmatex\">\\(A\\)<\/span> seulement.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q3.<\/strong> <span class=\"arithmatex\">\\(A\\cap B\\)<\/span> signifie : A <span class=\"arithmatex\">\\(A\\)<\/span> ou <span class=\"arithmatex\">\\(B\\)<\/span>, B <span class=\"arithmatex\">\\(A\\)<\/span> et <span class=\"arithmatex\">\\(B\\)<\/span>, C pas <span class=\"arithmatex\">\\(A\\)<\/span>, D pas <span class=\"arithmatex\">\\(B\\)<\/span>.",
+    "<strong>Q4.<\/strong> <span class=\"arithmatex\">\\(A\\cup B\\)<\/span> signifie : A <span class=\"arithmatex\">\\(A\\)<\/span> et <span class=\"arithmatex\">\\(B\\)<\/span>, B ni <span class=\"arithmatex\">\\(A\\)<\/span> ni <span class=\"arithmatex\">\\(B\\)<\/span>, C <span class=\"arithmatex\">\\(A\\)<\/span> ou <span class=\"arithmatex\">\\(B\\)<\/span>, D seulement <span class=\"arithmatex\">\\(A\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<strong class=\"auto-resultat\">réponse A<\/strong>.",

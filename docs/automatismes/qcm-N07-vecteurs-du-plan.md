@@ -142,7 +142,9 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Vecteurs — Chasles et translations",
    "type": "flash",
    "enonce": "Écrire un vecteur égal à <span class=\"arithmatex\">\\(-\\overrightarrow{BA}\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> Compléter : <span class=\"arithmatex\">\\(\\overrightarrow{AB}+\\overrightarrow{BC}=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\ldots\\)<\/span>"
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(-\\overrightarrow{BA}=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{\\overrightarrow{AB}}\\)<\/span>.",
@@ -154,7 +156,10 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Vecteurs — Chasles et translations",
    "type": "flash",
    "enonce": "Dans un parallélogramme <span class=\"arithmatex\">\\(ABCD\\)<\/span>, citer un vecteur égal à <span class=\"arithmatex\">\\(\\overrightarrow{AB}\\)<\/span>.",
-   "contexte": [],
+   "contexte": [
+    "<strong>Q1.<\/strong> Compléter : <span class=\"arithmatex\">\\(\\overrightarrow{AB}+\\overrightarrow{BC}=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\ldots\\)<\/span>",
+    "<strong>Q2.<\/strong> Écrire un vecteur égal à <span class=\"arithmatex\">\\(-\\overrightarrow{BA}\\)<\/span>."
+   ],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(\\overrightarrow{AB}=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{\\overrightarrow{DC}}\\)<\/span>.",
