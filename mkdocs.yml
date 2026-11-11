@@ -33,8 +33,12 @@ nav:
   - "📝 TD": td/index.md
   - "⚡ Automatismes":
       - automatismes/index.md
+      - "N01 — Logique, ensembles et raisonnement (en ligne)": automatismes/automatismes-N01-logique-ensembles.md
+      - "N02 — Nombres réels, intervalles et valeur absolue (en ligne)": automatismes/automatismes-N02-nombres-reels-intervalles.md
+      - "N03 — Arithmétique (en ligne)": automatismes/automatismes-N03-arithmetique.md
       - "N04 — Calcul littéral (en ligne)": automatismes/automatismes-N04-calcul-litteral.md
-      - "N04 — QCM interactif": automatismes/qcm-N04-calcul-litteral.md
+      - "N05 — Équations et inéquations (en ligne)": automatismes/automatismes-N05-equations-inequations.md
+      - "N06 — Synthèse nombres et calculs (en ligne)": automatismes/automatismes-N06-synthese-nombres-calculs.md
   - "🎯 Préparer une évaluation": preparer-evaluation/index.md
   - "✅ Corrigés publiés": corriges/index.md
   - "ℹ️ À propos & licence": a-propos.md
@@ -66,7 +70,7 @@ markdown_extensions:
       generic: true
 extra_css:
   - stylesheets/extra.css?v=2026-10-31
-  - stylesheets/automatismes.css?v=2026-11-11b
+  - stylesheets/automatismes.css?v=2026-11-11c
 extra_javascript:
   - javascripts/pdf-new-tab.js
   - javascripts/toutatice-header.js
@@ -75,4 +79,4 @@ extra_javascript:
   - javascripts/compteur-visites.js
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
-  - javascripts/automatismes-qcm.js?v=2026-11-11
+  - javascripts/automatismes-qcm.js?v=2026-11-11c

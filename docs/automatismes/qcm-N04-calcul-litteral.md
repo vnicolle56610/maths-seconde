@@ -1,6 +1,6 @@
 ---
 title: "QCM automatismes Seconde – Calcul littéral (interactif, corrigé)"
-description: "QCM en ligne d'automatismes de Seconde en calcul littéral : chronomètre, score immédiat et correction détaillée, sans calculatrice."
+description: "QCM en ligne d'automatismes de Seconde (calcul littéral) : chronomètre, score immédiat et correction détaillée, sans calculatrice."
 ---
 
 # QCM interactif — Calcul littéral
@@ -14,6 +14,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
 <script type="application/json" id="banque-automatismes">
 {
  "notion": "N04",
+ "cle": "N04",
  "titre": "Calcul littéral",
  "niveau": "Seconde",
  "series": [
@@ -22,28 +23,32 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Réactivation — calculs utiles",
    "duree": "6 min",
    "consigne": "Répondre rapidement. Garder les résultats exacts.",
-   "qcm": false
+   "qcm": false,
+   "figure": ""
   },
   {
    "lettre": "B",
    "theme": "Calcul littéral — développer et réduire",
    "duree": "6 min",
    "consigne": "Développer puis réduire si possible.",
-   "qcm": false
+   "qcm": false,
+   "figure": ""
   },
   {
    "lettre": "C",
    "theme": "Choisir une forme — calculer et factoriser",
    "duree": "7 min",
    "consigne": "Choisir la forme la plus efficace.",
-   "qcm": false
+   "qcm": false,
+   "figure": ""
   },
   {
    "lettre": "D",
    "theme": "QCM — calcul littéral",
    "duree": "5 min",
    "consigne": "Choisir une seule réponse. Aucune justification n'est demandée.",
-   "qcm": true
+   "qcm": true,
+   "figure": ""
   }
  ],
  "questions": [
@@ -53,6 +58,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Réactivation — calculs utiles",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\(\\dfrac{3}{4}+\\dfrac{5}{8}\\)<\/span>",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(\\dfrac{3}{4}+\\dfrac{5}{8}=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\dfrac{6}{8}+\\dfrac{5}{8}=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{\\dfrac{11}{8}}\\)<\/span>.",
@@ -64,6 +70,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Réactivation — calculs utiles",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\(2^3+3^2\\)<\/span>",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(2^3+3^2=8+9=\\boxed{17}\\)<\/span>.",
@@ -75,6 +82,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Réactivation — calculs utiles",
    "type": "flash",
    "enonce": "Calculer <span class=\"arithmatex\">\\((-5)^2\\)<\/span> puis <span class=\"arithmatex\">\\(-5^2\\)<\/span>.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\((-5)^2=\\boxed{25}\\)<\/span> et <span class=\"arithmatex\">\\(-5^2=\\boxed{-25}\\)<\/span>.",
@@ -86,6 +94,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Réactivation — calculs utiles",
    "type": "flash",
    "enonce": "Résoudre : <span class=\"arithmatex\">\\(3x-6=0\\)<\/span>.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(3x-6=0 \\Longleftrightarrow\\)<\/span><wbr><span class=\"arithmatex\">\\( 3x=6 \\Longleftrightarrow\\)<\/span><wbr><span class=\"arithmatex\">\\( \\boxed{x=2}\\)<\/span>.",
@@ -97,6 +106,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Réactivation — calculs utiles",
    "type": "flash",
    "enonce": "Développer : <span class=\"arithmatex\">\\(2(x+5)\\)<\/span>.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(2(x+5)=\\boxed{2x+10}\\)<\/span>.",
@@ -108,6 +118,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Réactivation — calculs utiles",
    "type": "flash",
    "enonce": "Factoriser : <span class=\"arithmatex\">\\(6x+9\\)<\/span>.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(6x+9=\\boxed{3(2x+3)}\\)<\/span>.",
@@ -119,6 +130,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Calcul littéral — développer et réduire",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\(3(2x-5)\\)<\/span>",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(3(2x-5)=\\boxed{6x-15}\\)<\/span>.",
@@ -130,6 +142,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Calcul littéral — développer et réduire",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\((x+4)(x-2)\\)<\/span>",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\((x+4)(x-2)=\\)<\/span><wbr><span class=\"arithmatex\">\\(x^2-2x+4x-8=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{x^2+2x-8}\\)<\/span>.",
@@ -141,6 +154,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Calcul littéral — développer et réduire",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\((2x-1)^2\\)<\/span>",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\((2x-1)^2=\\)<\/span><wbr><span class=\"arithmatex\">\\(4x^2-4x+1=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{4x^2-4x+1}\\)<\/span>.",
@@ -152,6 +166,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Calcul littéral — développer et réduire",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\((x+7)(x-7)\\)<\/span>",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\((x+7)(x-7)=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{x^2-49}\\)<\/span>.",
@@ -163,6 +178,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Calcul littéral — développer et réduire",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\(5x-2(3x+4)\\)<\/span>",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(5x-2(3x+4)=\\)<\/span><wbr><span class=\"arithmatex\">\\(5x-6x-8=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{-x-8}\\)<\/span>.",
@@ -174,6 +190,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Calcul littéral — développer et réduire",
    "type": "flash",
    "enonce": "<span class=\"arithmatex\">\\(4(x-1)+3(2x+5)\\)<\/span>",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(4(x-1)+3(2x+5)=\\)<\/span><wbr><span class=\"arithmatex\">\\(4x-4+6x+15=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{10x+11}\\)<\/span>.",
@@ -185,6 +202,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Choisir une forme — calculer et factoriser",
    "type": "flash",
    "enonce": "Calculer <span class=\"arithmatex\">\\(A=x^2-6x+9\\)<\/span> pour <span class=\"arithmatex\">\\(x=3\\)<\/span>.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(x^2-6x+9=(x-3)^2\\)<\/span>, donc pour <span class=\"arithmatex\">\\(x=3\\)<\/span> : <span class=\"arithmatex\">\\(\\boxed{0}\\)<\/span>.",
@@ -196,6 +214,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Choisir une forme — calculer et factoriser",
    "type": "flash",
    "enonce": "Factoriser : <span class=\"arithmatex\">\\(x^2-16\\)<\/span>.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(x^2-16=\\)<\/span><wbr><span class=\"arithmatex\">\\(x^2-4^2=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{(x-4)(x+4)}\\)<\/span>.",
@@ -207,6 +226,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Choisir une forme — calculer et factoriser",
    "type": "flash",
    "enonce": "Factoriser : <span class=\"arithmatex\">\\(9x^2+12x+4\\)<\/span>.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(9x^2+12x+4=\\)<\/span><wbr><span class=\"arithmatex\">\\((3x)^2+2\\times3x\\times2+2^2=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{(3x+2)^2}\\)<\/span>.",
@@ -218,6 +238,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Choisir une forme — calculer et factoriser",
    "type": "flash",
    "enonce": "Résoudre : <span class=\"arithmatex\">\\((x-5)(2x+1)=0\\)<\/span>.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\((x-5)(2x+1)=0\\)<\/span>, donc <span class=\"arithmatex\">\\(\\boxed{x=5\\text{ ou }x=-\\dfrac12}\\)<\/span>.",
@@ -229,6 +250,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Choisir une forme — calculer et factoriser",
    "type": "flash",
    "enonce": "Pour <span class=\"arithmatex\">\\(L=2x+3\\)<\/span>, écrire l'aire d'un carré de côté <span class=\"arithmatex\">\\(L\\)<\/span> sous forme développée.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\((2x+3)^2=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{4x^2+12x+9}\\)<\/span>.",
@@ -240,6 +262,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "Choisir une forme — calculer et factoriser",
    "type": "flash",
    "enonce": "Comparer mentalement : <span class=\"arithmatex\">\\(101^2-99^2\\)<\/span>.",
+   "contexte": [],
    "choix": [],
    "bonne": null,
    "corrige": "<span class=\"arithmatex\">\\(101^2-99^2=\\)<\/span><wbr><span class=\"arithmatex\">\\((101-99)(101+99)=\\)<\/span><wbr><span class=\"arithmatex\">\\(2\\times200=\\)<\/span><wbr><span class=\"arithmatex\">\\(\\boxed{400}\\)<\/span>.",
@@ -251,6 +274,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "QCM — calcul littéral",
    "type": "qcm",
    "enonce": "<span class=\"arithmatex\">\\((x+3)^2\\)<\/span>",
+   "contexte": [],
    "choix": [
     "<span class=\"arithmatex\">\\(x^2+9\\)<\/span>",
     "<span class=\"arithmatex\">\\(x^2+6x+9\\)<\/span>",
@@ -267,6 +291,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "QCM — calcul littéral",
    "type": "qcm",
    "enonce": "<span class=\"arithmatex\">\\(x^2-25\\)<\/span>",
+   "contexte": [],
    "choix": [
     "<span class=\"arithmatex\">\\((x-5)^2\\)<\/span>",
     "<span class=\"arithmatex\">\\((x-25)(x+25)\\)<\/span>",
@@ -283,6 +308,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "QCM — calcul littéral",
    "type": "qcm",
    "enonce": "<span class=\"arithmatex\">\\(-3(2x-4)\\)<\/span>",
+   "contexte": [],
    "choix": [
     "<span class=\"arithmatex\">\\(-6x-12\\)<\/span>",
     "<span class=\"arithmatex\">\\(-6x+12\\)<\/span>",
@@ -299,6 +325,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "QCM — calcul littéral",
    "type": "qcm",
    "enonce": "Une forme factorisée de <span class=\"arithmatex\">\\(4x^2-12x\\)<\/span> est",
+   "contexte": [],
    "choix": [
     "<span class=\"arithmatex\">\\(4x(x-3)\\)<\/span>",
     "<span class=\"arithmatex\">\\(4(x^2-3)\\)<\/span>",
@@ -315,6 +342,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "QCM — calcul littéral",
    "type": "qcm",
    "enonce": "La valeur de <span class=\"arithmatex\">\\(x^2+2x\\)<\/span> pour <span class=\"arithmatex\">\\(x=-2\\)<\/span> est",
+   "contexte": [],
    "choix": [
     "<span class=\"arithmatex\">\\(0\\)<\/span>",
     "<span class=\"arithmatex\">\\(4\\)<\/span>",
@@ -331,6 +359,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
    "theme": "QCM — calcul littéral",
    "type": "qcm",
    "enonce": "Si <span class=\"arithmatex\">\\((x-1)(x+4)=0\\)<\/span>, alors",
+   "contexte": [],
    "choix": [
     "<span class=\"arithmatex\">\\(x=1\\)<\/span> seulement",
     "<span class=\"arithmatex\">\\(x=-4\\)<\/span> seulement",

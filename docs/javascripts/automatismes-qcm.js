@@ -70,7 +70,7 @@
   function Application(racine, banque) {
     this.racine = racine;
     this.banque = banque;
-    this.cle = "automatismes-" + banque.niveau + "-" + banque.notion;
+    this.cle = "automatismes-" + banque.niveau + "-" + (banque.cle || banque.notion);
     this.accueil();
   }
 
@@ -118,9 +118,34 @@
     this.racine.appendChild(carte);
   };
 
+  Application.prototype.serie = function (q) {
+    return this.banque.series.filter(function (x) { return x.lettre === q.serie; })[0] || {};
+  };
+
   Application.prototype.consigne = function (q) {
-    var s = this.banque.series.filter(function (x) { return x.lettre === q.serie; })[0];
-    return s ? s.consigne : "";
+    return this.serie(q).consigne || "";
+  };
+
+  // Figure de la série (repliable en mode QCM, affichée en mode flash) et
+  // questions précédentes dont dépend l'énoncé.
+  Application.prototype.supports = function (q, replier) {
+    var frag = document.createDocumentFragment();
+    var figure = this.serie(q).figure;
+    if (figure) {
+      if (replier) {
+        var d = el("details", "qcm-figure");
+        d.appendChild(el("summary", "", "Voir la figure"));
+        d.appendChild(el("div", "", figure));
+        frag.appendChild(d);
+      } else {
+        frag.appendChild(el("div", "qcm-figure", figure));
+      }
+    }
+    if (q.contexte && q.contexte.length) {
+      frag.appendChild(el("div", "qcm-contexte",
+        "<strong>Dans la même série :</strong> " + q.contexte.join(" ")));
+    }
+    return frag;
   };
 
   // ---------------------------------------------------------------- Mode QCM
@@ -142,6 +167,7 @@
     var liste = el("ol", "qcm-liste");
     tirage.forEach(function (t, i) {
       var li = el("li", "qcm-question");
+      li.appendChild(self.supports(t.q, true));
       li.appendChild(el("div", "qcm-enonce", t.q.enonce));
       var choix = el("div", "qcm-choix");
       t.ordre.forEach(function (k, pos) {
@@ -230,6 +256,7 @@
       zone.innerHTML = "";
       var carte = el("div", "qcm-question");
       carte.appendChild(el("div", "qcm-consigne", self.consigne(q)));
+      carte.appendChild(self.supports(q, false));
       carte.appendChild(el("div", "qcm-enonce qcm-enonce--grand", q.enonce));
       var voir = el("button", "md-button md-button--primary", "Voir la réponse");
       voir.type = "button";
@@ -266,6 +293,7 @@
         bloc.appendChild(el("h3", "", "À revoir"));
         aRevoir.forEach(function (r) {
           var d = el("div", "qcm-question qcm-question--faux");
+          d.appendChild(self.supports(r.q, true));
           d.appendChild(el("div", "qcm-enonce", r.q.enonce));
           d.appendChild(el("div", "qcm-retour qcm-retour--visible", r.q.corrige));
           if (r.q.methode) d.appendChild(el("div", "qcm-methode", "<strong>Méthode.</strong> " + r.q.methode));

@@ -30,6 +30,10 @@ Cette synthèse rassemble les premiers outils numériques et algébriques de l�
 - [Automatismes N06 — Synthèse nombres et calculs](../automatismes/AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N06 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N06-synthese-nombres-calculs.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

@@ -1,0 +1,55 @@
+{
+  "_commentaire": "Notions publiées en ligne par scripts/generer_automatismes_web.py (pages lecture + QCM). Ajouter une entrée par notion, puis relancer le script.",
+  "niveau": "Seconde",
+  "source_racine": "~/ENSEIGNEMENT/CLAUDE/Niveau_2nde",
+  "notions": [
+    {
+      "code": "N01",
+      "slug": "logique-ensembles",
+      "titre": "Logique, ensembles et raisonnement",
+      "source": "N01_LOGIQUE_ENSEMBLES/AUTOMATISMES_N01_LOGIQUE_ENSEMBLES.tex",
+      "pdf": "AUTOMATISMES_N01_LOGIQUE_ENSEMBLES.pdf",
+      "notion": "../notions/N01-logique-ensembles.md"
+    },
+    {
+      "code": "N02",
+      "slug": "nombres-reels-intervalles",
+      "titre": "Nombres réels, intervalles et valeur absolue",
+      "source": "N02_NOMBRES_REELS_INTERVALLES/AUTOMATISMES_N02_NOMBRES_REELS_INTERVALLES.tex",
+      "pdf": "AUTOMATISMES_N02_NOMBRES_REELS_INTERVALLES.pdf",
+      "notion": "../notions/N02-nombres-reels-intervalles.md"
+    },
+    {
+      "code": "N03",
+      "slug": "arithmetique",
+      "titre": "Arithmétique",
+      "source": "N03_ARITHMETIQUE/AUTOMATISMES_N03_ARITHMETIQUE.tex",
+      "pdf": "AUTOMATISMES_N03_ARITHMETIQUE.pdf",
+      "notion": "../notions/N03-arithmetique.md"
+    },
+    {
+      "code": "N04",
+      "slug": "calcul-litteral",
+      "titre": "Calcul littéral",
+      "source": "N04_CALCUL_LITTERAL/AUTOMATISMES_N04_CALCUL_LITTERAL.tex",
+      "pdf": "AUTOMATISMES_N04_CALCUL_LITTERAL.pdf",
+      "notion": "../notions/N04-calcul-litteral.md"
+    },
+    {
+      "code": "N05",
+      "slug": "equations-inequations",
+      "titre": "Équations et inéquations",
+      "source": "N05_EQUATIONS_INEQUATIONS/AUTOMATISMES_N05_EQUATIONS_INEQUATIONS.tex",
+      "pdf": "AUTOMATISMES_N05_EQUATIONS_INEQUATIONS.pdf",
+      "notion": "../notions/N05-equations-inequations.md"
+    },
+    {
+      "code": "N06",
+      "slug": "synthese-nombres-calculs",
+      "titre": "Synthèse nombres et calculs",
+      "source": "N06_SYNTHESE_NOMBRES_CALCULS/AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.tex",
+      "pdf": "AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.pdf",
+      "notion": "../notions/N06-synthese-nombres-calculs.md"
+    }
+  ]
+}

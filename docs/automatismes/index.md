@@ -2,9 +2,19 @@
 
 Exercices d'automatismes et mini-tests, classés par notion.
 
-!!! tip "Nouveau : les automatismes en ligne"
+<!-- AUTOMATISMES-WEB:START -->
+!!! tip "Automatismes en ligne : énoncés corrigés et QCM interactif"
 
-    Pour **N04 — Calcul littéral**, les questions sont aussi disponibles directement en ligne : [énoncés et corrigés](automatismes-N04-calcul-litteral.md) et [QCM interactif chronométré](qcm-N04-calcul-litteral.md).
+    Sans rien télécharger : questions à l'écran, corrigés repliables et QCM chronométré.
+
+    - **N01 — Logique, ensembles et raisonnement** : [énoncés et corrigés](automatismes-N01-logique-ensembles.md) · [QCM interactif](qcm-N01-logique-ensembles.md)
+    - **N02 — Nombres réels, intervalles et valeur absolue** : [énoncés et corrigés](automatismes-N02-nombres-reels-intervalles.md) · [QCM interactif](qcm-N02-nombres-reels-intervalles.md)
+    - **N03 — Arithmétique** : [énoncés et corrigés](automatismes-N03-arithmetique.md) · [QCM interactif](qcm-N03-arithmetique.md)
+    - **N04 — Calcul littéral** : [énoncés et corrigés](automatismes-N04-calcul-litteral.md) · [QCM interactif](qcm-N04-calcul-litteral.md)
+    - **N05 — Équations et inéquations** : [énoncés et corrigés](automatismes-N05-equations-inequations.md) · [QCM interactif](qcm-N05-equations-inequations.md)
+    - **N06 — Synthèse nombres et calculs** : [énoncés et corrigés](automatismes-N06-synthese-nombres-calculs.md) · [QCM interactif](qcm-N06-synthese-nombres-calculs.md)
+
+<!-- AUTOMATISMES-WEB:END -->
 
 <!-- AUTO-DOCS:START -->
 ## N01 — Logique, ensembles et raisonnement

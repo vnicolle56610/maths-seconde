@@ -30,6 +30,10 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 - [Automatismes N05 — Équations et inéquations](../automatismes/AUTOMATISMES_N05_EQUATIONS_INEQUATIONS.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N05 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N05-equations-inequations.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 <!-- AUTO-EVAL:START -->
 - 🎯 Évaluée au DS1 du mardi 24 novembre : [devoir blanc en ligne le lundi 16 novembre](../preparer-evaluation/index.md#ds1-2026-2027)
 <!-- AUTO-EVAL:END -->

@@ -30,6 +30,10 @@ Les notations d'ensembles aident à nommer précisément les objets manipulés e
 - [Corrigé TD N01](../corriges/CORRIGE_TD_N01_LOGIQUE_ENSEMBLES.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N01 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N01-logique-ensembles.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""
