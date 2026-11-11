@@ -35,7 +35,15 @@ Corrigés destinés aux élèves, classés par notion.
 
 
 
+## N10 — Fonctions affines
+
+
+
 ## N13 — Équations et inéquations avec fonctions
+
+
+
+## N14 — Synthèse fonctions et modélisation
 
 
 
