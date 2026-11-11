@@ -1,4 +1,4 @@
-/* PROTOTYPE — pages d'automatismes en ligne et QCM interactif. */
+/* Pages d'automatismes en ligne et QCM interactif. */
 
 /* ---- Page « lecture » ---- */
 .auto-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 1.5rem; }
@@ -95,3 +95,19 @@
 }
 /* Les boîtes MathJax dépassent parfois d'1-2 px en fin de ligne : sans effet visible, mais crée un défilement horizontal. */
 .md-typeset ol.auto-questions, .md-typeset ol.auto-corrige, .md-typeset ol.qcm-liste, .qcm-flash { overflow-x: clip; }
+
+/* ---- Figures (tableaux de valeurs, courbes, tableaux de variations) ---- */
+.md-typeset .auto-figure { margin: .6rem 0 .9rem; overflow-x: auto; }
+.md-typeset .auto-figure img { max-width: 100%; height: auto; background: #fff; border-radius: 6px; }
+.md-typeset table.auto-tableau, .qcm-figure table.auto-tableau { border-collapse: collapse; margin: 0; font-size: .9rem; }
+.md-typeset table.auto-tableau th, .md-typeset table.auto-tableau td,
+.qcm-figure table.auto-tableau th, .qcm-figure table.auto-tableau td {
+  border: 1px solid #9fb0c3; padding: .25rem .7rem; text-align: center; min-width: 2.4rem;
+}
+.md-typeset table.auto-tableau tr:first-child > *, .qcm-figure table.auto-tableau tr:first-child > * { background: #eef5ff; }
+.md-typeset table.auto-tableau th:first-child, .qcm-figure table.auto-tableau th:first-child { background: #eef5ff; }
+.qcm-figure { margin: .2rem 0 .6rem; font-size: .9em; }
+.qcm-figure summary { cursor: pointer; color: #0050a0; font-weight: 600; }
+.qcm-figure img { max-width: 100%; height: auto; }
+.qcm-contexte { font-size: .85em; color: #3d4b5c; background: #f4f7fb; border-left: 3px solid #9fb0c3;
+  padding: .3rem .6rem; margin-bottom: .5rem; border-radius: 0 6px 6px 0; }
