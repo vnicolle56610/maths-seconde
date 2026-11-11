@@ -288,7 +288,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\([-2;3]\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ". Zéros <span class=\"arithmatex\">\\(-2\\)<\/span> et <span class=\"arithmatex\">\\(3\\)<\/span>, produit positif à l'extérieur.",
+   "corrige": "Zéros <span class=\"arithmatex\">\\(-2\\)<\/span> et <span class=\"arithmatex\">\\(3\\)<\/span>, produit positif à l'extérieur.",
    "methode": "En QCM, la reconnaissance de la structure évite les calculs longs."
   },
   {
@@ -305,7 +305,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(x=-1\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ". Le dénominateur <span class=\"arithmatex\">\\(x+4\\)<\/span> s'annule pour <span class=\"arithmatex\">\\(x=-4\\)<\/span>.",
+   "corrige": "Le dénominateur <span class=\"arithmatex\">\\(x+4\\)<\/span> s'annule pour <span class=\"arithmatex\">\\(x=-4\\)<\/span>.",
    "methode": "En QCM, la reconnaissance de la structure évite les calculs longs."
   },
   {
@@ -322,7 +322,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(g&gt;f\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ". <span class=\"arithmatex\">\\(f-g&gt;0\\)<\/span> signifie <span class=\"arithmatex\">\\(f&gt;g\\)<\/span>.",
+   "corrige": "<span class=\"arithmatex\">\\(f-g&gt;0\\)<\/span> signifie <span class=\"arithmatex\">\\(f&gt;g\\)<\/span>.",
    "methode": "En QCM, la reconnaissance de la structure évite les calculs longs."
   },
   {
@@ -339,7 +339,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "aucune"
    ],
    "bonne": 2,
-   "corrige": ". <span class=\"arithmatex\">\\(x^2-1=(x-1)(x+1)\\)<\/span>.",
+   "corrige": "<span class=\"arithmatex\">\\(x^2-1=(x-1)(x+1)\\)<\/span>.",
    "methode": "En QCM, la reconnaissance de la structure évite les calculs longs."
   },
   {
@@ -356,7 +356,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "tout <span class=\"arithmatex\">\\(x\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ". Les zéros sont les abscisses des points de l'axe des abscisses.",
+   "corrige": "Les zéros sont les abscisses des points de l'axe des abscisses.",
    "methode": "En QCM, la reconnaissance de la structure évite les calculs longs."
   },
   {
@@ -375,7 +375,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(\\dfrac{f}{g}\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ". On résout <span class=\"arithmatex\">\\(f-g\\leqslant0\\)<\/span>.",
+   "corrige": "On résout <span class=\"arithmatex\">\\(f-g\\leqslant0\\)<\/span>.",
    "methode": "En QCM, la reconnaissance de la structure évite les calculs longs."
   }
  ]

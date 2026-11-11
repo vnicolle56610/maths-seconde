@@ -288,7 +288,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "aucun coût fixe"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "une part fixe <span class=\"arithmatex\">\\(20\\)<\/span> et <span class=\"arithmatex\">\\(8\\)<\/span> par unité",
    "methode": "En modélisation, l'automatisme important est de reconnaître le rôle de chaque nombre."
   },
   {
@@ -305,7 +305,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(f(10)=3\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(10\\)<\/span> est l'image de <span class=\"arithmatex\">\\(3\\)<\/span>",
    "methode": "En modélisation, l'automatisme important est de reconnaître le rôle de chaque nombre."
   },
   {
@@ -322,7 +322,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\([0;+\\infty[\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(\\mathbb R\\setminus\\{-2\\}\\)<\/span>",
    "methode": "En modélisation, l'automatisme important est de reconnaître le rôle de chaque nombre."
   },
   {
@@ -339,7 +339,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(fg\\leqslant0\\)<\/span>"
    ],
    "bonne": 0,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(f\\leqslant g\\)<\/span>",
    "methode": "En modélisation, l'automatisme important est de reconnaître le rôle de chaque nombre."
   },
   {
@@ -356,7 +356,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(12\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(1{,}12\\)<\/span>",
    "methode": "En modélisation, l'automatisme important est de reconnaître le rôle de chaque nombre."
   },
   {
@@ -373,7 +373,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "une valeur interdite"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "la plus grande image",
    "methode": "En modélisation, l'automatisme important est de reconnaître le rôle de chaque nombre."
   }
  ]

@@ -143,12 +143,12 @@ description: "24 questions d'automatismes de Seconde (vecteurs du plan), sans ca
 ??? success "Corrigé de la série D"
 
     <ol class="auto-corrige">
-    <li value="1"><strong class="auto-resultat">Réponse A</strong> : .</li>
-    <li value="2"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="3"><strong class="auto-resultat">Réponse C</strong> : .</li>
-    <li value="4"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="5"><strong class="auto-resultat">Réponse A</strong> : .</li>
-    <li value="6"><strong class="auto-resultat">Réponse B</strong> : , car <span class="arithmatex">\(25+144=169\)</span>.</li>
+    <li value="1"><strong class="auto-resultat">Réponse A</strong> : <span class="arithmatex">\(\left(\begin{smallmatrix}3\\-4\end{smallmatrix}\right)\)</span></li>
+    <li value="2"><strong class="auto-resultat">Réponse B</strong> : <span class="arithmatex">\((2\,;\,4)\)</span></li>
+    <li value="3"><strong class="auto-resultat">Réponse C</strong> : <span class="arithmatex">\(\vec u,\vec v\)</span> colinéaires</li>
+    <li value="4"><strong class="auto-resultat">Réponse B</strong> : <span class="arithmatex">\(\overrightarrow{CB}\)</span></li>
+    <li value="5"><strong class="auto-resultat">Réponse A</strong> : <span class="arithmatex">\((-2\,;\,7)\)</span></li>
+    <li value="6"><strong class="auto-resultat">Réponse B</strong> : car <span class="arithmatex">\(25+144=169\)</span>.</li>
     </ol>
     <div class="auto-methode"><strong>Méthode.</strong> En QCM, commencer par vérifier le sens et l'ordre des points avant de calculer.</div>
     <div class="auto-vigilance"><strong>Vigilance.</strong> Une réponse qui a le bon calcul mais le sens opposé est fausse.</div>

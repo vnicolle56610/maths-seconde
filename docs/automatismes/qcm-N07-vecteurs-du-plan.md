@@ -282,7 +282,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(\\left(\\begin{smallmatrix}2\\\\-1\\end{smallmatrix}\\right)\\)<\/span>"
    ],
    "bonne": 0,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(\\left(\\begin{smallmatrix}3\\\\-4\\end{smallmatrix}\\right)\\)<\/span>",
    "methode": "En QCM, commencer par vérifier le sens et l'ordre des points avant de calculer."
   },
   {
@@ -299,7 +299,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\((1\\,;\\,3)\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\((2\\,;\\,4)\\)<\/span>",
    "methode": "En QCM, commencer par vérifier le sens et l'ordre des points avant de calculer."
   },
   {
@@ -316,7 +316,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(\\vec u+\\vec v=\\vec 0\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(\\vec u,\\vec v\\)<\/span> colinéaires",
    "methode": "En QCM, commencer par vérifier le sens et l'ordre des points avant de calculer."
   },
   {
@@ -333,7 +333,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(\\overrightarrow{BC}\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(\\overrightarrow{CB}\\)<\/span>",
    "methode": "En QCM, commencer par vérifier le sens et l'ordre des points avant de calculer."
   },
   {
@@ -350,7 +350,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\((2\\,;\\,1)\\)<\/span>"
    ],
    "bonne": 0,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\((-2\\,;\\,7)\\)<\/span>",
    "methode": "En QCM, commencer par vérifier le sens et l'ordre des points avant de calculer."
   },
   {
@@ -367,7 +367,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(\\sqrt{119}\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ", car <span class=\"arithmatex\">\\(25+144=169\\)<\/span>.",
+   "corrige": "car <span class=\"arithmatex\">\\(25+144=169\\)<\/span>.",
    "methode": "En QCM, commencer par vérifier le sens et l'ordre des points avant de calculer."
   }
  ]

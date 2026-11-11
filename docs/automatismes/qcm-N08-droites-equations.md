@@ -282,7 +282,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(y=x+2\\)<\/span>"
    ],
    "bonne": 0,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(y=3x+2\\)<\/span>",
    "methode": "Le coefficient directeur donne une reconnaissance rapide de la position relative."
   },
   {
@@ -299,7 +299,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\((7\\,;\\,0)\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\((-2\\,;\\,4)\\)<\/span>",
    "methode": "Le coefficient directeur donne une reconnaissance rapide de la position relative."
   },
   {
@@ -316,7 +316,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\((3\\,;\\,4)\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\((4\\,;\\,3)\\)<\/span>",
    "methode": "Le coefficient directeur donne une reconnaissance rapide de la position relative."
   },
   {
@@ -333,7 +333,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(verticales\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(parallèles\\)<\/span>",
    "methode": "Le coefficient directeur donne une reconnaissance rapide de la position relative."
   },
   {
@@ -350,7 +350,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(une parabole\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(une droite verticale\\)<\/span>",
    "methode": "Le coefficient directeur donne une reconnaissance rapide de la position relative."
   },
   {
@@ -367,7 +367,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "une infinité"
    ],
    "bonne": 0,
-   "corrige": ".",
+   "corrige": "aucune solution",
    "methode": "Le coefficient directeur donne une reconnaissance rapide de la position relative."
   }
  ]

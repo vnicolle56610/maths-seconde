@@ -290,7 +290,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\((0\\,;\\,7)\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\((3\\,;\\,7)\\)<\/span>",
    "methode": "Un QCM de fonctions se traite souvent en traduisant d'abord l'énoncé en notation mathématique."
   },
   {
@@ -307,7 +307,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(81\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(-3\\)<\/span> et <span class=\"arithmatex\">\\(3\\)<\/span>",
    "methode": "Un QCM de fonctions se traite souvent en traduisant d'abord l'énoncé en notation mathématique."
   },
   {
@@ -324,7 +324,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(\\{ -2\\}\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(\\mathbb R\\setminus\\{-2\\}\\)<\/span>",
    "methode": "Un QCM de fonctions se traite souvent en traduisant d'abord l'énoncé en notation mathématique."
   },
   {
@@ -341,7 +341,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(-3\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(7\\)<\/span>",
    "methode": "Un QCM de fonctions se traite souvent en traduisant d'abord l'énoncé en notation mathématique."
   },
   {
@@ -360,7 +360,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(7\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\(1\\)<\/span>",
    "methode": "Un QCM de fonctions se traite souvent en traduisant d'abord l'énoncé en notation mathématique."
   },
   {
@@ -377,7 +377,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(2x^2\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ".",
+   "corrige": "<span class=\"arithmatex\">\\((x+2)^2\\)<\/span>",
    "methode": "Un QCM de fonctions se traite souvent en traduisant d'abord l'énoncé en notation mathématique."
   }
  ]

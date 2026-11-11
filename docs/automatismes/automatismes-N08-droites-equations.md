@@ -143,12 +143,12 @@ description: "24 questions d'automatismes de Seconde (droites et équations dans
 ??? success "Corrigé de la série D"
 
     <ol class="auto-corrige">
-    <li value="1"><strong class="auto-resultat">Réponse A</strong> : .</li>
-    <li value="2"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="3"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="4"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="5"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="6"><strong class="auto-resultat">Réponse A</strong> : .</li>
+    <li value="1"><strong class="auto-resultat">Réponse A</strong> : <span class="arithmatex">\(y=3x+2\)</span></li>
+    <li value="2"><strong class="auto-resultat">Réponse B</strong> : <span class="arithmatex">\((-2\,;\,4)\)</span></li>
+    <li value="3"><strong class="auto-resultat">Réponse B</strong> : <span class="arithmatex">\((4\,;\,3)\)</span></li>
+    <li value="4"><strong class="auto-resultat">Réponse B</strong> : <span class="arithmatex">\(parallèles\)</span></li>
+    <li value="5"><strong class="auto-resultat">Réponse B</strong> : <span class="arithmatex">\(une droite verticale\)</span></li>
+    <li value="6"><strong class="auto-resultat">Réponse A</strong> : aucune solution</li>
     </ol>
     <div class="auto-methode"><strong>Méthode.</strong> Le coefficient directeur donne une reconnaissance rapide de la position relative.</div>
     <div class="auto-vigilance"><strong>Vigilance.</strong> Une équation cartésienne peut toujours être testée en remplaçant les coordonnées.</div>

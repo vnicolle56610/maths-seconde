@@ -143,12 +143,12 @@ description: "24 questions d'automatismes de Seconde (équations et inéquations
 ??? success "Corrigé de la série D"
 
     <ol class="auto-corrige">
-    <li value="1"><strong class="auto-resultat">Réponse B</strong> : . Zéros <span class="arithmatex">\(-2\)</span> et <span class="arithmatex">\(3\)</span>, produit positif à l'extérieur.</li>
-    <li value="2"><strong class="auto-resultat">Réponse B</strong> : . Le dénominateur <span class="arithmatex">\(x+4\)</span> s'annule pour <span class="arithmatex">\(x=-4\)</span>.</li>
-    <li value="3"><strong class="auto-resultat">Réponse C</strong> : . <span class="arithmatex">\(f-g&gt;0\)</span> signifie <span class="arithmatex">\(f&gt;g\)</span>.</li>
-    <li value="4"><strong class="auto-resultat">Réponse C</strong> : . <span class="arithmatex">\(x^2-1=(x-1)(x+1)\)</span>.</li>
-    <li value="5"><strong class="auto-resultat">Réponse B</strong> : . Les zéros sont les abscisses des points de l'axe des abscisses.</li>
-    <li value="6"><strong class="auto-resultat">Réponse C</strong> : . On résout <span class="arithmatex">\(f-g\leqslant0\)</span>.</li>
+    <li value="1"><strong class="auto-resultat">Réponse B</strong> : Zéros <span class="arithmatex">\(-2\)</span> et <span class="arithmatex">\(3\)</span>, produit positif à l'extérieur.</li>
+    <li value="2"><strong class="auto-resultat">Réponse B</strong> : Le dénominateur <span class="arithmatex">\(x+4\)</span> s'annule pour <span class="arithmatex">\(x=-4\)</span>.</li>
+    <li value="3"><strong class="auto-resultat">Réponse C</strong> : <span class="arithmatex">\(f-g&gt;0\)</span> signifie <span class="arithmatex">\(f&gt;g\)</span>.</li>
+    <li value="4"><strong class="auto-resultat">Réponse C</strong> : <span class="arithmatex">\(x^2-1=(x-1)(x+1)\)</span>.</li>
+    <li value="5"><strong class="auto-resultat">Réponse B</strong> : Les zéros sont les abscisses des points de l'axe des abscisses.</li>
+    <li value="6"><strong class="auto-resultat">Réponse C</strong> : On résout <span class="arithmatex">\(f-g\leqslant0\)</span>.</li>
     </ol>
     <div class="auto-methode"><strong>Méthode.</strong> En QCM, la reconnaissance de la structure évite les calculs longs.</div>
     <div class="auto-vigilance"><strong>Vigilance.</strong> Une réponse rapide doit rester compatible avec le domaine de définition.</div>

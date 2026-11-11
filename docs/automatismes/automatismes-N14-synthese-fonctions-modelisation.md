@@ -143,12 +143,12 @@ description: "24 questions d'automatismes de Seconde (synthèse fonctions et mod
 ??? success "Corrigé de la série D"
 
     <ol class="auto-corrige">
-    <li value="1"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="2"><strong class="auto-resultat">Réponse C</strong> : .</li>
-    <li value="3"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="4"><strong class="auto-resultat">Réponse A</strong> : .</li>
-    <li value="5"><strong class="auto-resultat">Réponse C</strong> : .</li>
-    <li value="6"><strong class="auto-resultat">Réponse B</strong> : .</li>
+    <li value="1"><strong class="auto-resultat">Réponse B</strong> : une part fixe <span class="arithmatex">\(20\)</span> et <span class="arithmatex">\(8\)</span> par unité</li>
+    <li value="2"><strong class="auto-resultat">Réponse C</strong> : <span class="arithmatex">\(10\)</span> est l'image de <span class="arithmatex">\(3\)</span></li>
+    <li value="3"><strong class="auto-resultat">Réponse B</strong> : <span class="arithmatex">\(\mathbb R\setminus\{-2\}\)</span></li>
+    <li value="4"><strong class="auto-resultat">Réponse A</strong> : <span class="arithmatex">\(f\leqslant g\)</span></li>
+    <li value="5"><strong class="auto-resultat">Réponse C</strong> : <span class="arithmatex">\(1{,}12\)</span></li>
+    <li value="6"><strong class="auto-resultat">Réponse B</strong> : la plus grande image</li>
     </ol>
     <div class="auto-methode"><strong>Méthode.</strong> En modélisation, l'automatisme important est de reconnaître le rôle de chaque nombre.</div>
     <div class="auto-vigilance"><strong>Vigilance.</strong> Les mots image, antécédent, maximum et domaine ont un sens précis.</div>

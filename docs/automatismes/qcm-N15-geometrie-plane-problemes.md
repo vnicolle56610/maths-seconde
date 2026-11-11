@@ -282,7 +282,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "des aires"
    ],
    "bonne": 1,
-   "corrige": ". <span class=\"arithmatex\">\\(3^2+4^2=5^2\\)<\/span>.",
+   "corrige": "<span class=\"arithmatex\">\\(3^2+4^2=5^2\\)<\/span>.",
    "methode": "Le QCM de géométrie se traite par reconnaissance de formule ou test rapide."
   },
   {
@@ -299,7 +299,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\(80\\)<\/span>"
    ],
    "bonne": 2,
-   "corrige": ". <span class=\"arithmatex\">\\(\\dfrac{8\\times5}{2}=20\\)<\/span>.",
+   "corrige": "<span class=\"arithmatex\">\\(\\dfrac{8\\times5}{2}=20\\)<\/span>.",
    "methode": "Le QCM de géométrie se traite par reconnaissance de formule ou test rapide."
   },
   {
@@ -316,7 +316,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "un cercle seulement"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "une perpendiculaire",
    "methode": "Le QCM de géométrie se traite par reconnaissance de formule ou test rapide."
   },
   {
@@ -333,7 +333,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "<span class=\"arithmatex\">\\((4;5)\\)<\/span>"
    ],
    "bonne": 1,
-   "corrige": ". <span class=\"arithmatex\">\\(B-A=(3;4)\\)<\/span>.",
+   "corrige": "<span class=\"arithmatex\">\\(B-A=(3;4)\\)<\/span>.",
    "methode": "Le QCM de géométrie se traite par reconnaissance de formule ou test rapide."
   },
   {
@@ -350,7 +350,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "impossible à savoir"
    ],
    "bonne": 0,
-   "corrige": ". <span class=\"arithmatex\">\\(2+1=3\\)<\/span>.",
+   "corrige": "<span class=\"arithmatex\">\\(2+1=3\\)<\/span>.",
    "methode": "Le QCM de géométrie se traite par reconnaissance de formule ou test rapide."
   },
   {
@@ -367,7 +367,7 @@ Entraînement **sans calculatrice**. Rien n'est enregistré ni envoyé : tout se
     "une équation de droite"
    ],
    "bonne": 1,
-   "corrige": ".",
+   "corrige": "un maximum ou minimum",
    "methode": "Le QCM de géométrie se traite par reconnaissance de formule ou test rapide."
   }
  ]

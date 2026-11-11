@@ -818,10 +818,15 @@ def analyser_corrige(contenu: str) -> tuple[int | None, str]:
     if not m:
         return None, contenu
     reste = contenu[:m.start()] + contenu[m.end():]
-    reste = re.sub(r"(?i)bonne\s+réponse\s*:?", "", reste)
+    # Débris laissés par la lettre retirée (les propositions sont mélangées en
+    # ligne) : formule vide « \(\) », « Ici la bonne réponse est », « donc »,
+    # « , réponse » en fin de phrase.
+    reste = re.sub(r"\\\(\s*\\\)|\$\s*\$", "", reste)
+    reste = re.sub(r"(?i)(?:\bici\s+)?(?:\bla\s+)?bonne\s+réponse\s*(?:est\b)?\s*:?", "", reste)
+    reste = re.sub(r"(?i)[\s,:;]*(?:\bdonc|\b(?:la\s+)?réponse(?:\s+est)?)\s*(?=[.:;,]*\s*$)", "", reste.strip())
+    reste = re.sub(r"(?i)\b(?:la\s+)?réponse(?:\s+est)?\s*:?\s*[.;,]\s*", "", reste)
     reste = re.sub(r"^[\s.:;,]+", "", reste)
-    reste = re.sub(r"\s*([.:;,])\s*[.:;,]+\s*$", r"\1", reste.strip())
-    reste = re.sub(r"\s+[.:;,]\s*$", ".", reste)
+    reste = re.sub(r"\s*[.:;,][\s.:;,]*$", ".", reste.strip())
     if re.fullmatch(r"[\s.:;,]*", reste):
         reste = ""
     return "ABCD".index(m.group(1)), reste.strip()

@@ -143,12 +143,12 @@ description: "24 questions d'automatismes de Seconde (fonctions : images, antéc
 ??? success "Corrigé de la série D"
 
     <ol class="auto-corrige">
-    <li value="1"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="2"><strong class="auto-resultat">Réponse C</strong> : .</li>
-    <li value="3"><strong class="auto-resultat">Réponse C</strong> : .</li>
-    <li value="4"><strong class="auto-resultat">Réponse C</strong> : .</li>
-    <li value="5"><strong class="auto-resultat">Réponse B</strong> : .</li>
-    <li value="6"><strong class="auto-resultat">Réponse C</strong> : .</li>
+    <li value="1"><strong class="auto-resultat">Réponse B</strong> : <span class="arithmatex">\((3\,;\,7)\)</span></li>
+    <li value="2"><strong class="auto-resultat">Réponse C</strong> : <span class="arithmatex">\(-3\)</span> et <span class="arithmatex">\(3\)</span></li>
+    <li value="3"><strong class="auto-resultat">Réponse C</strong> : <span class="arithmatex">\(\mathbb R\setminus\{-2\}\)</span></li>
+    <li value="4"><strong class="auto-resultat">Réponse C</strong> : <span class="arithmatex">\(7\)</span></li>
+    <li value="5"><strong class="auto-resultat">Réponse B</strong> : <span class="arithmatex">\(1\)</span></li>
+    <li value="6"><strong class="auto-resultat">Réponse C</strong> : <span class="arithmatex">\((x+2)^2\)</span></li>
     </ol>
     <div class="auto-methode"><strong>Méthode.</strong> Un QCM de fonctions se traite souvent en traduisant d'abord l'énoncé en notation mathématique.</div>
     <div class="auto-vigilance"><strong>Vigilance.</strong> Attention aux carrés : deux nombres opposés peuvent avoir la même image.</div>
