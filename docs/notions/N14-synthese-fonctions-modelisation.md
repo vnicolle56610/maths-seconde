@@ -30,6 +30,10 @@ Cette synthèse regroupe les outils de fonctions travaillés jusque-là : lectur
 - [Automatismes N14 — Synthèse fonctions et modélisation](../automatismes/AUTOMATISMES_N14_SYNTHESE_FONCTIONS_MODELISATION.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N14 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N14-synthese-fonctions-modelisation.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

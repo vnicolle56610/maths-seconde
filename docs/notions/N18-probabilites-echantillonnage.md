@@ -30,6 +30,10 @@ Les probabilités transforment une situation aléatoire en modèle calculable. L
 - [Automatismes N18 — Probabilités et échantillonnage](../automatismes/AUTOMATISMES_N18_PROBABILITES_ECHANTILLONNAGE.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N18 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N18-probabilites-echantillonnage.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

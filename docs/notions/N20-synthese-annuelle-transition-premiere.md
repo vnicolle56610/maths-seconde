@@ -28,6 +28,10 @@ La synthèse annuelle reprend les outils essentiels de Seconde dans des exercice
 - [TD N20 — Synthèse annuelle et transition vers la Première](../td/TD_N20_SYNTHESE_ANNUELLE_TRANSITION_PREMIERE.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N20 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N20-synthese-annuelle-transition-premiere.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Points essentiels à maîtriser
 
 !!! essentiel ""

@@ -30,6 +30,10 @@ Les problèmes de géométrie plane demandent souvent de choisir entre plusieurs
 - [Automatismes N15 — Géométrie plane : problèmes et méthodes](../automatismes/AUTOMATISMES_N15_GEOMETRIE_PLANE_PROBLEMES.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N15 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N15-geometrie-plane-problemes.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

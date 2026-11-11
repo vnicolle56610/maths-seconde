@@ -30,6 +30,10 @@ Une droite peut être décrite par un point, une direction, une pente ou une éq
 - [Automatismes N08 — Droites et équations dans le plan](../automatismes/AUTOMATISMES_N08_DROITES_DU_PLAN.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N08 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N08-droites-equations.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

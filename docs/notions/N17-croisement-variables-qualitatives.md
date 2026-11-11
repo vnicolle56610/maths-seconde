@@ -30,6 +30,10 @@ Un tableau croisé organise deux variables qualitatives dans une même lecture. 
 - [Automatismes N17 — Tableaux croisés et variables qualitatives](../automatismes/AUTOMATISMES_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N17 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N17-croisement-variables-qualitatives.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

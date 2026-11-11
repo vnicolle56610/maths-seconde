@@ -30,6 +30,10 @@ Les variations décrivent comment les valeurs d’une fonction évoluent sur un 
 - [Automatismes N12 — Variations et extremums](../automatismes/AUTOMATISMES_N12_VARIATIONS_EXTREMUMS.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N12 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N12-variations-extremums.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

@@ -30,6 +30,10 @@ L’information chiffrée demande de savoir ce que l’on mesure et par rapport 
 - [Automatismes N16 — Information chiffrée et statistiques](../automatismes/AUTOMATISMES_N16_INFORMATION_CHIFFREE_STATISTIQUES.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N16 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N16-information-chiffree-statistiques.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

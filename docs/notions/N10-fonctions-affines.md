@@ -30,6 +30,10 @@ Une fonction affine modélise une évolution à rythme constant. Les documents r
 - [Automatismes N10 — Fonctions affines](../automatismes/AUTOMATISMES_N10_FONCTIONS_AFFINES.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N10 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N10-fonctions-affines.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

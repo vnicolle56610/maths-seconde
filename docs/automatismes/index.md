@@ -13,6 +13,20 @@ Exercices d'automatismes et mini-tests, classés par notion.
     - **N04 — Calcul littéral** : [énoncés et corrigés](automatismes-N04-calcul-litteral.md) · [QCM interactif](qcm-N04-calcul-litteral.md)
     - **N05 — Équations et inéquations** : [énoncés et corrigés](automatismes-N05-equations-inequations.md) · [QCM interactif](qcm-N05-equations-inequations.md)
     - **N06 — Synthèse nombres et calculs** : [énoncés et corrigés](automatismes-N06-synthese-nombres-calculs.md) · [QCM interactif](qcm-N06-synthese-nombres-calculs.md)
+    - **N07 — Vecteurs du plan** : [énoncés et corrigés](automatismes-N07-vecteurs-du-plan.md) · [QCM interactif](qcm-N07-vecteurs-du-plan.md)
+    - **N08 — Droites et équations dans le plan** : [énoncés et corrigés](automatismes-N08-droites-equations.md) · [QCM interactif](qcm-N08-droites-equations.md)
+    - **N09 — Fonctions : images, antécédents et registres** : [énoncés et corrigés](automatismes-N09-fonctions-registres.md) · [QCM interactif](qcm-N09-fonctions-registres.md)
+    - **N10 — Fonctions affines** : [énoncés et corrigés](automatismes-N10-fonctions-affines.md) · [QCM interactif](qcm-N10-fonctions-affines.md)
+    - **N11 — Fonctions de référence** : [énoncés et corrigés](automatismes-N11-fonctions-reference.md) · [QCM interactif](qcm-N11-fonctions-reference.md)
+    - **N12 — Variations et extremums** : [énoncés et corrigés](automatismes-N12-variations-extremums.md) · [QCM interactif](qcm-N12-variations-extremums.md)
+    - **N13 — Équations et inéquations avec fonctions** : [énoncés et corrigés](automatismes-N13-equations-inequations-fonctions.md) · [QCM interactif](qcm-N13-equations-inequations-fonctions.md)
+    - **N14 — Synthèse fonctions et modélisation** : [énoncés et corrigés](automatismes-N14-synthese-fonctions-modelisation.md) · [QCM interactif](qcm-N14-synthese-fonctions-modelisation.md)
+    - **N15 — Géométrie plane : problèmes et méthodes** : [énoncés et corrigés](automatismes-N15-geometrie-plane-problemes.md) · [QCM interactif](qcm-N15-geometrie-plane-problemes.md)
+    - **N16 — Information chiffrée et statistiques** : [énoncés et corrigés](automatismes-N16-information-chiffree-statistiques.md) · [QCM interactif](qcm-N16-information-chiffree-statistiques.md)
+    - **N17 — Tableaux croisés et variables qualitatives** : [énoncés et corrigés](automatismes-N17-croisement-variables-qualitatives.md) · [QCM interactif](qcm-N17-croisement-variables-qualitatives.md)
+    - **N18 — Probabilités et échantillonnage** : [énoncés et corrigés](automatismes-N18-probabilites-echantillonnage.md) · [QCM interactif](qcm-N18-probabilites-echantillonnage.md)
+    - **N19 — Synthèse statistiques et probabilités** : [énoncés et corrigés](automatismes-N19-synthese-statistiques-probabilites.md) · [QCM interactif](qcm-N19-synthese-statistiques-probabilites.md)
+    - **N20 — Synthèse annuelle et transition vers la Première** : [énoncés et corrigés](automatismes-N20-synthese-annuelle-transition-premiere.md) · [QCM interactif](qcm-N20-synthese-annuelle-transition-premiere.md)
 
 <!-- AUTOMATISMES-WEB:END -->
 

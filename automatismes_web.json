@@ -50,6 +50,118 @@
       "source": "N06_SYNTHESE_NOMBRES_CALCULS/AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.tex",
       "pdf": "AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.pdf",
       "notion": "../notions/N06-synthese-nombres-calculs.md"
+    },
+    {
+      "code": "N07",
+      "slug": "vecteurs-du-plan",
+      "titre": "Vecteurs du plan",
+      "source": "N07_VECTEURS_DU_PLAN/AUTOMATISMES_N07_VECTEURS_DU_PLAN.tex",
+      "pdf": "AUTOMATISMES_N07_VECTEURS_DU_PLAN.pdf",
+      "notion": "../notions/N07-vecteurs-du-plan.md"
+    },
+    {
+      "code": "N08",
+      "slug": "droites-equations",
+      "titre": "Droites et équations dans le plan",
+      "source": "N08_DROITES_DU_PLAN/AUTOMATISMES_N08_DROITES_DU_PLAN.tex",
+      "pdf": "AUTOMATISMES_N08_DROITES_DU_PLAN.pdf",
+      "notion": "../notions/N08-droites-equations.md"
+    },
+    {
+      "code": "N09",
+      "slug": "fonctions-registres",
+      "titre": "Fonctions : images, antécédents et registres",
+      "source": "N09_FONCTIONS_REGISTRES/AUTOMATISMES_N09_FONCTIONS_REGISTRES.tex",
+      "pdf": "AUTOMATISMES_N09_FONCTIONS_REGISTRES.pdf",
+      "notion": "../notions/N09-fonctions-registres.md"
+    },
+    {
+      "code": "N10",
+      "slug": "fonctions-affines",
+      "titre": "Fonctions affines",
+      "source": "N10_FONCTIONS_AFFINES/AUTOMATISMES_N10_FONCTIONS_AFFINES.tex",
+      "pdf": "AUTOMATISMES_N10_FONCTIONS_AFFINES.pdf",
+      "notion": "../notions/N10-fonctions-affines.md"
+    },
+    {
+      "code": "N11",
+      "slug": "fonctions-reference",
+      "titre": "Fonctions de référence",
+      "source": "N11_FONCTIONS_REFERENCE/AUTOMATISMES_N11_FONCTIONS_REFERENCE.tex",
+      "pdf": "AUTOMATISMES_N11_FONCTIONS_REFERENCE.pdf",
+      "notion": "../notions/N11-fonctions-reference.md"
+    },
+    {
+      "code": "N12",
+      "slug": "variations-extremums",
+      "titre": "Variations et extremums",
+      "source": "N12_VARIATIONS_EXTREMUMS/AUTOMATISMES_N12_VARIATIONS_EXTREMUMS.tex",
+      "pdf": "AUTOMATISMES_N12_VARIATIONS_EXTREMUMS.pdf",
+      "notion": "../notions/N12-variations-extremums.md"
+    },
+    {
+      "code": "N13",
+      "slug": "equations-inequations-fonctions",
+      "titre": "Équations et inéquations avec fonctions",
+      "source": "N13_EQUATIONS_INEQUATIONS_FONCTIONS/AUTOMATISMES_N13_EQUATIONS_INEQUATIONS_FONCTIONS.tex",
+      "pdf": "AUTOMATISMES_N13_EQUATIONS_INEQUATIONS_FONCTIONS.pdf",
+      "notion": "../notions/N13-equations-inequations-fonctions.md"
+    },
+    {
+      "code": "N14",
+      "slug": "synthese-fonctions-modelisation",
+      "titre": "Synthèse fonctions et modélisation",
+      "source": "N14_SYNTHESE_FONCTIONS_MODELISATION/AUTOMATISMES_N14_SYNTHESE_FONCTIONS_MODELISATION.tex",
+      "pdf": "AUTOMATISMES_N14_SYNTHESE_FONCTIONS_MODELISATION.pdf",
+      "notion": "../notions/N14-synthese-fonctions-modelisation.md"
+    },
+    {
+      "code": "N15",
+      "slug": "geometrie-plane-problemes",
+      "titre": "Géométrie plane : problèmes et méthodes",
+      "source": "N15_GEOMETRIE_PLANE_PROBLEMES/AUTOMATISMES_N15_GEOMETRIE_PLANE_PROBLEMES.tex",
+      "pdf": "AUTOMATISMES_N15_GEOMETRIE_PLANE_PROBLEMES.pdf",
+      "notion": "../notions/N15-geometrie-plane-problemes.md"
+    },
+    {
+      "code": "N16",
+      "slug": "information-chiffree-statistiques",
+      "titre": "Information chiffrée et statistiques",
+      "source": "N16_INFORMATION_CHIFFREE_STATISTIQUES/AUTOMATISMES_N16_INFORMATION_CHIFFREE_STATISTIQUES.tex",
+      "pdf": "AUTOMATISMES_N16_INFORMATION_CHIFFREE_STATISTIQUES.pdf",
+      "notion": "../notions/N16-information-chiffree-statistiques.md"
+    },
+    {
+      "code": "N17",
+      "slug": "croisement-variables-qualitatives",
+      "titre": "Tableaux croisés et variables qualitatives",
+      "source": "N17_CROISEMENT_VARIABLES_QUALITATIVES/AUTOMATISMES_N17_CROISEMENT_VARIABLES_QUALITATIVES.tex",
+      "pdf": "AUTOMATISMES_N17_CROISEMENT_VARIABLES_QUALITATIVES.pdf",
+      "notion": "../notions/N17-croisement-variables-qualitatives.md"
+    },
+    {
+      "code": "N18",
+      "slug": "probabilites-echantillonnage",
+      "titre": "Probabilités et échantillonnage",
+      "source": "N18_PROBABILITES_ECHANTILLONNAGE/AUTOMATISMES_N18_PROBABILITES_ECHANTILLONNAGE.tex",
+      "pdf": "AUTOMATISMES_N18_PROBABILITES_ECHANTILLONNAGE.pdf",
+      "notion": "../notions/N18-probabilites-echantillonnage.md"
+    },
+    {
+      "code": "N19",
+      "slug": "synthese-statistiques-probabilites",
+      "titre": "Synthèse statistiques et probabilités",
+      "source": "N19_SYNTHESE_STATISTIQUES_PROBABILITES/AUTOMATISMES_N19_SYNTHESE_STATISTIQUES_PROBABILITES.tex",
+      "pdf": "AUTOMATISMES_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf",
+      "notion": "../notions/N19-synthese-statistiques-probabilites.md"
+    },
+    {
+      "code": "N20",
+      "slug": "synthese-annuelle-transition-premiere",
+      "titre": "Synthèse annuelle et transition vers la Première",
+      "source": "N20_SYNTHESE_ANNUELLE_TRANSITION_PREMIERE/AUTOMATISMES_N20_SYNTHESE_ANNUELLE_TRANSITION_PREMIERE.tex",
+      "pdf": "AUTOMATISMES_N20_SYNTHESE_ANNUELLE_TRANSITION_PREMIERE.pdf",
+      "notion": "../notions/N20-synthese-annuelle-transition-premiere.md"
     }
   ]
 }

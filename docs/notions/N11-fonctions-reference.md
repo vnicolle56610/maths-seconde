@@ -30,6 +30,10 @@ Les fonctions de référence forment un répertoire de courbes et de comportemen
 - [Automatismes N11 — Fonctions de référence](../automatismes/AUTOMATISMES_N11_FONCTIONS_REFERENCE.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N11 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N11-fonctions-reference.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

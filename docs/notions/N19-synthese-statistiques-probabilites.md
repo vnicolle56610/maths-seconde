@@ -30,6 +30,10 @@ Cette synthèse met en relation les statistiques, les tableaux croisés, les pro
 - [Automatismes N19 — Synthèse statistiques et probabilités](../automatismes/AUTOMATISMES_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N19 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N19-synthese-statistiques-probabilites.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Points essentiels à maîtriser
 
 !!! essentiel ""

@@ -30,6 +30,10 @@ Les équations et inéquations de fonctions se lisent sur une courbe ou se réso
 - [Automatismes N13 — Équations et inéquations avec fonctions](../automatismes/AUTOMATISMES_N13_EQUATIONS_INEQUATIONS_FONCTIONS.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N13 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N13-equations-inequations-fonctions.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""

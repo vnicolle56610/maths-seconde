@@ -30,6 +30,10 @@ Une fonction associe une grandeur de départ à une grandeur d’arrivée. Les r
 - [Automatismes N09 — Fonctions : images, antécédents et registres](../automatismes/AUTOMATISMES_N09_FONCTIONS_REGISTRES.pdf)
 <!-- AUTO-DOCS:END -->
 
+<!-- AUTOMATISMES-WEB:START -->
+- ⚡ [Automatismes N09 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N09-fonctions-registres.md)
+<!-- AUTOMATISMES-WEB:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""
