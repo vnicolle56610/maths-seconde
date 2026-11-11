@@ -111,3 +111,7 @@
 .qcm-figure img { max-width: 100%; height: auto; }
 .qcm-contexte { font-size: .85em; color: #3d4b5c; background: #f4f7fb; border-left: 3px solid #9fb0c3;
   padding: .3rem .6rem; margin-bottom: .5rem; border-radius: 0 6px 6px 0; }
+
+/* Toute formule insécable plus large que l'écran défile sur place (méthodes, coups de pouce…). */
+.md-typeset mjx-container[jax="CHTML"], .auto-qcm mjx-container[jax="CHTML"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.md-typeset details, .md-typeset .auto-methode, .md-typeset .auto-vigilance, .md-typeset .auto-consigne { overflow-x: clip; }
