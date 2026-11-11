@@ -87,3 +87,11 @@
 .qcm-bilan { margin-bottom: 1rem; text-align: center; }
 .qcm-score { font-size: 2rem; font-weight: 800; color: #14663c; margin: 0; }
 .md-typeset .qcm-a-revoir h3 { margin-top: .5rem; }
+
+/* Formule isolée trop longue pour l'écran : défilement local plutôt que débordement de la page. */
+.md-typeset .auto-corrige li, .md-typeset .auto-questions li, .qcm-retour, .qcm-enonce { overflow-wrap: anywhere; }
+.md-typeset .auto-corrige mjx-container, .qcm-retour mjx-container, .qcm-enonce mjx-container {
+  max-width: 100%; overflow-x: auto; overflow-y: hidden;
+}
+/* Les boîtes MathJax dépassent parfois d'1-2 px en fin de ligne : sans effet visible, mais crée un défilement horizontal. */
+.md-typeset ol.auto-questions, .md-typeset ol.auto-corrige, .md-typeset ol.qcm-liste, .qcm-flash { overflow-x: clip; }

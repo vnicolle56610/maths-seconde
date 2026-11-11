@@ -38,10 +38,10 @@ description: "24 questions d'automatismes de Seconde en calcul littéral, sans c
 ??? success "Corrigé de la série A"
 
     <ol class="auto-corrige">
-    <li><span class="arithmatex">\(\dfrac{3}{4}+\dfrac{5}{8}=\dfrac{6}{8}+\dfrac{5}{8}=\boxed{\dfrac{11}{8}}\)</span>.</li>
+    <li><span class="arithmatex">\(\dfrac{3}{4}+\dfrac{5}{8}=\)</span><wbr><span class="arithmatex">\(\dfrac{6}{8}+\dfrac{5}{8}=\)</span><wbr><span class="arithmatex">\(\boxed{\dfrac{11}{8}}\)</span>.</li>
     <li><span class="arithmatex">\(2^3+3^2=8+9=\boxed{17}\)</span>.</li>
     <li><span class="arithmatex">\((-5)^2=\boxed{25}\)</span> et <span class="arithmatex">\(-5^2=\boxed{-25}\)</span>.</li>
-    <li><span class="arithmatex">\(3x-6=0 \Longleftrightarrow 3x=6 \Longleftrightarrow \boxed{x=2}\)</span>.</li>
+    <li><span class="arithmatex">\(3x-6=0 \Longleftrightarrow\)</span><wbr><span class="arithmatex">\( 3x=6 \Longleftrightarrow\)</span><wbr><span class="arithmatex">\( \boxed{x=2}\)</span>.</li>
     <li><span class="arithmatex">\(2(x+5)=\boxed{2x+10}\)</span>.</li>
     <li><span class="arithmatex">\(6x+9=\boxed{3(2x+3)}\)</span>.</li>
     </ol>
@@ -74,11 +74,11 @@ description: "24 questions d'automatismes de Seconde en calcul littéral, sans c
 
     <ol class="auto-corrige">
     <li><span class="arithmatex">\(3(2x-5)=\boxed{6x-15}\)</span>.</li>
-    <li><span class="arithmatex">\((x+4)(x-2)=x^2-2x+4x-8=\boxed{x^2+2x-8}\)</span>.</li>
-    <li><span class="arithmatex">\((2x-1)^2=4x^2-4x+1=\boxed{4x^2-4x+1}\)</span>.</li>
-    <li><span class="arithmatex">\((x+7)(x-7)=\boxed{x^2-49}\)</span>.</li>
-    <li><span class="arithmatex">\(5x-2(3x+4)=5x-6x-8=\boxed{-x-8}\)</span>.</li>
-    <li><span class="arithmatex">\(4(x-1)+3(2x+5)=4x-4+6x+15=\boxed{10x+11}\)</span>.</li>
+    <li><span class="arithmatex">\((x+4)(x-2)=\)</span><wbr><span class="arithmatex">\(x^2-2x+4x-8=\)</span><wbr><span class="arithmatex">\(\boxed{x^2+2x-8}\)</span>.</li>
+    <li><span class="arithmatex">\((2x-1)^2=\)</span><wbr><span class="arithmatex">\(4x^2-4x+1=\)</span><wbr><span class="arithmatex">\(\boxed{4x^2-4x+1}\)</span>.</li>
+    <li><span class="arithmatex">\((x+7)(x-7)=\)</span><wbr><span class="arithmatex">\(\boxed{x^2-49}\)</span>.</li>
+    <li><span class="arithmatex">\(5x-2(3x+4)=\)</span><wbr><span class="arithmatex">\(5x-6x-8=\)</span><wbr><span class="arithmatex">\(\boxed{-x-8}\)</span>.</li>
+    <li><span class="arithmatex">\(4(x-1)+3(2x+5)=\)</span><wbr><span class="arithmatex">\(4x-4+6x+15=\)</span><wbr><span class="arithmatex">\(\boxed{10x+11}\)</span>.</li>
     </ol>
     <div class="auto-methode"><strong>Méthode.</strong> Distribuer, puis regrouper les termes de même nature.</div>
     <div class="auto-vigilance"><strong>Vigilance.</strong> Ne pas écrire <span class="arithmatex">\((2x-1)^2=4x^2+1\)</span> : il manque le double produit.</div>
@@ -109,11 +109,11 @@ description: "24 questions d'automatismes de Seconde en calcul littéral, sans c
 
     <ol class="auto-corrige">
     <li><span class="arithmatex">\(x^2-6x+9=(x-3)^2\)</span>, donc pour <span class="arithmatex">\(x=3\)</span> : <span class="arithmatex">\(\boxed{0}\)</span>.</li>
-    <li><span class="arithmatex">\(x^2-16=x^2-4^2=\boxed{(x-4)(x+4)}\)</span>.</li>
-    <li><span class="arithmatex">\(9x^2+12x+4=(3x)^2+2\times3x\times2+2^2=\boxed{(3x+2)^2}\)</span>.</li>
+    <li><span class="arithmatex">\(x^2-16=\)</span><wbr><span class="arithmatex">\(x^2-4^2=\)</span><wbr><span class="arithmatex">\(\boxed{(x-4)(x+4)}\)</span>.</li>
+    <li><span class="arithmatex">\(9x^2+12x+4=\)</span><wbr><span class="arithmatex">\((3x)^2+2\times3x\times2+2^2=\)</span><wbr><span class="arithmatex">\(\boxed{(3x+2)^2}\)</span>.</li>
     <li><span class="arithmatex">\((x-5)(2x+1)=0\)</span>, donc <span class="arithmatex">\(\boxed{x=5\text{ ou }x=-\dfrac12}\)</span>.</li>
-    <li><span class="arithmatex">\((2x+3)^2=\boxed{4x^2+12x+9}\)</span>.</li>
-    <li><span class="arithmatex">\(101^2-99^2=(101-99)(101+99)=2\times200=\boxed{400}\)</span>.</li>
+    <li><span class="arithmatex">\((2x+3)^2=\)</span><wbr><span class="arithmatex">\(\boxed{4x^2+12x+9}\)</span>.</li>
+    <li><span class="arithmatex">\(101^2-99^2=\)</span><wbr><span class="arithmatex">\((101-99)(101+99)=\)</span><wbr><span class="arithmatex">\(2\times200=\)</span><wbr><span class="arithmatex">\(\boxed{400}\)</span>.</li>
     </ol>
     <div class="auto-methode"><strong>Méthode.</strong> Le bon réflexe est de chercher une structure : carré, différence de deux carrés, produit nul.</div>
     <div class="auto-vigilance"><strong>Vigilance.</strong> La forme développée n'est pas toujours la plus utile.</div>

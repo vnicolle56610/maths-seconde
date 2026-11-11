@@ -86,9 +86,54 @@ def segments_math(texte: str) -> list[tuple[bool, str]]:
 # Conversion LaTeX → HTML (MathJax via la classe « arithmatex »)
 # --------------------------------------------------------------------------
 
+SEUIL_COUPURE = 24   # au-delà, une chaîne d'égalités est découpée pour le mobile
+
+
+def couper_egalites(tex: str) -> list[str]:
+    """Découpe après chaque « = » ou « \\Longleftrightarrow » de premier niveau
+    (hors accolades), pour que le navigateur puisse aller à la ligne entre les
+    morceaux : MathJax 3 ne coupe jamais une formule en ligne."""
+    morceaux, debut, profondeur, i = [], 0, 0, 0
+    while i < len(tex):
+        c = tex[i]
+        if c == "\\":
+            m = re.match(r"\\Longleftrightarrow(?![A-Za-z])", tex[i:])
+            if m and profondeur == 0:
+                i += m.end()
+                morceaux.append(tex[debut:i])
+                debut = i
+                continue
+            i += 2
+            continue
+        if c == "{":
+            profondeur += 1
+        elif c == "}":
+            profondeur -= 1
+        elif c == "=" and profondeur == 0:
+            morceaux.append(tex[debut:i + 1])
+            debut = i + 1
+        i += 1
+    morceaux.append(tex[debut:])
+    morceaux = [m for m in morceaux if m.strip()]
+    # Avec des équivalences, couper seulement entre les équations, jamais au milieu.
+    if any(m.rstrip().endswith("\\Longleftrightarrow") for m in morceaux):
+        regroupes, courant = [], ""
+        for m in morceaux:
+            courant += m
+            if m.rstrip().endswith("\\Longleftrightarrow"):
+                regroupes.append(courant)
+                courant = ""
+        if courant:
+            regroupes.append(courant)
+        morceaux = regroupes
+    return morceaux
+
+
 def math_html(tex: str) -> str:
     tex = remplacer_commande(tex, "resultat", lambda a: r"\boxed{" + a + "}")
-    return f'<span class="arithmatex">\\({html.escape(tex, quote=False)}\\)</span>'
+    morceaux = couper_egalites(tex) if len(tex) > SEUIL_COUPURE else [tex]
+    return "<wbr>".join(
+        f'<span class="arithmatex">\\({html.escape(m, quote=False)}\\)</span>' for m in morceaux)
 
 
 def texte_html(tex: str) -> str:

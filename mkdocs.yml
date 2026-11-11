@@ -66,7 +66,7 @@ markdown_extensions:
       generic: true
 extra_css:
   - stylesheets/extra.css?v=2026-10-31
-  - stylesheets/automatismes.css?v=2026-11-11
+  - stylesheets/automatismes.css?v=2026-11-11b
 extra_javascript:
   - javascripts/pdf-new-tab.js
   - javascripts/toutatice-header.js
