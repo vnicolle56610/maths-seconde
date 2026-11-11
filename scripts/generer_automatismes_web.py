@@ -1196,6 +1196,8 @@ def page_qcm(series: list[Serie], n: Notion) -> str:
 # ==========================================================================
 
 DEBUT, FIN = "<!-- AUTOMATISMES-WEB:START -->", "<!-- AUTOMATISMES-WEB:END -->"
+MASQUE_DEBUT = '<div class="auto-docs-masque" hidden markdown="1">'
+MASQUE_FIN = "</div>"
 
 
 def remplacer_bloc(texte: str, bloc: str, ancre_apres: str | None) -> str:
@@ -1218,8 +1220,16 @@ def maj_index(docs: Path, notions: list[Notion]) -> None:
               "    Sans rien télécharger : questions à l'écran, corrigés repliables et QCM chronométré.", ""]
     for n in notions:
         lignes.append(f"    - **{n.code} — {n.titre}** : [énoncés et corrigés]({n.page}) · "
-                      f"[QCM interactif]({n.page_qcm})")
+                      f"[QCM interactif]({n.page_qcm}) · [diaporama PDF]({n.pdf})")
     texte = remplacer_bloc(texte, "\n".join(lignes) + "\n", "Exercices d'automatismes et mini-tests, classés par notion.")
+    # L'ancienne liste des PDF (zone AUTO-DOCS, régénérée par l'outil de publication)
+    # fait doublon : on la masque à l'affichage sans toucher à ses marqueurs, sinon
+    # l'outil la recréerait en bas de page.
+    if not texte.startswith("---\n"):
+        texte = "---\nhide:\n  - toc\n---\n\n" + texte      # titres masqués : pas de sommaire
+    if MASQUE_DEBUT not in texte and "<!-- AUTO-DOCS:START -->" in texte:
+        texte = texte.replace("<!-- AUTO-DOCS:START -->", MASQUE_DEBUT + "\n\n<!-- AUTO-DOCS:START -->", 1)
+        texte = texte.replace("<!-- AUTO-DOCS:END -->", "<!-- AUTO-DOCS:END -->\n\n" + MASQUE_FIN, 1)
     chemin.write_text(texte, encoding="utf-8")
 
 
