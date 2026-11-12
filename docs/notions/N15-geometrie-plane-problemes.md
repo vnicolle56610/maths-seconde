@@ -27,7 +27,6 @@ Les problèmes de géométrie plane demandent souvent de choisir entre plusieurs
 <!-- AUTO-DOCS:START -->
 - [Cours N15 — Géométrie plane : problèmes et méthodes](../cours/COURS_N15_GEOMETRIE_PLANE_PROBLEMES.pdf)
 - [TD N15 — Géométrie plane : problèmes et méthodes](../td/TD_N15_GEOMETRIE_PLANE_PROBLEMES.pdf)
-- [Automatismes N15 — Géométrie plane : problèmes et méthodes](../automatismes/AUTOMATISMES_N15_GEOMETRIE_PLANE_PROBLEMES.pdf)
 <!-- AUTO-DOCS:END -->
 
 <!-- AUTOMATISMES-WEB:START -->

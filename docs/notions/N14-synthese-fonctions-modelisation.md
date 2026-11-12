@@ -27,7 +27,6 @@ Cette synthèse regroupe les outils de fonctions travaillés jusque-là : lectur
 <!-- AUTO-DOCS:START -->
 - [Cours N14 — Synthèse fonctions et modélisation](../cours/COURS_N14_SYNTHESE_FONCTIONS_MODELISATION.pdf)
 - [TD N14 — Synthèse fonctions et modélisation](../td/TD_N14_SYNTHESE_FONCTIONS_MODELISATION.pdf)
-- [Automatismes N14 — Synthèse fonctions et modélisation](../automatismes/AUTOMATISMES_N14_SYNTHESE_FONCTIONS_MODELISATION.pdf)
 <!-- AUTO-DOCS:END -->
 
 <!-- AUTOMATISMES-WEB:START -->

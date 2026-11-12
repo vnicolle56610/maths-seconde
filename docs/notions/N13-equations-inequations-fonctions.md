@@ -27,7 +27,6 @@ Les équations et inéquations de fonctions se lisent sur une courbe ou se réso
 <!-- AUTO-DOCS:START -->
 - [Cours N13 — Équations et inéquations avec fonctions](../cours/COURS_N13_EQUATIONS_INEQUATIONS_FONCTIONS.pdf)
 - [TD N13 — Équations et inéquations avec fonctions](../td/TD_N13_EQUATIONS_INEQUATIONS_FONCTIONS.pdf)
-- [Automatismes N13 — Équations et inéquations avec fonctions](../automatismes/AUTOMATISMES_N13_EQUATIONS_INEQUATIONS_FONCTIONS.pdf)
 <!-- AUTO-DOCS:END -->
 
 <!-- AUTOMATISMES-WEB:START -->

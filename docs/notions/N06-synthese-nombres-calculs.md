@@ -27,7 +27,6 @@ Cette synthèse rassemble les premiers outils numériques et algébriques de l�
 <!-- AUTO-DOCS:START -->
 - [Cours N06 — Synthèse nombres et calculs](../cours/COURS_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
 - [TD N06 — Synthèse nombres et calculs](../td/TD_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
-- [Automatismes N06 — Synthèse nombres et calculs](../automatismes/AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
 <!-- AUTO-DOCS:END -->
 
 <!-- AUTOMATISMES-WEB:START -->
@@ -37,7 +36,7 @@ Cette synthèse rassemble les premiers outils numériques et algébriques de l�
 <!-- PARCOURS-GUIDE:START -->
 ### Parcours guidé
 
-Trois fiches pour reprendre les bases de N06 en autonomie : à la maison, après une absence ou pour préparer le DS1. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
+Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
 
 - 📝 [Fiche 1 — Calculer sans se piéger](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_1.pdf) : carrés et priorités, fractions irréductibles, intervalles, équations avec vérification.
 - 📝 [Fiche 2 — Développer, factoriser, résoudre](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_2.pdf) : le piège de (a − b)², la différence de deux carrés, l'équation produit nul.

@@ -27,7 +27,6 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 <!-- AUTO-DOCS:START -->
 - [Cours N05 — Équations et inéquations](../cours/COURS_N05_EQUATIONS_INEQUATIONS.pdf)
 - [TD N05 — Équations et inéquations](../td/TD_N05_EQUATIONS_INEQUATIONS.pdf)
-- [Automatismes N05 — Équations et inéquations](../automatismes/AUTOMATISMES_N05_EQUATIONS_INEQUATIONS.pdf)
 <!-- AUTO-DOCS:END -->
 
 <!-- AUTOMATISMES-WEB:START -->

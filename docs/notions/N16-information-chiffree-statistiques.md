@@ -27,7 +27,6 @@ L’information chiffrée demande de savoir ce que l’on mesure et par rapport 
 <!-- AUTO-DOCS:START -->
 - [Cours N16 — Information chiffrée et statistiques](../cours/COURS_N16_INFORMATION_CHIFFREE_STATISTIQUES.pdf)
 - [TD N16 — Information chiffrée et statistiques](../td/TD_N16_INFORMATION_CHIFFREE_STATISTIQUES.pdf)
-- [Automatismes N16 — Information chiffrée et statistiques](../automatismes/AUTOMATISMES_N16_INFORMATION_CHIFFREE_STATISTIQUES.pdf)
 <!-- AUTO-DOCS:END -->
 
 <!-- AUTOMATISMES-WEB:START -->

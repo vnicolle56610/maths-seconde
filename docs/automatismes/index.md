@@ -113,10 +113,6 @@ Exercices d'automatismes et mini-tests, classés par notion.
 ## N19 — Synthèse statistiques et probabilités
 
 - [Automatismes N19](AUTOMATISMES_N19_SYNTHESE_STATISTIQUES_PROBABILITES.pdf)
-
-## N20 — Synthèse annuelle et transition vers la Première
-
-
 <!-- AUTO-DOCS:END -->
 
 </div>

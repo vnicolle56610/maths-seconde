@@ -27,7 +27,6 @@ Les fonctions de référence forment un répertoire de courbes et de comportemen
 <!-- AUTO-DOCS:START -->
 - [Cours N11 — Fonctions de référence](../cours/COURS_N11_FONCTIONS_REFERENCE.pdf)
 - [TD N11 — Fonctions de référence](../td/TD_N11_FONCTIONS_REFERENCE.pdf)
-- [Automatismes N11 — Fonctions de référence](../automatismes/AUTOMATISMES_N11_FONCTIONS_REFERENCE.pdf)
 <!-- AUTO-DOCS:END -->
 
 <!-- AUTOMATISMES-WEB:START -->
