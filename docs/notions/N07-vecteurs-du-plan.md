@@ -33,6 +33,22 @@ Un vecteur code un déplacement et permet de calculer dans le plan. Les ressourc
 - ⚡ [Automatismes N07 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N07-vecteurs-du-plan.md)
 <!-- AUTOMATISMES-WEB:END -->
 
+<!-- PARCOURS-GUIDE:START -->
+### Parcours guidé
+
+Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
+
+- 📝 [Fiche 1 — Un vecteur, c'est un déplacement](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_1.pdf) : décrire un déplacement sur un quadrillage, reconnaître deux vecteurs égaux, construire un représentant, opposé et milieu.
+- 📝 [Fiche 2 — Additionner des vecteurs](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_2.pdf) : construire une somme bout à bout, simplifier avec la relation de Chasles, parallélogramme et égalité de vecteurs.
+- 📝 [Fiche 3 — Coordonnées d'un vecteur](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_3.pdf) : lire les coordonnées d'un vecteur, calculer arrivée moins départ avec des nombres négatifs, retrouver un point, coordonnées d'une somme.
+- 📝 [Fiche 4 — Norme, distance et milieu](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_4.pdf) : norme d'un vecteur avec Pythagore, distance entre deux points, coordonnées du milieu, parallélogramme par les diagonales.
+- 📝 [Fiche 5 — Vecteurs colinéaires](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_5.pdf) : multiplier un vecteur par un réel, coordonnées de ku, reconnaître deux vecteurs colinéaires en cherchant k, alignement et parallélisme.
+- 📝 [Fiche 6 — Le déterminant](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_6.pdf) : calculer un déterminant en croix, tester la colinéarité, prouver un alignement ou un parallélisme par le calcul.
+- 📝 [Fiche 7 — Choisir le bon outil](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_7.pdf) : choisir l'outil adapté, prouver un parallélogramme et trouver son centre, nature d'un triangle ou d'un losange, point sur une droite.
+
+À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier.
+<!-- PARCOURS-GUIDE:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""
