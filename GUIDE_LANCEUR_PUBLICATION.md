@@ -159,3 +159,19 @@ Tu devrais obtenir quelque chose comme :
 
 Il existe une commande symétrique `lancer_publication_premiere` pour le
 site de Première spécialité (`~/ENSEIGNEMENT/SITES_INTERNET/maths-premiere-specialite`).
+
+## Parcours guidés et liens d'automatismes (12/11/2026)
+
+- Deux types de ressources dans l'interface : **Parcours guidé** (fiches
+  `PARCOURS_GUIDE_Nxx_[PARTIE_p_]FICHE_n.pdf`, cochées par défaut comme les
+  cours et TD) et **Corrigé parcours guidé** (`..._CORRIGE.pdf`, jamais cochés
+  par défaut : à cocher une fois la notion terminée en classe, comme les
+  corrigés de TD). Les deux vont dans `docs/parcours-guide/`.
+- Sur la page de notion, ils ne sont pas dans la liste « Documents » mais
+  dans la zone `<!-- PARCOURS-GUIDE -->`, régénérée par l'outil : titre lu
+  dans `\nomFiche`, résumé dans `\resumeFiche` (fichier `.tex` voisin), lien
+  « corrigé » ajouté sur la ligne de la fiche quand il est publié. Les
+  corrigés apparaissent aussi dans « Corrigés publiés ».
+- Quand une page de notion a le bloc « Automatismes en ligne »
+  (`<!-- AUTOMATISMES-WEB -->`), le PDF d'automatismes n'est plus listé dans
+  « Documents ». Il reste publié : la page en ligne propose le diaporama PDF.

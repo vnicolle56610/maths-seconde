@@ -38,6 +38,8 @@ DESTINATION_DIRS = {
     "AUTOMATISMES": "automatismes",
     "MINITEST": "automatismes",
     "DS": "ds",
+    "PARCOURS": "parcours-guide",
+    "CORRIGE_PARCOURS": "parcours-guide",
 }
 
 LABELS = {
@@ -48,6 +50,8 @@ LABELS = {
     "AUTOMATISMES": "Automatismes",
     "MINITEST": "Mini-test",
     "DS": "DS",
+    "PARCOURS": "Parcours guidé",
+    "CORRIGE_PARCOURS": "Corrigé parcours guidé",
 }
 
 # Formulations pédagogiques des thèmes actuellement publiés. Si un nouveau
@@ -82,9 +86,13 @@ KIND_ORDER = {
     "DS": 4,
     "CORRIGE": 5,
     "CORRIGE_TD": 6,
+    "PARCOURS": 7,
+    "CORRIGE_PARCOURS": 8,
 }
 
-SAFE_DEFAULT_KINDS = frozenset({"COURS", "TD", "AUTOMATISMES"})
+# Les fiches de parcours guidé restent en ligne comme les cours et TD ;
+# leurs corrigés, comme ceux des TD, ne sont jamais cochés par défaut.
+SAFE_DEFAULT_KINDS = frozenset({"COURS", "TD", "AUTOMATISMES", "PARCOURS"})
 
 # Suffixes de fichier COURS qui ne sont jamais la version publique (site) :
 # copie de préparation professeur (mini-déroulé visible) ou copie élève à
@@ -107,6 +115,18 @@ IGNORED_DIR_NAME_PATTERN = re.compile(
 # CORRIGE_TD doit être testé avant CORRIGE afin de conserver deux choix
 # distincts dans l'interface, tout en envoyant les deux vers docs/corriges.
 RESOURCE_PATTERNS = (
+    # Corrigé de parcours testé avant la fiche : même préfixe.
+    (
+        "CORRIGE_PARCOURS",
+        re.compile(
+            r"^PARCOURS_GUIDE_N(?P<number>\d{2})(?:_.*)?_CORRIG(?:E|É)$",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "PARCOURS",
+        re.compile(r"^PARCOURS_GUIDE_N(?P<number>\d{2})(?:_|$)", re.IGNORECASE),
+    ),
     (
         "CORRIGE_TD",
         re.compile(
@@ -741,6 +761,155 @@ def normalize_for_comparison(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", without_accents)
 
 
+# ---------------------------------------------------------------------------
+# Parcours guidé (fiches d'autonomie) et automatismes en ligne
+# ---------------------------------------------------------------------------
+# Les fiches PARCOURS_GUIDE_Nxx_[PARTIE_p_]FICHE_n.pdf (et leurs corrigés
+# ..._CORRIGE.pdf) ne vont pas dans la liste AUTO-DOCS : elles ont leur
+# propre zone sur la page de notion, régénérée par l'outil. Le titre vient
+# de \nomFiche et le résumé de \resumeFiche, lus dans le .tex voisin.
+PARCOURS_KINDS = frozenset({"PARCOURS", "CORRIGE_PARCOURS"})
+PARCOURS_START = "<!-- PARCOURS-GUIDE:START -->"
+PARCOURS_END = "<!-- PARCOURS-GUIDE:END -->"
+AUTOMATISMES_WEB_START = "<!-- AUTOMATISMES-WEB:START -->"
+AUTOMATISMES_WEB_END = "<!-- AUTOMATISMES-WEB:END -->"
+
+PARCOURS_INTRO = (
+    "Des fiches pour reprendre la notion en autonomie : à la maison, après "
+    "une absence ou avant une évaluation. Chaque bloc commence par un "
+    "**exemple résolu**. Les réponses sont imprimées **à l'envers** dans les "
+    "cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite."
+)
+PARCOURS_OUTRO = (
+    "À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, "
+    "à la fin, puis l'apporter au cours suivant pour le faire vérifier."
+)
+PARCOURS_OUTRO_CORRIGE = "Ne lire le corrigé qu'après avoir cherché."
+
+
+def has_automatismes_web(text: str) -> bool:
+    """La page propose-t-elle déjà les automatismes en ligne ?"""
+    if AUTOMATISMES_WEB_START not in text or AUTOMATISMES_WEB_END not in text:
+        return False
+    start = text.index(AUTOMATISMES_WEB_START) + len(AUTOMATISMES_WEB_START)
+    end = text.index(AUTOMATISMES_WEB_END)
+    return "](" in text[start:end]
+
+
+def parcours_base_stem(resource: Resource) -> str:
+    stem = resource.source.stem
+    if resource.kind == "CORRIGE_PARCOURS" and stem.upper().endswith("_CORRIGE"):
+        stem = stem[: -len("_CORRIGE")]
+    return stem
+
+
+def read_tex_command(text: str, name: str) -> str | None:
+    match = re.search(
+        r"^\\newcommand\{\\" + name + r"\}\{(.*)\}[ \t]*$", text, flags=re.MULTILINE
+    )
+    return match.group(1).strip() if match else None
+
+
+def parcours_fiche_info(resource: Resource) -> tuple[str, str | None, str | None, int]:
+    """(titre, résumé, partie, numéro de fiche) d'une fiche de parcours."""
+    stem = parcours_base_stem(resource)
+    fiche = re.search(r"_FICHE_(\d+)", stem, flags=re.IGNORECASE)
+    partie = re.search(r"_PARTIE_(\d+)", stem, flags=re.IGNORECASE)
+    numero = int(fiche.group(1)) if fiche else 0
+    titre = f"Fiche {numero}" if fiche else humanize_topic_slug(stem) or stem
+    resume = None
+    tex = resource.source.with_name(f"{stem}.tex")
+    if tex.is_file():
+        source = tex.read_text(encoding="utf-8", errors="replace")
+        nom = read_tex_command(source, "nomFiche")
+        if nom:
+            gauche, separateur, droite = nom.partition(" : ")
+            if separateur and droite:
+                titre = f"{gauche.strip()} — {droite[:1].upper()}{droite[1:]}"
+            else:
+                titre = nom
+        resume = read_tex_command(source, "resumeFiche")
+    return titre, resume, (partie.group(1) if partie else None), numero
+
+
+def render_parcours_zone(markdown_page: Path, resources: list[Resource]) -> str:
+    """Bloc « Parcours guidé » : fiches publiées et, s'ils le sont, corrigés."""
+    groupes: dict[str, dict[str, Resource]] = defaultdict(dict)
+    for resource in resources:
+        groupes[parcours_base_stem(resource).upper()][resource.kind] = resource
+
+    entrees = []
+    for groupe in groupes.values():
+        reference = groupe.get("PARCOURS") or groupe["CORRIGE_PARCOURS"]
+        titre, resume, partie, numero = parcours_fiche_info(reference)
+        entrees.append((int(partie or 0), numero, titre, resume, partie, groupe))
+    entrees.sort(key=lambda item: (item[0], item[1], item[2]))
+
+    parties = {item[4] for item in entrees}
+    une_partie = parties.pop() if len(parties) == 1 else None
+    titre_bloc = "### Parcours guidé" + (f" (partie {une_partie})" if une_partie else "")
+
+    lignes = []
+    avec_corrige = False
+    for _, _, titre, resume, partie, groupe in entrees:
+        nom = f"Partie {partie} — {titre}" if partie and not une_partie else titre
+        fiche = groupe.get("PARCOURS")
+        corrige = groupe.get("CORRIGE_PARCOURS")
+        if fiche is not None:
+            ligne = f"- 📝 [{nom}]({relative_link(markdown_page, fiche.destination)})"
+        else:
+            ligne = f"- 📝 {nom}"
+        if corrige is not None:
+            avec_corrige = True
+            ligne += f" · ✔️ [corrigé]({relative_link(markdown_page, corrige.destination)})"
+        if resume:
+            ligne += f" : {resume}"
+        lignes.append(ligne)
+
+    fin = PARCOURS_OUTRO + (f" {PARCOURS_OUTRO_CORRIGE}" if avec_corrige else "")
+    return "\n\n".join([titre_bloc, PARCOURS_INTRO, "\n".join(lignes), fin])
+
+
+def replace_parcours_zone(text: str, content: str | None, newline: str) -> str:
+    """Remplacer, créer ou retirer la zone PARCOURS-GUIDE d'une page."""
+    start_count = text.count(PARCOURS_START)
+    end_count = text.count(PARCOURS_END)
+    if start_count != end_count or start_count > 1:
+        raise ValueError(
+            "Zone PARCOURS-GUIDE mal formée : il faut exactement un marqueur "
+            "START et un marqueur END"
+        )
+
+    if start_count == 1:
+        start = text.index(PARCOURS_START)
+        end = text.index(PARCOURS_END) + len(PARCOURS_END)
+        if end < start:
+            raise ValueError("Zone PARCOURS-GUIDE mal formée : END précède START")
+        if content is None:
+            after = end
+            # retirer aussi la ligne vide qui suivait la zone
+            for _ in range(2):
+                if text.startswith(newline, after):
+                    after += len(newline)
+            return text[:start] + text[after:]
+        return (
+            text[:start]
+            + f"{PARCOURS_START}{newline}{content}{newline}{PARCOURS_END}"
+            + text[end:]
+        )
+
+    if content is None:
+        return text
+
+    block = f"{PARCOURS_START}{newline}{content}{newline}{PARCOURS_END}"
+    for anchor in (AUTOMATISMES_WEB_END, AUTO_DOCS_END):
+        if anchor in text:
+            position = text.index(anchor) + len(anchor)
+            return f"{text[:position]}{newline}{newline}{block}{text[position:]}"
+    suffix = "" if text.endswith(("\n", "\r")) else newline
+    return f"{text}{suffix}{newline}{block}{newline}"
+
+
 def student_link_title(
     resource: Resource,
     fallback_topic: str | None = None,
@@ -755,6 +924,11 @@ def student_link_title(
     information nouvelle (déjà présent dans le titre).
     """
     notion = resource.notion
+
+    if resource.kind in PARCOURS_KINDS:
+        titre, _, partie, _ = parcours_fiche_info(resource)
+        partie_texte = f" (partie {partie})" if partie else ""
+        return f"{LABELS[resource.kind]} {notion}{partie_texte} — {titre}"
 
     if resource.kind == "COURS" and ELEVE_TOKEN_PATTERN.search(
         topic_slug_from_filename(resource.source) or ""
@@ -994,16 +1168,45 @@ def update_notion_pages(
 
         newline = detect_newline(original_text)
         fallback_topic = notion_topic_from_heading(original_text, notion)
+        # Liste « Documents » : sans les parcours guidés (zone dédiée) et
+        # sans le PDF d'automatismes quand la page propose la version en
+        # ligne (le PDF reste publié : la page en ligne y renvoie).
+        automatismes_en_ligne = has_automatismes_web(original_text)
+        document_resources = [
+            resource
+            for resource in selected_by_notion[notion]
+            if resource.kind not in PARCOURS_KINDS
+            and not (automatismes_en_ligne and resource.kind == "AUTOMATISMES")
+        ]
+        parcours_resources = [
+            resource
+            for resource in selected_by_notion[notion]
+            if resource.kind in PARCOURS_KINDS
+        ]
         content = render_document_lines(
             markdown_page,
-            selected_by_notion[notion],
+            document_resources,
             fallback_topic,
         ).replace("\n", newline)
+        parcours_content = (
+            render_parcours_zone(markdown_page, parcours_resources).replace(
+                "\n", newline
+            )
+            if parcours_resources
+            else None
+        )
 
         try:
             updated_text = replace_auto_docs_zone(
                 original_text, content, newline
             )
+            if parcours_resources or any(
+                resource.kind in PARCOURS_KINDS
+                for resource in resources_by_notion[notion]
+            ):
+                updated_text = replace_parcours_zone(
+                    updated_text, parcours_content, newline
+                )
         except ValueError as error:
             report.warnings.append(f"{markdown_page}: {error}")
             continue
@@ -1024,7 +1227,7 @@ def update_notion_pages(
 SECTION_INDEX_PAGES = (
     ("td", frozenset({"TD"})),
     ("automatismes", frozenset({"AUTOMATISMES", "MINITEST"})),
-    ("corriges", frozenset({"CORRIGE", "CORRIGE_TD"})),
+    ("corriges", frozenset({"CORRIGE", "CORRIGE_TD", "CORRIGE_PARCOURS"})),
 )
 
 
@@ -1038,10 +1241,6 @@ def update_section_index(
     considered_kinds: frozenset[str] | None = None,
 ) -> None:
     """Régénérer docs/<section>/index.md, comme les pages de notions."""
-    all_by_notion: dict[str, list[Resource]] = defaultdict(list)
-    for resource in resources:
-        all_by_notion[resource.notion].append(resource)
-
     section_resources = [
         resource for resource in resources if resource.kind in kinds
     ]
@@ -1051,7 +1250,7 @@ def update_section_index(
 
     notions_with_documents = {
         notion
-        for notion, notion_resources in all_by_notion.items()
+        for notion, notion_resources in selected_by_notion.items()
         if any(item.kind in kinds for item in notion_resources)
     }
     if not notions_with_documents:

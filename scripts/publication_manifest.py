@@ -51,6 +51,8 @@ MANIFEST_KEY_ORDER = (
     "ds",
     "corrige",
     "corrige_td",
+    "parcours",
+    "corrige_parcours",
 )
 KIND_TO_MANIFEST_KEY = {
     "COURS": "cours",
@@ -60,6 +62,8 @@ KIND_TO_MANIFEST_KEY = {
     "DS": "ds",
     "CORRIGE": "corrige",
     "CORRIGE_TD": "corrige_td",
+    "PARCOURS": "parcours",
+    "CORRIGE_PARCOURS": "corrige_parcours",
 }
 MANIFEST_KEY_TO_KIND = {value: key for key, value in KIND_TO_MANIFEST_KEY.items()}
 
