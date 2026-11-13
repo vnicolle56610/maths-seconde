@@ -83,7 +83,7 @@ hide:
     <span class="maths-note-icon">📅</span>
     <div>
       <strong>À ne pas manquer.</strong><br>
-      Les ressources sont mises à jour progressivement. En cas d'absence, commencez par consulter la notion travaillée, puis récupérez le cours et le TD associés.
+      Les ressources sont mises à jour progressivement. Après une absence, ou pour reprendre une notion qui résiste, ouvrez la page de la notion : vous y trouverez le cours et le TD, et pour certaines notions un <strong>parcours guidé</strong> — des fiches à faire en autonomie, avec des exemples résolus et les réponses pour se vérifier.
     </div>
   </div>
   <div class="maths-quote">
