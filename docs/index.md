@@ -68,7 +68,7 @@ hide:
     </div>
     <p>Devoirs blancs et corrigés pour s'entraîner avant chaque mini-test et chaque DS.</p>
 <!-- AUTO-EVAL:START -->
-    <p class="maths-card-next">Prochaine évaluation : <strong>DS1</strong>, mardi 24 novembre — devoir blanc en ligne le lundi 16 novembre.</p>
+    <p class="maths-card-next">Prochaine évaluation : <strong>DS1</strong>, mardi 24 novembre — devoir blanc en ligne.</p>
 <!-- AUTO-EVAL:END -->
     <span class="maths-card-arrow">→</span>
   </a>

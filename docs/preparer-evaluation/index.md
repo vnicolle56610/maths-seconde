@@ -24,7 +24,8 @@ Après certaines évaluations, le sujet, des **fiches pour retravailler** et leu
 **Devoir surveillé · 50 min · calculatrice interdite**  
 Notions : [N02 — Nombres réels, intervalles et valeur absolue](../notions/N02-nombres-reels-intervalles.md) · [N03 — Arithmétique](../notions/N03-arithmetique.md) · [N04 — Calcul littéral](../notions/N04-calcul-litteral.md) · [N05 — Équations et inéquations](../notions/N05-equations-inequations.md)
 
-- 📄 Devoir blanc et fiche « Ce que je dois savoir faire » : en ligne le lundi 16 novembre.
+- 📄 [Devoir blanc : fiche « Ce que je dois savoir faire » et sujet](2026-2027/DEVOIR_BLANC_DS1_2nde.pdf)
+- ✅ Corrigé et grille d'auto-évaluation : en ligne le vendredi 20 novembre.
 
 ## Pour réviser — évaluations passées
 

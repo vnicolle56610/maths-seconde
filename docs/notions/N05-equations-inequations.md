@@ -34,7 +34,7 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 <!-- AUTOMATISMES-WEB:END -->
 
 <!-- AUTO-EVAL:START -->
-- 🎯 Évaluée au DS1 du mardi 24 novembre : [devoir blanc en ligne le lundi 16 novembre](../preparer-evaluation/index.md#ds1-2026-2027)
+- 🎯 Évaluée au DS1 du mardi 24 novembre : [voir le devoir blanc](../preparer-evaluation/index.md#ds1-2026-2027)
 <!-- AUTO-EVAL:END -->
 
 ## Notions essentielles
