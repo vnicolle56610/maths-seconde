@@ -37,12 +37,12 @@ hide:
     <p>Retrouver les définitions, propriétés et exemples essentiels de chaque notion.</p>
     <span class="maths-card-arrow">→</span>
   </a>
-  <a class="maths-card maths-card--green" href="td/">
+  <a class="maths-card maths-card--green" href="#acces-rapide">
     <div class="maths-card-head">
       <span class="maths-card-icon">📝</span>
       <h3>TD</h3>
     </div>
-    <p>S'entraîner avec les exercices donnés en classe ou à la maison.</p>
+    <p>S'entraîner avec les exercices de chaque notion : le TD se trouve sur la page de la notion.</p>
     <span class="maths-card-arrow">→</span>
   </a>
   <a class="maths-card maths-card--yellow" href="automatismes/">

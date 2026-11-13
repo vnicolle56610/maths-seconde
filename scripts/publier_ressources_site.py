@@ -1224,8 +1224,9 @@ def update_notion_pages(
 
 # Pages d'index régénérées à chaque publication, sur le modèle des pages
 # de notions : (sous-dossier de docs/, types de documents listés).
+# Plus de page d'index TD (13/11/2026) : chaque TD est sur la page de sa
+# notion ; docs/td/ ne sert plus qu'à stocker les PDF.
 SECTION_INDEX_PAGES = (
-    ("td", frozenset({"TD"})),
     ("automatismes", frozenset({"AUTOMATISMES", "MINITEST"})),
     ("corriges", frozenset({"CORRIGE", "CORRIGE_TD", "CORRIGE_PARCOURS"})),
 )

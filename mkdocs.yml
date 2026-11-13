@@ -30,7 +30,6 @@ nav:
       - "N18 — Probabilités echantillonnage": notions/N18-probabilites-echantillonnage.md
       - "N19 — Synthese statistiques probabilités": notions/N19-synthese-statistiques-probabilites.md
       - "N20 — Synthese annuelle transition premiere": notions/N20-synthese-annuelle-transition-premiere.md
-  - "📝 TD": td/index.md
   - "⚡ Automatismes":
       - automatismes/index.md
       - "N01 — Logique, ensembles et raisonnement (en ligne)": automatismes/automatismes-N01-logique-ensembles.md
