@@ -40,7 +40,7 @@ Des fiches pour reprendre la notion en autonomie : à la maison, après une abse
 
 - 📝 [Fiche 1 — Calculer sans se piéger](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_1.pdf) : carrés et priorités, fractions irréductibles, intervalles, équations avec vérification.
 - 📝 [Fiche 2 — Développer, factoriser, résoudre](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_2.pdf) : le piège de (a − b)², la différence de deux carrés, l'équation produit nul.
-- 📝 [Fiche 3 — Isoler, justifier, modéliser](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_3.pdf) : isoler une lettre, vrai ou faux avec un contre-exemple, preuves avec des entiers, mise en équation.
+- 📝 [Fiche 3 — Isoler, justifier, modéliser](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_3.pdf) : isoler une lettre, vrai ou faux avec un contre-exemple, mise en équation ; pour aller plus loin : preuves avec des entiers.
 
 À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier.
 <!-- PARCOURS-GUIDE:END -->
