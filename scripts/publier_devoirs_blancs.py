@@ -20,6 +20,11 @@ Le script :
     carte de la page d'accueil (si ses marqueurs AUTO-EVAL y sont placés) ;
   - signale les mises en ligne en retard sur le calendrier déclaré, sans
     jamais les faire à la place du professeur ;
+  - publie, sous une évaluation passée, le bloc facultatif « Après
+    l'évaluation » (sujets réels, fiches de remédiation, corrigés,
+    présentation) seulement si la date est passée, les rattrapages déclarés
+    terminés et les fichiers rangés dans un sous-dossier apres_evaluation/ ;
+    un fichier « _PROF » (barème, commentaires) n'est jamais accepté ;
   - committe uniquement ce qu'il a écrit (comme publier_ressources_site.py),
     pour laisser l'arbre propre avant le déploiement.
 
@@ -56,6 +61,9 @@ ZONE_END = "<!-- AUTO-EVAL:END -->"
 AUTO_DOCS_END = "<!-- AUTO-DOCS:END -->"
 
 ETATS = ("non_publie", "annonce", "sujet", "sujet_et_corrige")
+ETATS_APRES = ("non_publie", "publie")
+DOSSIER_APRES = "apres_evaluation"
+FICHIER_PROF = re.compile(r"(^|[_-])PROF([_.-]|$)", re.IGNORECASE)
 PREFIXE_SUJET = "DEVOIR_BLANC_"
 PREFIXE_CORRIGE = "CORRIGE_DEVOIR_BLANC_"
 ID_PATTERN = re.compile(r"^(?P<type>MT|DS)(?P<numero>\d+)$")
@@ -77,6 +85,8 @@ description: Devoirs blancs et corrigés auto-correctifs pour se préparer aux m
 
 Avant chaque mini-test et chaque devoir surveillé, un **devoir blanc** est mis en ligne environ une semaine avant. Sa première page, « Ce que je dois savoir faire », annonce les savoir-faire évalués, le format et les critères de rédaction. L'évaluation porte sur ces mêmes savoir-faire, avec d'autres exercices.
 
+Après certaines évaluations, le sujet, des **fiches pour retravailler** et leurs corrigés détaillés sont ajoutés sous l'évaluation, dans « Pour réviser ».
+
 **Mode d'emploi**
 
 1. Faire le devoir blanc **seul, sans le cours, en temps limité**.
@@ -91,6 +101,29 @@ Avant chaque mini-test et chaque devoir surveillé, un **devoir blanc** est mis 
 
 class DeclarationError(ValueError):
     """devoirs_blancs.yaml est mal formé ou désigne un fichier interdit."""
+
+
+@dataclass(frozen=True)
+class Rubrique:
+    """Une ligne du bloc « Après l'évaluation » : un titre et ses documents."""
+
+    titre: str
+    documents: tuple[tuple[str, str], ...]  # (fichier, libellé du lien)
+
+
+@dataclass(frozen=True)
+class ApresEvaluation:
+    """Documents publiés après l'évaluation (sujets réels, remédiation)."""
+
+    etat: str
+    rattrapages_termines: bool
+    dossier: Path
+    rubriques: tuple[Rubrique, ...]
+    conseil: str | None = None
+
+    @property
+    def fichiers(self) -> tuple[str, ...]:
+        return tuple(fichier for rubrique in self.rubriques for fichier, _ in rubrique.documents)
 
 
 @dataclass(frozen=True)
@@ -109,6 +142,7 @@ class DevoirBlanc:
     # Texte libre quand l'évaluation a lieu à deux dates selon le groupe
     # (« mercredi 4 ou jeudi 5 novembre ») ; ``date`` est alors la dernière.
     date_affichee: str | None = None
+    apres: ApresEvaluation | None = None
 
     def libelle_date(self, avec_annee: bool = False) -> str:
         if self.date_affichee:
@@ -142,6 +176,15 @@ class DevoirBlanc:
             return (self.sujet, self.corrige)
         return ()
 
+    @property
+    def apres_publie(self) -> bool:
+        return self.apres is not None and self.apres.etat == "publie"
+
+    @property
+    def dossier_apres(self) -> str:
+        """Sous-dossier du site (relatif à l'année) des documents d'après l'évaluation."""
+        return f"apres-{self.id.lower()}"
+
 
 @dataclass
 class Rapport:
@@ -165,6 +208,68 @@ def lire_date(valeur, champ: str, ident: str) -> dt.date | None:
         return dt.date.fromisoformat(str(valeur))
     except ValueError as error:
         raise DeclarationError(f"{ident} : {champ} doit être une date AAAA-MM-JJ") from error
+
+
+def lire_apres(brut, ident: str, source_root: Path) -> ApresEvaluation | None:
+    """Lire le bloc facultatif ``apres_evaluation`` d'une entrée."""
+    if brut is None:
+        return None
+    if not isinstance(brut, dict):
+        raise DeclarationError(f"{ident} : apres_evaluation doit être un bloc")
+    etat = str(brut.get("etat", "non_publie"))
+    if etat not in ETATS_APRES:
+        raise DeclarationError(f"{ident} : apres_evaluation.etat « {etat} » inconnu ({', '.join(ETATS_APRES)})")
+    dossier = (source_root / str(brut.get("dossier", ""))).resolve()
+    if not dossier.is_relative_to(source_root.resolve()) or dossier.name != DOSSIER_APRES:
+        raise DeclarationError(
+            f"{ident} : apres_evaluation.dossier doit être un sous-dossier « {DOSSIER_APRES} » de la source"
+        )
+    rubriques = []
+    for rubrique in brut.get("rubriques") or []:
+        titre = str(rubrique.get("titre", "")).strip()
+        documents = []
+        for document in rubrique.get("documents") or []:
+            fichier = str(document.get("fichier", "")).strip()
+            libelle = str(document.get("libelle", "")).strip() or fichier
+            if "/" in fichier or not fichier.endswith(".pdf"):
+                raise DeclarationError(f"{ident} : document « {fichier} » refusé (un PDF du dossier, sans chemin)")
+            if FICHIER_PROF.search(Path(fichier).stem):
+                raise DeclarationError(f"{ident} : « {fichier} » refusé (document professeur)")
+            documents.append((fichier, libelle))
+        if not titre or not documents:
+            raise DeclarationError(f"{ident} : chaque rubrique d'apres_evaluation a un titre et des documents")
+        rubriques.append(Rubrique(titre, tuple(documents)))
+    apres = ApresEvaluation(
+        etat=etat,
+        rattrapages_termines=brut.get("rattrapages_termines") is True,
+        dossier=dossier,
+        rubriques=tuple(rubriques),
+        conseil=str(brut["conseil"]).strip() if brut.get("conseil") else None,
+    )
+    if len(set(apres.fichiers)) != len(apres.fichiers):
+        raise DeclarationError(f"{ident} : un document est déclaré deux fois dans apres_evaluation")
+    if etat == "publie":
+        if not rubriques:
+            raise DeclarationError(f"{ident} : apres_evaluation publié sans aucun document")
+        for fichier in apres.fichiers:
+            if not (dossier / fichier).is_file():
+                raise DeclarationError(f"{ident} : fichier introuvable {dossier / fichier}")
+    return apres
+
+
+def controler_apres(devoirs: list[DevoirBlanc], aujourd_hui: dt.date) -> None:
+    """Refuser de publier les documents réels d'une évaluation trop tôt."""
+    for devoir in devoirs:
+        if not devoir.apres_publie:
+            continue
+        if devoir.date >= aujourd_hui:
+            raise DeclarationError(f"{devoir.id} : « après l'évaluation » publié avant la date de l'évaluation")
+        if not devoir.apres.rattrapages_termines:
+            raise DeclarationError(
+                f"{devoir.id} : « après l'évaluation » publié sans « rattrapages_termines: true »"
+            )
+        if devoir.etat in ("non_publie", "annonce"):
+            raise DeclarationError(f"{devoir.id} : « après l'évaluation » publié pour un devoir blanc non publié")
 
 
 def charger_declarations(chemin: Path, source_root: Path) -> list[DevoirBlanc]:
@@ -217,6 +322,7 @@ def charger_declarations(chemin: Path, source_root: Path) -> list[DevoirBlanc]:
             corrige_prevu=lire_date(brut.get("corrige_prevu"), "corrige_prevu", ident),
             etat=etat,
             date_affichee=str(brut["date_affichee"]).strip() if brut.get("date_affichee") else None,
+            apres=lire_apres(brut.get("apres_evaluation"), ident, source_root),
         )
         if devoir.ancre in vus:
             raise DeclarationError(f"{ident} déclaré deux fois pour {devoir.annee_scolaire}")
@@ -261,6 +367,17 @@ def synchroniser_pdf(devoirs: list[DevoirBlanc], rapport: Rapport, dry_run: bool
             if not dry_run:
                 cible.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(source, cible)
+        if devoir.apres_publie:
+            for nom in devoir.apres.fichiers:
+                cible = destination(devoir, f"{devoir.dossier_apres}/{nom}")
+                voulus.add(cible)
+                source = devoir.apres.dossier / nom
+                if cible.is_file() and filecmp.cmp(source, cible, shallow=False):
+                    continue
+                rapport.copies.append(cible)
+                if not dry_run:
+                    cible.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(source, cible)
     if RUBRIQUE_ROOT.is_dir():
         for present in sorted(RUBRIQUE_ROOT.rglob("*.pdf")):
             if present not in voulus:
@@ -308,6 +425,17 @@ def lignes_entree(devoir: DevoirBlanc, aujourd_hui: dt.date) -> list[str]:
     else:
         lignes.append("- ✅ Corrigé et grille d'auto-évaluation : en ligne quelques jours avant l'évaluation.")
     lignes.append("")
+    if devoir.apres_publie and devoir.date < aujourd_hui:
+        lignes += ["**Après l'évaluation**", ""]
+        for rubrique in devoir.apres.rubriques:
+            liens = " · ".join(
+                f"[{libelle}]({dossier}/{devoir.dossier_apres}/{fichier})"
+                for fichier, libelle in rubrique.documents
+            )
+            lignes.append(f"- {rubrique.titre} : {liens}")
+        lignes.append("")
+        if devoir.apres.conseil:
+            lignes += [f"> {devoir.apres.conseil}", ""]
     return lignes
 
 
@@ -416,6 +544,11 @@ def mettre_a_jour_notions(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapp
                     f"- 🎯 Pour réviser : [devoir blanc du {nom_court(devoir)} "
                     f"du {devoir.libelle_date(avec_annee=True)}]({lien})"
                 )
+                if devoir.apres_publie:
+                    lignes.append(
+                        f"- 🔁 Après le {nom_court(devoir)} : "
+                        f"[sujet, fiches pour retravailler et corrigés]({lien})"
+                    )
         texte = page.read_text(encoding="utf-8")
         contenu = "\n".join(lignes) if lignes else None
         ecrire_si_change(page, remplacer_zone(texte, contenu, AUTO_DOCS_END), rapport, dry_run)
@@ -515,6 +648,7 @@ def main() -> int:
 
     try:
         devoirs = charger_declarations(DECLARATION_PATH, config.source)
+        controler_apres(devoirs, aujourd_hui)
         rapport = Rapport()
         synchroniser_pdf(devoirs, rapport, args.dry_run)
         mettre_a_jour_index(devoirs, aujourd_hui, rapport, args.dry_run)
@@ -526,7 +660,8 @@ def main() -> int:
         return 1
 
     for devoir in sorted(devoirs, key=lambda d: d.date):
-        print(f"  {devoir.id:<4} {devoir.date:%d/%m/%Y}  {devoir.etat}")
+        apres = f"  après l'évaluation : {devoir.apres.etat}" if devoir.apres else ""
+        print(f"  {devoir.id:<4} {devoir.date:%d/%m/%Y}  {devoir.etat}{apres}")
     afficher("PDF copiés", rapport.copies)
     afficher("PDF retirés", rapport.retires)
     afficher("Pages mises à jour", rapport.pages)
