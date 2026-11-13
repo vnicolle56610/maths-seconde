@@ -29,20 +29,12 @@ hide:
 </section>
 
 <section class="maths-cards">
-  <a class="maths-card maths-card--blue" href="#acces-rapide">
+  <a class="maths-card maths-card--blue maths-card--double" href="#acces-rapide">
     <div class="maths-card-head">
-      <span class="maths-card-icon">📘</span>
-      <h3>Cours</h3>
+      <span class="maths-card-icon">📖</span>
+      <h3>Notions</h3>
     </div>
-    <p>Retrouver les définitions, propriétés et exemples essentiels de chaque notion.</p>
-    <span class="maths-card-arrow">→</span>
-  </a>
-  <a class="maths-card maths-card--green" href="#acces-rapide">
-    <div class="maths-card-head">
-      <span class="maths-card-icon">📝</span>
-      <h3>TD</h3>
-    </div>
-    <p>S'entraîner avec les exercices de chaque notion : le TD se trouve sur la page de la notion.</p>
+    <p>Pour chaque notion, au même endroit : le cours (définitions, propriétés, exemples) et le TD pour s'entraîner.</p>
     <span class="maths-card-arrow">→</span>
   </a>
   <a class="maths-card maths-card--yellow" href="automatismes/">

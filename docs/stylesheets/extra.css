@@ -654,3 +654,9 @@
   .frise-barre { margin-right: 0; }
   .frise-periode { font-size: 0.5rem; }
 }
+
+/* Carte sur deux colonnes (ex. « Notions » = cours + TD), pleine largeur sur téléphone. */
+.maths-card--double { grid-column: span 2; }
+@media (max-width: 640px) {
+  .maths-card--double { grid-column: auto; }
+}
