@@ -33,6 +33,19 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 - ⚡ [Automatismes N05 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N05-equations-inequations.md)
 <!-- AUTOMATISMES-WEB:END -->
 
+<!-- PARCOURS-GUIDE:START -->
+### Parcours guidé
+
+Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
+
+- 📝 [Fiche 1 — Résoudre une équation pas à pas](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_1.pdf) : tester une valeur, faire la même opération sur les deux membres, développer d'abord, vérifier sa solution, isoler une lettre dans une formule.
+- 📝 [Fiche 2 — Inéquations, quand le sens change](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_2.pdf) : tester des valeurs, lire et écrire un ensemble de solutions, résoudre une inéquation, changer le sens en divisant par un nombre négatif, contrôler avec une valeur test.
+- 📝 [Fiche 3 — Produit nul et équation quotient](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_3.pdf) : résoudre une équation produit nul, se ramener à « produit = 0 », trouver une valeur interdite, résoudre une équation quotient ; pour aller plus loin : le même facteur des deux côtés.
+- 📝 [Fiche passerelle — Équation ou inéquation ?](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_4.pdf) : après les fiches 1 à 3, pour vérifier si je peux travailler les exercices du TD avec la classe : traduire une phrase par une équation ou une inéquation, problème de seuil avec une réponse entière, comparer deux quantités, choisir la méthode et conclure par une phrase.
+
+À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier.
+<!-- PARCOURS-GUIDE:END -->
+
 <!-- AUTO-EVAL:START -->
 - 🎯 Évaluée au DS1 du mardi 24 novembre : [voir le devoir blanc](../preparer-evaluation/index.md#ds1-2026-2027)
 <!-- AUTO-EVAL:END -->
