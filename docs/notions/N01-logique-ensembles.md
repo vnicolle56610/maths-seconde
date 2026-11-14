@@ -38,6 +38,8 @@ Les notations d'ensembles aident à nommer précisément les objets manipulés e
 
 Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
 
+**Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
+
 - 📝 [Fiche 1 — Appartenir, être inclus](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_1.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_1_CORRIGE.pdf) : lire et écrire « appartient » et « n'appartient pas », reconnaître un sous-ensemble, ne pas confondre élément et ensemble, traduire une phrase en symboles.
 - 📝 [Fiche 2 — Réunir, croiser, compter](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_2.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_2_CORRIGE.pdf) : intersection et réunion de deux ensembles, diagramme à deux ensembles, complémentaire et cardinal, couples et produit cartésien avec un arbre.
 - 📝 [Fiche 3 — Vrai ou faux ? le prouver](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_3.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_3_CORRIGE.pdf) : reconnaître une proposition, réfuter une phrase avec « tous » par un contre-exemple, écrire une négation simple, écrire la réciproque d'une implication et dire si elle est vraie.

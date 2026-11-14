@@ -39,6 +39,8 @@ Le calcul littéral sert à transformer une expression sans changer sa valeur. L
 
 Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
 
+**Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
+
 - 📝 [Fiche 1 — Puissances et racines](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_1.pdf) : règles de puissances, exposants négatifs, notation scientifique, racines carrées et contrôle du signe.
 - 📝 [Fiche 2 — Développer et réduire](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_2.pdf) : termes semblables, distributivité simple et double, signes et contrôle par substitution.
 - 📝 [Fiche 3 — Identités et factorisation](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_3.pdf) : trois identités remarquables dans les deux sens, reconnaître une forme développée ou factorisée, facteur commun et contrôle en redéveloppant ; pour aller plus loin : factoriser une différence de deux carrés avec des parenthèses.

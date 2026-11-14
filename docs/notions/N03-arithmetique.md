@@ -39,6 +39,8 @@ L'arithmétique donne des outils simples pour raisonner sur les entiers. Les doc
 
 Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
 
+**Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
+
 - 📝 [Fiche 1 — Multiples et diviseurs](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_1.pdf) : reconnaître un multiple et un diviseur (a = b × k), division euclidienne (quotient, reste, plus grand multiple), liste des diviseurs par paires, pair et impair ; pour aller plus loin : démontrer avec des multiples.
 - 📝 [Fiche 2 — Critères de divisibilité](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_2.pdf) : divisibilité par 2, 5 et 10 avec le dernier chiffre, par 3 et 9 avec la somme des chiffres, trouver un chiffre manquant, reconnaître un nombre premier.
 - 📝 [Fiche 3 — Fractions irréductibles](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_3.pdf) : simplifier une fraction par étapes, décomposer un nombre en facteurs premiers avec un arbre, rendre une fraction irréductible avec les décompositions, dire si une fraction est irréductible.

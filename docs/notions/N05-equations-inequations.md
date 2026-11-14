@@ -38,6 +38,8 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 
 Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
 
+**Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
+
 - 📝 [Fiche 1 — Résoudre une équation pas à pas](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_1.pdf) : tester une valeur, faire la même opération sur les deux membres, développer d'abord, vérifier sa solution, isoler une lettre dans une formule.
 - 📝 [Fiche 2 — Inéquations, quand le sens change](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_2.pdf) : tester des valeurs, lire et écrire un ensemble de solutions, résoudre une inéquation, changer le sens en divisant par un nombre négatif, contrôler avec une valeur test.
 - 📝 [Fiche 3 — Produit nul et équation quotient](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_3.pdf) : résoudre une équation produit nul, se ramener à « produit = 0 », trouver une valeur interdite, résoudre une équation quotient ; pour aller plus loin : le même facteur des deux côtés.

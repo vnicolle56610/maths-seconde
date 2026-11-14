@@ -38,6 +38,8 @@ Cette synthèse rassemble les premiers outils numériques et algébriques de l�
 
 Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
 
+**Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
+
 - 📝 [Fiche 1 — Calculer sans se piéger](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_1.pdf) : carrés et priorités, fractions irréductibles, intervalles, équations avec vérification.
 - 📝 [Fiche 2 — Développer, factoriser, résoudre](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_2.pdf) : le piège de (a − b)², la différence de deux carrés, l'équation produit nul ; pour aller plus loin : faire apparaître le produit nul.
 - 📝 [Fiche 3 — Isoler, justifier, modéliser](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_3.pdf) : isoler une lettre, vrai ou faux avec un contre-exemple, mise en équation ; pour aller plus loin : preuves avec des entiers.

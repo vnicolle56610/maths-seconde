@@ -39,6 +39,8 @@ Les nombres réels se représentent sur une droite graduée et se décrivent ave
 
 Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
 
+**Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
+
 - 📝 [Fiche 1 — Les nombres réels](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_1.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_1_CORRIGE.pdf) : trouver le plus petit ensemble d'un nombre (N, Z, D, Q, R), reconnaître un rationnel, placer, ranger et comparer sur une droite graduée, encadrer un nombre au dixième et au centième.
 - 📝 [Fiche 2 — Les intervalles](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_2.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_2_CORRIGE.pdf) : passer d'une phrase à une inégalité puis à un intervalle, choisir les crochets, représenter et lire un intervalle sur une droite graduée, dire si un nombre appartient à un intervalle, trouver l'intersection et la réunion de deux intervalles.
 - 📝 [Fiche 3 — Valeur absolue et distance](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_3.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_3_CORRIGE.pdf) : calculer une valeur absolue et une distance entre deux nombres, résoudre |x − a| ≤ r avec le centre et le rayon, lire |x + b| comme une distance à −b, écrire un intervalle sous la forme |x − c| ≤ r.

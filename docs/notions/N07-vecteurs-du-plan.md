@@ -38,6 +38,8 @@ Un vecteur code un déplacement et permet de calculer dans le plan. Les ressourc
 
 Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
 
+**Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
+
 - 📝 [Fiche 1 — Un vecteur, c'est un déplacement](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_1.pdf) : décrire un déplacement sur un quadrillage, reconnaître deux vecteurs égaux, construire un représentant, opposé et milieu.
 - 📝 [Fiche 2 — Additionner des vecteurs](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_2.pdf) : construire une somme bout à bout, simplifier avec la relation de Chasles, parallélogramme et égalité de vecteurs.
 - 📝 [Fiche 3 — Coordonnées d'un vecteur](../parcours-guide/PARCOURS_GUIDE_N07_FICHE_3.pdf) : lire les coordonnées d'un vecteur, calculer arrivée moins départ avec des nombres négatifs, retrouver un point, coordonnées d'une somme.
