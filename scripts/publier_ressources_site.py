@@ -778,7 +778,11 @@ PARCOURS_INTRO = (
     "Des fiches pour reprendre la notion en autonomie : à la maison, après "
     "une absence ou avant une évaluation. Chaque bloc commence par un "
     "**exemple résolu**. Les réponses sont imprimées **à l'envers** dans les "
-    "cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite."
+    "cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.\n\n"
+    "**Pour réviser** : pour chaque bloc, tenter d'abord la dernière question "
+    "sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire "
+    "l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD "
+    "indiqués à côté des questions."
 )
 PARCOURS_OUTRO = (
     "À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, "

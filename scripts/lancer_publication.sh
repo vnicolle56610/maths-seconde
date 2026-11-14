@@ -57,6 +57,9 @@ if [[ -f "devoirs_blancs.yaml" ]]; then
     python3 scripts/publier_devoirs_blancs.py
 fi
 
+# Rubrique « Nouveautés » de la page d'accueil (ajouts récents dans docs/).
+python3 scripts/generer_nouveautes.py
+
 if [[ "$MODE" == "--sync-only" ]]; then
     exit 0
 fi

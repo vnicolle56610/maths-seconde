@@ -660,3 +660,68 @@
 @media (max-width: 640px) {
   .maths-card--double { grid-column: auto; }
 }
+
+/* Nouveautés + réviser avec un parcours guidé (zone AUTO-NEWS, scripts/generer_nouveautes.py) */
+.maths-news {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1rem;
+  margin: 1.2rem 0 0.4rem;
+}
+.maths-news-box {
+  padding: 1rem 1.2rem 0.9rem;
+  border-radius: 1rem;
+  border: 1px solid var(--maths-border);
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(13, 27, 42, 0.05);
+}
+.maths-news-box h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--maths-ink);
+}
+.maths-news-box--revise {
+  background: linear-gradient(180deg, #ffffff 0%, var(--maths-green-soft) 100%);
+  border-bottom: 3px solid var(--maths-green);
+}
+.maths-news-list {
+  list-style: none;
+  margin: 0 !important;
+  padding: 0;
+}
+.maths-news-list li {
+  display: grid;
+  grid-template-columns: 2.8rem 1fr;
+  gap: 0.6rem;
+  margin: 0 0 0.55rem !important;
+  line-height: 1.45;
+  font-size: 0.8rem;
+  color: var(--maths-muted);
+}
+.maths-news-date {
+  font-weight: 700;
+  color: var(--maths-green);
+  font-variant-numeric: tabular-nums;
+}
+.maths-news-list strong { color: var(--maths-ink); }
+.maths-news-list a { font-weight: 600; }
+.maths-steps {
+  margin: 0 0 0.4rem !important;
+  padding-left: 1.3rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--maths-muted);
+}
+.maths-steps li { margin: 0 0 0.45rem !important; }
+.maths-steps strong { color: var(--maths-ink); }
+.maths-news-foot {
+  margin: 0.2rem 0 0;
+  font-size: 0.75rem;
+  color: var(--maths-muted);
+}
+@media (max-width: 720px) {
+  .maths-news { grid-template-columns: 1fr; }
+}
+.maths-news--single { grid-template-columns: 1fr; }
+.maths-news-empty { display: block !important; }
