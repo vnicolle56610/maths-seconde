@@ -34,6 +34,20 @@ Le calcul littéral sert à transformer une expression sans changer sa valeur. L
 - ⚡ [Automatismes N04 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N04-calcul-litteral.md)
 <!-- AUTOMATISMES-WEB:END -->
 
+<!-- PARCOURS-GUIDE:START -->
+### Parcours guidé
+
+Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
+
+- 📝 [Fiche 1 — Puissances et racines](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_1.pdf) : règles de puissances, exposants négatifs, notation scientifique, racines carrées et contrôle du signe.
+- 📝 [Fiche 2 — Développer et réduire](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_2.pdf) : termes semblables, distributivité simple et double, signes et contrôle par substitution.
+- 📝 [Fiche 3 — Identités et factorisation](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_3.pdf) : trois identités remarquables dans les deux sens, reconnaître une forme développée ou factorisée, facteur commun et contrôle en redéveloppant ; pour aller plus loin : factoriser une différence de deux carrés avec des parenthèses.
+- 📝 [Fiche 4 — Utiliser expressions et formules](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_4.pdf) : calculer une expression avec un nombre négatif, contrôler avec deux formes, isoler une lettre, comparer par une différence.
+- 📝 [Fiche passerelle — Choisir une forme](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_5.pdf) : fiche passerelle : programme de calcul, choix de la forme utile, comparaison selon le signe de x, puis un exercice sans modèle avant le retour au TD.
+
+À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier.
+<!-- PARCOURS-GUIDE:END -->
+
 
 <!-- AUTO-EVAL:START -->
 - 🎯 Pour réviser : [devoir blanc du mini-test 2 du mercredi 4 ou jeudi 5 novembre 2026](../preparer-evaluation/index.md#mt2-2026-2027)
