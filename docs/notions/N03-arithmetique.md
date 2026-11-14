@@ -34,6 +34,19 @@ L'arithmétique donne des outils simples pour raisonner sur les entiers. Les doc
 - ⚡ [Automatismes N03 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N03-arithmetique.md)
 <!-- AUTOMATISMES-WEB:END -->
 
+<!-- PARCOURS-GUIDE:START -->
+### Parcours guidé
+
+Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
+
+- 📝 [Fiche 1 — Multiples et diviseurs](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_1.pdf) : reconnaître un multiple et un diviseur (a = b × k), division euclidienne (quotient, reste, plus grand multiple), liste des diviseurs par paires, pair et impair ; pour aller plus loin : démontrer avec des multiples.
+- 📝 [Fiche 2 — Critères de divisibilité](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_2.pdf) : divisibilité par 2, 5 et 10 avec le dernier chiffre, par 3 et 9 avec la somme des chiffres, trouver un chiffre manquant, reconnaître un nombre premier.
+- 📝 [Fiche 3 — Fractions irréductibles](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_3.pdf) : simplifier une fraction par étapes, décomposer un nombre en facteurs premiers avec un arbre, rendre une fraction irréductible avec les décompositions, dire si une fraction est irréductible.
+- 📝 [Fiche passerelle — Problèmes de partage](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_4.pdf) : fiche passerelle : traduire « sans reste » par un diviseur, partager deux quantités avec un diviseur commun, choisir entre diviseur commun et multiple commun dans un problème sans modèle, avant le retour au TD.
+
+À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier.
+<!-- PARCOURS-GUIDE:END -->
+
 <!-- AUTO-EVAL:START -->
 - 🎯 Évaluée au DS1 du mardi 24 novembre : [voir le devoir blanc](../preparer-evaluation/index.md#ds1-2026-2027)
 <!-- AUTO-EVAL:END -->
