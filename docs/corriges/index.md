@@ -6,6 +6,10 @@ Corrigés destinés aux élèves, classés par notion.
 ## N01 — Logique, ensembles et raisonnement
 
 - [Corrigé TD N01](CORRIGE_TD_N01_LOGIQUE_ENSEMBLES.pdf)
+- [Corrigé parcours guidé N01 — Fiche 1 — Appartenir, être inclus](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_1_CORRIGE.pdf)
+- [Corrigé parcours guidé N01 — Fiche 2 — Réunir, croiser, compter](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_2_CORRIGE.pdf)
+- [Corrigé parcours guidé N01 — Fiche 3 — Vrai ou faux ? le prouver](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_3_CORRIGE.pdf)
+- [Corrigé parcours guidé N01 — Fiche passerelle — Démontrer ou réfuter](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_4_CORRIGE.pdf)
 
 ## N02 — Nombres réels, intervalles et valeur absolue
 

@@ -33,6 +33,19 @@ Les notations d'ensembles aident à nommer précisément les objets manipulés e
 - ⚡ [Automatismes N01 en ligne : énoncés, corrigés et QCM interactif](../automatismes/automatismes-N01-logique-ensembles.md)
 <!-- AUTOMATISMES-WEB:END -->
 
+<!-- PARCOURS-GUIDE:START -->
+### Parcours guidé
+
+Des fiches pour reprendre la notion en autonomie : à la maison, après une absence ou avant une évaluation. Chaque bloc commence par un **exemple résolu**. Les réponses sont imprimées **à l'envers** dans les cadres « Je vérifie » : répondre d'abord, retourner la feuille ensuite.
+
+- 📝 [Fiche 1 — Appartenir, être inclus](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_1.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_1_CORRIGE.pdf) : lire et écrire « appartient » et « n'appartient pas », reconnaître un sous-ensemble, ne pas confondre élément et ensemble, traduire une phrase en symboles.
+- 📝 [Fiche 2 — Réunir, croiser, compter](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_2.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_2_CORRIGE.pdf) : intersection et réunion de deux ensembles, diagramme à deux ensembles, complémentaire et cardinal, couples et produit cartésien avec un arbre.
+- 📝 [Fiche 3 — Vrai ou faux ? le prouver](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_3.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_3_CORRIGE.pdf) : reconnaître une proposition, réfuter une phrase avec « tous » par un contre-exemple, écrire une négation simple, écrire la réciproque d'une implication et dire si elle est vraie.
+- 📝 [Fiche passerelle — Démontrer ou réfuter](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_4.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N01_FICHE_4_CORRIGE.pdf) : fiche passerelle : rédiger une démonstration sur les multiples, choisir entre démontrer et réfuter, puis un exercice sans modèle avant le retour au TD.
+
+À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier. Ne lire le corrigé qu'après avoir cherché.
+<!-- PARCOURS-GUIDE:END -->
+
 ## Notions essentielles
 
 !!! essentiel ""
