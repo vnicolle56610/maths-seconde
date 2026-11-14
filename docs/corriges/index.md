@@ -14,6 +14,10 @@ Corrigés destinés aux élèves, classés par notion.
 ## N02 — Nombres réels, intervalles et valeur absolue
 
 - [Corrigé TD N02](CORRIGE_TD_N02_NOMBRES_REELS_INTERVALLES.pdf)
+- [Corrigé parcours guidé N02 — Fiche 1 — Les nombres réels](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_1_CORRIGE.pdf)
+- [Corrigé parcours guidé N02 — Fiche 2 — Les intervalles](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_2_CORRIGE.pdf)
+- [Corrigé parcours guidé N02 — Fiche 3 — Valeur absolue et distance](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_3_CORRIGE.pdf)
+- [Corrigé parcours guidé N02 — Fiche passerelle — Combiner deux contraintes](../parcours-guide/PARCOURS_GUIDE_N02_FICHE_4_CORRIGE.pdf)
 
 ## N03 — Arithmétique
 
