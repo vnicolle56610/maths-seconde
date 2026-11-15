@@ -55,7 +55,7 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css?v=2026-11-15b">
+      <link rel="stylesheet" href="../stylesheets/extra.css?v=2026-11-15c">
     
       <link rel="stylesheet" href="../stylesheets/automatismes.css?v=2026-11-11d">
     
@@ -1955,7 +1955,9 @@
 <h2 id="carte-de-progression">Carte de progression</h2>
 <p><strong>Cliquez sur une bulle pour ouvrir la page de la notion.</strong></p>
 <!-- CARTE-PROGRESSION:DEBUT -->
-<div class="carte-progression">
+<div class="carte-progression-cadre">
+<p><button type="button" class="carte-fermer" aria-label="Fermer la carte agrandie">✕ Fermer</button></p>
+<div class="carte-progression" style="--ratio:1.7768">
 <p><img alt="Progression spiralée en Seconde mathématiques" src="../assets/images/Progression_Seconde.png" /></p>
 <p><a class="bulle-progression" href="../notions/N01-logique-ensembles/" style="left:14.47%;top:7.97%;width:9.03%;height:8.93%" title="N01 – Rentrée, logique, ensembles">N01 – Rentrée, logique, ensembles</a>
 <a class="bulle-progression" href="../notions/N02-nombres-reels-intervalles/" style="left:15.13%;top:19.77%;width:8.01%;height:8.93%" title="N02 – Nombres réels, intervalles">N02 – Nombres réels, intervalles</a>
@@ -1979,7 +1981,8 @@
 <a class="bulle-progression" href="../notions/N20-synthese-annuelle-transition-premiere/" style="left:44.92%;top:81.93%;width:10.23%;height:8.82%" title="N20 – Synthèse annuelle, transition 1re">N20 – Synthèse annuelle, transition 1re</a>
 <a class="bulle-progression" href="../automatismes/" style="left:60.89%;top:70.78%;width:8.79%;height:8.18%" title="Automatismes">Automatismes</a></p>
 </div>
-<p><a href="../assets/images/Progression_Seconde.png" target="_blank">Agrandir la carte</a></p>
+</div>
+<p><button type="button" class="carte-agrandir md-button">Agrandir la carte (plein écran, bulles cliquables)</button></p>
 <!-- CARTE-PROGRESSION:FIN -->
 
 
@@ -2051,6 +2054,8 @@
         <script src="../javascripts/toutatice-header.js"></script>
       
         <script src="../javascripts/frise.js?v=2026-10-31"></script>
+      
+        <script src="../javascripts/carte-progression.js?v=2026-11-15"></script>
       
         <script src="../javascripts/goatcounter.js"></script>
       
