@@ -25,6 +25,10 @@ Le script :
     présentation) seulement si la date est passée, les rattrapages déclarés
     terminés et les fichiers rangés dans un sous-dossier apres_evaluation/ ;
     un fichier « _PROF » (barème, commentaires) n'est jamais accepté ;
+  - accepte, pour une évaluation passée qui n'a pas eu de devoir blanc (MT1 de
+    Première, octobre 2026, avant la règle du 17/10), l'état
+    « sans_devoir_blanc » : l'entrée n'apparaît que si son bloc « Après
+    l'évaluation » est publié ;
   - committe uniquement ce qu'il a écrit (comme publier_ressources_site.py),
     pour laisser l'arbre propre avant le déploiement.
 
@@ -60,7 +64,9 @@ ZONE_START = "<!-- AUTO-EVAL:START -->"
 ZONE_END = "<!-- AUTO-EVAL:END -->"
 AUTO_DOCS_END = "<!-- AUTO-DOCS:END -->"
 
-ETATS = ("non_publie", "annonce", "sujet", "sujet_et_corrige")
+ETATS = ("non_publie", "annonce", "sujet", "sujet_et_corrige", "sans_devoir_blanc")
+# Évaluation passée sans devoir blanc : seul le bloc « Après l'évaluation » est affiché.
+SANS_DEVOIR_BLANC = "sans_devoir_blanc"
 ETATS_APRES = ("non_publie", "publie")
 DOSSIER_APRES = "apres_evaluation"
 FICHIER_PROF = re.compile(r"(^|[_-])PROF([_.-]|$)", re.IGNORECASE)
@@ -181,6 +187,18 @@ class DevoirBlanc:
         return self.apres is not None and self.apres.etat == "publie"
 
     @property
+    def sans_devoir_blanc(self) -> bool:
+        return self.etat == SANS_DEVOIR_BLANC
+
+    def affiche(self, aujourd_hui: dt.date) -> bool:
+        """L'entrée apparaît-elle sur le site ?"""
+        if self.etat == "non_publie":
+            return False
+        if self.sans_devoir_blanc:
+            return self.apres_publie and self.date < aujourd_hui
+        return True
+
+    @property
     def dossier_apres(self) -> str:
         """Sous-dossier du site (relatif à l'année) des documents d'après l'évaluation."""
         return f"apres-{self.id.lower()}"
@@ -270,6 +288,9 @@ def controler_apres(devoirs: list[DevoirBlanc], aujourd_hui: dt.date) -> None:
             )
         if devoir.etat in ("non_publie", "annonce"):
             raise DeclarationError(f"{devoir.id} : « après l'évaluation » publié pour un devoir blanc non publié")
+    for devoir in devoirs:
+        if devoir.sans_devoir_blanc and devoir.apres is None:
+            raise DeclarationError(f"{devoir.id} : « sans_devoir_blanc » exige un bloc apres_evaluation")
 
 
 def charger_declarations(chemin: Path, source_root: Path) -> list[DevoirBlanc]:
@@ -300,9 +321,12 @@ def charger_declarations(chemin: Path, source_root: Path) -> list[DevoirBlanc]:
         corrige = str(brut.get("corrige", ""))
         # Garde-fou : un vrai sujet (DS1_1S_SUJET_A.pdf…) est rangé dans le
         # même dossier ; seul un nom de devoir blanc peut partir sur le site.
-        if not (sujet.startswith(PREFIXE_SUJET) and sujet.endswith(".pdf")):
+        if etat == SANS_DEVOIR_BLANC:
+            if sujet or corrige:
+                raise DeclarationError(f"{ident} : « sans_devoir_blanc » ne déclare ni sujet ni corrigé")
+        elif not (sujet.startswith(PREFIXE_SUJET) and sujet.endswith(".pdf")):
             raise DeclarationError(f"{ident} : sujet « {sujet} » refusé (doit commencer par {PREFIXE_SUJET})")
-        if not (corrige.startswith(PREFIXE_CORRIGE) and corrige.endswith(".pdf")):
+        elif not (corrige.startswith(PREFIXE_CORRIGE) and corrige.endswith(".pdf")):
             raise DeclarationError(f"{ident} : corrigé « {corrige} » refusé (doit commencer par {PREFIXE_CORRIGE})")
 
         notions = tuple(str(n) for n in brut.get("notions") or [])
@@ -409,22 +433,25 @@ def lignes_entree(devoir: DevoirBlanc, aujourd_hui: dt.date) -> list[str]:
     lignes += [f"Notions : {' · '.join(liens)}", ""]
 
     dossier = devoir.annee_scolaire
-    if devoir.etat == "annonce":
+    if devoir.sans_devoir_blanc:
+        lignes += ["Pas de devoir blanc pour cette évaluation.", ""]
+    elif devoir.etat == "annonce":
         quand = f"le {date_longue(devoir.sujet_prevu)}" if devoir.sujet_prevu else "environ une semaine avant"
         lignes += [f"- 📄 Devoir blanc et fiche « Ce que je dois savoir faire » : en ligne {quand}.", ""]
         return lignes
-    lignes.append(
-        f"- 📄 [Devoir blanc : fiche « Ce que je dois savoir faire » et sujet]({dossier}/{devoir.sujet})"
-    )
-    if devoir.etat == "sujet_et_corrige":
-        lignes.append(f"- ✅ [Corrigé et grille d'auto-évaluation]({dossier}/{devoir.corrige})")
-    elif devoir.corrige_prevu:
-        lignes.append(
-            f"- ✅ Corrigé et grille d'auto-évaluation : en ligne le {date_longue(devoir.corrige_prevu)}."
-        )
     else:
-        lignes.append("- ✅ Corrigé et grille d'auto-évaluation : en ligne quelques jours avant l'évaluation.")
-    lignes.append("")
+        lignes.append(
+            f"- 📄 [Devoir blanc : fiche « Ce que je dois savoir faire » et sujet]({dossier}/{devoir.sujet})"
+        )
+        if devoir.etat == "sujet_et_corrige":
+            lignes.append(f"- ✅ [Corrigé et grille d'auto-évaluation]({dossier}/{devoir.corrige})")
+        elif devoir.corrige_prevu:
+            lignes.append(
+                f"- ✅ Corrigé et grille d'auto-évaluation : en ligne le {date_longue(devoir.corrige_prevu)}."
+            )
+        else:
+            lignes.append("- ✅ Corrigé et grille d'auto-évaluation : en ligne quelques jours avant l'évaluation.")
+        lignes.append("")
     if devoir.apres_publie and devoir.date < aujourd_hui:
         lignes += ["**Après l'évaluation**", ""]
         for rubrique in devoir.apres.rubriques:
@@ -440,7 +467,7 @@ def lignes_entree(devoir: DevoirBlanc, aujourd_hui: dt.date) -> list[str]:
 
 
 def contenu_index(devoirs: list[DevoirBlanc], aujourd_hui: dt.date) -> str:
-    publies = [d for d in devoirs if d.etat != "non_publie"]
+    publies = [d for d in devoirs if d.affiche(aujourd_hui)]
     a_venir = sorted((d for d in publies if d.date >= aujourd_hui), key=lambda d: d.date)
     # Une évaluation seulement annoncée n'a rien à réviser une fois passée.
     passes = sorted(
@@ -516,7 +543,7 @@ def mettre_a_jour_index(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rappor
 def mettre_a_jour_notions(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapport: Rapport, dry_run: bool) -> None:
     par_notion: dict[str, list[DevoirBlanc]] = {}
     for devoir in devoirs:
-        if devoir.etat == "non_publie":
+        if not devoir.affiche(aujourd_hui):
             continue
         for notion in devoir.notions:
             par_notion.setdefault(notion, []).append(devoir)
@@ -539,6 +566,11 @@ def mettre_a_jour_notions(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapp
                     f"- 🎯 Évaluée au {nom_court(devoir)} du {devoir.libelle_date()} : "
                     f"[voir le devoir blanc]({lien})"
                 )
+            elif devoir.sans_devoir_blanc:
+                lignes.append(
+                    f"- 🔁 Après le {nom_court(devoir)} du {devoir.libelle_date(avec_annee=True)} : "
+                    f"[sujet, fiches pour retravailler et corrigés]({lien})"
+                )
             else:
                 lignes.append(
                     f"- 🎯 Pour réviser : [devoir blanc du {nom_court(devoir)} "
@@ -557,7 +589,8 @@ def mettre_a_jour_notions(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapp
 def contenu_accueil(devoirs: list[DevoirBlanc], aujourd_hui: dt.date) -> str:
     """Ligne « Prochaine évaluation » de la carte de la page d'accueil."""
     a_venir = sorted(
-        (d for d in devoirs if d.etat != "non_publie" and d.date >= aujourd_hui), key=lambda d: d.date
+        (d for d in devoirs if d.etat not in ("non_publie", SANS_DEVOIR_BLANC) and d.date >= aujourd_hui),
+        key=lambda d: d.date,
     )
     if not a_venir:
         return '    <p class="maths-card-next">Le prochain devoir blanc sera publié environ une semaine avant l\'évaluation.</p>'
@@ -590,7 +623,7 @@ def mettre_a_jour_accueil(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapp
 
 def verifier_calendrier(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapport: Rapport) -> None:
     for devoir in devoirs:
-        if devoir.date < aujourd_hui:
+        if devoir.date < aujourd_hui or devoir.sans_devoir_blanc:
             continue
         if devoir.etat in ("non_publie", "annonce") and devoir.sujet_prevu and devoir.sujet_prevu <= aujourd_hui:
             rapport.alertes.append(

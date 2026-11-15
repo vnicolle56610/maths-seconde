@@ -97,5 +97,77 @@ class ApresEvaluationTest(unittest.TestCase):
         self.assertNotIn("Après l'évaluation", lignes)
 
 
+SANS_DEVOIR_BLANC = """devoirs_blancs:
+  - id: MT1
+    date: 2026-10-07
+    duree: 30 min
+    calculatrice: interdite
+    notions: [N01]
+    dossier: Eval/MT1
+    etat: sans_devoir_blanc
+{apres}"""
+
+APRES_MT1 = """    apres_evaluation:
+      etat: {etat}
+      rattrapages_termines: true
+      dossier: Eval/MT1/apres_evaluation
+      rubriques:
+        - titre: Le mini-test
+          documents:
+            - {{fichier: MT1_SUJET_A.pdf, libelle: sujet A}}
+"""
+
+
+class SansDevoirBlancTest(unittest.TestCase):
+    """MT1 de Première (octobre 2026) : évaluation passée sans devoir blanc."""
+
+    def setUp(self) -> None:
+        self._tmp = tempfile.TemporaryDirectory()
+        self.racine = Path(self._tmp.name)
+        self.source = self.racine / "source"
+        cible = self.source / "Eval" / "MT1" / "apres_evaluation" / "MT1_SUJET_A.pdf"
+        cible.parent.mkdir(parents=True)
+        cible.write_bytes(b"%PDF")
+
+    def tearDown(self) -> None:
+        self._tmp.cleanup()
+
+    def charger(self, apres: str):
+        chemin = self.racine / "devoirs_blancs.yaml"
+        chemin.write_text(SANS_DEVOIR_BLANC.format(apres=apres), encoding="utf-8")
+        return pdb.charger_declarations(chemin, self.source)
+
+    def test_bloc_apres_seul(self) -> None:
+        jour = dt.date(2026, 11, 16)
+        devoirs = self.charger(APRES_MT1.format(etat="publie"))
+        pdb.controler_apres(devoirs, jour)
+        self.assertEqual(devoirs[0].fichiers_publies, ())
+        index = pdb.contenu_index(devoirs, jour)
+        self.assertIn("Pas de devoir blanc pour cette évaluation.", index)
+        self.assertNotIn("DEVOIR_BLANC", index)
+        self.assertIn("(2026-2027/apres-mt1/MT1_SUJET_A.pdf)", index)
+        self.assertIn("**Après l'évaluation**", index)
+        self.assertNotIn("MT1", pdb.contenu_accueil(devoirs, jour))
+
+    def test_rien_tant_que_apres_non_publie(self) -> None:
+        jour = dt.date(2026, 11, 16)
+        devoirs = self.charger(APRES_MT1.format(etat="non_publie"))
+        pdb.controler_apres(devoirs, jour)
+        self.assertFalse(devoirs[0].affiche(jour))
+        self.assertNotIn("Mini-test 1", pdb.contenu_index(devoirs, jour))
+
+    def test_bloc_apres_obligatoire(self) -> None:
+        devoirs = self.charger("")
+        with self.assertRaisesRegex(pdb.DeclarationError, "exige un bloc apres_evaluation"):
+            pdb.controler_apres(devoirs, dt.date(2026, 11, 16))
+
+    def test_sujet_declare_refuse(self) -> None:
+        chemin = self.racine / "devoirs_blancs.yaml"
+        texte = SANS_DEVOIR_BLANC.format(apres=APRES_MT1.format(etat="publie"))
+        chemin.write_text(texte.replace("    etat: sans", "    sujet: MT1_SUJET_A.pdf\n    etat: sans"), encoding="utf-8")
+        with self.assertRaisesRegex(pdb.DeclarationError, "ni sujet ni corrigé"):
+            pdb.charger_declarations(chemin, self.source)
+
+
 if __name__ == "__main__":
     unittest.main()
