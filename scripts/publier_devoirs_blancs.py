@@ -199,6 +199,13 @@ class DevoirBlanc:
         return True
 
     @property
+    def resume_apres(self) -> str:
+        """Libellé du lien des pages notions : n'annonce des fiches que s'il y en a."""
+        if self.apres and any("FICHE" in fichier.upper() for fichier in self.apres.fichiers):
+            return "sujet, fiches pour retravailler et corrigés"
+        return "sujets et corrigés"
+
+    @property
     def dossier_apres(self) -> str:
         """Sous-dossier du site (relatif à l'année) des documents d'après l'évaluation."""
         return f"apres-{self.id.lower()}"
@@ -571,7 +578,7 @@ def mettre_a_jour_notions(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapp
             elif devoir.sans_devoir_blanc:
                 lignes.append(
                     f"- 🔁 Après le {nom_court(devoir)} du {devoir.libelle_date(avec_annee=True)} : "
-                    f"[sujet, fiches pour retravailler et corrigés]({lien})"
+                    f"[{devoir.resume_apres}]({lien})"
                 )
             else:
                 lignes.append(
@@ -581,7 +588,7 @@ def mettre_a_jour_notions(devoirs: list[DevoirBlanc], aujourd_hui: dt.date, rapp
                 if devoir.apres_publie:
                     lignes.append(
                         f"- 🔁 Après le {nom_court(devoir)} : "
-                        f"[sujet, fiches pour retravailler et corrigés]({lien})"
+                        f"[{devoir.resume_apres}]({lien})"
                     )
         texte = page.read_text(encoding="utf-8")
         contenu = "\n".join(lignes) if lignes else None

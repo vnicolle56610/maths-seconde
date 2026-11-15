@@ -203,7 +203,14 @@ def rendre_ligne(ligne: Ligne, pages: dict[str, tuple[str, str]]) -> str:
         libelle = singulier if len(cles) == 1 else pluriel
         noms = " · ".join(html.escape(c) for c in cles)
         if ligne.type == "apres_evaluation":
-            corps = f"<strong>Après le {noms}</strong>{NBSP}: sujets, corrigés et remédiation"
+            # « remédiation » seulement si des fiches pour retravailler sont en ligne.
+            fiches = any(
+                "FICHE" in f.name.upper()
+                for c in cles
+                for f in (DOCS / "preparer-evaluation").glob(f"*/apres-{c.lower()}/*.pdf")
+            )
+            suite = "sujets, corrigés et remédiation" if fiches else "sujets et corrigés"
+            corps = f"<strong>Après le {noms}</strong>{NBSP}: {suite}"
         else:
             suite = ", avec corrigé" if ligne.avec_corriges == set(cles) and cles else ""
             corps = f"<strong>{libelle} {noms}</strong>{suite}"
