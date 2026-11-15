@@ -149,6 +149,17 @@ class SansDevoirBlancTest(unittest.TestCase):
         self.assertIn("**Après l'évaluation**", index)
         self.assertNotIn("MT1", pdb.contenu_accueil(devoirs, jour))
 
+    def test_plus_recente_en_haut(self) -> None:
+        jour = dt.date(2026, 11, 16)
+        devoirs = self.charger(APRES_MT1.format(etat="publie"))
+        mt2 = pdb.DevoirBlanc(
+            id="MT2", date=dt.date(2026, 11, 9), duree="", calculatrice="", notions=("N01",),
+            dossier=self.source, sujet="DEVOIR_BLANC_MT2.pdf", corrige="CORRIGE_DEVOIR_BLANC_MT2.pdf",
+            sujet_prevu=None, corrige_prevu=None, etat="sujet",
+        )
+        index = pdb.contenu_index([*devoirs, mt2], jour)
+        self.assertLess(index.index("### Mini-test 2"), index.index("### Mini-test 1"))
+
     def test_rien_tant_que_apres_non_publie(self) -> None:
         jour = dt.date(2026, 11, 16)
         devoirs = self.charger(APRES_MT1.format(etat="non_publie"))

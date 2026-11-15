@@ -470,9 +470,11 @@ def contenu_index(devoirs: list[DevoirBlanc], aujourd_hui: dt.date) -> str:
     publies = [d for d in devoirs if d.affiche(aujourd_hui)]
     a_venir = sorted((d for d in publies if d.date >= aujourd_hui), key=lambda d: d.date)
     # Une évaluation seulement annoncée n'a rien à réviser une fois passée.
+    # La plus récente en haut : chaque nouvelle évaluation passée s'ajoute au-dessus.
     passes = sorted(
         (d for d in publies if d.date < aujourd_hui and d.etat != "annonce"),
         key=lambda d: d.date,
+        reverse=True,
     )
 
     lignes = ["## À venir", ""]
