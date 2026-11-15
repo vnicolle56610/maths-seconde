@@ -1,0 +1,175 @@
+{
+ "image": "assets/images/Progression_Seconde.png",
+ "alt": "Progression spiralée en Seconde mathématiques",
+ "_note": "Algorithmique et Python et les grandes bulles de domaines n'ont pas de page : sans lien.",
+ "zones": [
+  {
+   "libelle": "N01 – Rentrée, logique, ensembles",
+   "lien": "notions/N01-logique-ensembles.md",
+   "amorce": [
+    318,
+    100
+   ]
+  },
+  {
+   "libelle": "N02 – Nombres réels, intervalles",
+   "lien": "notions/N02-nombres-reels-intervalles.md",
+   "amorce": [
+    320,
+    210
+   ]
+  },
+  {
+   "libelle": "N03 – Arithmétique",
+   "lien": "notions/N03-arithmetique.md",
+   "amorce": [
+    332,
+    330
+   ]
+  },
+  {
+   "libelle": "N04 – Calcul littéral, puissances, racines",
+   "lien": "notions/N04-calcul-litteral.md",
+   "amorce": [
+    330,
+    420
+   ]
+  },
+  {
+   "libelle": "N05 – Équations, inéquations",
+   "lien": "notions/N05-equations-inequations.md",
+   "amorce": [
+    328,
+    545
+   ]
+  },
+  {
+   "libelle": "N06 – Synthèse nombres, DS1",
+   "lien": "notions/N06-synthese-nombres-calculs.md",
+   "amorce": [
+    318,
+    650
+   ]
+  },
+  {
+   "libelle": "N07 – Vecteurs du plan",
+   "lien": "notions/N07-vecteurs-du-plan.md",
+   "amorce": [
+    693,
+    505
+   ]
+  },
+  {
+   "libelle": "N08 – Droites, déterminant, pente",
+   "lien": "notions/N08-droites-equations.md",
+   "amorce": [
+    870,
+    505
+   ]
+  },
+  {
+   "libelle": "N09 – Fonctions : images, antécédents",
+   "lien": "notions/N09-fonctions-registres.md",
+   "amorce": [
+    546,
+    255
+   ]
+  },
+  {
+   "libelle": "N10 – Fonctions affines",
+   "lien": "notions/N10-fonctions-affines.md",
+   "amorce": [
+    663,
+    318
+   ]
+  },
+  {
+   "libelle": "N11 – Fonctions de référence",
+   "lien": "notions/N11-fonctions-reference.md",
+   "amorce": [
+    772,
+    318
+   ]
+  },
+  {
+   "libelle": "N12 – Variations, extremums",
+   "lien": "notions/N12-variations-extremums.md",
+   "amorce": [
+    888,
+    318
+   ]
+  },
+  {
+   "libelle": "N13 – Équations avec fonctions",
+   "lien": "notions/N13-equations-inequations-fonctions.md",
+   "amorce": [
+    1003,
+    318
+   ]
+  },
+  {
+   "libelle": "N14 – Synthèse fonctions, DS4",
+   "lien": "notions/N14-synthese-fonctions-modelisation.md",
+   "amorce": [
+    1117,
+    255
+   ]
+  },
+  {
+   "libelle": "N15 – Géométrie plane, problèmes, DS2",
+   "lien": "notions/N15-geometrie-plane-problemes.md",
+   "amorce": [
+    1060,
+    505
+   ]
+  },
+  {
+   "libelle": "N16 – Info chiffrée, statistiques",
+   "lien": "notions/N16-information-chiffree-statistiques.md",
+   "amorce": [
+    1460,
+    240
+   ]
+  },
+  {
+   "libelle": "N17 – Deux variables qualitatives",
+   "lien": "notions/N17-croisement-variables-qualitatives.md",
+   "amorce": [
+    1460,
+    365
+   ]
+  },
+  {
+   "libelle": "N18 – Probabilités, arbres, simulation",
+   "lien": "notions/N18-probabilites-echantillonnage.md",
+   "amorce": [
+    1460,
+    485
+   ]
+  },
+  {
+   "libelle": "N19 – Synthèse stats-probas, DS3",
+   "lien": "notions/N19-synthese-statistiques-probabilites.md",
+   "amorce": [
+    1444,
+    622
+   ]
+  },
+  {
+   "libelle": "N20 – Synthèse annuelle, transition 1re",
+   "lien": "notions/N20-synthese-annuelle-transition-premiere.md",
+   "amorce": [
+    837,
+    790
+   ]
+  },
+  {
+   "libelle": "Automatismes",
+   "lien": "automatismes/index.md",
+   "amorce": [
+    1093,
+    690
+   ]
+  }
+ ]
+}
