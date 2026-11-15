@@ -78,7 +78,7 @@ def main():
 
     liens, boites = [], {}
     for z in cfg["zones"]:
-        bb = contour(a, *z["amorce"])
+        bb = contour(a, *z["amorce"], cfg.get("largeur_max", 190), cfg.get("hauteur_max", 135))
         if bb is None:
             raise SystemExit(f"Bulle introuvable : {z['libelle']} (déplacer l'amorce)")
         boites[z["libelle"]] = bb
