@@ -50,6 +50,7 @@ Des fiches pour reprendre la notion en autonomie : à la maison, après une abse
 <!-- PARCOURS-GUIDE:END -->
 
 <!-- AUTO-EVAL:START -->
+- 🔁 Après le mini-test 1 du lundi 28 septembre 2026 : [sujets et corrigés](../preparer-evaluation/index.md#mt1-2026-2027)
 - 🎯 Évaluée au DS1 du mardi 24 novembre : [voir le devoir blanc](../preparer-evaluation/index.md#ds1-2026-2027)
 <!-- AUTO-EVAL:END -->
 

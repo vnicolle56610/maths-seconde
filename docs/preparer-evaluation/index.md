@@ -47,4 +47,17 @@ Notions : [N04 — Calcul littéral](../notions/N04-calcul-litteral.md)
 - 👥 Pour les enseignants : [présentation du dispositif (3 pages)](2026-2027/apres-mt2/PRESENTATION_REMEDIATION_MT2_N04_2nde.pdf)
 
 > Quelle fiche prendre ? Faites d'abord le recto, commun à tous, puis le verso du parcours indiqué en classe. Si vous n'étiez pas là, commencez par R et passez au parcours suivant si c'est facile. Ne lisez le corrigé qu'après avoir cherché.
+
+### Mini-test 1 — lundi 28 septembre 2026 {#mt1-2026-2027}
+
+**Mini-test · 30 min · calculatrice interdite**  
+Notions : [N02 — Nombres réels, intervalles et valeur absolue](../notions/N02-nombres-reels-intervalles.md) · [N03 — Arithmétique](../notions/N03-arithmetique.md)
+
+Pas de devoir blanc pour cette évaluation.
+
+**Après l'évaluation**
+
+- 📝 Le mini-test : [sujet A](2026-2027/apres-mt1/MT1_N02_N03_S3_SUJET_A.pdf) · [sujet B](2026-2027/apres-mt1/MT1_N02_N03_S3_SUJET_B.pdf) · [corrigé A](2026-2027/apres-mt1/CORRIGE_MT1_N02_N03_S3_SUJET_A.pdf) · [corrigé B](2026-2027/apres-mt1/CORRIGE_MT1_N02_N03_S3_SUJET_B.pdf)
+
+> Pour vous entraîner : faites le sujet de l'autre version que la vôtre, en 30 minutes, sans calculatrice, puis corrigez-vous avec le corrigé.
 <!-- AUTO-EVAL:END -->
