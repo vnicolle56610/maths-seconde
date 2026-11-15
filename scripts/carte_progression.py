@@ -90,15 +90,18 @@ def main():
 
     bloc = "\n".join([
         DEBUT,
-        '<div class="carte-progression" markdown="1">',
+        '<div class="carte-progression-cadre" markdown="1">',
+        '<button type="button" class="carte-fermer" aria-label="Fermer la carte agrandie">✕ Fermer</button>',
+        f'<div class="carte-progression" markdown="1" style="--ratio:{W / H:.4f}">',
         "",
         f'![{cfg["alt"]}]({cfg["image"]})',
         "",
         *liens,
         "",
         "</div>",
+        "</div>",
         "",
-        f'[Agrandir la carte]({cfg["image"]}){{target="_blank"}}',
+        '<button type="button" class="carte-agrandir md-button">Agrandir la carte (plein écran, bulles cliquables)</button>',
         FIN,
     ])
     texte = PAGE.read_text(encoding="utf-8")

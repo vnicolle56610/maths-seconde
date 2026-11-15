@@ -11,7 +11,9 @@ La carte ci-dessous montre les notions de Seconde, regroupées par domaine, et l
 **Cliquez sur une bulle pour ouvrir la page de la notion.**
 
 <!-- CARTE-PROGRESSION:DEBUT -->
-<div class="carte-progression" markdown="1">
+<div class="carte-progression-cadre" markdown="1">
+<button type="button" class="carte-fermer" aria-label="Fermer la carte agrandie">✕ Fermer</button>
+<div class="carte-progression" markdown="1" style="--ratio:1.7768">
 
 ![Progression spiralée en Seconde mathématiques](assets/images/Progression_Seconde.png)
 
@@ -38,6 +40,7 @@ La carte ci-dessous montre les notions de Seconde, regroupées par domaine, et l
 [Automatismes](automatismes/index.md){.bulle-progression style="left:60.89%;top:70.78%;width:8.79%;height:8.18%" title="Automatismes"}
 
 </div>
+</div>
 
-[Agrandir la carte](assets/images/Progression_Seconde.png){target="_blank"}
+<button type="button" class="carte-agrandir md-button">Agrandir la carte (plein écran, bulles cliquables)</button>
 <!-- CARTE-PROGRESSION:FIN -->

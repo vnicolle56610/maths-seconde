@@ -82,12 +82,13 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 extra_css:
-  - stylesheets/extra.css?v=2026-11-15b
+  - stylesheets/extra.css?v=2026-11-15c
   - stylesheets/automatismes.css?v=2026-11-11d
 extra_javascript:
   - javascripts/pdf-new-tab.js
   - javascripts/toutatice-header.js
   - javascripts/frise.js?v=2026-10-31
+  - javascripts/carte-progression.js?v=2026-11-15
   - javascripts/goatcounter.js
   - javascripts/compteur-visites.js
   - javascripts/mathjax.js
