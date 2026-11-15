@@ -34,10 +34,10 @@ hide:
   <div class="maths-news-box">
     <h3>🆕 Nouveautés</h3>
     <ul class="maths-news-list">
+      <li><span class="maths-news-date">15/11</span><span><strong>Après le MT1</strong> : sujets et corrigés — <a href="preparer-evaluation/">Préparer une évaluation</a></span></li>
       <li><span class="maths-news-date">14/11</span><span><strong>Parcours guidés</strong> : <a href="notions/N01-logique-ensembles/#parcours-guide">N01</a> (avec corrigés) · <a href="notions/N02-nombres-reels-intervalles/#parcours-guide">N02</a> (avec corrigés) · <a href="notions/N03-arithmetique/#parcours-guide">N03</a> · <a href="notions/N04-calcul-litteral/#parcours-guide">N04</a></span></li>
       <li><span class="maths-news-date">13/11</span><span><strong>Devoir blanc DS1</strong> — <a href="preparer-evaluation/">Préparer une évaluation</a></span></li>
       <li><span class="maths-news-date">13/11</span><span><strong>Parcours guidé</strong> : <a href="notions/N05-equations-inequations/#parcours-guide">N05 Équations et inéquations</a></span></li>
-      <li><span class="maths-news-date">12/11</span><span><strong>Parcours guidés</strong> : <a href="notions/N06-synthese-nombres-calculs/#parcours-guide">N06</a> · <a href="notions/N07-vecteurs-du-plan/#parcours-guide">N07</a></span></li>
     </ul>
   </div>
   <div class="maths-news-box maths-news-box--revise">
