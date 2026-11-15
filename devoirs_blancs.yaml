@@ -23,7 +23,8 @@
 
 devoirs_blancs:
   # MT1 : évaluation sans devoir blanc (avant la règle du 17/10/2026) ;
-  # seul le bloc « Après l'évaluation » apparaît (sujets et corrigés).
+  # seul le bloc « Après l'évaluation » apparaît (sujets, corrigés et,
+  # depuis le 15/11/2026, remédiation en groupes R / D / A).
   - id: MT1
     date: 2026-09-28
     duree: 30 min
@@ -42,9 +43,25 @@ devoirs_blancs:
             - {fichier: MT1_N02_N03_S3_SUJET_B.pdf, libelle: sujet B}
             - {fichier: CORRIGE_MT1_N02_N03_S3_SUJET_A.pdf, libelle: corrigé A}
             - {fichier: CORRIGE_MT1_N02_N03_S3_SUJET_B.pdf, libelle: corrigé B}
+        - titre: 🔁 Retravailler
+          documents:
+            - {fichier: FICHE_REMEDIATION_MT1_2nde_R.pdf, libelle: parcours R — Reprendre (intervalles)}
+            - {fichier: FICHE_REMEDIATION_MT1_2nde_D.pdf, libelle: parcours D — Distance}
+            - {fichier: FICHE_REMEDIATION_MT1_2nde_A.pdf, libelle: parcours A — Approfondir}
+        - titre: ✔️ Corrigés détaillés
+          documents:
+            - {fichier: CORRIGE_FICHE_REMEDIATION_MT1_2nde_R.pdf, libelle: parcours R}
+            - {fichier: CORRIGE_FICHE_REMEDIATION_MT1_2nde_D.pdf, libelle: parcours D}
+            - {fichier: CORRIGE_FICHE_REMEDIATION_MT1_2nde_A.pdf, libelle: parcours A}
+        - titre: 👥 Pour les enseignants
+          documents:
+            - {fichier: PRESENTATION_REMEDIATION_MT1_2nde.pdf, libelle: présentation du dispositif (3 pages)}
       conseil: >-
         Pour vous entraîner : faites le sujet de l'autre version que la vôtre, en 30 minutes,
-        sans calculatrice, puis corrigez-vous avec le corrigé.
+        sans calculatrice, puis corrigez-vous avec le corrigé. Pour retravailler : faites
+        d'abord le recto de la fiche (commun à tous), puis le verso du parcours indiqué en
+        classe ; si vous n'avez pas de parcours, commencez par D. Ne lisez le corrigé
+        qu'après avoir cherché. Les questions sur la distance et la preuve reviennent au DS1.
 
   - id: MT2
     date: 2026-11-05

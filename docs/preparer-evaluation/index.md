@@ -58,6 +58,9 @@ Pas de devoir blanc pour cette évaluation.
 **Après l'évaluation**
 
 - 📝 Le mini-test : [sujet A](2026-2027/apres-mt1/MT1_N02_N03_S3_SUJET_A.pdf) · [sujet B](2026-2027/apres-mt1/MT1_N02_N03_S3_SUJET_B.pdf) · [corrigé A](2026-2027/apres-mt1/CORRIGE_MT1_N02_N03_S3_SUJET_A.pdf) · [corrigé B](2026-2027/apres-mt1/CORRIGE_MT1_N02_N03_S3_SUJET_B.pdf)
+- 🔁 Retravailler : [parcours R — Reprendre (intervalles)](2026-2027/apres-mt1/FICHE_REMEDIATION_MT1_2nde_R.pdf) · [parcours D — Distance](2026-2027/apres-mt1/FICHE_REMEDIATION_MT1_2nde_D.pdf) · [parcours A — Approfondir](2026-2027/apres-mt1/FICHE_REMEDIATION_MT1_2nde_A.pdf)
+- ✔️ Corrigés détaillés : [parcours R](2026-2027/apres-mt1/CORRIGE_FICHE_REMEDIATION_MT1_2nde_R.pdf) · [parcours D](2026-2027/apres-mt1/CORRIGE_FICHE_REMEDIATION_MT1_2nde_D.pdf) · [parcours A](2026-2027/apres-mt1/CORRIGE_FICHE_REMEDIATION_MT1_2nde_A.pdf)
+- 👥 Pour les enseignants : [présentation du dispositif (3 pages)](2026-2027/apres-mt1/PRESENTATION_REMEDIATION_MT1_2nde.pdf)
 
-> Pour vous entraîner : faites le sujet de l'autre version que la vôtre, en 30 minutes, sans calculatrice, puis corrigez-vous avec le corrigé.
+> Pour vous entraîner : faites le sujet de l'autre version que la vôtre, en 30 minutes, sans calculatrice, puis corrigez-vous avec le corrigé. Pour retravailler : faites d'abord le recto de la fiche (commun à tous), puis le verso du parcours indiqué en classe ; si vous n'avez pas de parcours, commencez par D. Ne lisez le corrigé qu'après avoir cherché. Les questions sur la distance et la preuve reviennent au DS1.
 <!-- AUTO-EVAL:END -->
