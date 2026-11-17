@@ -41,13 +41,13 @@ Des fiches pour reprendre la notion en autonomie : à la maison, après une abse
 
 **Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
 
-- 📝 [Fiche 1 — Puissances et racines](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_1.pdf) : règles de puissances, exposants négatifs, notation scientifique, racines carrées et contrôle du signe.
-- 📝 [Fiche 2 — Développer et réduire](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_2.pdf) : termes semblables, distributivité simple et double, signes et contrôle par substitution.
-- 📝 [Fiche 3 — Identités et factorisation](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_3.pdf) : trois identités remarquables dans les deux sens, reconnaître une forme développée ou factorisée, facteur commun et contrôle en redéveloppant ; pour aller plus loin : factoriser une différence de deux carrés avec des parenthèses.
-- 📝 [Fiche 4 — Utiliser expressions et formules](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_4.pdf) : calculer une expression avec un nombre négatif, contrôler avec deux formes, isoler une lettre, comparer par une différence.
-- 📝 [Fiche passerelle — Choisir une forme](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_5.pdf) : fiche passerelle : programme de calcul, choix de la forme utile, comparaison selon le signe de x, puis un exercice sans modèle avant le retour au TD.
+- 📝 [Fiche 1 — Puissances et racines](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_1.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_1_CORRIGE.pdf) : règles de puissances, exposants négatifs, notation scientifique, racines carrées et contrôle du signe.
+- 📝 [Fiche 2 — Développer et réduire](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_2.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_2_CORRIGE.pdf) : termes semblables, distributivité simple et double, signes et contrôle par substitution.
+- 📝 [Fiche 3 — Identités et factorisation](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_3.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_3_CORRIGE.pdf) : trois identités remarquables dans les deux sens, reconnaître une forme développée ou factorisée, facteur commun et contrôle en redéveloppant ; pour aller plus loin : factoriser une différence de deux carrés avec des parenthèses.
+- 📝 [Fiche 4 — Utiliser expressions et formules](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_4.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_4_CORRIGE.pdf) : calculer une expression avec un nombre négatif, contrôler avec deux formes, isoler une lettre, comparer par une différence.
+- 📝 [Fiche passerelle — Choisir une forme](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_5.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N04_FICHE_5_CORRIGE.pdf) : fiche passerelle : programme de calcul, choix de la forme utile, comparaison selon le signe de x, puis un exercice sans modèle avant le retour au TD.
 
-À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier.
+À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier. Ne lire le corrigé qu'après avoir cherché.
 <!-- PARCOURS-GUIDE:END -->
 
 

@@ -27,6 +27,7 @@ Une équation ou une inéquation demande de transformer une relation tout en con
 <!-- AUTO-DOCS:START -->
 - [Cours N05 — Équations et inéquations](../cours/COURS_N05_EQUATIONS_INEQUATIONS.pdf)
 - [TD N05 — Équations et inéquations](../td/TD_N05_EQUATIONS_INEQUATIONS.pdf)
+- [Corrigé TD N05](../corriges/CORRIGE_TD_N05_EQUATIONS_INEQUATIONS.pdf)
 <!-- AUTO-DOCS:END -->
 
 <!-- AUTOMATISMES-WEB:START -->
@@ -40,12 +41,12 @@ Des fiches pour reprendre la notion en autonomie : à la maison, après une abse
 
 **Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
 
-- 📝 [Fiche 1 — Résoudre une équation pas à pas](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_1.pdf) : tester une valeur, faire la même opération sur les deux membres, développer d'abord, vérifier sa solution, isoler une lettre dans une formule.
-- 📝 [Fiche 2 — Inéquations, quand le sens change](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_2.pdf) : tester des valeurs, lire et écrire un ensemble de solutions, résoudre une inéquation, changer le sens en divisant par un nombre négatif, contrôler avec une valeur test.
-- 📝 [Fiche 3 — Produit nul et équation quotient](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_3.pdf) : résoudre une équation produit nul, se ramener à « produit = 0 », trouver une valeur interdite, résoudre une équation quotient ; pour aller plus loin : le même facteur des deux côtés.
-- 📝 [Fiche passerelle — Équation ou inéquation ?](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_4.pdf) : après les fiches 1 à 3, pour vérifier si je peux travailler les exercices du TD avec la classe : traduire une phrase par une équation ou une inéquation, problème de seuil avec une réponse entière, comparer deux quantités, choisir la méthode et conclure par une phrase.
+- 📝 [Fiche 1 — Résoudre une équation pas à pas](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_1.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_1_CORRIGE.pdf) : tester une valeur, faire la même opération sur les deux membres, développer d'abord, vérifier sa solution, isoler une lettre dans une formule.
+- 📝 [Fiche 2 — Inéquations, quand le sens change](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_2.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_2_CORRIGE.pdf) : tester des valeurs, lire et écrire un ensemble de solutions, résoudre une inéquation, changer le sens en divisant par un nombre négatif, contrôler avec une valeur test.
+- 📝 [Fiche 3 — Produit nul et équation quotient](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_3.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_3_CORRIGE.pdf) : résoudre une équation produit nul, se ramener à « produit = 0 », trouver une valeur interdite, résoudre une équation quotient ; pour aller plus loin : le même facteur des deux côtés.
+- 📝 [Fiche passerelle — Équation ou inéquation ?](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_4.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_4_CORRIGE.pdf) : après les fiches 1 à 3, pour vérifier si je peux travailler les exercices du TD avec la classe : traduire une phrase par une équation ou une inéquation, problème de seuil avec une réponse entière, comparer deux quantités, choisir la méthode et conclure par une phrase.
 
-À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier.
+À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier. Ne lire le corrigé qu'après avoir cherché.
 <!-- PARCOURS-GUIDE:END -->
 
 <!-- AUTO-EVAL:START -->

@@ -71,6 +71,12 @@
         "PARCOURS_GUIDE_N03_FICHE_2.pdf",
         "PARCOURS_GUIDE_N03_FICHE_3.pdf",
         "PARCOURS_GUIDE_N03_FICHE_4.pdf"
+      ],
+      "corrige_parcours": [
+        "PARCOURS_GUIDE_N03_FICHE_1_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N03_FICHE_2_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N03_FICHE_3_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N03_FICHE_4_CORRIGE.pdf"
       ]
     },
     "N04": {
@@ -92,6 +98,13 @@
         "PARCOURS_GUIDE_N04_FICHE_3.pdf",
         "PARCOURS_GUIDE_N04_FICHE_4.pdf",
         "PARCOURS_GUIDE_N04_FICHE_5.pdf"
+      ],
+      "corrige_parcours": [
+        "PARCOURS_GUIDE_N04_FICHE_1_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N04_FICHE_2_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N04_FICHE_3_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N04_FICHE_4_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N04_FICHE_5_CORRIGE.pdf"
       ]
     },
     "N05": {
@@ -104,11 +117,20 @@
       "automatismes": [
         "AUTOMATISMES_N05_EQUATIONS_INEQUATIONS.pdf"
       ],
+      "corrige_td": [
+        "CORRIGE_TD_N05_EQUATIONS_INEQUATIONS.pdf"
+      ],
       "parcours": [
         "PARCOURS_GUIDE_N05_FICHE_1.pdf",
         "PARCOURS_GUIDE_N05_FICHE_2.pdf",
         "PARCOURS_GUIDE_N05_FICHE_3.pdf",
         "PARCOURS_GUIDE_N05_FICHE_4.pdf"
+      ],
+      "corrige_parcours": [
+        "PARCOURS_GUIDE_N05_FICHE_1_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N05_FICHE_2_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N05_FICHE_3_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N05_FICHE_4_CORRIGE.pdf"
       ]
     },
     "N06": {

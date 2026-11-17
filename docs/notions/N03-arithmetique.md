@@ -41,12 +41,12 @@ Des fiches pour reprendre la notion en autonomie : à la maison, après une abse
 
 **Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
 
-- 📝 [Fiche 1 — Multiples et diviseurs](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_1.pdf) : reconnaître un multiple et un diviseur (a = b × k), division euclidienne (quotient, reste, plus grand multiple), liste des diviseurs par paires, pair et impair ; pour aller plus loin : démontrer avec des multiples.
-- 📝 [Fiche 2 — Critères de divisibilité](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_2.pdf) : divisibilité par 2, 5 et 10 avec le dernier chiffre, par 3 et 9 avec la somme des chiffres, trouver un chiffre manquant, reconnaître un nombre premier.
-- 📝 [Fiche 3 — Fractions irréductibles](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_3.pdf) : simplifier une fraction par étapes, décomposer un nombre en facteurs premiers avec un arbre, rendre une fraction irréductible avec les décompositions, dire si une fraction est irréductible.
-- 📝 [Fiche passerelle — Problèmes de partage](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_4.pdf) : fiche passerelle : traduire « sans reste » par un diviseur, partager deux quantités avec un diviseur commun, choisir entre diviseur commun et multiple commun dans un problème sans modèle, avant le retour au TD.
+- 📝 [Fiche 1 — Multiples et diviseurs](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_1.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_1_CORRIGE.pdf) : reconnaître un multiple et un diviseur (a = b × k), division euclidienne (quotient, reste, plus grand multiple), liste des diviseurs par paires, pair et impair ; pour aller plus loin : démontrer avec des multiples.
+- 📝 [Fiche 2 — Critères de divisibilité](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_2.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_2_CORRIGE.pdf) : divisibilité par 2, 5 et 10 avec le dernier chiffre, par 3 et 9 avec la somme des chiffres, trouver un chiffre manquant, reconnaître un nombre premier.
+- 📝 [Fiche 3 — Fractions irréductibles](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_3.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_3_CORRIGE.pdf) : simplifier une fraction par étapes, décomposer un nombre en facteurs premiers avec un arbre, rendre une fraction irréductible avec les décompositions, dire si une fraction est irréductible.
+- 📝 [Fiche passerelle — Problèmes de partage](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_4.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N03_FICHE_4_CORRIGE.pdf) : fiche passerelle : traduire « sans reste » par un diviseur, partager deux quantités avec un diviseur commun, choisir entre diviseur commun et multiple commun dans un problème sans modèle, avant le retour au TD.
 
-À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier.
+À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier. Ne lire le corrigé qu'après avoir cherché.
 <!-- PARCOURS-GUIDE:END -->
 
 <!-- AUTO-EVAL:START -->
