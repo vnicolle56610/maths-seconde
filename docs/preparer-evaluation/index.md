@@ -25,7 +25,7 @@ Après certaines évaluations, le sujet, des **fiches pour retravailler** et leu
 Notions : [N02 — Nombres réels, intervalles et valeur absolue](../notions/N02-nombres-reels-intervalles.md) · [N03 — Arithmétique](../notions/N03-arithmetique.md) · [N04 — Calcul littéral](../notions/N04-calcul-litteral.md) · [N05 — Équations et inéquations](../notions/N05-equations-inequations.md)
 
 - 📄 [Devoir blanc : fiche « Ce que je dois savoir faire » et sujet](2026-2027/DEVOIR_BLANC_DS1_2nde.pdf)
-- ✅ Corrigé et grille d'auto-évaluation : en ligne le vendredi 20 novembre.
+- ✅ [Corrigé et grille d'auto-évaluation](2026-2027/CORRIGE_DEVOIR_BLANC_DS1_2nde.pdf)
 
 ## Pour réviser — évaluations passées
 
