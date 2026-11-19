@@ -1596,6 +1596,49 @@ def _bootstrap_manifest_command(pm, resources: list[Resource], args) -> int:
     return 0
 
 
+def update_news_zone(project_root: Path) -> None:
+    """Régénérer la rubrique « Nouveautés » de l'accueil après une publication réelle.
+
+    Appelé par le GUI comme par la ligne de commande : sans cela, seul
+    lancer_publication.sh mettait la rubrique à jour. Si docs/index.md change,
+    ce fichier (et lui seul) est commité à part, pour laisser l'arbre propre
+    avant le pré-vol de déploiement.
+    """
+    script = project_root / "scripts" / "generer_nouveautes.py"
+    index = project_root / "docs" / "index.md"
+    if not script.is_file() or not index.is_file():
+        return
+    completed = subprocess.run(
+        [sys.executable, str(script)],
+        cwd=project_root,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        print(f"\nAVERTISSEMENT : Nouveautés non mises à jour :\n{git_output(completed)}")
+        return
+    if _run_git(project_root, "diff", "--quiet", "--", str(index)).returncode == 0:
+        print("\nNouveautés : page d'accueil déjà à jour.")
+        return
+    added = _run_git(project_root, "add", "--", str(index))
+    committed = _run_git(
+        project_root,
+        "commit",
+        "-m",
+        "Nouveautés : mise à jour automatique de la page d'accueil",
+        "--",
+        str(index),
+    )
+    if added.returncode != 0 or committed.returncode != 0:
+        print(
+            "\nAVERTISSEMENT : Nouveautés régénérées mais non commitées :\n"
+            f"{git_output(added)}\n{git_output(committed)}"
+        )
+        return
+    print("\nNouveautés : page d'accueil mise à jour et commitée.")
+
+
 def main() -> int:
     import publication_manifest as pm
 
@@ -1671,6 +1714,9 @@ def main() -> int:
         print(f"\nCommit créé : {result.commit_sha[:12]}")
     elif not args.dry_run:
         print("\nAucun changement à committer (rien de nouveau à publier).")
+
+    if not args.dry_run:
+        update_news_zone(PROJECT_ROOT)
 
     if args.dry_run:
         if args.serve:
