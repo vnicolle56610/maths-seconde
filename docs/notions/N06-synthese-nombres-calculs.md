@@ -27,6 +27,7 @@ Cette synthèse rassemble les premiers outils numériques et algébriques de l�
 <!-- AUTO-DOCS:START -->
 - [Cours N06 — Synthèse nombres et calculs](../cours/COURS_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
 - [TD N06 — Synthèse nombres et calculs](../td/TD_N06_SYNTHESE_NOMBRES_CALCULS.pdf)
+- [Corrigé TD N06](../corriges/CORRIGE_TD_N06_SYNTHESE_NOMBRES_CALCULS_AVEC_ENONCES.pdf)
 <!-- AUTO-DOCS:END -->
 
 <!-- AUTOMATISMES-WEB:START -->
@@ -40,11 +41,11 @@ Des fiches pour reprendre la notion en autonomie : à la maison, après une abse
 
 **Pour réviser** : pour chaque bloc, tenter d'abord la dernière question sans aide. Si elle est réussie, passer au bloc suivant ; sinon, lire l'exemple résolu et faire tout le bloc. Terminer par les exercices du TD indiqués à côté des questions.
 
-- 📝 [Fiche 1 — Calculer sans se piéger](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_1.pdf) : carrés et priorités, fractions irréductibles, intervalles, équations avec vérification.
-- 📝 [Fiche 2 — Développer, factoriser, résoudre](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_2.pdf) : le piège de (a − b)², la différence de deux carrés, l'équation produit nul ; pour aller plus loin : faire apparaître le produit nul.
-- 📝 [Fiche 3 — Isoler, justifier, modéliser](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_3.pdf) : isoler une lettre, vrai ou faux avec un contre-exemple, mise en équation ; pour aller plus loin : preuves avec des entiers.
+- 📝 [Fiche 1 — Calculer sans se piéger](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_1.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_1_CORRIGE.pdf) : carrés et priorités, fractions irréductibles, intervalles, équations avec vérification.
+- 📝 [Fiche 2 — Développer, factoriser, résoudre](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_2.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_2_CORRIGE.pdf) : le piège de (a − b)², la différence de deux carrés, l'équation produit nul ; pour aller plus loin : faire apparaître le produit nul.
+- 📝 [Fiche 3 — Isoler, justifier, modéliser](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_3.pdf) · ✔️ [corrigé](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_3_CORRIGE.pdf) : isoler une lettre, vrai ou faux avec un contre-exemple, mise en équation ; pour aller plus loin : preuves avec des entiers.
 
-À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier.
+À la maison, ignorer les cases « STOP ». Faire le ticket de sortie seul, à la fin, puis l'apporter au cours suivant pour le faire vérifier. Ne lire le corrigé qu'après avoir cherché.
 <!-- PARCOURS-GUIDE:END -->
 
 ## Notions essentielles

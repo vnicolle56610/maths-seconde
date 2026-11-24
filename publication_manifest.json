@@ -143,10 +143,18 @@
       "automatismes": [
         "AUTOMATISMES_N06_SYNTHESE_NOMBRES_CALCULS.pdf"
       ],
+      "corrige_td": [
+        "CORRIGE_TD_N06_SYNTHESE_NOMBRES_CALCULS_AVEC_ENONCES.pdf"
+      ],
       "parcours": [
         "PARCOURS_GUIDE_N06_FICHE_1.pdf",
         "PARCOURS_GUIDE_N06_FICHE_2.pdf",
         "PARCOURS_GUIDE_N06_FICHE_3.pdf"
+      ],
+      "corrige_parcours": [
+        "PARCOURS_GUIDE_N06_FICHE_1_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N06_FICHE_2_CORRIGE.pdf",
+        "PARCOURS_GUIDE_N06_FICHE_3_CORRIGE.pdf"
       ]
     },
     "N07": {

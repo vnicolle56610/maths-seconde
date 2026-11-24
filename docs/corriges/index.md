@@ -43,4 +43,11 @@ Corrigés destinés aux élèves, classés par notion.
 - [Corrigé parcours guidé N05 — Fiche 2 — Inéquations, quand le sens change](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_2_CORRIGE.pdf)
 - [Corrigé parcours guidé N05 — Fiche 3 — Produit nul et équation quotient](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_3_CORRIGE.pdf)
 - [Corrigé parcours guidé N05 — Fiche passerelle — Équation ou inéquation ?](../parcours-guide/PARCOURS_GUIDE_N05_FICHE_4_CORRIGE.pdf)
+
+## N06 — Synthèse nombres et calculs
+
+- [Corrigé TD N06](CORRIGE_TD_N06_SYNTHESE_NOMBRES_CALCULS_AVEC_ENONCES.pdf)
+- [Corrigé parcours guidé N06 — Fiche 1 — Calculer sans se piéger](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_1_CORRIGE.pdf)
+- [Corrigé parcours guidé N06 — Fiche 2 — Développer, factoriser, résoudre](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_2_CORRIGE.pdf)
+- [Corrigé parcours guidé N06 — Fiche 3 — Isoler, justifier, modéliser](../parcours-guide/PARCOURS_GUIDE_N06_FICHE_3_CORRIGE.pdf)
 <!-- AUTO-DOCS:END -->
