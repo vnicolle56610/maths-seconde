@@ -34,10 +34,10 @@ hide:
   <div class="maths-news-box">
     <h3>🆕 Nouveautés</h3>
     <ul class="maths-news-list">
+      <li><span class="maths-news-date">24/11</span><span><strong>Corrigés du parcours guidé</strong> : <a href="notions/N06-synthese-nombres-calculs/#parcours-guide">N06 Synthèse nombres et calculs</a></span></li>
+      <li><span class="maths-news-date">24/11</span><span><strong>Corrigé du TD</strong> : <a href="notions/N06-synthese-nombres-calculs/">N06 Synthèse nombres et calculs</a></span></li>
       <li><span class="maths-news-date">19/11</span><span><strong>Corrigé du devoir blanc DS1</strong> — <a href="preparer-evaluation/">Préparer une évaluation</a></span></li>
       <li><span class="maths-news-date">17/11</span><span><strong>Corrigés des parcours guidés</strong> : <a href="notions/N03-arithmetique/#parcours-guide">N03</a> · <a href="notions/N04-calcul-litteral/#parcours-guide">N04</a> · <a href="notions/N05-equations-inequations/#parcours-guide">N05</a></span></li>
-      <li><span class="maths-news-date">17/11</span><span><strong>Corrigé du TD</strong> : <a href="notions/N05-equations-inequations/">N05 Équations et inéquations</a></span></li>
-      <li><span class="maths-news-date">15/11</span><span><strong>Après le MT1</strong> : sujets, corrigés et remédiation — <a href="preparer-evaluation/">Préparer une évaluation</a></span></li>
     </ul>
   </div>
   <div class="maths-news-box maths-news-box--revise">
