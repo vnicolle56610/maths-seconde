@@ -54,7 +54,7 @@ Des fiches pour reprendre la notion en autonomie : à la maison, après une abse
 <!-- AUTO-EVAL:START -->
 - 🎯 Pour réviser : [devoir blanc du mini-test 2 du mercredi 4 ou jeudi 5 novembre 2026](../preparer-evaluation/index.md#mt2-2026-2027)
 - 🔁 Après le mini-test 2 : [sujet, fiches pour retravailler et corrigés](../preparer-evaluation/index.md#mt2-2026-2027)
-- 🎯 Évaluée au DS1 du mardi 24 novembre : [voir le devoir blanc](../preparer-evaluation/index.md#ds1-2026-2027)
+- 🎯 Pour réviser : [devoir blanc du DS1 du mardi 24 novembre 2026](../preparer-evaluation/index.md#ds1-2026-2027)
 <!-- AUTO-EVAL:END -->
 
 ## Notions essentielles

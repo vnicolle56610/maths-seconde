@@ -19,17 +19,19 @@ Après certaines évaluations, le sujet, des **fiches pour retravailler** et leu
 <!-- AUTO-EVAL:START -->
 ## À venir
 
-### DS1 — mardi 24 novembre {#ds1-2026-2027}
+Aucune évaluation annoncée pour le moment : le prochain devoir blanc sera publié environ une semaine avant l'évaluation.
+
+## Pour réviser — évaluations passées
+
+Les devoirs blancs des évaluations passées restent en ligne pour les révisions.
+
+### DS1 — mardi 24 novembre 2026 {#ds1-2026-2027}
 
 **Devoir surveillé · 50 min · calculatrice interdite**  
 Notions : [N02 — Nombres réels, intervalles et valeur absolue](../notions/N02-nombres-reels-intervalles.md) · [N03 — Arithmétique](../notions/N03-arithmetique.md) · [N04 — Calcul littéral](../notions/N04-calcul-litteral.md) · [N05 — Équations et inéquations](../notions/N05-equations-inequations.md)
 
 - 📄 [Devoir blanc : fiche « Ce que je dois savoir faire » et sujet](2026-2027/DEVOIR_BLANC_DS1_2nde.pdf)
 - ✅ [Corrigé et grille d'auto-évaluation](2026-2027/CORRIGE_DEVOIR_BLANC_DS1_2nde.pdf)
-
-## Pour réviser — évaluations passées
-
-Les devoirs blancs des évaluations passées restent en ligne pour les révisions.
 
 ### Mini-test 2 — mercredi 4 ou jeudi 5 novembre 2026 {#mt2-2026-2027}
 
